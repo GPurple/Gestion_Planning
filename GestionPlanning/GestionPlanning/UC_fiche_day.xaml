@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="GestionPlanning.UC_fiche_day"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GestionPlanning"
+             mc:Ignorable="d" Width="650" Height="40">
+    <Grid Margin="10,10,0,0" Height="26" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="rectangleLeft_op" Fill="#FFF4F4F5" Height="30" Width="320" StrokeThickness="0" Margin="0,-4,0,0" HorizontalAlignment="Left"/>
+        <Rectangle x:Name="rectangleRight_rec" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="30" Width="320" Margin="320,-4,0,0" StrokeThickness="0" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textIDficheDay" HorizontalAlignment="Left" Margin="10,3,0,0" TextWrapping="Wrap" Text="ID : " VerticalAlignment="Top"/>
+        <TextBlock x:Name="textNameFicheDay" HorizontalAlignment="Left" Margin="75,3,0,0" TextWrapping="Wrap" Text="Nom : " VerticalAlignment="Top"/>
+        <TextBlock x:Name="textDateFicheDay" HorizontalAlignment="Left" Margin="288,3,0,0" TextWrapping="Wrap" Text="Livraison : " VerticalAlignment="Top"/>
+        <TextBlock x:Name="textQtyFicheDay" HorizontalAlignment="Left" Margin="440,3,0,0" TextWrapping="Wrap" Text="Quantité : " VerticalAlignment="Top"/>
+        <Image x:Name="image_alerte" HorizontalAlignment="Left" Height="30" Margin="602,-4,0,0" VerticalAlignment="Top" Width="33" Source="Images/Icone_Alerte.png"/>
+        <Image x:Name="image_warning" HorizontalAlignment="Left" Height="30" Margin="572,-4,0,0" VerticalAlignment="Top" Width="30" Source="Images/Icone_Attention.png" RenderTransformOrigin="0.533,0.404"/>
+
+    </Grid>
+</UserControl>

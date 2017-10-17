@@ -1,0 +1,60 @@
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.csprojResolveAssemblyReference.cache
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\MainWindow.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\App.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning_MarkupCompile.cache
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning_MarkupCompile.lref
+D:\Projet_Planning\GestionPlanning\GestionPlanning\bin\Debug\GestionPlanning.exe.config
+D:\Projet_Planning\GestionPlanning\GestionPlanning\bin\Debug\GestionPlanning.exe
+D:\Projet_Planning\GestionPlanning\GestionPlanning\bin\Debug\GestionPlanning.pdb
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\MainWindow.baml
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.g.resources
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.Properties.Resources.resources
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.csproj.GenerateResource.Cache
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.exe
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.pdb
+D:\Projet_Planning\GestionPlanning\GestionPlanning\bin\Debug\CsvHelper.dll
+D:\Projet_Planning\GestionPlanning\GestionPlanning\bin\Debug\CsvHelper.pdb
+D:\Projet_Planning\GestionPlanning\GestionPlanning\bin\Debug\CsvHelper.xml
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_fiche_day.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_fiche_day.baml
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_display_day.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_display_day.baml
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_Controls.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_Controls.baml
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Display_week.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Display_week.baml
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_Month.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_Month.baml
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Fiche_week.g.cs
+D:\Projet_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Fiche_week.baml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\bin\Debug\GestionPlanning.exe.config
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\bin\Debug\GestionPlanning.exe
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\bin\Debug\GestionPlanning.pdb
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\bin\Debug\CsvHelper.dll
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\bin\Debug\CsvHelper.pdb
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\bin\Debug\CsvHelper.xml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.csprojResolveAssemblyReference.cache
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\MainWindow.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_display_day.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_Display_week.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_Controls.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_Month.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_fiche_day.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_Fiche_week.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\App.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning_MarkupCompile.cache
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning_MarkupCompile.lref
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\MainWindow.baml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_display_day.baml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_Display_week.baml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_Controls.baml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_Month.baml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_fiche_day.baml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\UC_Fiche_week.baml
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.g.resources
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.Properties.Resources.resources
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.csproj.GenerateResource.Cache
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.exe
+D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.pdb

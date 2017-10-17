@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="GestionPlanning.UC_Disp_Controls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GestionPlanning"
+             mc:Ignorable="d" Height="139" Width="662">
+    <Grid Background="#FF2E2E2E">
+        <Button x:Name="btnDispDay" Content="Afficher jour" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="108" Click="DisplayDay"/>
+        <Button x:Name="btnResetDay" Content="Jour actuel" HorizontalAlignment="Left" Margin="134,27,0,0" VerticalAlignment="Top" Width="106" Click="ResetDay"/>
+        <Button x:Name="btnDispWeek" Content="Afficher Semaine" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="108" Click="DisplayWeek"/>
+        <Button x:Name="btnResetWeek" Content="Semaine actuelle" HorizontalAlignment="Left" Margin="134,64,0,0" VerticalAlignment="Top" Width="106" Click="ResetWeek"/>
+        <ComboBox HorizontalAlignment="Left" Margin="255,27,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Rechercher nom" HorizontalAlignment="Left" Margin="397,27,0,0" VerticalAlignment="Top" Width="130"/>
+        <ComboBox HorizontalAlignment="Left" Margin="255,64,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Rechercher opération" HorizontalAlignment="Left" Margin="397,64,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button x:Name="btnDispMonth" Content="Afficher mois" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Width="108" Click="DisplayMonth"/>
+        <Button x:Name="btnResetMonth" Content="Mois Actuel" HorizontalAlignment="Left" Margin="134,102,0,0" VerticalAlignment="Top" Width="106" Click="ResetMonth"/>
+        <ComboBox HorizontalAlignment="Left" Margin="255,102,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Rechercher opération" HorizontalAlignment="Left" Margin="397,102,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button Content="Rafraîchir" HorizontalAlignment="Left" Margin="546,27,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</UserControl>
