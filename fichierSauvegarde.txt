@@ -1,0 +1,4 @@
+NameFile:fileSave.csv;
+Path:C:/Documents/
+ColorRecouvrement:Rouge
+ColorProduction:Vert

@@ -1,0 +1,20 @@
+Code planning:
+
+Test 1 sauvegarde et chargement dans fichier
+bouton lancement de test 1 : ok
+créer valeurs fakes depuis mainwindow?
+Test 2 chargement des données depuis fichier généré
+
+Afficher les données chargées dans fes listes
+
+Mettre en forme les listes
+
+
+
+protocole synchro fiches
+
+lancement logiciel ou synchro
+chargement des données xcel
+	récup de toutes les données dans saveData
+	avec liste des fiches récupération comparaison par rapport à la liste actuelle 
+		si élement dans la liste
