@@ -46,7 +46,8 @@ namespace GestionPlanning.src
 
         //Le fichier xcel
         public FichierSauvegarde fichierSauvegarde = new FichierSauvegarde();
-
+        
+        //Les différents controls utilisateurs
         public MainWindow mainWindow;
         public UC_Disp_Controls ucDispControl;
         public UC_display_day ucDispDay;
@@ -73,23 +74,36 @@ namespace GestionPlanning.src
          * @param none
          */
         private Brain() {
-            //TODO créer une pile d'évenements 
-            //afficher de base la semaine actuelle
-           
             dateToDisplay = DateTime.Now;
-            dispPlanning = DispPlanning.week;
         }
 
-
-        public void Main()
+        static public void Main()
         {
-            //start 
-            fichierXcel.LoadFiches(listeFiches);
-            //Tri des fiches par id
-            listeFiches = listeFiches.OrderBy(fiche => fiche.id).ToList();
-            fichierSauvegarde.SynchroListe(listeFiches);
-            //TODO display listes en fonction des paramètres (week, affutage, recouvrement, type)
-            ResetWeek();
+
+        }
+
+        public void InitDisplay()
+        {
+            ////TODO display listes en fonction des paramètres (week, affutage, recouvrement, type)
+            dispPlanning = DispPlanning.week;
+            dateToDisplay = DateTime.Now;
+            while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
+            {
+                dateToDisplay = dateToDisplay.AddDays(-1);
+            }
+            RefreshData();
+        }
+        
+        /**
+         * @brief Recupération de la liste des fiches en fonction d'un nom
+         * @note none
+         * @param none
+         */
+        public List<Fiche> GetListFichesByName(String name)
+        {
+            //Une liste contenant les références de fiches seulement pour un tri en fonction des noms
+            List<Fiche> listFichesName = new List<Fiche>();
+            return listFichesName;
         }
 
         /**
@@ -97,11 +111,23 @@ namespace GestionPlanning.src
          * @note none
          * @param none
          */
-        public List<Fiche> GetListFiches(String name)
+        public List<Fiche> GetListFichesByOperation(TypeOperation typeOp)
         {
             //Une liste contenant les références de fiches seulement pour un tri en fonction des noms
-            List<Fiche> listFichesName = new List<Fiche>();
-            return listFichesName;
+            List<Fiche> listFichesOperation = new List<Fiche>();
+            return listFichesOperation;
+        }
+
+        /**
+         * @brief Recupération de la liste des fiches en fonction d'un nom
+         * @note none
+         * @param none
+         */
+        public List<Fiche> GetListFichesByRecouvrement(Boolean reco)
+        {
+            //Une liste contenant les références de fiches seulement pour un tri en fonction des noms
+            List<Fiche> listFichesRec = new List<Fiche>();
+            return listFichesRec;
         }
 
         /**
@@ -116,262 +142,243 @@ namespace GestionPlanning.src
         }
 
         /**
-         * @brief Retour de la liste synchronisée depuis le serveur
-         * @note none
-         * @param none
-         * @retval ListFiches La liste depuis le serveur 
-         */
-        public void SynchroFiches()
-        {
-            int checkLoad = 0, checkSynchro = 0;
-            checkLoad = fichierXcel.LoadFiches(listeFiches);
-            checkSynchro = fichierSauvegarde.SynchroListe(listeFiches);
-            //ici les fiches sont synchronisées
-            switch (dispPlanning)
-            {
-                case DispPlanning.week:
-                    this.GetListCurrentWeek();
-                    //TODO display week (param week,listeWeek)
-                    break;
-                case DispPlanning.day:
-                    this.GetListCurrentDay();
-                    //TODO display day (param day,listeWeek)
-                    break;
-                default:
-                    break;
-            }
-            this.PlacementAutoAll();
-            //TODO display liste non placée (param nonPlacee,listeNonplacee)
-            
-        }
-
-
-        //-------------------------------
-        //Gestion des fiches
-        //-------------------------------
-
-        /**
          * @brief Place automatiquement toutes les fiches dans l'emploi du temps en fonction de leurs paramètres
          * @note la synchro doit être appellées
          * @param none
          * */
         public void PlacementAutoAll()
         {
-
+            foreach (Fiche fiche in listeFiches)
+            {
+                //si la fiche n'a pas de date de fabrication
+                if (fiche.dateDebutFabrication.CompareTo(new DateTime(2000, 1, 1)) < 0)
+                {
+                    //si la fiche a une date de livraison
+                    if (fiche.dateLivraison.CompareTo(new DateTime(2000, 1, 1)) > 0)
+                    {
+                        fiche.dateDebutFabrication = fiche.dateLivraison.AddDays(-2);
+                        //Si la fabrication tombe un week end elle est décalée de 2 jours supplémentaire
+                        if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday || fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
+                        {
+                            fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(-2);
+                        }
+                        //Déplacement de 2 jours si recouvrement et prise en compte du week end
+                        if (fiche.recouvrement == true)
+                        {
+                            fiche.dateDebutFabrication = fiche.dateLivraison.AddDays(-2);
+                            if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday || fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
+                            {
+                                fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(-2);
+                            }
+                        }
+                        if (fiche.dateDebutFabrication.CompareTo(DateTime.Now) < 0)
+                        {
+                            fiche.dateDebutFabrication = DateTime.Now;
+                        }
+                    }
+                    else
+                    {
+                        fiche.dateDebutFabrication = DateTime.Now;
+                    }
+                }
+            }
+            SaveListeInData();
+            ProcessListNotPlaced();
+            ProcessListCurrentDay();
+            listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+            //TODO ProcessListMonth
+            DisplayFiches();
         }
 
-        /**
-         * @brief Place automatiquement une seule fiche dans l'emploi du temps
-         * @note la synchro doit être appellées
-         * @retVal La liste synchronisée
-         * @param idFiche L'identifiant de la fiche 
-         * */
+        //Replace les fiches dont la date de fabrication est dépassée sans être validée
+        public void ReplacementRetardAutoAll()
+        {
+            foreach (Fiche fiche in listeFiches)
+            {
+                if (fiche.dateDebutFabrication.CompareTo(DateTime.Now) < 0 && fiche.check == false)
+                {
+                    fiche.dateDebutFabrication = DateTime.Now;
+                }
+            }
+            SaveListeInData();
+            ProcessListNotPlaced();
+            ProcessListCurrentDay();
+            listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+            //TODO ProcessListMonth
+            DisplayFiches();
+        }
+
+        //Place automatiquement une seule fiche dans l'emploi du temps
         public void PlacementAutoOneFiche(int idFiche)
         {
+            //TODO
+        }
+
+        //Detection des alertes et des warnings dans la liste
+        public void FindAlerteListeFull(List<Fiche> liste)
+        {
+            mainWindow.image_alerteGeneral.Visibility = Visibility.Collapsed;
+            mainWindow.image_warningGeneral.Visibility = Visibility.Collapsed;
+            foreach (Fiche fiche in liste)
+            {
+                FindAlerteListeInFor(fiche);
+            }
+        }
+
+        //Detection des alertes et des warnings pour une fiche
+        public void FindAlerteListeInFor(Fiche fiche)
+        {
+            DateTime dateLivraison = new DateTime();
+            DateTime dateFabrication = new DateTime();
             
+            //TODO prise en compte des week ends
+            if (fiche.dateLivraison != null && fiche.dateLivraison.CompareTo(new DateTime(2000, 1, 1)) > 0)
+            {
+                if (fiche.dateDebutFabrication.CompareTo(new DateTime(2000, 1, 1)) > 0 )
+                {
+                    dateLivraison = fiche.dateLivraison;
+                    dateFabrication = fiche.dateDebutFabrication;
+                }
+                else //Si la fiche n'a pas de date de fabrication, on prend en compte le retard par rapport à la date d'aujourd'hui
+                {
+                    dateLivraison = fiche.dateLivraison;
+                    dateFabrication = DateTime.Now;
+                }
+
+                TimeSpan time = dateFabrication - dateLivraison;
+                if(time.Days > 0 ) //date fabrication après date livraison
+                {
+                    fiche.alerteRetard = true;
+                    fiche.attentionRetard = false;
+                    mainWindow.image_alerteGeneral.Visibility = Visibility.Visible;
+                }
+                else if (time.Days <2) //moins de 2 jours entre fabrication et livraison en semaine
+                {
+                    fiche.alerteRetard = false;
+                    fiche.attentionRetard = true;
+                    mainWindow.image_warningGeneral.Visibility = Visibility.Visible;
+                }
+                else if (time.Days < 4 && (dateLivraison.AddDays(-1).DayOfWeek == DayOfWeek.Sunday || dateLivraison.AddDays(-2).DayOfWeek == DayOfWeek.Sunday))
+                {
+                    fiche.alerteRetard = false;
+                    fiche.attentionRetard = true;
+                    mainWindow.image_warningGeneral.Visibility = Visibility.Visible;
+                }
+                else 
+                {
+                    fiche.alerteRetard = false;
+                    fiche.attentionRetard = false;
+                }
+            }
         }
 
-        public List<Fiche> GetListDay()
+        //récupère la liste du jour
+        public void ProcessListCurrentDay()
         {
-            return listeDay;
-
+            listeDay.Clear();
+            foreach (Fiche fiche in listeFiches)
+            {
+                FindAlerteListeInFor(fiche);
+                if (fiche.dateDebutFabrication.Year == dateToDisplay.Year
+                    && fiche.dateDebutFabrication.Month == dateToDisplay.Month
+                    && fiche.dateDebutFabrication.Day == dateToDisplay.Day)
+                {
+                    listeDay.Add(fiche);
+                }
+            }
         }
 
-        public ListeFichesWeek GetListWeek()
+        //récupère la liste du mois
+        public void ProcessListCurrentMonth()
         {
-            return listeWeek;
+            //listeMonth
+            foreach (Fiche fiche in listeFiches)
+            {
+                FindAlerteListeInFor(fiche);
+                if (fiche.dateLivraison.Year == dateToDisplay.Year
+                    && fiche.dateLivraison.Month == dateToDisplay.Month
+                    && fiche.dateLivraison.Day == dateToDisplay.Day)
+                {
+                    listeDay.Add(fiche);
+                }
+            }
         }
 
-        public ListeFichesMonth GetListMonth()
+        //récupère la liste du jour
+        public void ProcessListNotPlaced()
         {
-            return listeMonth;
+            listeNonPlacees.Clear();
+            foreach (Fiche fiche in listeFiches)
+            {
+                FindAlerteListeInFor(fiche);
+                if(fiche.dateDebutFabrication.Year < 2000)
+                {
+                    listeNonPlacees.Add(fiche);
+                }
+            }
         }
 
-        
-
-        public ListeFichesMonth GetListNextMonth()
-        {
-            return listeMonth;
-        }
-
-        public ListeFichesMonth GetListPrecedentMonth()
-        {
-            return listeMonth;
-        }
-
-        public ListeFichesMonth ResetMonth()
-        {
-            return listeMonth;
-        }
-        
-        /**
-         * @brief Rafraichit la liste avec la semaine suivante
-         * @note si il y a un tri special, appliquer le tri 
-         * @retVal La liste synchronisée
-         * @param listeWeek La liste de fiches de la semaine suivante
-         * */
-        public ListeFichesWeek GetListNextWeek()
-        {
-            return listeWeek;
-        }
-
-        /**
-        * @brief Rafraichit la liste avec la semaine précédente
-        * @note si il y a un tri special, appliquer le tri
-        * @retVal La liste synchronisée
-         * @param listeWeek La liste de fiches de la semaine précédente
-        * */
-        public ListeFichesWeek GetListPrecedentWeek()
-        {
-            return listeWeek;
-        }
-
-        /**
-         * @brief Récupère les fiches de la semaine affichée
-         * @note si il y a un tri special, appliquer le tri
-         * @retVal La liste synchronisée
-         * @param listeWeek La liste de fiches de la semaine actuelle
-         * */
-        public ListeFichesWeek GetListCurrentWeek()
-        {
-            return listeWeek;
-        }
-
-        /**
-         * @brief Rafraichit la liste avec la semaine actuelle
-         * @note si il y a un tri special, appliquer le tri
-         * @retVal La liste synchronisée
-         * @param listeWeek La liste de fiches de la semaine actuelle
-         * */
-        public ListeFichesWeek ResetWeek()
-        {
-            return listeWeek;
-        }
-
-        /**
-        * @brief Rafraichit la liste avec la semaine suivante
-        * @note si il y a un tri special, appliquer le tri 
-        * @retVal La liste synchronisée
-        * @param listeJour La liste de fiches du jour suivant
-        * */
-        public List<Fiche> GetListNextDay()
-        {
-            return listeDay;
-        }
-
-        /**
-        * @brief Rafraichit la liste avec la semaine précédente
-        * @note si il y a un tri special, appliquer le tri
-        * @retVal La liste synchronisée
-         * @param listeJour La liste de fiches du jour précédent
-        * */
-        public List<Fiche> GetListPrecedentDay()
-        {
-            return listeDay;
-        }
-
-        /**
-         * @brief Rafraichit la liste avec la semaine actuelle
-         * @note si il y a un tri special, appliquer le tri
-         * @retVal La liste synchronisée
-         * @param listeJour La liste de fiches du jour actuel
-         * */
-        public List<Fiche> GetListCurrentDay()
-        {
-            return listeDay;
-        }
-
-        /**
-         * @brief Rafraichit la liste avec le jour actuel
-         * @note si il y a un tri special, appliquer le tri
-         * @retVal La liste synchronisée
-         * @param listeWeek La liste de fiches de la semaine actuelle
-         * */
-        public List<Fiche> ResetDay()
-        {
-            return listeDay;
-        }
-
-        /**
-         * @brief Modifie le nombre d'éléments de la liste
-         * */
+        //Modifie le nombre d'éléments de la liste
         public void ModifyQtyElements(int idFiche, int nbElements)
         {
 
         }
 
-        /**
-         * @brief Modifier le nom
-         * */
+        //resynchronise les données avec fichier Xcel et fichierSauvegarde
+        public void RefreshData()
+        {
+            if (fichierXcel.LoadFiches(listeFiches) >= 0)
+            {
+                fichierSauvegarde.SynchroListe(listeFiches);
+                FindAlerteListeFull(listeFiches);
+                ProcessListCurrentDay();
+                listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+                //processListCurrentMonth
+                ProcessListNotPlaced();
+                DisplayFiches();
+            }
+        }
+        
+        //suauvegarde les données dans le fichier sauvegarde
+        public void SaveListeInData()
+        {
+            fichierSauvegarde.SaveListe(listeFiches);
+        }
 
-        /**
-         * @brief Modifier l'id? probablement interdit 
-         * */
+        //affiche les listes actuelles
+        public void DisplayFiches()
+        {
+            mainWindow.DisplayFichesNotPlaced(listeNonPlacees);
+            switch (dispPlanning)
+            {
+                case DispPlanning.day:
+                    DisplayDay();
+                    break;
+                case DispPlanning.week:
+                    DisplayWeek();
+                    break;
+                case DispPlanning.month:
+                    DisplayMonth();
+                    break;
+                default:
+                    DisplayDay();
+                    break;
+            }
+        }
 
-        /**
-         * @brief Modification quantité éléments
-         * */
-
-        /**
-         * @brief Modifier le temps de création de l'élement
-         * */
-
-        /**
-         * @brief Modifier la machine de l'élément
-         * */
-
-        /**
-         * @brief Modifier la date de début de fabrication + heure
-         * */
-
-        /**
-         * @brief Modifier la date de livraison? privé
-         * */
-
-        /**
-         * @brief Modifier le type de fabrication? privé
-         * */
-
-        /**
-         * @brief Modifier le type de recouvrement ? privé
-         * */
-
-        /**
-         * @brief Modification de l'état du retard de placement
-
-
-        /**
-         * @brief Modifier le texte de la fiche
-         * */
-
-        /**
-         * @brief Modifier toute une fiche
-         * */
-
-        /**
-         * @brief Affiche la liste du jour 
-         * @note choisit le premier jour de la semaine ou du mois si besoin 
-         * */
+        //Affiche la liste du jour 
         public void DisplayDay()
         {
-            if(dispPlanning == DispPlanning.month)
-            {
-                //date a afficher = premier jour du mois
-            }
-            else if (dispPlanning == DispPlanning.week)
-            {
-                //date à afficher = premier jour de la semaine
-            }
-
             dispPlanning = DispPlanning.day;
             mainWindow.UC_Disp_Day.Visibility = Visibility.Visible;
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
-
-            //TODO rafraichir liste du jour par rapport à la date
-            //liste = GetListCurrentDay()
+            
+            ProcessListCurrentDay();
+            ucDispDay.RefreshDayToDisplay(dateToDisplay);
+            ucDispDay.RefreshListToDisplay(listeDay);
         }
-
+        
         /**
          * @brief Affiche la liste de la semaine
          * @note choisit la première semaine du mois si besoin, sinon semaine du jour choisit
@@ -383,7 +390,13 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Visible;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
 
-            //TODO obtenir premier jour de la semaine
+            //obtenir premier jour de la semaine et afficher numéro semaine et jours
+            int numberWeek = GetNumberWeek(dateToDisplay);
+            ucDispWeek.RefreshWeekToDisplay(dateToDisplay, numberWeek);
+
+            //obtenir les fiches de la semaine affichée et les afficher
+            listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+            ucDispWeek.RefreshListToDisplay(listeWeek);
         }
 
         /**
@@ -396,42 +409,76 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Visible;
             //TODO obtenir premier jour du mois
+            dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
+            ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
         }
 
         public void NextDay()
         {
             dateToDisplay = dateToDisplay.AddDays(1);
             ucDispDay.RefreshDayToDisplay(dateToDisplay);
-            //TODO ucDispDay.RefrshListToDisplay(liste)
-
+            ProcessListCurrentDay();
+            ucDispDay.RefreshListToDisplay(listeDay);
         }
 
         public void PreviousDay()
         {
             dateToDisplay = dateToDisplay.AddDays(-1);
             ucDispDay.RefreshDayToDisplay(dateToDisplay);
-            //TODO ucDispDay.RefrshListToDisplay(liste)
+            ProcessListCurrentDay();
+            ucDispDay.RefreshListToDisplay(listeDay);
+        }
+
+        public void ResetDay()
+        {
+            dateToDisplay = DateTime.Now;
+            ucDispDay.RefreshDayToDisplay(dateToDisplay);
+            ProcessListCurrentDay();
+            ucDispDay.RefreshListToDisplay(listeDay);
         }
 
         public void NextWeek()
         {
-            DateTime newDate = dateToDisplay.AddDays(7);
-            dateToDisplay = newDate;
-            ucDispWeek.RefreshWeekToDisplay(dateToDisplay,52);
-            //TODO ucDispDay.RefrshListToDisplay(liste)
+            dateToDisplay = dateToDisplay.AddDays(7);
+            while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
+            {
+                dateToDisplay = dateToDisplay.AddDays(-1);
+            }
+            DisplayWeek();
         }
 
         public void PreviousWeek()
         {
-            DateTime newDate = dateToDisplay.AddDays(-7);
-            dateToDisplay = newDate;
-            ucDispWeek.RefreshWeekToDisplay(dateToDisplay, 52);
-            //TODO ucDispDay.RefrshListToDisplay(liste)
+            dateToDisplay = dateToDisplay.AddDays(-7);
+            while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
+            {
+                dateToDisplay = dateToDisplay.AddDays(-1);
+            }
+            DisplayWeek();
         }
+
+        public void ResetWeek()
+        {
+            dateToDisplay = DateTime.Now;
+            while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
+            {
+                dateToDisplay = dateToDisplay.AddDays(-1);
+            }
+            //DisplayWeek();
+        }
+
         public void NextMonth()
         {
             dateToDisplay = dateToDisplay.AddMonths(1);
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month,1);
+            ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
+            //TODO ucDispDay.RefrshListToDisplay(liste)
+        }
+
+        public void ResetMonth()
+        {
+            dateToDisplay = DateTime.Now;
+            dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
             ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
             //TODO ucDispDay.RefrshListToDisplay(liste)
         }
@@ -443,6 +490,15 @@ namespace GestionPlanning.src
             ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
             //TODO ucDispDay.RefrshListToDisplay(liste)
         }
+
+        private int GetNumberWeek(DateTime date)
+        {
+            DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
+            Calendar cal = dfi.Calendar;
+            return cal.GetWeekOfYear(date, dfi.CalendarWeekRule, dfi.FirstDayOfWeek);
+        }
+
+
 
         /**
         * @param time Le temps de fabrication
@@ -496,9 +552,6 @@ namespace GestionPlanning.src
 
             data.nameFileCSV = "fileCsV";
             data.pathFileCSV = "";
-            /*colorFabrication = new List<TypeColor>(),
-            colorRecouvrement = new List<TypeColor>(),
-            colorOption = new List<TypeColor>(),*/
             data.displayDay = true;
             data.listeFiches = listeFiches;
         }
@@ -514,6 +567,13 @@ namespace GestionPlanning.src
             {
                 //list_test = list_test.OrderBy(fiche => fiche.id).ToList();
                 fichierSauvegarde.SynchroListe(list_test);
+                listeFiches = list_test;
+
+                foreach (Fiche fiche in listeFiches)
+                {
+                    fiche.dateDebutFabrication = fiche.dateLivraison;
+                }
+
                 return 1;
             }
             else
@@ -521,7 +581,8 @@ namespace GestionPlanning.src
                 return 0;
             }
 
-            //TODO vérifier la bonne forme des fiches
+            
+            
         }
 
         public void Test3_displayListe()
@@ -545,13 +606,14 @@ namespace GestionPlanning.src
             fiche4.id = 121134; fiche4.name = "Test4"; fiche4.dateLivraison = new DateTime(2016, 12, 12); fiche4.quantiteElement = 120; fiche4.typeOperation = TypeOperation.fabrication; fiche4.recouvrement = false;
             list_test.Add(fiche4);
 
-            
+
 
             /*if (fichierXcel.LoadFiches(list_test) >= 0  
 )             {
                 //list_test = list_test.OrderBy(fiche => fiche.id).ToList();
                 fichierSauvegarde.SynchroListe(list_test); 
             }*/
+            
 
             //TODO ajouter nouvelles uc dans UC_display_day
             //TODO liste déroulante
@@ -590,6 +652,62 @@ namespace GestionPlanning.src
             nbList = mainWindow.STFichesNotPlaced.Children.Count;
             mainWindow.STFichesNotPlaced.Height = nbList * 70;
         }
+
+        public void EraseDataFichierSauvegarde()
+        {
+            listeFiches.Clear();
+            fichierSauvegarde.EraseData();
+        }
+
+        //TODO modif valeurs d'une fiche
+
+        /**
+         * @brief Modifier le nom
+         * */
+
+        /**
+         * @brief Modifier l'id? probablement interdit 
+         * */
+
+        /**
+         * @brief Modification quantité éléments
+         * */
+
+        /**
+         * @brief Modifier le temps de création de l'élement
+         * */
+
+        /**
+         * @brief Modifier la machine de l'élément
+         * */
+
+        /**
+         * @brief Modifier la date de début de fabrication + heure
+         * */
+
+        /**
+         * @brief Modifier la date de livraison? privé
+         * */
+
+        /**
+         * @brief Modifier le type de fabrication? privé
+         * */
+
+        /**
+         * @brief Modifier le type de recouvrement ? privé
+         * */
+
+        /**
+         * @brief Modification de l'état du retard de placement
+
+
+        /**
+         * @brief Modifier le texte de la fiche
+         * */
+
+        /**
+         * @brief Modifier toute une fiche
+         * */
     }
 
 }

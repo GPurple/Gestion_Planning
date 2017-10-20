@@ -21,13 +21,14 @@ namespace GestionPlanning
     /// </summary>
     public partial class MainWindow : Window
     {
-
         
-
         public MainWindow()
         {
             InitializeComponent();
             Brain.Instance.mainWindow = this;
+            Brain.Instance.InitDisplay();
+            image_alerteGeneral.Visibility = Visibility.Collapsed;
+            image_warningGeneral.Visibility = Visibility.Collapsed;
         }
 
         /**
@@ -65,8 +66,7 @@ namespace GestionPlanning
         {
             Brain.Instance.Test3_displayListe();
         }
-
-
+        
         /*
          * display week
          * -> obtenir la référence de la liste
@@ -87,16 +87,21 @@ namespace GestionPlanning
          *  
          * */
 
-        //TODO
-        //affichage liste day
-        //fiche dans planning day
+        public void DisplayFichesNotPlaced(List<Fiche> liste)
+        {
+            STFichesNotPlaced.Children.Clear();
+            foreach (Fiche fiche in liste)
+            {
+                UC_Fiche_week dspFicheWeek = new UC_Fiche_week(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement);
+                STFichesNotPlaced.Children.Add(dspFicheWeek);
+            }
+            int nbList = STFichesNotPlaced.Children.Count;
+            STFichesNotPlaced.Height = nbList * 90;
+        }
 
-        //affichage liste week
-        //fiche dans planning week
-
-        //affichage liste month
-        //display day dans month
-
-        //voir customUI
+        private void EraseDataFichierSauvegarde(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.EraseDataFichierSauvegarde();
+        }
     }
 }

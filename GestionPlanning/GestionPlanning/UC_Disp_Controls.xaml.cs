@@ -56,5 +56,25 @@ namespace GestionPlanning
         {
             Brain.Instance.ResetMonth();
         }
+
+        private void RefreshData(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.RefreshData();
+        }
+
+        private void PlacementAuto(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.PlacementAutoAll();
+        }
+
+        private void ReplacementRetardAuto(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.ReplacementRetardAutoAll();
+        }
+
+        private void SaveData(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.SaveListeInData();
+        }
     }
 }

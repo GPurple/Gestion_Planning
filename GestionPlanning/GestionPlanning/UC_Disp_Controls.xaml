@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionPlanning"
-             mc:Ignorable="d" Height="139" Width="662">
-    <Grid Background="#FF2E2E2E">
+             mc:Ignorable="d" Height="139" Width="868.542">
+    <Grid Background="#FF2E2E2E" Margin="0,0,-18,0">
         <Button x:Name="btnDispDay" Content="Afficher jour" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="108" Click="DisplayDay"/>
         <Button x:Name="btnResetDay" Content="Jour actuel" HorizontalAlignment="Left" Margin="134,27,0,0" VerticalAlignment="Top" Width="106" Click="ResetDay"/>
         <Button x:Name="btnDispWeek" Content="Afficher Semaine" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="108" Click="DisplayWeek"/>
@@ -18,7 +18,11 @@
         <Button x:Name="btnResetMonth" Content="Mois Actuel" HorizontalAlignment="Left" Margin="134,102,0,0" VerticalAlignment="Top" Width="106" Click="ResetMonth"/>
         <ComboBox HorizontalAlignment="Left" Margin="255,102,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Content="Rechercher opération" HorizontalAlignment="Left" Margin="397,102,0,0" VerticalAlignment="Top" Width="130"/>
-        <Button Content="Rafraîchir" HorizontalAlignment="Left" Margin="546,27,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Charger données" HorizontalAlignment="Left" Margin="546,27,0,0" VerticalAlignment="Top" Width="152" Click="RefreshData"/>
+        <Button Content="Placement Auto" HorizontalAlignment="Left" Margin="546,64,0,0" VerticalAlignment="Top" Width="152" Click="PlacementAuto"/>
+        <Button Content="Replacement retard Auto" HorizontalAlignment="Left" Margin="712,64,0,0" VerticalAlignment="Top" Width="152" Click="ReplacementRetardAuto"/>
+        <Button Content="Sauvegarder données" HorizontalAlignment="Left" Margin="712,27,0,0" VerticalAlignment="Top" Width="127" Click="SaveData"/>
+        <Button Content="Afficher fiches validées" HorizontalAlignment="Left" Margin="546,102,0,0" VerticalAlignment="Top" Width="152" Click="PlacementAuto"/>
 
     </Grid>
 </UserControl>

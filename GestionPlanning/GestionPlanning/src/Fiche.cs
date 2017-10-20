@@ -52,6 +52,14 @@ namespace GestionPlanning.src
         //Le texte de description de la fiche
         public String textDescription = null;
 
+        //Si la date de livraison est dépassée
+        public Boolean alerteRetard = false;
+
+        //Si la date de livraison est dans moins de 2 jours
+        public Boolean attentionRetard = false;
+
+        //Si la fiche est validée(déja fabriquée)
+        public Boolean check = false;
         /**
          * @brief Creation d'une nouvelle fiche
          * @note none 

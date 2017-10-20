@@ -27,7 +27,7 @@ namespace GestionPlanning
         {
             InitializeComponent();
             Brain.Instance.ucDispWeek = this;
-            RefreshWeekToDisplay(firstDayToDisplay, 52);
+            Brain.Instance.ResetWeek();
         }
 
         private void PrecedentWeek(object sender, RoutedEventArgs e)
@@ -65,6 +65,29 @@ namespace GestionPlanning
             dayToDisplay = dayToDisplay.AddDays(1);
             TextDay_dimanche.Text = dayToDisplay.Day + "/" + dayToDisplay.Month;
 
+        }
+
+        public void RefreshListToDisplay(ListeFichesWeek listeWeek)
+        {
+            RefreshListToDisplayOneDay(listeWeek.listeLundi, SPDisplayDay_lundi);
+            RefreshListToDisplayOneDay(listeWeek.listeMardi, SPDisplayDay_mardi);
+            RefreshListToDisplayOneDay(listeWeek.listeMercredi, SPDisplayDay_mercredi);
+            RefreshListToDisplayOneDay(listeWeek.listeJeudi, SPDisplayDay_jeudi);
+            RefreshListToDisplayOneDay(listeWeek.listeVendredi, SPDisplayDay_vendredi);
+            RefreshListToDisplayOneDay(listeWeek.listeSamedi, SPDisplayDay_samedi);
+            RefreshListToDisplayOneDay(listeWeek.listeDimanche, SPDisplayDay_dimanche);
+        }
+
+        public void RefreshListToDisplayOneDay(List<Fiche> listeDay, StackPanel stackPanel)
+        {
+            stackPanel.Children.Clear();
+            foreach (Fiche fiche in listeDay)
+            {
+                UC_Fiche_week ucfw = new UC_Fiche_week(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement);
+                stackPanel.Children.Add(ucfw);
+            }
+            int nbList = stackPanel.Children.Count;
+            stackPanel.Height = nbList * 90;
         }
     }
 }

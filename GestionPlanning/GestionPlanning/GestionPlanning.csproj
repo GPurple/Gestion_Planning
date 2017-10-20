@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GestionPlanning.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\packages\CsvHelper.3.2.0\lib\net45\CsvHelper.dll</HintPath>
@@ -84,6 +87,9 @@
     <Compile Include="UC_fiche_day.xaml.cs">
       <DependentUpon>UC_fiche_day.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UC_fiche_month.xaml.cs">
+      <DependentUpon>UC_fiche_month.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC_Fiche_week.xaml.cs">
       <DependentUpon>UC_Fiche_week.xaml</DependentUpon>
     </Compile>
@@ -116,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UC_fiche_day.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_fiche_month.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,7 +165,9 @@
   <ItemGroup>
     <Resource Include="Fichier_Sauvegarde.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\logos_aos.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icone_Alerte.png" />
     <Resource Include="Images\Icone_Attention.png" />

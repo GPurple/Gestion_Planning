@@ -24,8 +24,10 @@ namespace GestionPlanning
 
         private String textId = "Id : ";
         private String textName = "Nom : ";
-        private String textDate = "Date : ";
+        private String textDate = "Livraison : ";
         private String textQty = "Qté : ";
+        private String textHeureFab = "Heure fab : ";
+        private String textTimeFab = "Temps fab : ";
         private Color colorLeft_op = Colors.White;
         private Color colorRight_rec = Colors.White;
         private bool dispWarning = false;
@@ -38,19 +40,20 @@ namespace GestionPlanning
             textNameFicheWeek.Text = textName;
             textDateFicheWeek.Text = textDate;
             textQtyFicheWeek.Text = textQty;
-            //image_alerte.Visibility = Visibility.Collapsed; 
-            //image_warning.Visibility = Visibility.Collapsed;
+            image_alerte.Visibility = Visibility.Collapsed; 
+            image_warning.Visibility = Visibility.Collapsed;
 
 
         }
 
         public UC_Fiche_week(int newId, String newName, DateTime newDate, int newQty, bool newDispWarning, bool newDispAlerte, TypeOperation op, bool rec)
         {
+            //TODO ajouter temps et heure fabrication et heure
             InitializeComponent();
             ModifyId(newId);
             ModifyName(newName);
             ModifyDate(newDate);
-            ModifyQté(newQty);
+            ModifyQty(newQty);
             if (newDispAlerte == true)
             {
                 DisplayAlerte();
@@ -109,11 +112,19 @@ namespace GestionPlanning
 
         public void ModifyDate(DateTime newDate)
         {
-            textDate = "Date : " + newDate.Day + "/" + newDate.Month + "/" + newDate.Year;
-            textDateFicheWeek.Text = textDate;
+            if (newDate.CompareTo(new DateTime(2000, 1, 1)) > 0)
+            {
+                textDate = "Livraison : " + newDate.Day + "/" + newDate.Month + "/" + newDate.Year;
+                textDateFicheWeek.Text = textDate;
+            }
+            else
+            {
+                textDate = "Livraison : NA";
+                textDateFicheWeek.Text = textDate;
+            }
         }
 
-        public void ModifyQté(int newQty)
+        public void ModifyQty(int newQty)
         {
             textQty = "Qté : " + newQty;
             textQtyFicheWeek.Text = textQty;

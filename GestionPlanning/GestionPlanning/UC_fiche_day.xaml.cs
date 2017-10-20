@@ -24,7 +24,7 @@ namespace GestionPlanning
     {
         private String textId = "Id : ";
         private String textName = "Nom : ";
-        private String textDate = "Date : ";
+        private String textDate = "Livraison : ";
         private String textQty = "Qté : ";
         private Color colorLeft_op = Colors.White;    
         private Color colorRight_rec = Colors.White;
@@ -114,8 +114,16 @@ namespace GestionPlanning
 
         public void ModifyDate(DateTime newDate)
         {
-            textDate = "Date : " + newDate.Day + "/" + newDate.Month + "/" + newDate.Year;
-            textDateFicheDay.Text = textDate;
+            if (newDate.CompareTo(new DateTime(2000, 1, 1)) > 0)
+            {
+                textDate = "Livraison : " + newDate.Day + "/" + newDate.Month + "/" + newDate.Year;
+                textDateFicheDay.Text = textDate;
+            }
+            else
+            {
+                textDate = "Livraison : NA";
+                textDateFicheDay.Text = textDate;
+            }
         }
 
         public void ModifyQté(int newQty)

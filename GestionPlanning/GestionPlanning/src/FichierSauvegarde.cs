@@ -92,18 +92,8 @@ namespace GestionPlanning.src
          * */
         public int SynchroListe(List<Fiche> listeFichesConnues)
         {
-            //chargement des données du fichier dans listeFiches saved
-            //if dateLastModif == dateLastModifFichier
-            //pour chaque fiche verifier si la fiche existe dans le fichier
-            //si elle existe -> modifier la fiche software
-            //si elle n'existe pas créer dans le fichier  
-            //-> penser à créer de nouvelles références
-            //fermeture du fichier de sauvegarde
-            //liberation du mutex
-
-            //TODO effacement données après 1 mois
-
             Boolean nodatemodif = false;
+            int idFichePrec = 0;
             SaveData data = ReadDatas();
             if(data==null)
             {
@@ -120,14 +110,20 @@ namespace GestionPlanning.src
             {
                 //La liste sauvegardée est triée par id
                 List<Fiche> listeFichesSaved = data.listeFiches;
-
-                foreach (Fiche ficheConnue in listeFichesConnues)
+                List<Fiche> listeFichesTmp = new List<Fiche>();
+                listeFichesTmp.Clear();
+                listeFichesSaved = listeFichesSaved.OrderBy(fiche => fiche.id).ToList();
+                listeFichesConnues = listeFichesConnues.OrderBy(fiche => fiche.id).ToList();
+               
+                //listeFichesSaved = listeFichesSaved.OrderBy(fiche => fiche.id).ToList();
+                //si il existe une fiche dans le fichier de sauvegarde qui n'est pas chargée,elle est chargée -> une autre boucle dans l'autre sens?
+                foreach (Fiche ficheSaved in listeFichesSaved)
                 {
-                    foreach (Fiche ficheSaved in listeFichesSaved)
+                    foreach (Fiche ficheConnue in listeFichesConnues)
                     {
                         if (ficheSaved.id == ficheConnue.id)
                         {
-                            //synchro des fiches dans fiche connues
+                            // synchro des fiches dans fiche connues
                             //charger toutes les valeurs enregistrées
                             ficheConnue.tempsFabrication = ficheSaved.tempsFabrication;
                             ficheConnue.typeOperation = ficheSaved.typeOperation;
@@ -138,37 +134,25 @@ namespace GestionPlanning.src
                             ficheConnue.dateLivraison = ficheSaved.dateLivraison;
                             ficheConnue.retardPlacement = ficheSaved.retardPlacement;
                             ficheConnue.textDescription = ficheSaved.textDescription;
-                        }
-                        else if (ficheSaved.id > ficheConnue.id)
-                        {
-                            //si les id des fiches à comparer dépassent les id des fiches connues la recherche s'arrête
-                            break;
-                        }
-                    }
-                    //si la fiche n'existe pas dans la liste chargée on ne fait rien, elle sera modifiée et sauvegardée dans le fichier plus tard
-                }
-                listeFichesSaved = listeFichesSaved.OrderBy(fiche => fiche.id).ToList();
-                //si il existe une fiche dans le fichier de sauvegarde qui n'est pas chargée,elle est chargée -> une autre boucle dans l'autre sens?
-                foreach (Fiche ficheSaved in listeFichesSaved)
-                {
-                    foreach (Fiche ficheConnue in listeFichesConnues)
-                    {
-                        if (ficheSaved.id == ficheConnue.id)
-                        {
                             break;
                         }
                         else if (ficheConnue.id > ficheSaved.id)
                         {
                             TimeSpan ts = DateTime.Now - ficheSaved.dateLivraison;
                             //si la fiche sauvegardée n'est pas dans la liste connue et qu'elle n'est pas dépassée, la placer dans la liste
-                            if (ts.Days < 30)
+                            if (ts.Days < 30 && idFichePrec!= ficheSaved.id)
                             {
-                                listeFichesConnues.Add(new Fiche(ficheSaved));
+                                listeFichesTmp.Add(new Fiche(ficheSaved));
                             }
                             //Si la fiche est passée, fin de la boucle
                             break;
                         }
                     }
+                    idFichePrec = ficheSaved.id;
+                }
+                foreach (Fiche ficheTmp in listeFichesTmp)
+                {
+                    listeFichesConnues.Add(new Fiche(ficheTmp));
                 }
                 //Trier fiches par id
                 listeFichesConnues = listeFichesConnues.OrderBy(fiche => fiche.id).ToList();
@@ -180,6 +164,45 @@ namespace GestionPlanning.src
             else //Si date dernière modif fichier == date connue alors pas besoin de synchro
             {
                 return 0;
+            }
+        }
+
+
+        public int SaveListe(List<Fiche> listeFichesConnues)
+        {
+            try
+            {
+                SaveData data = ReadDatas();
+                dateLastModif = DateTime.Now;
+                data.dateLastModif = dateLastModif;
+                data.listeFiches = listeFichesConnues;
+                SaveDatas(data);
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        public void EraseData()
+        {
+            String file = this.pathFile + this.nameFile + ".xml";
+
+            if (System.IO.File.Exists(file))
+            {
+                // Use a try block to catch IOExceptions, to
+                // handle the case of the file already being
+                // opened by another process.
+                try
+                {
+                    System.IO.File.Delete(file);
+                }
+                catch (System.IO.IOException e)
+                {
+                    Console.WriteLine(e.Message);
+                    return;
+                }
             }
         }
 

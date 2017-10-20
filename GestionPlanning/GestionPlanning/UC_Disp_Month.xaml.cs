@@ -27,6 +27,7 @@ namespace GestionPlanning
         {
             InitializeComponent();
             Brain.Instance.ucDispMonth = this;
+            Brain.Instance.ResetMonth();
         }
 
         public void RefreshMonthToDisplay(DateTime newDayToDisplay)

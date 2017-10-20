@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\obj\Debug\
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\
 GestionPlanning
 none
 false
 DEBUG;TRACE
-D:\Projet_Planning - copie\GestionPlanning\GestionPlanning\App.xaml
-7-1502924655
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\App.xaml
+81942741903
 
-241261323286
-171973590327
-MainWindow.xaml;UC_display_day.xaml;UC_Display_week.xaml;UC_Disp_Controls.xaml;UC_Disp_Month.xaml;UC_fiche_day.xaml;UC_Fiche_week.xaml;
+25-1155426567
+17-385597657
+MainWindow.xaml;UC_display_day.xaml;UC_Display_week.xaml;UC_Disp_Controls.xaml;UC_Disp_Month.xaml;UC_fiche_day.xaml;UC_fiche_month.xaml;UC_Fiche_week.xaml;
 
-True
+False
 

@@ -28,6 +28,7 @@ namespace GestionPlanning
             InitializeComponent();
             TextDay.Text = dayToDisplay.Day + "/" + dayToDisplay.Month + "/" + dayToDisplay.Year;
             Brain.Instance.ucDispDay = this;
+            Brain.Instance.ResetDay();
         }
 
         private void Btn_PreviousDay(object sender, RoutedEventArgs e)
@@ -51,5 +52,17 @@ namespace GestionPlanning
             TextDay.Text = dayToDisplay.Day + "/" + dayToDisplay.Month + "/" + dayToDisplay.Year;
         }
 
+        public void RefreshListToDisplay(List<Fiche> listeDay)
+        {
+            //revoir synchro 
+            StackPanelDisplayDay.Children.Clear();
+            foreach (Fiche fiche in listeDay)
+            {
+                UC_fiche_day ucfd = new UC_fiche_day(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement);
+                StackPanelDisplayDay.Children.Add(ucfd);
+            }
+            int nbList = StackPanelDisplayDay.Children.Count;
+            StackPanelDisplayDay.Height = nbList * 40;
+        }
     }
 }
