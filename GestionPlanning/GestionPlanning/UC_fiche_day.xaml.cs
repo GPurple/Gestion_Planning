@@ -28,9 +28,8 @@ namespace GestionPlanning
         private String textQty = "Qté : ";
         private Color colorLeft_op = Colors.White;    
         private Color colorRight_rec = Colors.White;
-
-        //TODO ajouter couleurs 
-        //TODO ajouter logo
+        private String textHeureFab = "Heure fab : ";
+        private String textTimeFab = "Temps fab : ";
 
         private bool dispWarning = false;
         private bool dispAlerte = false;
@@ -38,24 +37,27 @@ namespace GestionPlanning
         public UC_fiche_day()
         {
             InitializeComponent();
-
             textIDficheDay.Text = textId;
             textNameFicheDay.Text = textName;
             textDateFicheDay.Text = textDate;
             textQtyFicheDay.Text = textQty;
-            //image_alerte.Visibility = Visibility.Collapsed; 
-            //image_warning.Visibility = Visibility.Collapsed;
+            textHeureFabFicheWeek.Text = textHeureFab;
+            textTempsFabFicheWeek.Text = textTimeFab;
+            image_alerte.Visibility = Visibility.Collapsed; 
+            image_warning.Visibility = Visibility.Collapsed;
             
 
         }
 
-        public UC_fiche_day(int newId, String newName, DateTime newDate, int newQty, bool newDispWarning, bool newDispAlerte , TypeOperation op, bool rec)
+        public UC_fiche_day(int newId, String newName, DateTime newDate, int newQty, bool newDispWarning, bool newDispAlerte , TypeOperation op, bool rec, DateTime newDateFabrication, int timeFab)
         {
             InitializeComponent();
             ModifyId(newId);
             ModifyName(newName);
             ModifyDate(newDate);
             ModifyQté(newQty);
+            ModifyTimeFab(timeFab);
+            ModifyHourFab(newDateFabrication);
             if (newDispAlerte == true)
             {
                 DisplayAlerte();
@@ -126,6 +128,34 @@ namespace GestionPlanning
             }
         }
 
+        public void ModifyTimeFab(int timeFab)
+        {
+
+            if (timeFab >= 0)
+            {
+                textHeureFab = "Temps fab : " + timeFab + "min";
+                textTempsFabFicheWeek.Text = textHeureFab;
+            }
+            else
+            {
+                textHeureFab = "Temps fab : NA";
+                textTempsFabFicheWeek.Text = textHeureFab;
+            }
+        }
+
+        public void ModifyHourFab(DateTime newDate)
+        {
+            if (newDate.Hour > 0)
+            {
+                textTimeFab = "Heure fab : " + newDate.Hour + "h" + newDate.Minute;
+                textHeureFabFicheWeek.Text = textTimeFab;
+            }
+            else
+            {
+                textTimeFab = "Heure fab : NA";
+                textHeureFabFicheWeek.Text = textTimeFab;
+            }
+        }
         public void ModifyQté(int newQty)
         {
             textQty = "Qté : " + newQty;

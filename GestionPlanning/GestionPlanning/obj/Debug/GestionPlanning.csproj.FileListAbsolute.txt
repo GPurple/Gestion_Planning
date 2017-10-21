@@ -90,3 +90,5 @@ D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\D
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\GestionPlanning.pdb
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_fiche_month.g.cs
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_fiche_month.baml
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_modif_fiche.g.cs
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_modif_fiche.baml

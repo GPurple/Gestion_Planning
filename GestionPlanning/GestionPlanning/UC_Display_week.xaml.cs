@@ -83,11 +83,13 @@ namespace GestionPlanning
             stackPanel.Children.Clear();
             foreach (Fiche fiche in listeDay)
             {
-                UC_Fiche_week ucfw = new UC_Fiche_week(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement);
+                UC_Fiche_week ucfw = new UC_Fiche_week(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication);
                 stackPanel.Children.Add(ucfw);
             }
             int nbList = stackPanel.Children.Count;
-            stackPanel.Height = nbList * 90;
+            stackPanel.Height = nbList * 145;
         }
+
+        //TODO do a drag and drop à partir du tuto 
     }
 }

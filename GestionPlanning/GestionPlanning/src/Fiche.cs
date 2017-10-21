@@ -60,6 +60,9 @@ namespace GestionPlanning.src
 
         //Si la fiche est validée(déja fabriquée)
         public Boolean check = false;
+
+        //Temps de fabrication en minutes
+        public int timeFab = -1; //-1 non défini
         /**
          * @brief Creation d'une nouvelle fiche
          * @note none 

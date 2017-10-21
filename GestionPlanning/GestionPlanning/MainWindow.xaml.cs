@@ -29,6 +29,7 @@ namespace GestionPlanning
             Brain.Instance.InitDisplay();
             image_alerteGeneral.Visibility = Visibility.Collapsed;
             image_warningGeneral.Visibility = Visibility.Collapsed;
+            UC_modif_fiche.Visibility = Visibility.Collapsed;
         }
 
         /**
@@ -92,11 +93,11 @@ namespace GestionPlanning
             STFichesNotPlaced.Children.Clear();
             foreach (Fiche fiche in liste)
             {
-                UC_Fiche_week dspFicheWeek = new UC_Fiche_week(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement);
+                UC_Fiche_week dspFicheWeek = new UC_Fiche_week(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication);
                 STFichesNotPlaced.Children.Add(dspFicheWeek);
             }
             int nbList = STFichesNotPlaced.Children.Count;
-            STFichesNotPlaced.Height = nbList * 90;
+            STFichesNotPlaced.Height = nbList * 145;
         }
 
         private void EraseDataFichierSauvegarde(object sender, RoutedEventArgs e)

@@ -53,6 +53,7 @@ namespace GestionPlanning.src
         public UC_display_day ucDispDay;
         public UC_Display_week ucDispWeek;
         public UC_Disp_Month ucDispMonth;
+        public UC_modif_fiche ucModifFiche;
 
         private static Brain instance;
 
@@ -180,6 +181,7 @@ namespace GestionPlanning.src
                     {
                         fiche.dateDebutFabrication = DateTime.Now;
                     }
+                    fiche.dateDebutFabrication = new DateTime(fiche.dateDebutFabrication.Year, fiche.dateDebutFabrication.Month, fiche.dateDebutFabrication.Day);
                 }
             }
             SaveListeInData();
@@ -197,7 +199,8 @@ namespace GestionPlanning.src
             {
                 if (fiche.dateDebutFabrication.CompareTo(DateTime.Now) < 0 && fiche.check == false)
                 {
-                    fiche.dateDebutFabrication = DateTime.Now;
+                    DateTime dateTmp = DateTime.Now;
+                    fiche.dateDebutFabrication = new DateTime(dateTmp.Year, dateTmp.Month, dateTmp.Day);
                 }
             }
             SaveListeInData();
@@ -498,7 +501,34 @@ namespace GestionPlanning.src
             return cal.GetWeekOfYear(date, dfi.CalendarWeekRule, dfi.FirstDayOfWeek);
         }
 
+        public void ClickModifyFiche(int idFiche)
+        {
+            //récupérer la fiche id dans la listeFiches 
+            //rafraichir UC_modifyFiche
+            //display modifyFiche
+            foreach (Fiche fiche in listeFiches)
+            {
+                if (fiche.id == idFiche)
+                {
+                    ucModifFiche.ModifyDataFiche(fiche);
+                    break;
+                }
+            }
+            //UC modifyFiche 
+            ucModifFiche.Visibility = Visibility.Visible;
+        }
 
+        public void ValidateModificationFiche(int idFiche)
+        {
+            //réenregistrer les nouvelles données dans la liste
+            ucModifFiche.Visibility = Visibility.Collapsed;
+        }
+
+        public void CancelModificationFiche(int idFiche)
+        {
+            //réenregistrer les nouvelles données dans la liste
+            ucModifFiche.Visibility = Visibility.Collapsed;
+        }
 
         /**
         * @param time Le temps de fabrication
@@ -620,7 +650,7 @@ namespace GestionPlanning.src
             //ajouter seulement 3 fiches
             for (int i =0;i<4; i++)
             {
-                UC_fiche_day ucfd = new UC_fiche_day(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, true, false, list_test[i].typeOperation, list_test[i].recouvrement);
+               /* UC_fiche_day ucfd = new UC_fiche_day(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, true, false, list_test[i].typeOperation, list_test[i].recouvrement);
                 mainWindow.UC_Disp_Day.StackPanelDisplayDay.Children.Add(ucfd);
 
                 UC_Fiche_week ucfw = new UC_Fiche_week(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, true, false, list_test[i].typeOperation, list_test[i].recouvrement);
@@ -633,7 +663,7 @@ namespace GestionPlanning.src
                 mainWindow.UC_Disp_Week.SPDisplayDay_samedi.Children.Add(ucfw_3);
 
                 UC_Fiche_week ucfnp = new UC_Fiche_week(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, false, true, list_test[i].typeOperation, list_test[i].recouvrement);
-                mainWindow.STFichesNotPlaced.Children.Add(ucfnp);
+                mainWindow.STFichesNotPlaced.Children.Add(ucfnp);*/
             }
             mainWindow.UC_Disp_Day.RefreshDayToDisplay(dateToDisplay);
             

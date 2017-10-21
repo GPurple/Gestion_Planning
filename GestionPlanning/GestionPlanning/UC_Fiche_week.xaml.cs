@@ -21,7 +21,7 @@ namespace GestionPlanning
     /// </summary>
     public partial class UC_Fiche_week : UserControl
     {
-
+        private int idFiche = -1;
         private String textId = "Id : ";
         private String textName = "Nom : ";
         private String textDate = "Livraison : ";
@@ -40,19 +40,24 @@ namespace GestionPlanning
             textNameFicheWeek.Text = textName;
             textDateFicheWeek.Text = textDate;
             textQtyFicheWeek.Text = textQty;
+            textHeureFabFicheWeek.Text = textHeureFab;
+            textTempsFabFicheWeek.Text = textTimeFab;
             image_alerte.Visibility = Visibility.Collapsed; 
             image_warning.Visibility = Visibility.Collapsed;
 
 
         }
 
-        public UC_Fiche_week(int newId, String newName, DateTime newDate, int newQty, bool newDispWarning, bool newDispAlerte, TypeOperation op, bool rec)
+        public UC_Fiche_week(int newId, String newName, DateTime newDateLivraison, int newQty, bool newDispWarning, bool newDispAlerte, TypeOperation op, bool rec, DateTime newDateFabrication, int timeFab)
         {
             //TODO ajouter temps et heure fabrication et heure
             InitializeComponent();
+            idFiche = newId;
             ModifyId(newId);
             ModifyName(newName);
-            ModifyDate(newDate);
+            ModifyDate(newDateLivraison);
+            ModifyTimeFab(timeFab);
+            ModifyHourFab(newDateFabrication);
             ModifyQty(newQty);
             if (newDispAlerte == true)
             {
@@ -124,6 +129,36 @@ namespace GestionPlanning
             }
         }
 
+        public void ModifyTimeFab(int timeFab)
+        {
+
+            if (timeFab >= 0)
+            {
+                textHeureFab = "Temps fab : " + timeFab + "min";
+                textTempsFabFicheWeek.Text = textHeureFab;
+            }
+            else
+            {
+                textHeureFab = "Temps fab : NA";
+                textTempsFabFicheWeek.Text = textHeureFab;
+            }
+        }
+
+        public void ModifyHourFab(DateTime newDate)
+        {
+            if (newDate.Hour > 0)
+            {
+                textTimeFab = "Heure fab : " + newDate.Hour + "h" + newDate.Minute;
+                textHeureFabFicheWeek.Text = textTimeFab;
+            }
+            else
+            {
+                textTimeFab = "Heure fab : NA";
+                textHeureFabFicheWeek.Text = textTimeFab;
+            }
+        }
+
+
         public void ModifyQty(int newQty)
         {
             textQty = "Qté : " + newQty;
@@ -152,6 +187,12 @@ namespace GestionPlanning
         {
             image_warning.Visibility = Visibility.Collapsed;
             dispWarning = false;
+        }
+
+        private void ModifyFiche(object sender, RoutedEventArgs e)
+        {
+            //TODO Afficher usercontrol avec les différentes infos de la fiche
+            Brain.Instance.ClickModifyFiche(idFiche);
         }
     }
 }
