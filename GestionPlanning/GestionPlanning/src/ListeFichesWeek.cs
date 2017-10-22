@@ -39,13 +39,16 @@ namespace GestionPlanning.src
             listeDay.Clear();
             foreach (Fiche fiche in listePlacees)
             {
-                Brain.Instance.FindAlerteListeInFor(fiche);
-
-                if (fiche.dateDebutFabrication.Year == dateDay.Year
-                    && fiche.dateDebutFabrication.Month == dateDay.Month
-                    && fiche.dateDebutFabrication.Day == dateDay.Day)
+                if (Brain.Instance.VerifProcessFiche(fiche) > 0)
                 {
-                    listeDay.Add(fiche);
+                    Brain.Instance.FindAlerteListeInFor(fiche);
+
+                    if (fiche.dateDebutFabrication.Year == dateDay.Year
+                        && fiche.dateDebutFabrication.Month == dateDay.Month
+                        && fiche.dateDebutFabrication.Day == dateDay.Day)
+                    {
+                        listeDay.Add(fiche);
+                    }
                 }
             }
         }

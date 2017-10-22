@@ -9,22 +9,14 @@ namespace GestionPlanning.src
     class TODO
     {
         //A corriger
-        
+
 
         //TODO
-        //ajouter radio button
         //afficher tri fiches avant drag and drop
         //afficher mois 
         //ajouter clique droit déplacement horaire/modification fiche/validation fiche(+ écran conbfirmation)
-        //faire indicateur d'attention et alerte en haut de l'ecran(simple affichage d'icone) (clique -> aller au jour)
-        //écran modification fiche
-        //Différentes fonctions de trie et recherche des listes + boutons
-        //configurer la preise en compte des weeks end pour recouvrement et retard?
-        //Finaliser modifs des fiches
-        //Valider les fiches !!! -> ne pas les garder dans liste fiche? ne pas les afficher
         //Ajouter identification utilisateur et ecrire dans le fichier les derniers à avoir modifier le fichier
         //Ajouter les différentes gestions d'erreurs
-        //gérer le rafraichissement des données
         //gérer détection de retard après chargement données
         //Afficher retard ou attention si passage sur logo
         //Faire un .exe
@@ -41,7 +33,10 @@ namespace GestionPlanning.src
         //affichage des bonnes listes
         //affichage des listes jour
         //affichage des listes semaine
-
+        //écran modification fiche
+        //configurer la preise en compte des weeks end pour recouvrement et retard?
+        //Valider les fiches !!! -> ne pas les garder dans liste fiche, ne pas les afficher
+        //gérer le rafraichissement des données -> sauvegarde quand on veut 
 
         //a demander
         //comment récupérer affutage et fabrication
@@ -61,5 +56,8 @@ namespace GestionPlanning.src
         //les fiches sont effacées 30 jours après leur date de livraison si elles sont validées
         //pendant modif fiche, si date livraison à 0 -> retrait du planning
         //pas de placement avant date actuelle(date jour ok)
+        //Différentes fonctions de trie et recherche des listes + boutons
+        //sauvegarde seulement lors de sauvegarde et placement auto
+
     }
 }

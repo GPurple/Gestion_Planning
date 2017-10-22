@@ -25,38 +25,41 @@ namespace GestionPlanning
         private int idFiche = -1;
         private String textId = "Id : ";
         private String textName = "Nom : ";
-        private String textDate = "Livraison : ";
+        private String textDateLivraison = "Livraison : ";
+        private String textDateFabrication = "Fabrication : ";
         private String textQty = "Qté : ";
         private Color colorLeft_op = Colors.White;    
         private Color colorRight_rec = Colors.White;
         private String textHeureFab = "Heure fab : ";
         private String textTimeFab = "Temps fab : ";
-
+        private String textDateFab = "Date Fabrication : ";
         private bool dispWarning = false;
         private bool dispAlerte = false;
+        private bool dispSimple = false;
 
         public UC_fiche_day()
         {
             InitializeComponent();
             textIDficheDay.Text = textId;
             textNameFicheDay.Text = textName;
-            textDateFicheDay.Text = textDate;
+            textDateLivFicheDay.Text = textDateLivraison;
+            textDateFabFicheDay.Text = textDateFabrication;
             textQtyFicheDay.Text = textQty;
             textHeureFabFicheWeek.Text = textHeureFab;
             textTempsFabFicheWeek.Text = textTimeFab;
             image_alerte.Visibility = Visibility.Collapsed; 
             image_warning.Visibility = Visibility.Collapsed;
-            
+            textDateFabFicheDay.Text = textDateFab;
 
         }
 
-        public UC_fiche_day(int newId, String newName, DateTime newDate, int newQty, bool newDispWarning, bool newDispAlerte , TypeOperation op, bool rec, DateTime newDateFabrication, int timeFab)
+        public UC_fiche_day(int newId, String newName, DateTime newDate, int newQty, bool newDispWarning, bool newDispAlerte , TypeOperation op, bool rec, DateTime newDateFabrication, int timeFab, bool newDispSimple)
         {
             InitializeComponent();
             idFiche = newId;
             ModifyId(newId);
             ModifyName(newName);
-            ModifyDate(newDate);
+            ModifyDateLiv(newDate);
             ModifyQté(newQty);
             ModifyTimeFab(timeFab);
             ModifyHourFab(newDateFabrication);
@@ -102,6 +105,16 @@ namespace GestionPlanning
                 colorRight_rec = colorLeft_op;
             }
             rectangleRight_rec.Fill = new SolidColorBrush(colorRight_rec);
+            dispSimple = newDispSimple;
+            if(dispSimple == true)
+            {
+                ModifyDateFab(newDateFabrication);
+            }
+            else
+            {
+                textDateFabrication = "";
+                textDateFabFicheDay.Text = "";
+            }
         }
 
         public void ModifyId(int newId)
@@ -116,17 +129,31 @@ namespace GestionPlanning
             textNameFicheDay.Text = textName;
         }
 
-        public void ModifyDate(DateTime newDate)
+        public void ModifyDateLiv(DateTime newDate)
         {
             if (newDate.CompareTo(new DateTime(2000, 1, 1)) > 0)
             {
-                textDate = "Livraison : " + newDate.Day + "/" + newDate.Month + "/" + newDate.Year;
-                textDateFicheDay.Text = textDate;
+                textDateLivraison = "Livraison : " + newDate.Day + "/" + newDate.Month + "/" + newDate.Year;
+                textDateLivFicheDay.Text = textDateLivraison;
             }
             else
             {
-                textDate = "Livraison : NA";
-                textDateFicheDay.Text = textDate;
+                textDateLivraison = "Livraison : NA";
+                textDateLivFicheDay.Text = textDateLivraison;
+            }
+        }
+
+        public void ModifyDateFab(DateTime newDate)
+        {
+            if (newDate.CompareTo(new DateTime(2000, 1, 1)) > 0)
+            {
+                textDateFabrication = "Fabrication : " + newDate.Day + "/" + newDate.Month + "/" + newDate.Year;
+                textDateFabFicheDay.Text = textDateFabrication;
+            }
+            else
+            {
+                textDateFabrication = "Fabrication : NA";
+                textDateFabFicheDay.Text = textDateFabrication;
             }
         }
 

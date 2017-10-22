@@ -138,38 +138,14 @@ namespace GestionPlanning
             }
         }
 
-
-        private void SearchByName(object sender, RoutedEventArgs e)
+        private void SearchFiches(object sender, RoutedEventArgs e)
         {
-            String item = ComboBoxName.Text;
-            Brain.Instance.SearchByName(item);
+            Brain.Instance.TriFiches(ComboBoxName.Text,
+                ComboBoxOperation.Text,
+                ComboBoxSearchReco.Text,
+                ComboBoxSearchMachine.Text,
+                ComboBoxSearchRetard.Text
+                );
         }
-
-        private void SearchByOperation(object sender, RoutedEventArgs e)
-        {
-            String item = ComboBoxOperation.Text;
-            Brain.Instance.SearchByOperation(item);
-        }
-
-        private void SearchReco(object sender, RoutedEventArgs e)
-        {
-            //TODO
-            String item = ComboBoxSearchReco.Text;
-            Brain.Instance.SearchByReco(item);
-        }
-
-        private void SearchNumMachine(object sender, RoutedEventArgs e)
-        {
-            String item = ComboBoxSearchMachine.Text;
-            Brain.Instance.SearchByMachine(item);
-        }
-
-        private void SearchNumRetard(object sender, RoutedEventArgs e)
-        {
-            String item = ComboBoxSearchMachine.Text;
-            Brain.Instance.SearchByRetard(item);
-        }
-
-        
     }
 }

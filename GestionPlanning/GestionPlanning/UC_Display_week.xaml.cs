@@ -27,7 +27,7 @@ namespace GestionPlanning
         {
             InitializeComponent();
             Brain.Instance.ucDispWeek = this;
-            Brain.Instance.ResetWeek();
+            //Brain.Instance.ResetWeek();
         }
 
         private void PrecedentWeek(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionPlanning.src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,23 @@ namespace GestionPlanning
         public UC_Display_Simple()
         {
             InitializeComponent();
+            Brain.Instance.ucDispSimple = this;
+        }
+
+        public void RefreshListToDisplay(List<Fiche> listeSimple)
+        {
+            //revoir synchro 
+            StackPanelDisplayListe.Children.Clear();
+            foreach (Fiche fiche in listeSimple)
+            {
+                if (fiche.check == false)
+                {
+                    UC_fiche_day ucfd = new UC_fiche_day(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication,true);
+                    StackPanelDisplayListe.Children.Add(ucfd);
+                }
+            }
+            int nbList = StackPanelDisplayListe.Children.Count;
+            StackPanelDisplayListe.Height = nbList * 50;
         }
     }
 }

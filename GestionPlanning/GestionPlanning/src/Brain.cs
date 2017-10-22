@@ -10,7 +10,7 @@ using static GestionPlanning.src.FichierSauvegarde;
 namespace GestionPlanning.src
 {
     enum DispPlanning { day, week, month, simple } // day = 1
-    enum TriOp { all, fab, aff }; //all = 1
+    enum TriOp { all, fab, aff , na}; //all = 1
     enum TriReco { all, yes, non }; //all = 1
     enum TriRetard { all, attention, alerte, both, none}
 
@@ -23,11 +23,12 @@ namespace GestionPlanning.src
         public DateTime dateToDisplay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day); 
 
         //Afficher les opérations
-        public TriOp triOperation; //operation fabrication all=0/fabrication/affutage/ -> faire une enum
+        public TriOp triOperation = TriOp.all; //operation fabrication all=0/fabrication/affutage/ -> faire une enum
 
         //Afficher les recouvrements
-        public TriReco triReco; //recouvrement all=0/oui/non/
+        public TriReco triReco = TriReco.all; //recouvrement all=0/oui/non/
 
+        public TriRetard triRetard = TriRetard.all;
         //Afficher le nom de tri
         public String triName = "All";
 
@@ -49,6 +50,10 @@ namespace GestionPlanning.src
         //La liste de fiches non placées
         public List<Fiche> listeNonPlacees = new List<Fiche>();
 
+        //La liste de fiches non placées
+        public List<Fiche> listeSimple = new List<Fiche>();
+
+
         //Le fichier de sauvegarde
         public FichierXcel fichierXcel = new FichierXcel();
 
@@ -62,6 +67,7 @@ namespace GestionPlanning.src
         public UC_Display_week ucDispWeek;
         public UC_Disp_Month ucDispMonth;
         public UC_modif_fiche ucModifFiche;
+        public UC_Display_Simple ucDispSimple;
 
         MessageConfValidationFiche message_validationFiche;
         MessageConfRetraitFichePlanning message_retraitFiche;
@@ -102,6 +108,11 @@ namespace GestionPlanning.src
             {
                 dateToDisplay = dateToDisplay.AddDays(-1);
             }
+            while (ucDispDay == null || ucDispWeek == null || ucDispMonth == null || ucDispSimple == null || ucModifFiche == null || ucDispControl == null || mainWindow == null)
+            {
+
+            }
+            ResetWeek();
             RefreshData();
         }
         
@@ -164,6 +175,7 @@ namespace GestionPlanning.src
                 PlacementAutoOneFiche(fiche);
             }
             SaveListeInData();
+            ProcessListSimple();
             ProcessListNotPlaced();
             ProcessListCurrentDay();
             listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
@@ -308,12 +320,15 @@ namespace GestionPlanning.src
             listeDay.Clear();
             foreach (Fiche fiche in listeFiches)
             {
-                FindAlerteListeInFor(fiche);
-                if (fiche.dateDebutFabrication.Year == dateToDisplay.Year
-                    && fiche.dateDebutFabrication.Month == dateToDisplay.Month
-                    && fiche.dateDebutFabrication.Day == dateToDisplay.Day)
+                if (VerifProcessFiche(fiche)>0)
                 {
-                    listeDay.Add(fiche);
+                    FindAlerteListeInFor(fiche);
+                    if (fiche.dateDebutFabrication.Year == dateToDisplay.Year
+                        && fiche.dateDebutFabrication.Month == dateToDisplay.Month
+                        && fiche.dateDebutFabrication.Day == dateToDisplay.Day)
+                    {
+                        listeDay.Add(fiche);
+                    }
                 }
             }
         }
@@ -324,12 +339,15 @@ namespace GestionPlanning.src
             //listeMonth
             foreach (Fiche fiche in listeFiches)
             {
-                FindAlerteListeInFor(fiche);
-                if (fiche.dateLivraison.Year == dateToDisplay.Year
-                    && fiche.dateLivraison.Month == dateToDisplay.Month
-                    && fiche.dateLivraison.Day == dateToDisplay.Day)
+                if (VerifProcessFiche(fiche) > 0)
                 {
-                    listeDay.Add(fiche);
+                    FindAlerteListeInFor(fiche);
+                    if (fiche.dateLivraison.Year == dateToDisplay.Year
+                        && fiche.dateLivraison.Month == dateToDisplay.Month
+                        && fiche.dateLivraison.Day == dateToDisplay.Day)
+                    {
+                        listeDay.Add(fiche);
+                    }
                 }
             }
         }
@@ -340,13 +358,122 @@ namespace GestionPlanning.src
             listeNonPlacees.Clear();
             foreach (Fiche fiche in listeFiches)
             {
-                FindAlerteListeInFor(fiche);
-                if(fiche.dateDebutFabrication.Year < 2000)
+                if (VerifProcessFiche(fiche) > 0)
                 {
-                    listeNonPlacees.Add(fiche);
+                    FindAlerteListeInFor(fiche);
+                    if (fiche.dateDebutFabrication.Year < 2000)
+                    {
+                        listeNonPlacees.Add(fiche);
+                    }
                 }
             }
         }
+
+        //récupère la liste du jour
+        public void ProcessListSimple()
+        {
+            listeSimple.Clear();
+            foreach (Fiche fiche in listeFiches)
+            {
+                if (VerifProcessFiche(fiche) > 0)
+                {
+                    FindAlerteListeInFor(fiche);
+                    listeSimple.Add(fiche);
+                }
+            }
+        }
+
+        public int VerifProcessFiche(Fiche fiche)
+        {
+            int val = 0, ret = 0;
+            
+            //tri retard
+            if(triRetard == TriRetard.all)
+            {
+            }
+            else if(triRetard == TriRetard.both && ( fiche.alerteRetard == true || fiche.attentionRetard == true) )
+            {
+            }
+            else if(triRetard == TriRetard.alerte && fiche.alerteRetard == true && fiche.attentionRetard == false)
+            {
+            }
+            else if (triRetard == TriRetard.attention && fiche.alerteRetard == false && fiche.attentionRetard == true)
+            {
+            }
+            else if (triRetard == TriRetard.none && fiche.alerteRetard == false && fiche.attentionRetard == false)
+            {
+            }
+            else
+            {
+                val++;
+            }
+
+            //tri operation
+            if (triOperation == TriOp.all)
+            {
+            }
+            else if(triOperation == TriOp.aff && fiche.typeOperation == TypeOperation.aiguisage)
+            {
+            }
+            else if(triOperation == TriOp.fab && fiche.typeOperation == TypeOperation.fabrication)
+            {
+            }
+            else if (triOperation == TriOp.na && fiche.typeOperation == TypeOperation.na)
+            {
+            }
+            else 
+            {
+                val++;
+            }
+
+            //tri recouvrement
+            if (triReco == TriReco.all)
+            {
+            }
+            else if (triReco == TriReco.non && fiche.recouvrement == false)
+            {
+            }
+            else if (triReco == TriReco.yes && fiche.recouvrement == true)
+            {
+            }
+            else
+            {
+                val++;
+            }
+
+            //tri nom
+            if (String.Compare(triName, "All") == 0)
+            {
+            }
+            else if (String.Compare(triName, fiche.name) == 0)
+            {
+            }
+            else
+            { 
+                val++;
+            }
+
+
+            //tri nombre machine
+            if (triNumberMachine == -1)
+            {
+            }
+            else if(triNumberMachine != fiche.numMachine)
+            {
+                val++;
+            }
+            
+            if(val > 0)
+            {
+                ret = 0;
+            }
+            else
+            {
+                ret = 1;
+            }
+            return ret;
+
+    }
 
         //Modifie le nombre d'éléments de la liste
         public void ModifyQtyElements(int idFiche, int nbElements)
@@ -370,6 +497,7 @@ namespace GestionPlanning.src
             }
         }
         
+        //rafraichir les listes de tri
         public void RefreshDispControlTri()
         {
             //TODO rafraichir dispcontrol
@@ -390,6 +518,14 @@ namespace GestionPlanning.src
             ucDispControl.SetListNumMachine(listeNumMachine);
         }
 
+        public void RefreshDisplayListes()
+        {
+            ProcessListSimple();
+            ProcessListNotPlaced();
+            ProcessListCurrentDay();
+            listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+            DisplayFiches();
+        }
         //suauvegarde les données dans le fichier sauvegarde
         public void SaveListeInData()
         {
@@ -411,6 +547,9 @@ namespace GestionPlanning.src
                 case DispPlanning.month:
                     DisplayMonth();
                     break;
+                case DispPlanning.simple:
+                    DisplayListeSimple();
+                    break;
                 default:
                     DisplayDay();
                     break;
@@ -423,7 +562,8 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Day.Visibility = Visibility.Visible;
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
-            
+            mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+
             ProcessListCurrentDay();
             ucDispDay.RefreshDayToDisplay(dateToDisplay);
             ucDispDay.RefreshListToDisplay(listeDay);
@@ -431,10 +571,12 @@ namespace GestionPlanning.src
         
         public void DisplayWeek()
         {
+            dispPlanning = DispPlanning.week;
             //utiliser premiere semaine du mois ou semaine du jour
             mainWindow.UC_Disp_Day.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Week.Visibility = Visibility.Visible;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
 
             //obtenir premier jour de la semaine et afficher numéro semaine et jours
             int numberWeek = GetNumberWeek(dateToDisplay);
@@ -447,9 +589,12 @@ namespace GestionPlanning.src
 
         public void DisplayMonth()
         {
+            dispPlanning = DispPlanning.month;
             mainWindow.UC_Disp_Day.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Visible;
+            mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+
             //TODO obtenir premier jour du mois
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
             ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
@@ -457,15 +602,16 @@ namespace GestionPlanning.src
 
         public void DisplayListeSimple()
         {
+            dispPlanning = DispPlanning.simple;
             //utiliser premiere semaine du mois ou semaine du jour
             mainWindow.UC_Disp_Day.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Simple.Visibility = Visibility.Visible;
 
-            
-            //TODO ucDispSimple.RefreshListToDisplay(listeFiches);
+            ProcessListSimple();
+            ucDispSimple.RefreshListToDisplay(listeSimple);
         }
-
 
         public void NextDay()
         {
@@ -518,7 +664,8 @@ namespace GestionPlanning.src
             {
                 dateToDisplay = dateToDisplay.AddDays(-1);
             }
-            //DisplayWeek();
+            //TODO corriger ici
+            DisplayWeek();
         }
 
         public void NextMonth()
@@ -822,6 +969,7 @@ namespace GestionPlanning.src
                     else
                     {
                         PlacementAutoOneFiche(fiche);
+                        ProcessListSimple();
                         ProcessListNotPlaced();
                         ProcessListCurrentDay();
                         listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
@@ -843,6 +991,7 @@ namespace GestionPlanning.src
                 if (fiche.id == idFiche)
                 {
                     fiche.dateDebutFabrication = new DateTime(1, 1, 1);
+                    ProcessListSimple();
                     ProcessListNotPlaced();
                     ProcessListCurrentDay();
                     listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
@@ -860,46 +1009,96 @@ namespace GestionPlanning.src
 
         public void SearchByName(String name)
         {
-            //TODO
-            //une liste générale
-            //une liste triée
-            //des listes différentes à afficher?
-
-            //recharger les données?
+            triName = String.Copy(name);
         }
+
         public void SearchByOperation(String st_operation)
         {
             switch (st_operation)
             {
                 case "All":
+                    triOperation = TriOp.all;
                     break;
                 case "Fabrication":
+                    triOperation = TriOp.fab;
                     break;
                 case "Aiguisage":
+                    triOperation = TriOp.aff;
                     break;
                 case "NA":
+                    triOperation = TriOp.na;
                     break;
                 default:
+                    triOperation = TriOp.all;
                     break;
-
             }
         }
 
-        public void SearchByReco(String item)
+        public void SearchByReco(String st_reco)
         {
-
+            switch (st_reco)
+            {
+                case "All":
+                    triReco = TriReco.all;
+                    break;
+                case "Oui":
+                    triReco = TriReco.yes;
+                    break;
+                case "Non":
+                    triReco = TriReco.non;
+                    break;
+                default:
+                    triReco = TriReco.all;
+                    break;
+            }
         }
 
-        public void SearchByMachine(String item)
+        public void SearchByMachine(String st_numMachine)
         {
-
+            try
+            {
+                 triNumberMachine = int.Parse(st_numMachine);
+            }
+            catch (Exception ex)
+            {
+                triNumberMachine = -1;
+            }
         }
 
-        public void SearchByRetard(String item)
+        public void SearchByRetard(String st_retard)
         {
-
+            switch (st_retard)
+            {
+                case "All":
+                    triRetard = TriRetard.all;
+                    break;
+                case "Attention":
+                    triRetard = TriRetard.attention;
+                    break;
+                case "Alerte":
+                    triRetard = TriRetard.alerte;
+                    break;
+                case "Alerte/retard":
+                    triRetard = TriRetard.both;
+                    break;
+                case "Sans problème":
+                    triRetard = TriRetard.none;
+                    break;
+                default:
+                    triRetard = TriRetard.all;
+                    break;
+            }
         }
 
+        public void TriFiches(String name, String st_operation, String st_reco, String st_numMachine, String st_retard)
+        {
+            SearchByName(name);
+            SearchByOperation(st_operation);
+            SearchByReco(st_reco);
+            SearchByMachine(st_numMachine);
+            SearchByRetard(st_retard);
+            RefreshDisplayListes();
+        }
 
 
         /*

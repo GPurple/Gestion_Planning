@@ -28,7 +28,7 @@ namespace GestionPlanning
             InitializeComponent();
             TextDay.Text = dayToDisplay.Day + "/" + dayToDisplay.Month + "/" + dayToDisplay.Year;
             Brain.Instance.ucDispDay = this;
-            Brain.Instance.ResetDay();
+            //Brain.Instance.ResetDay();
         }
 
         private void Btn_PreviousDay(object sender, RoutedEventArgs e)
@@ -60,7 +60,7 @@ namespace GestionPlanning
             {
                 if (fiche.check == false)
                 {
-                    UC_fiche_day ucfd = new UC_fiche_day(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication);
+                    UC_fiche_day ucfd = new UC_fiche_day(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication,false);
                     StackPanelDisplayDay.Children.Add(ucfd);
                 }
             }
