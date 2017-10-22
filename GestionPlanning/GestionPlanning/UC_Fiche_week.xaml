@@ -24,6 +24,12 @@
         <Button HorizontalAlignment="Center" Margin="94,119,0,0" VerticalAlignment="Top" Width="36" Height="25" Background="#FF303030" Click="ModifyFiche" Grid.ColumnSpan="2">
             <Image HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="22" Source="Images/Icone_Modif.png"/>
         </Button>
+        <Button HorizontalAlignment="Center" Margin="46,119,14,0" VerticalAlignment="Top" Width="36" Height="25" Background="#FF303030" Click="ValidateFabricationFiche">
+            <Image Height="25" Width="36" Source="Images/Icone_ValidationFiche.png"/>
+        </Button>
+        <Button HorizontalAlignment="Center" Margin="0,119,60,0" VerticalAlignment="Top" Width="36" Height="25" Background="#FF303030" Click="PlacementAutoFiche">
+            <Image Height="22" Width="26" Source="Images/Icone_Placement.png"/>
 
+        </Button>
     </Grid>
 </UserControl>

@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionPlanning"
-             mc:Ignorable="d" Width="650" Height="40">
-    <Grid Height="40" VerticalAlignment="Top">
+             mc:Ignorable="d" Width="650" Height="50">
+    <Grid Height="50" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="127*"/>
             <ColumnDefinition/>
@@ -20,7 +20,15 @@
         <Image x:Name="image_warning" HorizontalAlignment="Left" Height="30" Margin="602,-4,0,0" VerticalAlignment="Top" Width="30" Source="Images/Icone_Attention.png" RenderTransformOrigin="0.533,0.404"/>
         <TextBlock x:Name="textHeureFabFicheWeek" HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"><Run Text="Heure fab"/><Run Text=" "/><Run Text=": "/></TextBlock>
         <TextBlock x:Name="textTempsFabFicheWeek" HorizontalAlignment="Left" Margin="160,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"><Run Text="Temps fab"/><Run Text=" : "/></TextBlock>
-        <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="1" Margin="0,39,0,0" VerticalAlignment="Top" Width="650" Grid.ColumnSpan="2"/>
-
+        <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="1" Margin="0,49,0,0" VerticalAlignment="Top" Width="650" Grid.ColumnSpan="2"/>
+        <Button HorizontalAlignment="Center" Margin="614,24,0,0" VerticalAlignment="Top" Width="36" Height="25" Background="#FF303030" Click="ModifyFiche" Grid.ColumnSpan="2">
+            <Image HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="22" Source="Images/Icone_Modif.png"/>
+        </Button>
+        <Button HorizontalAlignment="Center" Margin="573,24,36,0" VerticalAlignment="Top" Width="36" Height="25" Background="#FF303030" Click="ValidateFabricationFiche">
+            <Image Height="22" Width="36" Source="Images/Icone_ValidationFiche.png"/>
+        </Button>
+        <Button HorizontalAlignment="Center" Margin="532,24,77,0" VerticalAlignment="Top" Width="36" Height="25" Background="#FF303030" Click="PlacementFicheAuto">
+            <Image Height="22" Width="26" Source="Images/Icone_Placement.png"/>
+        </Button>
     </Grid>
 </UserControl>

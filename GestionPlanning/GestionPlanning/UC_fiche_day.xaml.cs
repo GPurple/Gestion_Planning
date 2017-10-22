@@ -22,6 +22,7 @@ namespace GestionPlanning
     /// </summary>
     public partial class UC_fiche_day : UserControl
     {
+        private int idFiche = -1;
         private String textId = "Id : ";
         private String textName = "Nom : ";
         private String textDate = "Livraison : ";
@@ -52,6 +53,7 @@ namespace GestionPlanning
         public UC_fiche_day(int newId, String newName, DateTime newDate, int newQty, bool newDispWarning, bool newDispAlerte , TypeOperation op, bool rec, DateTime newDateFabrication, int timeFab)
         {
             InitializeComponent();
+            idFiche = newId;
             ModifyId(newId);
             ModifyName(newName);
             ModifyDate(newDate);
@@ -184,6 +186,22 @@ namespace GestionPlanning
         {
             image_warning.Visibility = Visibility.Collapsed;
             dispWarning = false;
+        }
+
+        private void ModifyFiche(object sender, RoutedEventArgs e)
+        {
+            //TODO Afficher usercontrol avec les différentes infos de la fiche
+            Brain.Instance.ClickModifyFiche(idFiche);
+        }
+
+        private void ValidateFabricationFiche(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.DemandValidationFiche(idFiche);
+        }
+
+        private void PlacementFicheAuto(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.PlacementFicheAuto(idFiche);
         }
     }
 }

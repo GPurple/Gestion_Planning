@@ -9,9 +9,11 @@ using static GestionPlanning.src.FichierSauvegarde;
 
 namespace GestionPlanning.src
 {
-    enum DispPlanning { day, week, month } // day = 1
+    enum DispPlanning { day, week, month, simple } // day = 1
     enum TriOp { all, fab, aff }; //all = 1
     enum TriReco { all, yes, non }; //all = 1
+    enum TriRetard { all, attention, alerte, both, none}
+
     class Brain
     {
         //Affichage du jour ou de la semaine
@@ -26,6 +28,12 @@ namespace GestionPlanning.src
         //Afficher les recouvrements
         public TriReco triReco; //recouvrement all=0/oui/non/
 
+        //Afficher le nom de tri
+        public String triName = "All";
+
+        //Afficher le numéro de machine de tri
+        public int triNumberMachine = -1; //-1 = all
+        
         //La liste de fiches completes
         public List<Fiche> listeFiches = new List<Fiche>();
 
@@ -54,6 +62,9 @@ namespace GestionPlanning.src
         public UC_Display_week ucDispWeek;
         public UC_Disp_Month ucDispMonth;
         public UC_modif_fiche ucModifFiche;
+
+        MessageConfValidationFiche message_validationFiche;
+        MessageConfRetraitFichePlanning message_retraitFiche;
 
         private static Brain instance;
 
@@ -85,7 +96,6 @@ namespace GestionPlanning.src
 
         public void InitDisplay()
         {
-            ////TODO display listes en fonction des paramètres (week, affutage, recouvrement, type)
             dispPlanning = DispPlanning.week;
             dateToDisplay = DateTime.Now;
             while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
@@ -151,38 +161,7 @@ namespace GestionPlanning.src
         {
             foreach (Fiche fiche in listeFiches)
             {
-                //si la fiche n'a pas de date de fabrication
-                if (fiche.dateDebutFabrication.CompareTo(new DateTime(2000, 1, 1)) < 0)
-                {
-                    //si la fiche a une date de livraison
-                    if (fiche.dateLivraison.CompareTo(new DateTime(2000, 1, 1)) > 0)
-                    {
-                        fiche.dateDebutFabrication = fiche.dateLivraison.AddDays(-2);
-                        //Si la fabrication tombe un week end elle est décalée de 2 jours supplémentaire
-                        if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday || fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
-                        {
-                            fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(-2);
-                        }
-                        //Déplacement de 2 jours si recouvrement et prise en compte du week end
-                        if (fiche.recouvrement == true)
-                        {
-                            fiche.dateDebutFabrication = fiche.dateLivraison.AddDays(-2);
-                            if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday || fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
-                            {
-                                fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(-2);
-                            }
-                        }
-                        if (fiche.dateDebutFabrication.CompareTo(DateTime.Now) < 0)
-                        {
-                            fiche.dateDebutFabrication = DateTime.Now;
-                        }
-                    }
-                    else
-                    {
-                        fiche.dateDebutFabrication = DateTime.Now;
-                    }
-                    fiche.dateDebutFabrication = new DateTime(fiche.dateDebutFabrication.Year, fiche.dateDebutFabrication.Month, fiche.dateDebutFabrication.Day);
-                }
+                PlacementAutoOneFiche(fiche);
             }
             SaveListeInData();
             ProcessListNotPlaced();
@@ -212,9 +191,57 @@ namespace GestionPlanning.src
         }
 
         //Place automatiquement une seule fiche dans l'emploi du temps
-        public void PlacementAutoOneFiche(int idFiche)
+        public void PlacementAutoOneFiche(Fiche fiche)
         {
-            //TODO
+            //si la fiche n'a pas de date de fabrication
+            if (fiche.dateDebutFabrication.CompareTo(new DateTime(2000, 1, 1)) < 0)
+            {
+                //si la fiche a une date de livraison
+                if (fiche.dateLivraison.CompareTo(new DateTime(2000, 1, 1)) > 0)
+                {
+                    fiche.dateDebutFabrication = fiche.dateLivraison.AddDays(-2);
+                    //Si la fabrication tombe un week end elle est décalée de 2 jours supplémentaire
+                    if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday || fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
+                    {
+                        fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(-2);
+                    }
+                    //Déplacement de 2 jours si recouvrement et prise en compte du week end
+                    if (fiche.recouvrement == true)
+                    {
+                        fiche.dateDebutFabrication = fiche.dateLivraison.AddDays(-2);
+                        if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday || fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
+                        {
+                            fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(-2);
+                        }
+                    }
+                    if (fiche.dateDebutFabrication.CompareTo(DateTime.Now) < 0)
+                    {
+                        fiche.dateDebutFabrication = DateTime.Now;
+                        if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday)
+                        {
+                            fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(1);
+                        }
+                        if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
+                        {
+                            fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(2);
+                        }
+
+                    }
+                }
+                else
+                {
+                    fiche.dateDebutFabrication = DateTime.Now;
+                    if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(1);
+                    }
+                    if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
+                    {
+                        fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(2);
+                    }
+                }
+                fiche.dateDebutFabrication = new DateTime(fiche.dateDebutFabrication.Year, fiche.dateDebutFabrication.Month, fiche.dateDebutFabrication.Day);
+            }
         }
 
         //Detection des alertes et des warnings dans la liste
@@ -234,7 +261,6 @@ namespace GestionPlanning.src
             DateTime dateLivraison = new DateTime();
             DateTime dateFabrication = new DateTime();
             
-            //TODO prise en compte des week ends
             if (fiche.dateLivraison != null && fiche.dateLivraison.CompareTo(new DateTime(2000, 1, 1)) > 0)
             {
                 if (fiche.dateDebutFabrication.CompareTo(new DateTime(2000, 1, 1)) > 0 )
@@ -246,6 +272,7 @@ namespace GestionPlanning.src
                 {
                     dateLivraison = fiche.dateLivraison;
                     dateFabrication = DateTime.Now;
+                    dateFabrication = new DateTime(dateFabrication.Year, dateFabrication.Month, dateFabrication.Day);
                 }
 
                 TimeSpan time = dateFabrication - dateLivraison;
@@ -324,7 +351,7 @@ namespace GestionPlanning.src
         //Modifie le nombre d'éléments de la liste
         public void ModifyQtyElements(int idFiche, int nbElements)
         {
-
+            //TODO utile?
         }
 
         //resynchronise les données avec fichier Xcel et fichierSauvegarde
@@ -339,9 +366,30 @@ namespace GestionPlanning.src
                 //processListCurrentMonth
                 ProcessListNotPlaced();
                 DisplayFiches();
+                RefreshDispControlTri();
             }
         }
         
+        public void RefreshDispControlTri()
+        {
+            //TODO rafraichir dispcontrol
+            //*
+                //à partir de listeFiches (la liste complète)
+            List<String> listName = new List<String>();
+            List<int> listeNumMachine = new List<int>();
+            foreach (Fiche fiche in listeFiches)
+            {
+                listName.Add(fiche.name);
+                listeNumMachine.Add(fiche.numMachine);
+            }
+            
+            listName.Sort();
+            listeNumMachine.Sort();
+
+            ucDispControl.SetListName(listName);
+            ucDispControl.SetListNumMachine(listeNumMachine);
+        }
+
         //suauvegarde les données dans le fichier sauvegarde
         public void SaveListeInData()
         {
@@ -369,7 +417,6 @@ namespace GestionPlanning.src
             }
         }
 
-        //Affiche la liste du jour 
         public void DisplayDay()
         {
             dispPlanning = DispPlanning.day;
@@ -382,10 +429,6 @@ namespace GestionPlanning.src
             ucDispDay.RefreshListToDisplay(listeDay);
         }
         
-        /**
-         * @brief Affiche la liste de la semaine
-         * @note choisit la première semaine du mois si besoin, sinon semaine du jour choisit
-         * */
         public void DisplayWeek()
         {
             //utiliser premiere semaine du mois ou semaine du jour
@@ -402,10 +445,6 @@ namespace GestionPlanning.src
             ucDispWeek.RefreshListToDisplay(listeWeek);
         }
 
-        /**
-        * @brief Affiche la liste de la semaine
-        * @note choisit le mois de la semaine ou du jour choisit
-        * */
         public void DisplayMonth()
         {
             mainWindow.UC_Disp_Day.Visibility = Visibility.Collapsed;
@@ -415,6 +454,18 @@ namespace GestionPlanning.src
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
             ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
         }
+
+        public void DisplayListeSimple()
+        {
+            //utiliser premiere semaine du mois ou semaine du jour
+            mainWindow.UC_Disp_Day.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
+
+            
+            //TODO ucDispSimple.RefreshListToDisplay(listeFiches);
+        }
+
 
         public void NextDay()
         {
@@ -503,9 +554,6 @@ namespace GestionPlanning.src
 
         public void ClickModifyFiche(int idFiche)
         {
-            //récupérer la fiche id dans la listeFiches 
-            //rafraichir UC_modifyFiche
-            //display modifyFiche
             foreach (Fiche fiche in listeFiches)
             {
                 if (fiche.id == idFiche)
@@ -520,8 +568,206 @@ namespace GestionPlanning.src
 
         public void ValidateModificationFiche(int idFiche)
         {
+            
             //réenregistrer les nouvelles données dans la liste
-            ucModifFiche.Visibility = Visibility.Collapsed;
+            String textTemp;
+            Fiche ficheTemp = new Fiche();
+            textTemp = ucModifFiche.textBoxDateLivraison.Text;
+            Boolean error = false;
+            DateTime dateTime = new DateTime(1,1,1);
+            DateTime dateDayNow = DateTime.Now;
+            dateDayNow = new DateTime(dateDayNow.Year, dateDayNow.Month, dateDayNow.Day);
+
+            if(ucModifFiche.RadioButtonOpAffutage.IsChecked == true)
+            {
+                ficheTemp.typeOperation = TypeOperation.aiguisage;
+            }
+            else if (ucModifFiche.radioButtonOpFabrication.IsChecked == true)
+            {
+                ficheTemp.typeOperation = TypeOperation.fabrication;
+            }
+            else if (ucModifFiche.RadioButtonOpNA.IsChecked == true)
+            {
+                ficheTemp.typeOperation = TypeOperation.na;
+            }
+            else
+            {
+                ficheTemp.typeOperation = TypeOperation.na;
+            }
+
+            if (ucModifFiche.RadioButtonRecYes.IsChecked == true)
+            {
+                ficheTemp.recouvrement = true;
+            }
+            else if (ucModifFiche.RadioButtonRecNo.IsChecked == true)
+            {
+                ficheTemp.recouvrement = false;
+            }
+            else
+            {
+                ficheTemp.recouvrement = false;
+            }
+
+
+            //modif date livraison
+            try
+            {
+                dateTime = Convert.ToDateTime(ucModifFiche.textBoxDateLivraison.Text);
+            }
+            catch
+            {
+                error = true;
+                ucModifFiche.imageAttention_dateLiv.Visibility = Visibility.Visible;
+            }
+            if (dateTime.CompareTo(dateDayNow) >= 0)
+            {
+                ficheTemp.dateLivraison = dateTime;
+                ucModifFiche.imageAttention_dateLiv.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                error = true;
+                ucModifFiche.imageAttention_dateLiv.Visibility = Visibility.Visible;
+            }
+            //modif date fabrication
+            if (ucModifFiche.textBoxDateFabrication.Text.Length > 0 && ucModifFiche.textBoxDateFabrication.Text.CompareTo(" ") !=0 )
+            {
+                try
+                {
+                    dateTime = Convert.ToDateTime(ucModifFiche.textBoxDateFabrication.Text);
+                }
+                catch
+                {
+                    error = true;
+                    ucModifFiche.imageAttention_dateFab.Visibility = Visibility.Visible;
+                }
+                if (dateTime.CompareTo(dateDayNow) >= 0)
+                {
+                    ficheTemp.dateDebutFabrication = dateTime;
+                    ucModifFiche.imageAttention_dateFab.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    error = true;
+                    ucModifFiche.imageAttention_dateFab.Visibility = Visibility.Visible;
+                }
+            }
+            else //pas de date de fabrication
+            {
+                ficheTemp.dateDebutFabrication = new DateTime(1, 1, 1);
+                ucModifFiche.imageAttention_dateFab.Visibility = Visibility.Collapsed;
+            }
+            //Heure début fabrication
+            try
+            {
+                string[] tab_line = new string[20]; // tableau qui va contenir les sous-chaines extraites d'une ligne.
+                char[] splitter = { ':' }; // délimiteur du fichier texte
+                tab_line = ucModifFiche.textBoxHeureFabrication.Text.Split(splitter);
+                ficheTemp.dateDebutFabrication.AddHours(int.Parse(tab_line[0]));
+                ficheTemp.dateDebutFabrication.AddMinutes(int.Parse(tab_line[1]));
+                ucModifFiche.imageAttention_heureFab.Visibility = Visibility.Collapsed;
+            }
+            catch
+            {
+                error = true;
+                ucModifFiche.imageAttention_heureFab.Visibility = Visibility.Visible;
+            }
+            //temps fabrication
+            if (int.TryParse(ucModifFiche.textBoxTempsFabrication.Text, out ficheTemp.tempsFabrication))
+            {
+                if (ficheTemp.tempsFabrication >= 0) //ok
+                {
+                    ucModifFiche.imageAttention_TempsFab.Visibility = Visibility.Collapsed;
+                }
+                else 
+                {
+                    error = true;
+                    ucModifFiche.imageAttention_TempsFab.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            { 
+                error = true;
+                ucModifFiche.imageAttention_TempsFab.Visibility = Visibility.Visible;
+            }
+
+            //numéro machine
+            if (int.TryParse(ucModifFiche.TextBoxNumMachine.Text, out ficheTemp.numMachine))
+            {
+                if (ficheTemp.numMachine >= -1)//ok
+                {
+                    ucModifFiche.imageAttention_NumMach.Visibility = Visibility.Collapsed;
+                }
+                else
+                { 
+                    error = true;
+                    ucModifFiche.imageAttention_NumMach.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                error = true;
+                ucModifFiche.imageAttention_NumMach.Visibility = Visibility.Visible;
+            }
+            //quantité élements
+            if ( int.TryParse(ucModifFiche.TextBoxQty.Text, out ficheTemp.quantiteElement))
+            {
+                if (ficheTemp.quantiteElement >= -1)
+                {
+                    ucModifFiche.imageAttention_QtyEl.Visibility = Visibility.Collapsed;
+                }
+                else
+                { 
+                    error = true;
+                    ucModifFiche.imageAttention_QtyEl.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                error = true;
+                ucModifFiche.imageAttention_QtyEl.Visibility = Visibility.Visible;
+            }
+
+            ficheTemp.textDescription = ucModifFiche.textBoxTextFiche.Text;
+            if (ucModifFiche.textBoxTextFiche.Text.Length <= 200)
+            {
+                ucModifFiche.imageAttention_SizeText.Visibility = Visibility.Collapsed;
+            }
+            else
+            { 
+                error = true;
+                ucModifFiche.imageAttention_SizeText.Visibility = Visibility.Visible;
+            }
+            
+            if(!error)
+            { 
+                //synchro ficheTemp avec listeFiches
+                foreach (Fiche fiche in listeFiches)
+                {
+                    if (fiche.id == idFiche)
+                    {
+                        fiche.dateLivraison = ficheTemp.dateLivraison;
+                        fiche.dateDebutFabrication = ficheTemp.dateDebutFabrication;
+                        fiche.tempsFabrication = ficheTemp.tempsFabrication;
+                        fiche.numMachine = ficheTemp.tempsFabrication; ;
+                        fiche.quantiteElement = ficheTemp.quantiteElement;
+                        fiche.textDescription = ficheTemp.textDescription;
+                        fiche.typeOperation = ficheTemp.typeOperation;
+                        fiche.recouvrement = ficheTemp.recouvrement;
+
+                        FindAlerteListeFull(listeFiches);
+                        ProcessListCurrentDay();
+                        listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+                        //processListCurrentMonth
+                        ProcessListNotPlaced();
+                        DisplayFiches();
+                        break;
+                        
+                    }
+                }
+                ucModifFiche.Visibility = Visibility.Collapsed;
+                RefreshDispControlTri();
+            }
         }
 
         public void CancelModificationFiche(int idFiche)
@@ -530,16 +776,131 @@ namespace GestionPlanning.src
             ucModifFiche.Visibility = Visibility.Collapsed;
         }
 
-        /**
-        * @param time Le temps de fabrication
-        * @param machine Le numéro de machine
-        * @param dateBeginning La date de début de fabrication + heure
-        * @param dateLivraison
-        * @param enum typeFabrication
-        * @param enum covering
-        * @param enum retardPlacement (aucun/avant 2jours/ apres date rendu)
-        * @param text
-        * */
+        public void DemandValidationFiche(int idFiche)
+        {
+            message_validationFiche = new MessageConfValidationFiche(idFiche);
+            message_validationFiche.Show();
+        }
+
+        public void ValidateFabricationFiche(int idFiche)
+        {
+            message_validationFiche.Hide();
+            foreach (Fiche fiche in listeFiches)
+            {
+                if (fiche.id == idFiche)
+                {
+                    fiche.check = true;
+                    //modifie les nouvelles données dans la liste 
+                    //resynchronise la liste et réaffiche tout en retirant la fiche de ucdisplayfiche si possible
+                    FindAlerteListeFull(listeFiches);
+                    ProcessListCurrentDay();
+                    listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+                    //processListCurrentMonth
+                    ProcessListNotPlaced();
+                    DisplayFiches();
+                }
+            }
+        }
+
+        public void CancelFabricationFiche(int idFiche)
+        {
+            message_validationFiche.Hide();
+        }
+
+        public void PlacementFicheAuto(int idFiche)
+        {
+            foreach(Fiche fiche in listeFiches)
+            {
+                if (fiche.id == idFiche)
+                {
+                    if(fiche.dateDebutFabrication.Year >2000)
+                    {
+                        //message demande autorisation retrait
+                        message_retraitFiche = new MessageConfRetraitFichePlanning(idFiche);
+                        message_retraitFiche.Show();
+                    }
+                    else
+                    {
+                        PlacementAutoOneFiche(fiche);
+                        ProcessListNotPlaced();
+                        ProcessListCurrentDay();
+                        listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+                        //TODO ProcessListMonth
+                        DisplayFiches();
+                    }
+                    break;
+                }
+            }
+            //si la fiche est placée et non check, la retirer avec message confirmation
+            //si la fiche n'est pas placée la placer
+        }
+
+        public void ConfirmationPlacementFiche(int idFiche)
+        {
+            message_retraitFiche.Hide();
+            foreach (Fiche fiche in listeFiches)
+            {
+                if (fiche.id == idFiche)
+                {
+                    fiche.dateDebutFabrication = new DateTime(1, 1, 1);
+                    ProcessListNotPlaced();
+                    ProcessListCurrentDay();
+                    listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
+                    //TODO ProcessListMonth
+                    DisplayFiches();
+                    break;
+                }
+            }
+        }
+
+        public void CancelPlacementFiche(int idFiche)
+        {
+            message_retraitFiche.Hide();
+        }
+
+        public void SearchByName(String name)
+        {
+            //TODO
+            //une liste générale
+            //une liste triée
+            //des listes différentes à afficher?
+
+            //recharger les données?
+        }
+        public void SearchByOperation(String st_operation)
+        {
+            switch (st_operation)
+            {
+                case "All":
+                    break;
+                case "Fabrication":
+                    break;
+                case "Aiguisage":
+                    break;
+                case "NA":
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+        public void SearchByReco(String item)
+        {
+
+        }
+
+        public void SearchByMachine(String item)
+        {
+
+        }
+
+        public void SearchByRetard(String item)
+        {
+
+        }
+
+
 
         /*
          * Fonctions d'essai du logiciel

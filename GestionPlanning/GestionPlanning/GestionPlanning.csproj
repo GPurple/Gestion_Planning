@@ -63,6 +63,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MessageConfRetraitFichePlanning.xaml.cs">
+      <DependentUpon>MessageConfRetraitFichePlanning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageConfValidationFiche.xaml.cs">
+      <DependentUpon>MessageConfValidationFiche.xaml</DependentUpon>
+    </Compile>
     <Compile Include="src\Brain.cs" />
     <Compile Include="src\DataCSV.cs" />
     <Compile Include="src\Fiche.cs" />
@@ -74,6 +80,9 @@
     <Compile Include="src\TODO.cs" />
     <Compile Include="UC_display_day.xaml.cs">
       <DependentUpon>UC_display_day.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Display_Simple.xaml.cs">
+      <DependentUpon>UC_Display_Simple.xaml</DependentUpon>
     </Compile>
     <Compile Include="UC_Display_week.xaml.cs">
       <DependentUpon>UC_Display_week.xaml</DependentUpon>
@@ -108,7 +117,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MessageConfRetraitFichePlanning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageConfValidationFiche.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UC_display_day.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC_Display_Simple.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,6 +205,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icone_PasDateLivraison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icone_ValidationFiche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icone_Placement.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

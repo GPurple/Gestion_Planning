@@ -191,8 +191,17 @@ namespace GestionPlanning
 
         private void ModifyFiche(object sender, RoutedEventArgs e)
         {
-            //TODO Afficher usercontrol avec les différentes infos de la fiche
             Brain.Instance.ClickModifyFiche(idFiche);
+        }
+
+        private void ValidateFabricationFiche(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.DemandValidationFiche(idFiche);
+        }
+
+        private void PlacementAutoFiche(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.PlacementFicheAuto(idFiche);
         }
     }
 }

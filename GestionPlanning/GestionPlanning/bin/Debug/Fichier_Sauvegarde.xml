@@ -1,19 +1,20 @@
 <?xml version="1.0"?>
 <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <displayDay>false</displayDay>
-  <dateLastModif>2017-10-20T13:52:30.0613083+02:00</dateLastModif>
+  <dateLastModif>2017-10-22T18:41:19.4871365+02:00</dateLastModif>
   <ListeFiches>
     <Fiche>
       <id>75268</id>
       <name />
       <tempsFabrication>0</tempsFabrication>
-      <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
+      <typeOperation>fabrication</typeOperation>
+      <recouvrement>true</recouvrement>
       <quantiteElement>2</quantiteElement>
-      <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
-      <dateLivraison>2017-03-20T00:00:00</dateLivraison>
+      <numMachine>0</numMachine>
+      <dateDebutFabrication>2017-10-23T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-10-23T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
+      <textDescription />
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -27,7 +28,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>5</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>0001-01-01T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -43,7 +44,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>3</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-03-22T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -59,7 +60,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>3</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>0001-01-01T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -75,7 +76,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-03-21T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -91,7 +92,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>0001-01-01T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -107,7 +108,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>1</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-03-27T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -123,7 +124,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>1</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>0001-01-01T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -139,7 +140,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>15</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-03-24T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -155,7 +156,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>15</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>0001-01-01T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -171,7 +172,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>6</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-03-24T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -187,7 +188,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>4</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-19T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -203,7 +204,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-18T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -219,7 +220,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-10-20T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-24T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
@@ -235,7 +236,7 @@
       <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <numMachine>-1</numMachine>
-      <dateDebutFabrication>2017-12-28T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>0001-01-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2018-01-01T00:00:00</dateLivraison>
       <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>

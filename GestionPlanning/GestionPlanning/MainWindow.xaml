@@ -25,7 +25,7 @@
         <Button x:Name="BtnStartTest3_Copy" Content="Effacer données " HorizontalAlignment="Left" Margin="984,326,0,0" VerticalAlignment="Top" Width="114" Click="EraseDataFichierSauvegarde"/>
         <Image x:Name="image_warningGeneral" HorizontalAlignment="Left" Height="56" Margin="984,16,0,0" VerticalAlignment="Top" Width="56" Source="Images/Icone_Attention.png"/>
         <Image x:Name="image_alerteGeneral" HorizontalAlignment="Left" Height="56" Margin="1045,16,0,0" VerticalAlignment="Top" Width="53" Source="Images/Icone_Alerte.png"/>
-        <local:UC_modif_fiche x:Name="UC_modif_fiche" HorizontalAlignment="Left" Height="410" Margin="530,138,0,0" VerticalAlignment="Top" Width="414"/>
+        <local:UC_modif_fiche x:Name="UC_modif_fiche" HorizontalAlignment="Left" Height="593" Margin="501,49,0,0" VerticalAlignment="Top" Width="421"/>
 
     </Grid>
 </Window>

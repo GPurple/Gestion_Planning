@@ -58,11 +58,14 @@ namespace GestionPlanning
             StackPanelDisplayDay.Children.Clear();
             foreach (Fiche fiche in listeDay)
             {
-                UC_fiche_day ucfd = new UC_fiche_day(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication);
-                StackPanelDisplayDay.Children.Add(ucfd);
+                if (fiche.check == false)
+                {
+                    UC_fiche_day ucfd = new UC_fiche_day(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication);
+                    StackPanelDisplayDay.Children.Add(ucfd);
+                }
             }
             int nbList = StackPanelDisplayDay.Children.Count;
-            StackPanelDisplayDay.Height = nbList * 40;
+            StackPanelDisplayDay.Height = nbList * 50;
         }
     }
 }

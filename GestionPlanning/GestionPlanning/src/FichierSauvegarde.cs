@@ -134,16 +134,25 @@ namespace GestionPlanning.src
                             ficheConnue.dateLivraison = ficheSaved.dateLivraison;
                             ficheConnue.retardPlacement = ficheSaved.retardPlacement;
                             ficheConnue.textDescription = ficheSaved.textDescription;
+                            ficheConnue.check = ficheSaved.check;
                             break;
                         }
                         else if (ficheConnue.id > ficheSaved.id)
                         {
                             TimeSpan ts = DateTime.Now - ficheSaved.dateLivraison;
                             //si la fiche sauvegardée n'est pas dans la liste connue et qu'elle n'est pas dépassée, la placer dans la liste
-                            if (ts.Days < 30 && idFichePrec!= ficheSaved.id)
+                            if ( idFichePrec!= ficheSaved.id)
                             {
-                                listeFichesTmp.Add(new Fiche(ficheSaved));
+                                if (ts.Days < 30)
+                                {
+                                    listeFichesTmp.Add(new Fiche(ficheSaved));
+                                }
+                                else if (ficheSaved.check == false)
+                                {
+                                    listeFichesTmp.Add(new Fiche(ficheSaved));
+                                }
                             }
+                            
                             //Si la fiche est passée, fin de la boucle
                             break;
                         }

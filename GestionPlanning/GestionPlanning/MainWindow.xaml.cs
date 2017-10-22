@@ -27,8 +27,8 @@ namespace GestionPlanning
             InitializeComponent();
             Brain.Instance.mainWindow = this;
             Brain.Instance.InitDisplay();
-            image_alerteGeneral.Visibility = Visibility.Collapsed;
-            image_warningGeneral.Visibility = Visibility.Collapsed;
+            //image_alerteGeneral.Visibility = Visibility.Collapsed;
+            //image_warningGeneral.Visibility = Visibility.Collapsed;
             UC_modif_fiche.Visibility = Visibility.Collapsed;
         }
 

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\App.xaml
-91928102398
+121449527755
 
-26975548451
+291388340278
 17-385597657
-MainWindow.xaml;UC_display_day.xaml;UC_Display_week.xaml;UC_Disp_Controls.xaml;UC_Disp_Month.xaml;UC_fiche_day.xaml;UC_fiche_month.xaml;UC_Fiche_week.xaml;UC_modif_fiche.xaml;
+MainWindow.xaml;MessageConfRetraitFichePlanning.xaml;MessageConfValidationFiche.xaml;UC_display_day.xaml;UC_Display_Simple.xaml;UC_Display_week.xaml;UC_Disp_Controls.xaml;UC_Disp_Month.xaml;UC_fiche_day.xaml;UC_fiche_month.xaml;UC_Fiche_week.xaml;UC_modif_fiche.xaml;
 
 False
 
