@@ -1,0 +1,17 @@
+﻿<Window x:Class="GestionPlanning.Window_Identification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionPlanning"
+        mc:Ignorable="d"
+        Title="Window_Identification" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}">
+    <Grid Background="#FF2E2E2E">
+        <TextBlock HorizontalAlignment="Left" Margin="607,207,0,0" TextWrapping="Wrap" Text="Identification" VerticalAlignment="Top" Foreground="White" FontSize="36"/>
+        <Image HorizontalAlignment="Left" Height="133" Margin="942,50,0,0" VerticalAlignment="Top" Width="369" Source="Images/logos_aos.png"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="673,472,0,0" VerticalAlignment="Top" Width="76" Click="ValidateIdentifiant"/>
+        <TextBox x:Name="TextBoxIdentifiant" HorizontalAlignment="Left" Height="23" Margin="651,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Identifiant"/>
+        <TextBlock HorizontalAlignment="Left" Margin="675,331,0,0" TextWrapping="Wrap" Text="Identifiant" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+
+    </Grid>
+</Window>

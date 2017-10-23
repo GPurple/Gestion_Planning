@@ -4,11 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionPlanning"
-             mc:Ignorable="d" Background="#FF71A4C1" Height="120.833" Width="181.5">
+             mc:Ignorable="d" Background="#FF71A4C1" Height="90" Width="120">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="35" Margin="143,0,0,0" VerticalAlignment="Top" Width="44" Source="Images/Icone_Alerte.png"/>
-        <Image HorizontalAlignment="Left" Height="35" Margin="143,35,0,0" VerticalAlignment="Top" Width="40" Source="Images/Icone_Attention.png"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Nombre fiches : " VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="61*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="CanvaColorDisplay" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2">
+            <Rectangle HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Top" Width="120"/>
+        </Canvas>
+        <Image x:Name="image_AlerteRetard" HorizontalAlignment="Left" Height="35" Margin="28.333,0,-11,0" VerticalAlignment="Top" Width="44" Source="Images/Icone_Alerte.png" Grid.Column="1"/>
+        <Image x:Name="image_AttentionRetard" HorizontalAlignment="Left" Height="35" Margin="28.333,28,-7,0" VerticalAlignment="Top" Width="40" Source="Images/Icone_Attention.png" Grid.Column="1"/>
+        <TextBlock x:Name="TextNbFiches" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="6,37,0,0" Grid.ColumnSpan="2"><Run Text="N"/><Run Text="b"/><Run Text=" fiches : "/></TextBlock>
+        <TextBlock x:Name="TextReco" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Reco :" VerticalAlignment="Top" Margin="6,50,0,0" Grid.ColumnSpan="2" Width="76"/>
+        <TextBlock x:Name="TextDateFab" HorizontalAlignment="Left" Margin="6,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Grid.ColumnSpan="2"><Run Text="Date fab"/><Run Text=" "/><Run Text=":"/><LineBreak/><Run/></TextBlock>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Height="90" Margin="0,0,0,0" VerticalAlignment="Top" Width="1" Background="#FF9C9C9C"/>
 
     </Grid>
 </UserControl>

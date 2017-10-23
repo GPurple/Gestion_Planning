@@ -22,18 +22,31 @@ namespace GestionPlanning
     public partial class UC_Disp_Month : UserControl
     {
         DateTime monthToDisplay = DateTime.Now;
+        UC_fiche_month[,] tabFicheDispMonth = new UC_fiche_month[5, 7];
 
         public UC_Disp_Month()
         {
             InitializeComponent();
             Brain.Instance.ucDispMonth = this;
-            Brain.Instance.ResetMonth();
         }
 
-        public void RefreshMonthToDisplay(DateTime newDayToDisplay)
+        public void RefreshMonthToDisplay(DateTime newDayToDisplay, ListeFichesMonth listeFichesMonth)
         {
             monthToDisplay = newDayToDisplay;
             TextMonth.Text = monthToDisplay.Month + "/" + monthToDisplay.Year;
+
+            Canva_disp_fiche.Children.Clear();
+            for (int j = 0; j < 5; j++)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    UC_fiche_month ucFicheMonth = new UC_fiche_month(listeFichesMonth.tabMonthFicheDay[j, i]);
+                    //TODO modifier ucFicheMonth avec listeFichesMonth.tabMonthFicheDay[j, i];
+                    Canva_disp_fiche.Children.Add(ucFicheMonth);
+                    Canvas.SetLeft(ucFicheMonth, i * 120);
+                    Canvas.SetTop(ucFicheMonth, j * 90);
+                }
+            }
         }
 
         private void PreviousMonth(object sender, RoutedEventArgs e)

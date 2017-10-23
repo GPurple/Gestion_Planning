@@ -98,3 +98,9 @@ D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\D
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\MessageConfRetraitFichePlanning.baml
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Display_Simple.g.cs
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Display_Simple.baml
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_modifs.g.cs
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_Disp_modifs.baml
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\Window_Identification.g.cs
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\Window_Identification.baml
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\WindowChangePaths.g.cs
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\WindowChangePaths.baml

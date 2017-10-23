@@ -74,6 +74,8 @@
     <Compile Include="src\Fiche.cs" />
     <Compile Include="src\FichierSauvegarde.cs" />
     <Compile Include="src\FichierXcel.cs" />
+    <Compile Include="src\GestionErreur.cs" />
+    <Compile Include="src\GestionID.cs" />
     <Compile Include="src\ListeFichesMonth.cs" />
     <Compile Include="src\ListeFichesWeek.cs" />
     <Compile Include="src\Tests\TestSauvegarde.cs" />
@@ -90,6 +92,9 @@
     <Compile Include="UC_Disp_Controls.xaml.cs">
       <DependentUpon>UC_Disp_Controls.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UC_Disp_modifs.xaml.cs">
+      <DependentUpon>UC_Disp_modifs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC_Disp_Month.xaml.cs">
       <DependentUpon>UC_Disp_Month.xaml</DependentUpon>
     </Compile>
@@ -104,6 +109,12 @@
     </Compile>
     <Compile Include="UC_modif_fiche.xaml.cs">
       <DependentUpon>UC_modif_fiche.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowChangePaths.xaml.cs">
+      <DependentUpon>WindowChangePaths.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window_Identification.xaml.cs">
+      <DependentUpon>Window_Identification.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +152,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UC_Disp_modifs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UC_Disp_Month.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +173,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UC_modif_fiche.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowChangePaths.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_Identification.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

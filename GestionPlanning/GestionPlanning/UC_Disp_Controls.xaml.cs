@@ -28,29 +28,29 @@ namespace GestionPlanning
         {
             InitializeComponent();
             Brain.Instance.ucDispControl = this;
-            ComboBoxName.Items.Add("All");
-            ComboBoxName.SelectedItem = "All";
+            ComboBoxName.Items.Add("Tous noms");
+            ComboBoxName.SelectedItem = "Tous noms";
 
-            ComboBoxOperation.Items.Add("All");
+            ComboBoxOperation.Items.Add("Toutes operations");
             ComboBoxOperation.Items.Add("Fabrication");
             ComboBoxOperation.Items.Add("Aiguisage");
             ComboBoxOperation.Items.Add("NA");
-            ComboBoxOperation.SelectedItem = "All";
+            ComboBoxOperation.SelectedItem = "Toutes operations";
 
-            ComboBoxSearchReco.Items.Add("All");
+            ComboBoxSearchReco.Items.Add("Tous recouvrements");
             ComboBoxSearchReco.Items.Add("Oui");
             ComboBoxSearchReco.Items.Add("Non");
-            ComboBoxSearchReco.SelectedItem = "All";
+            ComboBoxSearchReco.SelectedItem = "Tous recouvrements";
 
-            ComboBoxSearchMachine.Items.Add("All");
-            ComboBoxSearchMachine.SelectedItem = "All";
+            ComboBoxSearchMachine.Items.Add("Toutes machines");
+            ComboBoxSearchMachine.SelectedItem = "Toutes machines";
 
-            ComboBoxSearchRetard.Items.Add("All");
+            ComboBoxSearchRetard.Items.Add("Tous retards");
             ComboBoxSearchRetard.Items.Add("Attention");
             ComboBoxSearchRetard.Items.Add("Alerte");
             ComboBoxSearchRetard.Items.Add("Alerte/retard");
             ComboBoxSearchRetard.Items.Add("Sans problème");
-            ComboBoxSearchRetard.SelectedItem = "All";
+            ComboBoxSearchRetard.SelectedItem = "Tous retards";
         }
 
         private void DisplayDay(object sender, RoutedEventArgs e)
@@ -111,8 +111,8 @@ namespace GestionPlanning
         public void SetListName(List<String> listeName)
         {
             ComboBoxName.Items.Clear();
-            ComboBoxName.Items.Add("All");
-            ComboBoxName.SelectedItem = "All";
+            ComboBoxName.Items.Add("Tous noms");
+            ComboBoxName.SelectedItem = "Tous noms";
 
             foreach (String name in listeName)
             {
@@ -126,8 +126,8 @@ namespace GestionPlanning
         public void SetListNumMachine(List<int> listeNumMachine)
         {
             ComboBoxSearchMachine.Items.Clear();
-            ComboBoxSearchMachine.Items.Add("All");
-            ComboBoxSearchMachine.SelectedItem = "All";
+            ComboBoxSearchMachine.Items.Add("Toutes machines");
+            ComboBoxSearchMachine.SelectedItem = "Toutes machines";
 
             foreach (int numero in listeNumMachine)
             {
@@ -146,6 +146,21 @@ namespace GestionPlanning
                 ComboBoxSearchMachine.Text,
                 ComboBoxSearchRetard.Text
                 );
+        }
+
+        private void DisplayModifs(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.DisplayListeModifs();
+        }
+
+        private void ChangeUser(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.ChangeUser();
+        }
+
+        private void ModifyPathsFiles(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.DispWindowPaths();
         }
     }
 }

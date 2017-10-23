@@ -50,7 +50,6 @@ namespace GestionPlanning
 
         public UC_Fiche_week(int newId, String newName, DateTime newDateLivraison, int newQty, bool newDispWarning, bool newDispAlerte, TypeOperation op, bool rec, DateTime newDateFabrication, int timeFab)
         {
-            //TODO ajouter temps et heure fabrication et heure
             InitializeComponent();
             idFiche = newId;
             ModifyId(newId);

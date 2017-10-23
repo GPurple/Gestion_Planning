@@ -8,22 +8,37 @@ namespace GestionPlanning.src
 {
     class TODO
     {
-        //A corriger
-
+        //Erreurs à ajouter
+        //ouverture fichier sauvegarde(existence, vide)
+        //chargement données
+        //fermeture fichier sauvegarde
+        //affichage image
+        //refresh data toutes les 15secondes
 
         //TODO
-        //afficher tri fiches avant drag and drop
-        //afficher mois 
+        //gestion erreur et display
+
+        //gérer path fichiers
+        //Faire un .exe
+        //rendre plus beau
+        //faire nouvelles données
+
         //ajouter clique droit déplacement horaire/modification fiche/validation fiche(+ écran conbfirmation)
         //Ajouter identification utilisateur et ecrire dans le fichier les derniers à avoir modifier le fichier
         //Ajouter les différentes gestions d'erreurs
-        //gérer détection de retard après chargement données
-        //Afficher retard ou attention si passage sur logo
-        //Faire un .exe
+
         //Définir un path des différents fichiers
         //Tester plusieurs lancements en parallèle
-        //faire drag and drop si possible
-        //drag and drop changement day ou week en passant sur bouton next day...
+
+        //gestion erreur 
+        //si erreur 
+        //enregistrer erreur dans fichier text
+
+        //bouton ouverture rapport erreur
+        //afficher liste erreur 
+
+
+
 
         //Fait:
         //Faire chargement depuis fichier xcel 
@@ -37,6 +52,8 @@ namespace GestionPlanning.src
         //configurer la preise en compte des weeks end pour recouvrement et retard?
         //Valider les fiches !!! -> ne pas les garder dans liste fiche, ne pas les afficher
         //gérer le rafraichissement des données -> sauvegarde quand on veut 
+        //tri month : ok - afficher mois : a faire
+        //gestion identifications
 
         //a demander
         //comment récupérer affutage et fabrication

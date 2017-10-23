@@ -176,7 +176,6 @@ namespace GestionPlanning.src
             }
         }
 
-
         public int SaveListe(List<Fiche> listeFichesConnues)
         {
             try
@@ -213,30 +212,6 @@ namespace GestionPlanning.src
                     return;
                 }
             }
-        }
-
-        /**
-         * @brief Ajouter une fiche
-         * @note none
-         * @param newFiche La fiche à ajouter
-         * retval none
-         * */
-        private void AddFiche(Fiche newFiche)
-        {
-
-        }
-
-        /**
-         * @brief Retirer une fiche de la liste enregistrée
-         * @note Désactivation de la fiche, mise de la liste à la fin
-         * @note Arrêt de la lecture après la première fiche desactivée?
-         * @note Arrêt d'utilisation des fiches Une semaine après la date de fin? -> paramétrage de la date
-         * @param newFiche La fiche à ajouter
-         * retval none
-         * */
-        private void DeleteFiche(Fiche fiche)
-        {
-
         }
 
         public void SynchroFiche(Fiche fiche)
@@ -305,6 +280,8 @@ namespace GestionPlanning.src
             //Ouverture du fichier
             Stream stream = new FileStream(file_V2, FileMode.OpenOrCreate);
             
+            //TODO ajouter erreur sauvegarde données
+
             Type[] extraTypes = { typeof(Fiche) };
             XmlSerializer serializer = new XmlSerializer(typeof(SaveData),extraTypes);
             

@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:GestionPlanning"
              mc:Ignorable="d" Height="560" Width="950">
     <Grid Background="#FF2E2E2E">
-        <TextBlock x:Name="TextMonth" HorizontalAlignment="Left" Margin="345,43,0,0" TextWrapping="Wrap" Text="Affichage Mois" VerticalAlignment="Top" Width="229" FontSize="24" Foreground="White"/>
+        <TextBlock x:Name="TextMonth" HorizontalAlignment="Left" Margin="367,43,0,0" TextWrapping="Wrap" Text="Affichage Mois" VerticalAlignment="Top" Width="229" FontSize="24" Foreground="White"/>
         <Button x:Name="BtnPreviousMonth" Content="Mois précédent" HorizontalAlignment="Left" Margin="51,43,0,0" VerticalAlignment="Top" Width="106" Click="PreviousMonth"/>
-        <Button Content="Mois suivant" HorizontalAlignment="Left" Margin="780,43,0,0" VerticalAlignment="Top" Width="75" Click="NextMonth"/>
+        <Button Content="Mois suivant" HorizontalAlignment="Left" Margin="816,43,0,0" VerticalAlignment="Top" Width="75" Click="NextMonth"/>
+        <Canvas x:Name="Canva_disp_fiche" HorizontalAlignment="Left" Height="450" Margin="51,80,0,0" VerticalAlignment="Top" Width="840"/>
 
     </Grid>
 </UserControl>

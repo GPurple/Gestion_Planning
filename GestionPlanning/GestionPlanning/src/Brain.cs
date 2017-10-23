@@ -16,6 +16,8 @@ namespace GestionPlanning.src
 
     class Brain
     {
+        public String nameUser = " Default user";
+
         //Affichage du jour ou de la semaine
         public DispPlanning dispPlanning = DispPlanning.week; 
 
@@ -30,7 +32,7 @@ namespace GestionPlanning.src
 
         public TriRetard triRetard = TriRetard.all;
         //Afficher le nom de tri
-        public String triName = "All";
+        public String triName = "Tous noms";
 
         //Afficher le numéro de machine de tri
         public int triNumberMachine = -1; //-1 = all
@@ -59,7 +61,10 @@ namespace GestionPlanning.src
 
         //Le fichier xcel
         public FichierSauvegarde fichierSauvegarde = new FichierSauvegarde();
-        
+
+        //Le fichier gestion modifs
+        public GestionModifs gestionModif = new GestionModifs();
+
         //Les différents controls utilisateurs
         public MainWindow mainWindow;
         public UC_Disp_Controls ucDispControl;
@@ -68,6 +73,10 @@ namespace GestionPlanning.src
         public UC_Disp_Month ucDispMonth;
         public UC_modif_fiche ucModifFiche;
         public UC_Display_Simple ucDispSimple;
+        public UC_Disp_modifs ucDispModifs;
+
+        public Window_Identification WinPageIdentification;
+        public WindowChangePaths winChangePaths;
 
         MessageConfValidationFiche message_validationFiche;
         MessageConfRetraitFichePlanning message_retraitFiche;
@@ -117,53 +126,6 @@ namespace GestionPlanning.src
         }
         
         /**
-         * @brief Recupération de la liste des fiches en fonction d'un nom
-         * @note none
-         * @param none
-         */
-        public List<Fiche> GetListFichesByName(String name)
-        {
-            //Une liste contenant les références de fiches seulement pour un tri en fonction des noms
-            List<Fiche> listFichesName = new List<Fiche>();
-            return listFichesName;
-        }
-
-        /**
-         * @brief Recupération de la liste des fiches en fonction d'un nom
-         * @note none
-         * @param none
-         */
-        public List<Fiche> GetListFichesByOperation(TypeOperation typeOp)
-        {
-            //Une liste contenant les références de fiches seulement pour un tri en fonction des noms
-            List<Fiche> listFichesOperation = new List<Fiche>();
-            return listFichesOperation;
-        }
-
-        /**
-         * @brief Recupération de la liste des fiches en fonction d'un nom
-         * @note none
-         * @param none
-         */
-        public List<Fiche> GetListFichesByRecouvrement(Boolean reco)
-        {
-            //Une liste contenant les références de fiches seulement pour un tri en fonction des noms
-            List<Fiche> listFichesRec = new List<Fiche>();
-            return listFichesRec;
-        }
-
-        /**
-         * @brief Récupération d'une fiche en fonction de son id
-         * @note none
-         * @param id l'identifiant de la fiche
-         * @retval Fiche la fiche
-         */
-        public Fiche GetFiche(int id)
-        {
-            return new Fiche();
-        }
-
-        /**
          * @brief Place automatiquement toutes les fiches dans l'emploi du temps en fonction de leurs paramètres
          * @note la synchro doit être appellées
          * @param none
@@ -181,6 +143,7 @@ namespace GestionPlanning.src
             listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
             //TODO ProcessListMonth
             DisplayFiches();
+            gestionModif.AddModif(new Modification(TypeModification.placementAuto, nameUser, -1, "Placement automatique de toutes les fiches", DateTime.Now,""));
         }
 
         //Replace les fiches dont la date de fabrication est dépassée sans être validée
@@ -200,6 +163,7 @@ namespace GestionPlanning.src
             listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
             //TODO ProcessListMonth
             DisplayFiches();
+            gestionModif.AddModif(new Modification(TypeModification.replacementAuto, nameUser, -1, "Replacement automatique de toutes les fiches", DateTime.Now,""));
         }
 
         //Place automatiquement une seule fiche dans l'emploi du temps
@@ -442,7 +406,7 @@ namespace GestionPlanning.src
             }
 
             //tri nom
-            if (String.Compare(triName, "All") == 0)
+            if (String.Compare(triName, "Tous noms") == 0)
             {
             }
             else if (String.Compare(triName, fiche.name) == 0)
@@ -475,12 +439,6 @@ namespace GestionPlanning.src
 
     }
 
-        //Modifie le nombre d'éléments de la liste
-        public void ModifyQtyElements(int idFiche, int nbElements)
-        {
-            //TODO utile?
-        }
-
         //resynchronise les données avec fichier Xcel et fichierSauvegarde
         public void RefreshData()
         {
@@ -494,6 +452,7 @@ namespace GestionPlanning.src
                 ProcessListNotPlaced();
                 DisplayFiches();
                 RefreshDispControlTri();
+                gestionModif.AddModif(new Modification(TypeModification.refreshData, nameUser, -1, "Rafraichissement des données", DateTime.Now,""));
             }
         }
         
@@ -526,6 +485,7 @@ namespace GestionPlanning.src
             listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
             DisplayFiches();
         }
+
         //suauvegarde les données dans le fichier sauvegarde
         public void SaveListeInData()
         {
@@ -563,6 +523,7 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            ucDispModifs.Visibility = Visibility.Collapsed;
 
             ProcessListCurrentDay();
             ucDispDay.RefreshDayToDisplay(dateToDisplay);
@@ -577,12 +538,17 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Visible;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            ucDispModifs.Visibility = Visibility.Collapsed;
 
             //obtenir premier jour de la semaine et afficher numéro semaine et jours
             int numberWeek = GetNumberWeek(dateToDisplay);
             ucDispWeek.RefreshWeekToDisplay(dateToDisplay, numberWeek);
 
             //obtenir les fiches de la semaine affichée et les afficher
+            while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
+            {
+                dateToDisplay = dateToDisplay.AddDays(-1);
+            }
             listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
             ucDispWeek.RefreshListToDisplay(listeWeek);
         }
@@ -594,10 +560,14 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Visible;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            ucDispModifs.Visibility = Visibility.Collapsed;
 
             //TODO obtenir premier jour du mois
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
-            ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
+
+            listeMonth.ProcessListCurrentMonth(listeFiches, dateToDisplay);
+            ucDispMonth.RefreshMonthToDisplay(dateToDisplay,listeMonth);
+
         }
 
         public void DisplayListeSimple()
@@ -608,9 +578,20 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Visible;
+            ucDispModifs.Visibility = Visibility.Collapsed;
 
             ProcessListSimple();
             ucDispSimple.RefreshListToDisplay(listeSimple);
+        }
+
+        public void DisplayListeModifs()
+        {
+            mainWindow.UC_Disp_Day.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            ucDispModifs.DisplayModifs(gestionModif.ReadDatas());
+            ucDispModifs.Visibility = Visibility.Visible;
         }
 
         public void NextDay()
@@ -635,6 +616,7 @@ namespace GestionPlanning.src
             ucDispDay.RefreshDayToDisplay(dateToDisplay);
             ProcessListCurrentDay();
             ucDispDay.RefreshListToDisplay(listeDay);
+            DisplayDay();
         }
 
         public void NextWeek()
@@ -672,24 +654,27 @@ namespace GestionPlanning.src
         {
             dateToDisplay = dateToDisplay.AddMonths(1);
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month,1);
-            ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
-            //TODO ucDispDay.RefrshListToDisplay(liste)
+            //listeMonth.ProcessListCurrentMonth(listeFiches, dateToDisplay);
+            ucDispMonth.RefreshMonthToDisplay(dateToDisplay, listeMonth);
+            DisplayMonth();
         }
 
         public void ResetMonth()
         {
             dateToDisplay = DateTime.Now;
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
-            ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
-            //TODO ucDispDay.RefrshListToDisplay(liste)
+            //listeMonth.ProcessListCurrentMonth(listeFiches, dateToDisplay);
+            //ucDispMonth.RefreshMonthToDisplay(dateToDisplay, listeMonth);
+            DisplayMonth();
         }
 
         public void PreviousMonth()
         {
             dateToDisplay = dateToDisplay.AddMonths(-1);
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
-            ucDispMonth.RefreshMonthToDisplay(dateToDisplay);
-            //TODO ucDispDay.RefrshListToDisplay(liste)
+            //listeMonth.ProcessListCurrentMonth(listeFiches, dateToDisplay);
+            //ucDispMonth.RefreshMonthToDisplay(dateToDisplay, listeMonth);
+            DisplayMonth();
         }
 
         private int GetNumberWeek(DateTime date)
@@ -896,7 +881,7 @@ namespace GestionPlanning.src
                         fiche.dateLivraison = ficheTemp.dateLivraison;
                         fiche.dateDebutFabrication = ficheTemp.dateDebutFabrication;
                         fiche.tempsFabrication = ficheTemp.tempsFabrication;
-                        fiche.numMachine = ficheTemp.tempsFabrication; ;
+                        fiche.numMachine = ficheTemp.numMachine;
                         fiche.quantiteElement = ficheTemp.quantiteElement;
                         fiche.textDescription = ficheTemp.textDescription;
                         fiche.typeOperation = ficheTemp.typeOperation;
@@ -915,6 +900,7 @@ namespace GestionPlanning.src
                 ucModifFiche.Visibility = Visibility.Collapsed;
                 RefreshDispControlTri();
             }
+            gestionModif.AddModif(new Modification(TypeModification.modifFiche, nameUser, idFiche, "Modification d'une fiche", DateTime.Now,""));
         }
 
         public void CancelModificationFiche(int idFiche)
@@ -931,6 +917,7 @@ namespace GestionPlanning.src
 
         public void ValidateFabricationFiche(int idFiche)
         {
+            bool modif = false;
             message_validationFiche.Hide();
             foreach (Fiche fiche in listeFiches)
             {
@@ -945,7 +932,14 @@ namespace GestionPlanning.src
                     //processListCurrentMonth
                     ProcessListNotPlaced();
                     DisplayFiches();
+                    modif = true;
+                    break;
                 }
+            }
+            if (modif == true)
+            {
+                SaveListeInData();
+                gestionModif.AddModif(new Modification(TypeModification.validationFiche, nameUser, idFiche, "Validation d'une fiche", DateTime.Now, ""));
             }
         }
 
@@ -956,7 +950,8 @@ namespace GestionPlanning.src
 
         public void PlacementFicheAuto(int idFiche)
         {
-            foreach(Fiche fiche in listeFiches)
+            bool modif = false;
+            foreach (Fiche fiche in listeFiches)
             {
                 if (fiche.id == idFiche)
                 {
@@ -976,15 +971,21 @@ namespace GestionPlanning.src
                         //TODO ProcessListMonth
                         DisplayFiches();
                     }
+                    modif = true;
                     break;
                 }
             }
             //si la fiche est placée et non check, la retirer avec message confirmation
             //si la fiche n'est pas placée la placer
+            if (modif == true)
+            {
+                SaveListeInData();
+            }
         }
 
         public void ConfirmationPlacementFiche(int idFiche)
         {
+            bool modif = false;
             message_retraitFiche.Hide();
             foreach (Fiche fiche in listeFiches)
             {
@@ -997,8 +998,13 @@ namespace GestionPlanning.src
                     listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
                     //TODO ProcessListMonth
                     DisplayFiches();
+                    modif = true;
                     break;
                 }
+            }
+            if (modif == true)
+            {
+                SaveListeInData();
             }
         }
 
@@ -1016,7 +1022,7 @@ namespace GestionPlanning.src
         {
             switch (st_operation)
             {
-                case "All":
+                case "Toutes operations":
                     triOperation = TriOp.all;
                     break;
                 case "Fabrication":
@@ -1038,7 +1044,7 @@ namespace GestionPlanning.src
         {
             switch (st_reco)
             {
-                case "All":
+                case "Tous recouvrements":
                     triReco = TriReco.all;
                     break;
                 case "Oui":
@@ -1055,13 +1061,20 @@ namespace GestionPlanning.src
 
         public void SearchByMachine(String st_numMachine)
         {
-            try
-            {
-                 triNumberMachine = int.Parse(st_numMachine);
-            }
-            catch (Exception ex)
+            if (st_numMachine == "Toutes machines")
             {
                 triNumberMachine = -1;
+            }
+            else
+            {
+                try
+                {
+                    triNumberMachine = int.Parse(st_numMachine);
+                }
+                catch (Exception ex)
+                {
+                    triNumberMachine = -1;
+                }
             }
         }
 
@@ -1069,7 +1082,7 @@ namespace GestionPlanning.src
         {
             switch (st_retard)
             {
-                case "All":
+                case "Tous retards":
                     triRetard = TriRetard.all;
                     break;
                 case "Attention":
@@ -1100,148 +1113,48 @@ namespace GestionPlanning.src
             RefreshDisplayListes();
         }
 
-
-        /*
-         * Fonctions d'essai du logiciel
-         * */
-        public int Test1_saveLoadDatas_dummy()
+        public void ValidateIdentification(String username, String password)
         {
-            SaveData dummyData = new SaveData();
-            CreateDummyData(dummyData);
-
-            //Sauvegarde des données dans le fichier
-            fichierSauvegarde.SaveDatas(dummyData);
-
-            //vider les données
-            dummyData.nameFileCSV = "";
-            dummyData.pathFileCSV = "";
-            dummyData.displayDay = false;
-            dummyData.listeFiches.Clear();
-
-            //Charger les données
-            dummyData = fichierSauvegarde.ReadDatas();
-
-            //Comparer les données avec les données d'entrée (au moins une donnée)
-            if (dummyData.nameFileCSV == "fileCsV" && dummyData.pathFileCSV == "" && dummyData.displayDay == true)
+            if (username != "Identifiant")
             {
-               if (dummyData.listeFiches != null && dummyData.listeFiches.Count>0)
-                {
-                    if (dummyData.listeFiches[0].typeOperation == TypeOperation.fabrication)
-                    {
-                        return 1;
-                    }
-                }
+                this.nameUser = username;
+                WinPageIdentification.Hide();
+                mainWindow.Show();
             }
-            return 0;
         }
 
-        public void CreateDummyData(SaveData data)
+        public void ChangeUser()
         {
-            //Génerer fausses données (créer 1 fiche)
-            listeFiches.Add(new Fiche("AOS", 32000, 10, new DateTime(2018, 01, 01), TypeOperation.fabrication, true));
-
-            data.nameFileCSV = "fileCsV";
-            data.pathFileCSV = "";
-            data.displayDay = true;
-            data.listeFiches = listeFiches;
+            WinPageIdentification.Show();
+            mainWindow.Hide();
         }
 
-        /*
-         * Fonctions d'essai du logiciel
-         * */
-        public int Test2_saveLoadDatas_dummy()
+        public void DispWindowPaths()
         {
-
-            List<Fiche> list_test = new List<Fiche>();
-            if(fichierXcel.LoadFiches(list_test)>=0)
-            {
-                //list_test = list_test.OrderBy(fiche => fiche.id).ToList();
-                fichierSauvegarde.SynchroListe(list_test);
-                listeFiches = list_test;
-
-                foreach (Fiche fiche in listeFiches)
-                {
-                    fiche.dateDebutFabrication = fiche.dateLivraison;
-                }
-
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-
-            
-            
+            winChangePaths = new WindowChangePaths();
+            winChangePaths.Show();
         }
 
-        public void Test3_displayListe()
+        public void ChangeNameFileCsv(String newName)
         {
-            int nbList = 0;
 
-            List<Fiche> list_test = new List<Fiche>();
-            Fiche fiche1 = new Fiche();
-            fiche1.id = 1234; fiche1.name = "Test1";fiche1.dateLivraison = new DateTime(2017, 12, 12); fiche1.quantiteElement = 12; fiche1.typeOperation = TypeOperation.fabrication; fiche1.recouvrement = true;
-            list_test.Add(fiche1);
-
-            Fiche fiche2 = new Fiche();
-            fiche2.id = 2345; fiche2.name = "Test2"; fiche2.dateLivraison = new DateTime(2018, 12, 12); fiche2.quantiteElement = 1; fiche2.typeOperation = TypeOperation.aiguisage; fiche2.recouvrement = true;
-            list_test.Add(fiche2);
-
-            Fiche fiche3 = new Fiche();
-            fiche3.id = 121134; fiche3.name = "Test3"; fiche3.dateLivraison = new DateTime(2016, 12, 12); fiche3.quantiteElement = 3; fiche3.typeOperation = TypeOperation.na; fiche3.recouvrement = false;
-            list_test.Add(fiche3);
-
-            Fiche fiche4 = new Fiche();
-            fiche4.id = 121134; fiche4.name = "Test4"; fiche4.dateLivraison = new DateTime(2016, 12, 12); fiche4.quantiteElement = 120; fiche4.typeOperation = TypeOperation.fabrication; fiche4.recouvrement = false;
-            list_test.Add(fiche4);
-
-
-
-            /*if (fichierXcel.LoadFiches(list_test) >= 0  
-)             {
-                //list_test = list_test.OrderBy(fiche => fiche.id).ToList();
-                fichierSauvegarde.SynchroListe(list_test); 
-            }*/
-            
-
-            //TODO ajouter nouvelles uc dans UC_display_day
-            //TODO liste déroulante
-            //ajouter seulement 3 fiches
-            for (int i =0;i<4; i++)
-            {
-               /* UC_fiche_day ucfd = new UC_fiche_day(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, true, false, list_test[i].typeOperation, list_test[i].recouvrement);
-                mainWindow.UC_Disp_Day.StackPanelDisplayDay.Children.Add(ucfd);
-
-                UC_Fiche_week ucfw = new UC_Fiche_week(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, true, false, list_test[i].typeOperation, list_test[i].recouvrement);
-                mainWindow.UC_Disp_Week.SPDisplayDay_lundi.Children.Add(ucfw);
-
-                UC_Fiche_week ucfw_2 = new UC_Fiche_week(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, false, true, list_test[i].typeOperation, list_test[i].recouvrement);
-                mainWindow.UC_Disp_Week.SPDisplayDay_mercredi.Children.Add(ucfw_2);
-
-                UC_Fiche_week ucfw_3 = new UC_Fiche_week(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, false, true, list_test[i].typeOperation, list_test[i].recouvrement);
-                mainWindow.UC_Disp_Week.SPDisplayDay_samedi.Children.Add(ucfw_3);
-
-                UC_Fiche_week ucfnp = new UC_Fiche_week(list_test[i].id, list_test[i].name, list_test[i].dateLivraison, list_test[i].quantiteElement, false, true, list_test[i].typeOperation, list_test[i].recouvrement);
-                mainWindow.STFichesNotPlaced.Children.Add(ucfnp);*/
-            }
-            mainWindow.UC_Disp_Day.RefreshDayToDisplay(dateToDisplay);
-            
-            nbList = mainWindow.UC_Disp_Day.StackPanelDisplayDay.Children.Count;
-            mainWindow.UC_Disp_Day.StackPanelDisplayDay.Height = nbList * 40;
-
-            nbList = ucDispWeek.SPDisplayDay_lundi.Children.Count;
-            ucDispWeek.SPDisplayDay_lundi.Height = nbList * 70;
-
-            nbList = ucDispWeek.SPDisplayDay_mardi.Children.Count;
-            ucDispWeek.SPDisplayDay_mardi.Height = nbList * 70;
-
-            nbList = ucDispWeek.SPDisplayDay_mercredi.Children.Count;
-            ucDispWeek.SPDisplayDay_mercredi.Height = nbList * 70;
-
-            nbList = mainWindow.STFichesNotPlaced.Children.Count;
-            mainWindow.STFichesNotPlaced.Height = nbList * 70;
         }
+
+        public void ChangePathFileCsv(String newPath)
+        {
+
+        }
+
+        public void ChangePathFichierSauvegarde(String newPath)
+        {
+
+        }
+
+        public void ChangePathFichierModifs(String newPath)
+        {
+
+        }
+
 
         public void EraseDataFichierSauvegarde()
         {
@@ -1249,55 +1162,6 @@ namespace GestionPlanning.src
             fichierSauvegarde.EraseData();
         }
 
-        //TODO modif valeurs d'une fiche
-
-        /**
-         * @brief Modifier le nom
-         * */
-
-        /**
-         * @brief Modifier l'id? probablement interdit 
-         * */
-
-        /**
-         * @brief Modification quantité éléments
-         * */
-
-        /**
-         * @brief Modifier le temps de création de l'élement
-         * */
-
-        /**
-         * @brief Modifier la machine de l'élément
-         * */
-
-        /**
-         * @brief Modifier la date de début de fabrication + heure
-         * */
-
-        /**
-         * @brief Modifier la date de livraison? privé
-         * */
-
-        /**
-         * @brief Modifier le type de fabrication? privé
-         * */
-
-        /**
-         * @brief Modifier le type de recouvrement ? privé
-         * */
-
-        /**
-         * @brief Modification de l'état du retard de placement
-
-
-        /**
-         * @brief Modifier le texte de la fiche
-         * */
-
-        /**
-         * @brief Modifier toute une fiche
-         * */
     }
 
 }
