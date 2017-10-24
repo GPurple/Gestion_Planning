@@ -18,7 +18,7 @@ namespace GestionPlanning.src
         //TODO
         //gestion erreur et display
 
-        //gérer path fichiers
+        //corriger problème stackoverflow
         //Faire un .exe
         //rendre plus beau
         //faire nouvelles données
@@ -54,6 +54,7 @@ namespace GestionPlanning.src
         //gérer le rafraichissement des données -> sauvegarde quand on veut 
         //tri month : ok - afficher mois : a faire
         //gestion identifications
+        //gérer path fichiers
 
         //a demander
         //comment récupérer affutage et fabrication

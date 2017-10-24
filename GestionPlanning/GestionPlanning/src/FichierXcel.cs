@@ -10,8 +10,8 @@ namespace GestionPlanning.src
 {
     class FichierXcel
     {
-        String path_file = "";
-        String name_file = "CHARGE_ATELIER_BRUTE_AOS";
+        public String path_file = "";
+        public String name_file = "CHARGE_ATELIER_BRUTE_AOS";
         
         DataCSV data_csv = new DataCSV();
         /**

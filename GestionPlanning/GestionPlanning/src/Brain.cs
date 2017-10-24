@@ -19,10 +19,10 @@ namespace GestionPlanning.src
         public String nameUser = " Default user";
 
         //Affichage du jour ou de la semaine
-        public DispPlanning dispPlanning = DispPlanning.week; 
+        public DispPlanning dispPlanning = DispPlanning.week;
 
         //Le jour à afficher ou le premier jour de la semaine ou du mois à afficher
-        public DateTime dateToDisplay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day); 
+        public DateTime dateToDisplay = new DateTime();// = DateTime.Now;
 
         //Afficher les opérations
         public TriOp triOperation = TriOp.all; //operation fabrication all=0/fabrication/affutage/ -> faire une enum
@@ -102,6 +102,7 @@ namespace GestionPlanning.src
          */
         private Brain() {
             dateToDisplay = DateTime.Now;
+            dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, dateToDisplay.Day);
         }
 
         static public void Main()
@@ -1127,6 +1128,7 @@ namespace GestionPlanning.src
         {
             WinPageIdentification.Show();
             mainWindow.Hide();
+            gestionModif.AddModif(new Modification(TypeModification.connexion, nameUser, -1, "Déconnexion utilisateur : " + nameUser, DateTime.Now, ""));
         }
 
         public void DispWindowPaths()
@@ -1137,22 +1139,20 @@ namespace GestionPlanning.src
 
         public void ChangeNameFileCsv(String newName)
         {
-
+            fichierSauvegarde.RenommerFichierXcel(newName);
+            gestionModif.AddModif(new Modification(TypeModification.changementNameFile, nameUser, -1, "Renommage fichier csv", DateTime.Now, ""));
         }
 
         public void ChangePathFileCsv(String newPath)
         {
-
-        }
-
-        public void ChangePathFichierSauvegarde(String newPath)
-        {
-
+            fichierSauvegarde.ModifierPathFichierXcel(newPath);
+            gestionModif.AddModif(new Modification(TypeModification.changementPath, nameUser, -1, "Changement chemin d'accès fichier csv", DateTime.Now, ""));
         }
 
         public void ChangePathFichierModifs(String newPath)
         {
-
+            fichierSauvegarde.ModifierPathFichierModifs(newPath);
+            gestionModif.AddModif(new Modification(TypeModification.changementPath, nameUser, -1, "Changement chemin d'accès fichier modifications", DateTime.Now, ""));
         }
 
 
@@ -1160,6 +1160,8 @@ namespace GestionPlanning.src
         {
             listeFiches.Clear();
             fichierSauvegarde.EraseData();
+            gestionModif.AddModif(new Modification(TypeModification.validationFiche, nameUser, -1, "Suppression du fichier de sauvegarde", DateTime.Now, ""));
+
         }
 
     }

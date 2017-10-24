@@ -40,11 +40,6 @@ namespace GestionPlanning
             Brain.Instance.ChangePathFileCsv(textPathCsv.Text);
         }
 
-        private void ChangePathFichierSauvegarde(object sender, RoutedEventArgs e)
-        {
-            Brain.Instance.ChangePathFichierSauvegarde(textPathFichierSauvegarde.Text);
-        }
-
         private void ChangePathFichierModifs(object sender, RoutedEventArgs e)
         {
             Brain.Instance.ChangePathFichierModifs(textPathFichierModifications.Text);

@@ -5,22 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionPlanning"
         mc:Ignorable="d"
-        Title="WindowChangePaths" Height="304.469" Width="693.125">
+        Title="WindowChangePaths" Height="255.469" Width="677.625">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="36,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Path fichier"/><Run Text=" .c"/><Run Text="s"/><Run Text="v"/><Run Text=" :"/></TextBlock>
-        <TextBox x:Name="textPathCsv" HorizontalAlignment="Left" Height="23" Margin="182,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345"/>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="566,89,0,0" VerticalAlignment="Top" Width="75" Click="ChangePathFileCsv"/>
-        <TextBlock HorizontalAlignment="Left" Margin="36,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Path fichier"/><Run Text=" "/><Run Text="sauvegarde :"/></TextBlock>
-        <TextBox x:Name="textPathFichierSauvegarde" HorizontalAlignment="Left" Height="23" Margin="182,126,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345"/>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="566,128,0,0" VerticalAlignment="Top" Width="75" Click="ChangePathFichierSauvegarde"/>
-        <TextBlock HorizontalAlignment="Left" Margin="36,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Path "/><Run Text="fichier modifications :"/></TextBlock>
-        <TextBox x:Name="textPathFichierModifications" HorizontalAlignment="Left" Height="23" Margin="182,163,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345"/>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="566,165,0,0" VerticalAlignment="Top" Width="75" Click="ChangePathFichierModifs"/>
+        <TextBox x:Name="textPathCsv" HorizontalAlignment="Left" Height="23" Margin="136,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="346"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="520,89,0,0" VerticalAlignment="Top" Width="76" Click="ChangePathFileCsv"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Path "/><Run Text="fichier modifications :"/></TextBlock>
+        <TextBox x:Name="textPathFichierModifications" HorizontalAlignment="Left" Height="23" Margin="187,122,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="346"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="553,121,0,0" VerticalAlignment="Top" Width="76" Click="ChangePathFichierModifs"/>
         <TextBlock HorizontalAlignment="Left" Margin="36,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nom"/><Run Text=" fichier"/><Run Text=" .c"/><Run Text="s"/><Run Text="v"/><Run Text=" :"/></TextBlock>
-        <TextBox x:Name="textNameCsv" HorizontalAlignment="Left" Height="23" Margin="182,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345"/>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="566,54,0,0" VerticalAlignment="Top" Width="75" Click="ChangeNameFileCsv"/>
-        <TextBlock HorizontalAlignment="Left" Margin="227,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Modification "/><Run Text="des "/><Run Text="chemins d'accès"/><Run Text=" "/><Run Text="des "/><Run Text="fichiers"/></TextBlock>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="308,210,0,0" VerticalAlignment="Top" Width="75" Click="LeaveWindowModifPaths"/>
+        <TextBox x:Name="textNameCsv" HorizontalAlignment="Left" Height="23" Margin="136,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="346"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="520,54,0,0" VerticalAlignment="Top" Width="76" Click="ChangeNameFileCsv"/>
+        <TextBlock HorizontalAlignment="Left" Margin="220,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Modification "/><Run Text="des "/><Run Text="chemins d'accès"/><Run Text=" "/><Run Text="des "/><Run Text="fichiers"/></TextBlock>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="308,170,0,0" VerticalAlignment="Top" Width="75" Click="LeaveWindowModifPaths"/>
 
     </Grid>
 </Window>

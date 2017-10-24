@@ -23,7 +23,7 @@ namespace GestionPlanning.src
         public DataSaveModif() { }
     }
 
-    public enum TypeModification { placementAuto, replacementAuto, refreshData, modifFiche, connexion , validationFiche };
+    public enum TypeModification { placementAuto, replacementAuto, refreshData, modifFiche, connexion , validationFiche, changementPath, changementNameFile};
 
     //[Serializable]
     [XmlType("Modification")]
@@ -60,7 +60,7 @@ namespace GestionPlanning.src
         //Init fichier txt
         public String pathFile = "";
         public String nameFile = "Fichier_Modifications";
-
+        
         public void AddModif(Modification modification)
         {
             //ouvrir fichier

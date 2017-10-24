@@ -681,5 +681,29 @@
       <dateModif>2017-10-24T01:43:08.5155743+02:00</dateModif>
       <valueModif />
     </Modification>
+    <Modification>
+      <modification>refreshData</modification>
+      <nameUser> Default user</nameUser>
+      <idFiche>-1</idFiche>
+      <text>Rafraichissement des données</text>
+      <dateModif>2017-10-24T03:45:51.1443045+02:00</dateModif>
+      <valueModif />
+    </Modification>
+    <Modification>
+      <modification>connexion</modification>
+      <nameUser>Identifi</nameUser>
+      <idFiche>-1</idFiche>
+      <text>Déconnexion utilisateur : Identifi</text>
+      <dateModif>2017-10-24T03:46:23.5602186+02:00</dateModif>
+      <valueModif />
+    </Modification>
+    <Modification>
+      <modification>refreshData</modification>
+      <nameUser> Default user</nameUser>
+      <idFiche>-1</idFiche>
+      <text>Rafraichissement des données</text>
+      <dateModif>2017-10-24T03:47:13.1973093+02:00</dateModif>
+      <valueModif />
+    </Modification>
   </ListeModifs>
 </ListeModifications>

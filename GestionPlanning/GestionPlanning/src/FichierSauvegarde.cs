@@ -20,6 +20,8 @@ namespace GestionPlanning.src
         public String pathFileCSV;
         [XmlElement("CSVFileName")]
         public String nameFileCSV;
+        [XmlElement("PathFileModifs")]
+        public String pathFileModifs;
 
         //les valeurs non définies par défaut
         /*public List<TypeColor> colorFabrication;
@@ -44,7 +46,7 @@ namespace GestionPlanning.src
         public String pathFile = "";
         public String nameFile = "Fichier_Sauvegarde";
         public DateTime dateLastModif = new DateTime(2000,1,1);
-
+        public SaveData dataCom = new SaveData();
         /* *
          * Données sauvegardées:
          * 1 = nom fichier sauvegarde
@@ -67,7 +69,7 @@ namespace GestionPlanning.src
         public FichierSauvegarde()
         {
             //Récupération des données du fichier
-            SaveData data = ReadDatas();
+            //dataCom = ReadDatas();
             //chargement du path fichier xcel
             /*if (data.pathFileCSV != null)
             {
@@ -95,7 +97,12 @@ namespace GestionPlanning.src
             Boolean nodatemodif = false;
             int idFichePrec = 0;
             SaveData data = ReadDatas();
-            if(data==null)
+            
+            Brain.Instance.fichierXcel.name_file = data.nameFileCSV;
+            Brain.Instance.fichierXcel.path_file = data.pathFileCSV;
+            Brain.Instance.gestionModif.pathFile = data.pathFileModifs;
+
+            if (data==null)
             {
                 return -1;
             }
@@ -214,11 +221,6 @@ namespace GestionPlanning.src
             }
         }
 
-        public void SynchroFiche(Fiche fiche)
-        {
-            //utilisation de l'id de la commande
-        }
-        
         //La structure contenant les données sur la couleur d'une fiche pas lié au type
         //ex : fabrication : vert, aiguisage: rouge, recouvrement : orange
         public struct TypeColor
@@ -235,34 +237,40 @@ namespace GestionPlanning.src
         {
             SaveData data = new SaveData();
 
-            if (File.Exists(pathFile + nameFile + ".xml"))
+            //try
+            //{
+                if (File.Exists(pathFile + nameFile + ".xml"))
+                {
+                    //Ouverture du fichier
+                    Stream stream = new FileStream(pathFile + nameFile + ".xml", FileMode.OpenOrCreate, FileAccess.Read);
+
+                    Type[] extraTypes = { typeof(Fiche) };
+
+                    XmlSerializer serializer = new XmlSerializer(typeof(SaveData), extraTypes);
+
+                    if (stream.Position != 0)
+                    {
+                        stream.Position = 0;
+                    }
+                    if (System.IO.File.Exists(this.pathFile + this.nameFile + ".xml"))
+                    {
+                        try
+                        {
+                            data = (SaveData)serializer.Deserialize(stream);
+                        }
+                        catch (System.IO.IOException e)
+                        {
+
+                        }
+                    }
+                    //Fermeture du fichier
+                    stream.Close();
+                }
+            /*}
+            catch
             {
-                //Ouverture du fichier
-                Stream stream = new FileStream(pathFile + nameFile + ".xml", FileMode.OpenOrCreate, FileAccess.Read);
 
-                Type[] extraTypes = { typeof(Fiche) };
-
-                XmlSerializer serializer = new XmlSerializer(typeof(SaveData), extraTypes);
-                
-                if (stream.Position != 0)
-                {
-                    stream.Position = 0;
-                }
-                if (System.IO.File.Exists(this.pathFile + this.nameFile + ".xml"))
-                {
-
-                    try
-                    {
-                        data = (SaveData)serializer.Deserialize(stream);
-                    }
-                    catch (System.IO.IOException e)
-                    {
-
-                    }
-                }
-                //Fermeture du fichier
-                stream.Close();
-            }
+            }*/
             return data;
 
         }
@@ -276,6 +284,22 @@ namespace GestionPlanning.src
             // Delete a file by using File class static method...
             String file_V1 = this.pathFile + this.nameFile + ".xml";
             String file_V2 = this.pathFile + this.nameFile + "V2" + ".xml";
+
+            if (System.IO.File.Exists(file_V2))
+            {
+                // Use a try block to catch IOExceptions, to
+                // handle the case of the file already being
+                // opened by another process.
+                try
+                {
+                    System.IO.File.Delete(file_V2);
+                }
+                catch (System.IO.IOException e)
+                {
+                    Console.WriteLine(e.Message);
+                    return;
+                }
+            }
 
             //Ouverture du fichier
             Stream stream = new FileStream(file_V2, FileMode.OpenOrCreate);
@@ -308,35 +332,30 @@ namespace GestionPlanning.src
             FileSystem.Rename(file_V2, file_V1);
         }
 
-        /*
-         * @brief Renommage du fichier
-         * @param newName Le nouveau nom
-         * @retval 1 = changé, -1 erreur
-         * */
-        public int RenommerFichierSauvegarde(String newName)
-        {
-            return 1;
-        }
-
-        /*
-        * @brief Renommage du fichier
-        * @param newName Le nouveau nom
-        * @retval 1 = changé, -1 erreur
-        * */
         public int RenommerFichierXcel(String newName)
         {
+            Brain.Instance.fichierXcel.name_file = newName;
+            dataCom.nameFileCSV = newName;
+        
             return 1;
         }
 
-        /*
-        * @brief Renommage du fichier
-        * @param newName Le nouveau nom
-        * @retval 1 = changé, -1 erreur
-        * */
-        public int ModifierPathFichierXcel(String newName)
+        public int ModifierPathFichierXcel(String newPath)
         {
+            Brain.Instance.fichierXcel.path_file = newPath;
+            dataCom.pathFileCSV = newPath;
+        
             return 1;
         }
 
+        public int ModifierPathFichierModifs(String newPath)
+        {
+            Brain.Instance.gestionModif.pathFile = newPath;
+            dataCom.pathFileModifs = newPath;
+            //TODO save data
+            return 1;
+        }
+
+            
     }
 }
