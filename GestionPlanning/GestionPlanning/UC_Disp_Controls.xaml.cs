@@ -148,19 +148,5 @@ namespace GestionPlanning
                 );
         }
 
-        private void DisplayModifs(object sender, RoutedEventArgs e)
-        {
-            Brain.Instance.DisplayListeModifs();
-        }
-
-        private void ChangeUser(object sender, RoutedEventArgs e)
-        {
-            Brain.Instance.ChangeUser();
-        }
-
-        private void ModifyPathsFiles(object sender, RoutedEventArgs e)
-        {
-            Brain.Instance.DispWindowPaths();
-        }
     }
 }

@@ -28,8 +28,8 @@ namespace GestionPlanning
         private String textQty = "Qté : ";
         private String textHeureFab = "Heure fab : ";
         private String textTimeFab = "Temps fab : ";
-        private Color colorLeft_op = Colors.White;
-        private Color colorRight_rec = Colors.White;
+        private Color colorLeft_op = Values.COLOR_NA;
+        private Color colorRight_rec = Values.COLOR_NA;
         private bool dispWarning = false;
         private bool dispAlerte = false;
 
@@ -77,16 +77,16 @@ namespace GestionPlanning
             switch (op)
             {
                 case TypeOperation.na:
-                    colorLeft_op = Colors.White;
+                    colorLeft_op = Values.COLOR_NA;
                     break;
                 case TypeOperation.fabrication:
-                    colorLeft_op = Colors.LawnGreen;
+                    colorLeft_op = Values.COLOR_FAB;
                     break;
                 case TypeOperation.aiguisage:
-                    colorLeft_op = Colors.Firebrick;
+                    colorLeft_op = Values.COLOR_AFF;
                     break;
                 default:
-                    colorLeft_op = Colors.White;
+                    colorLeft_op = Values.COLOR_NA;
                     break;
             }
             rectangleLeft_op.Fill = new SolidColorBrush(colorLeft_op);

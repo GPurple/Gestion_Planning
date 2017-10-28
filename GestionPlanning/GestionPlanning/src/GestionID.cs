@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Serialization;
 
 namespace GestionPlanning.src
@@ -110,8 +111,7 @@ namespace GestionPlanning.src
                     }
                     catch (System.IO.IOException e)
                     {
-                        //TODO gérer echec chargement de données
-                        //erreur lecture fichier
+                        MessageBox.Show("Erreur lecture fichier modifications");
                     }
                 }
                 //Fermeture du fichier
@@ -119,7 +119,7 @@ namespace GestionPlanning.src
             }
             else
             {
-                //TODO display erreur pas de fichier de modifs
+                MessageBox.Show("Erreur:  Le fichier de modifications n'existe pas");
             }
             return data;
         }

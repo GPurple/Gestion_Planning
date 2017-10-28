@@ -5,29 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionPlanning"
         mc:Ignorable="d"
-        Title="MainWindow" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0,1,0,0" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0,1,0,0" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}" WindowState="Maximized" WindowStartupLocation="CenterScreen" Closing="CloseAll">
     <Grid Margin="0,0,2,-21">
-        <local:UC_Disp_Controls HorizontalAlignment="Left" Height="124" Margin="42,568,0,0" VerticalAlignment="Top" Width="880"/>
-        <local:UC_Display_week x:Name="UC_Disp_Week" HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="950"/>
-        <local:UC_Disp_Month x:Name="UC_Disp_Month" HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="950"/>
-        <local:UC_display_day x:Name="UC_Disp_Day" HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="950"/>
-        <local:UC_Disp_modifs HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="950"/>
-        <Button x:Name="BtnStartTest3_Copy" Content="Effacer données " HorizontalAlignment="Left" Margin="1201,114,0,0" VerticalAlignment="Top" Width="114" Click="EraseDataFichierSauvegarde"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="667*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <local:UC_Disp_Controls HorizontalAlignment="Left" Height="124" Margin="34,16,0,0" VerticalAlignment="Top" Width="880"/>
         <Image x:Name="image_warningGeneral" HorizontalAlignment="Left" Height="56" Margin="984,16,0,0" VerticalAlignment="Top" Width="56" Source="Images/Icone_Attention.png"/>
         <Image x:Name="image_alerteGeneral" HorizontalAlignment="Left" Height="56" Margin="1045,16,0,0" VerticalAlignment="Top" Width="53" Source="Images/Icone_Alerte.png"/>
-        <local:UC_Display_Simple x:Name="UC_Disp_Simple" HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="950"/>
-        <local:UC_modif_fiche x:Name="UC_modif_fiche" HorizontalAlignment="Left" Height="593" Margin="501,49,0,0" VerticalAlignment="Top" Width="421"/>
-        <Grid HorizontalAlignment="Left" Height="542" Margin="1045,163,0,0" VerticalAlignment="Top" Width="225" Background="#FF2E2E2E">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="73*"/>
-                <ColumnDefinition Width="162*"/>
-            </Grid.ColumnDefinitions>
-            <ScrollViewer HorizontalAlignment="Left" Height="476" Margin="25,56,0,0" VerticalAlignment="Top" Width="190" Grid.ColumnSpan="2">
-                <StackPanel x:Name="STFichesNotPlaced" Height="300" Width="180"/>
-            </ScrollViewer>
-            <TextBlock x:Name="TextMonth" HorizontalAlignment="Left" Margin="25,10,-29,0" TextWrapping="Wrap" Text="Liste non placée" VerticalAlignment="Top" Width="229" FontSize="24" Foreground="White" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="80" Margin="1114,10,0,0" VerticalAlignment="Top" Width="222" Source="Images/logos_aos.png" Grid.ColumnSpan="2"/>
+        <Button HorizontalAlignment="Left" Margin="939,18,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="DisplayParamLog">
+            <Image Height="37" Width="37" Source="Images/Icone_Modif.png"/>
+        </Button>
+        <local:UC_param_logiciel Margin="761,35,380,0" VerticalAlignment="Top" Height="139"/>
+        <Grid HorizontalAlignment="Left" Height="630" Margin="34,169,0,-65" VerticalAlignment="Top" Width="1290">
+            <local:UC_Display_Simple x:Name="UC_Disp_Simple" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
+            <local:UC_Disp_modifs HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
+            <local:UC_display_day x:Name="UC_Disp_Day" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
+            <local:UC_Disp_Month x:Name="UC_Disp_Month" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
+            <local:UC_Display_week x:Name="UC_Disp_Week" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
         </Grid>
-        <Image HorizontalAlignment="Left" Height="80" Margin="1114,10,0,0" VerticalAlignment="Top" Width="222" Source="Images/logos_aos.png"/>
 
     </Grid>
 </Window>

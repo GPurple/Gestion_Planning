@@ -25,7 +25,6 @@ namespace GestionPlanning
         public UC_modif_fiche()
         {
             InitializeComponent();
-            Brain.Instance.ucModifFiche = this;
             imageAttention_dateLiv.Visibility = Visibility.Visible;
         }
 

@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="GestionPlanning.UC_param_logiciel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GestionPlanning"
+             mc:Ignorable="d" Height="139.147" Width="193.363">
+    <Grid Background="#FF2E2E2E" Margin="0,0,0,-27">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="166" VerticalAlignment="Top" Width="193"/>
+        <Button Content="Affichage modifs" HorizontalAlignment="Left" Margin="28,22,0,0" VerticalAlignment="Top" Width="137" Click="DisplayModifs"/>
+        <Button Content="Changer utilisateur" HorizontalAlignment="Left" Margin="28,59,0,0" VerticalAlignment="Top" Width="137" Click="ChangeUser"/>
+        <Button Content="Modifier paths" HorizontalAlignment="Left" Margin="28,97,0,0" VerticalAlignment="Top" Width="137" Click="ModifyPathsFiles"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="59,136,0,0" VerticalAlignment="Top" Width="75" Click="ValidateUC"/>
+
+    </Grid>
+</UserControl>

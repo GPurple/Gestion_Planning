@@ -71,7 +71,6 @@
       <DependentUpon>MessageConfValidationFiche.xaml</DependentUpon>
     </Compile>
     <Compile Include="src\Brain.cs" />
-    <Compile Include="src\DataCSV.cs" />
     <Compile Include="src\Fiche.cs" />
     <Compile Include="src\FichierSauvegarde.cs" />
     <Compile Include="src\FichierXcel.cs" />
@@ -111,11 +110,18 @@
     <Compile Include="UC_modif_fiche.xaml.cs">
       <DependentUpon>UC_modif_fiche.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UC_param_logiciel.xaml.cs">
+      <DependentUpon>UC_param_logiciel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Values.cs" />
     <Compile Include="WindowChangePaths.xaml.cs">
       <DependentUpon>WindowChangePaths.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window_Identification.xaml.cs">
       <DependentUpon>Window_Identification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window_Modif_Fiche.xaml.cs">
+      <DependentUpon>Window_Modif_Fiche.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -177,11 +183,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UC_param_logiciel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowChangePaths.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window_Identification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_Modif_Fiche.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

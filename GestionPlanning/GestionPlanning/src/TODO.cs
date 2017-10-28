@@ -16,30 +16,15 @@ namespace GestionPlanning.src
         //refresh data toutes les 15secondes
 
         //TODO
-        //gestion erreur et display
+        //tout fermer à fermeture fenêtre
+        //corriger problème modification du path
+        //faire un affichage par machine
+        //affichage par machine -> String et non int 
 
-        //corriger problème stackoverflow
-        //Faire un .exe
         //rendre plus beau
-        //faire nouvelles données
 
-        //ajouter clique droit déplacement horaire/modification fiche/validation fiche(+ écran conbfirmation)
-        //Ajouter identification utilisateur et ecrire dans le fichier les derniers à avoir modifier le fichier
-        //Ajouter les différentes gestions d'erreurs
-
-        //Définir un path des différents fichiers
         //Tester plusieurs lancements en parallèle
-
-        //gestion erreur 
-        //si erreur 
-        //enregistrer erreur dans fichier text
-
-        //bouton ouverture rapport erreur
-        //afficher liste erreur 
-
-
-
-
+        
         //Fait:
         //Faire chargement depuis fichier xcel 
         //affichage en plein écran
@@ -55,11 +40,13 @@ namespace GestionPlanning.src
         //tri month : ok - afficher mois : a faire
         //gestion identifications
         //gérer path fichiers
+        //ajouter clique droit déplacement horaire/modification fiche/validation fiche(+ écran conbfirmation)
+        //Ajouter identification utilisateur et ecrire dans le fichier les derniers à avoir modifier le fichier
+        //Ajouter les différentes gestions d'erreurs
 
-        //a demander
-        //comment récupérer affutage et fabrication
 
-        //a prsenter
+
+        //a présenter
         // tous les cas de tests
         //tous les problèmes évités
         //toutes les fonctionnalités

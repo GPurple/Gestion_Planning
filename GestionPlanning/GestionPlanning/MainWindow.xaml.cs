@@ -31,26 +31,16 @@ namespace GestionPlanning
             this.Hide();
             Brain.Instance.mainWindow = this;
             Brain.Instance.InitDisplay();
-            //image_alerteGeneral.Visibility = Visibility.Collapsed;
-            //image_warningGeneral.Visibility = Visibility.Collapsed;
-            UC_modif_fiche.Visibility = Visibility.Collapsed;
         }
 
-        public void DisplayFichesNotPlaced(List<Fiche> liste)
+        private void DisplayParamLog(object sender, RoutedEventArgs e)
         {
-            STFichesNotPlaced.Children.Clear();
-            foreach (Fiche fiche in liste)
-            {
-                UC_Fiche_week dspFicheWeek = new UC_Fiche_week(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication);
-                STFichesNotPlaced.Children.Add(dspFicheWeek);
-            }
-            int nbList = STFichesNotPlaced.Children.Count;
-            STFichesNotPlaced.Height = nbList * 145;
+            Brain.Instance.ucParamLog.Visibility = Visibility.Visible;
         }
 
-        private void EraseDataFichierSauvegarde(object sender, RoutedEventArgs e)
+        private void CloseAll(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Brain.Instance.EraseDataFichierSauvegarde();
+            Brain.Instance.CloseAll();
         }
     }
 }

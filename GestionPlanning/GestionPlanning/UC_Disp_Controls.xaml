@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionPlanning"
-             mc:Ignorable="d" Height="122" Width="868.542">
-    <Grid Background="#FF2E2E2E" Margin="0,0,-156,0">
+             mc:Ignorable="d" Height="122" Width="874.542">
+    <Grid Background="#FF2E2E2E">
         <Button x:Name="btnDispDay" Content="Afficher jour" HorizontalAlignment="Left" Margin="12,10,0,0" VerticalAlignment="Top" Width="108" Click="DisplayDay"/>
         <Button x:Name="btnResetDay" Content="Jour actuel" HorizontalAlignment="Left" Margin="12,47,0,0" VerticalAlignment="Top" Width="106" Click="ResetDay"/>
         <Button x:Name="btnDispWeek" Content="Afficher Semaine" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Width="108" Click="DisplayWeek"/>
@@ -23,9 +23,6 @@
         <ComboBox x:Name="ComboBoxSearchRetard" HorizontalAlignment="Left" Margin="564,83,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnDispListeSimple" Content="Afficher liste complète" HorizontalAlignment="Left" Margin="380,10,0,0" VerticalAlignment="Top" Width="136" Click="DisplayListeSimple"/>
         <Button Content="Rechercher" HorizontalAlignment="Left" Margin="705,85,0,0" VerticalAlignment="Top" Width="82" Click="SearchFiches"/>
-        <Button Content="Affichage modifs" HorizontalAlignment="Left" Margin="878,10,0,0" VerticalAlignment="Top" Width="137" Click="DisplayModifs"/>
-        <Button Content="Changer utilisateur" HorizontalAlignment="Left" Margin="878,47,0,0" VerticalAlignment="Top" Width="137" Click="ChangeUser"/>
-        <Button Content="Modifier paths" HorizontalAlignment="Left" Margin="878,85,0,0" VerticalAlignment="Top" Width="137" Click="ModifyPathsFiles"/>
 
     </Grid>
 </UserControl>

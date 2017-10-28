@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml.Serialization;
 
 namespace GestionPlanning.src
@@ -16,11 +17,11 @@ namespace GestionPlanning.src
     public class SaveData
     {
         //Les données
-        [XmlElement("CSVFilePath")]
+
         public String pathFileCSV;
-        [XmlElement("CSVFileName")]
+
         public String nameFileCSV;
-        [XmlElement("PathFileModifs")]
+
         public String pathFileModifs;
 
         //les valeurs non définies par défaut
@@ -47,6 +48,15 @@ namespace GestionPlanning.src
         public String nameFile = "Fichier_Sauvegarde";
         public DateTime dateLastModif = new DateTime(2000,1,1);
         public SaveData dataCom = new SaveData();
+
+        public String nameFileCsv = "";
+        public String pathFileCsv = "";
+        public String pathFileModifs = "";
+
+        public String newNameFileCsv = "";
+        public String newPathFileCsv = "";
+        public String newPathFileModifs = "";
+
         /* *
          * Données sauvegardées:
          * 1 = nom fichier sauvegarde
@@ -97,15 +107,52 @@ namespace GestionPlanning.src
             Boolean nodatemodif = false;
             int idFichePrec = 0;
             SaveData data = ReadDatas();
-            
-            Brain.Instance.fichierXcel.name_file = data.nameFileCSV;
-            Brain.Instance.fichierXcel.path_file = data.pathFileCSV;
-            Brain.Instance.gestionModif.pathFile = data.pathFileModifs;
 
-            if (data==null)
+            if (data == null)
             {
                 return -1;
             }
+
+            if (data.nameFileCSV != null && data.nameFileCSV != "")
+            {
+                Brain.Instance.fichierXcel.name_file = data.nameFileCSV;
+                nameFileCsv = data.nameFileCSV;
+            }
+
+            if (data.pathFileCSV != null)
+            {
+                Brain.Instance.fichierXcel.path_file = data.pathFileCSV;
+                pathFileCsv = data.pathFileCSV;
+            }
+
+            if (data.pathFileCSV != null)
+            {
+                Brain.Instance.gestionModif.pathFile = data.pathFileModifs;
+                pathFileModifs = data.pathFileModifs;
+            }
+
+            /*data.nameFileCSV = Brain.Instance.fichierXcel.name_file;
+            data.pathFileCSV = Brain.Instance.fichierXcel.path_file;
+            data.pathFileModifs = Brain.Instance.gestionModif.pathFile;
+            */
+            if (newNameFileCsv != null && newNameFileCsv!="")
+            {
+                data.nameFileCSV = newNameFileCsv;
+            }
+            else
+            {
+                data.nameFileCSV = Brain.Instance.fichierXcel.name_file;
+            }
+
+            if (newPathFileCsv != null)
+            {
+                data.pathFileCSV = newPathFileCsv;
+            }
+            if (newPathFileModifs != null)
+            {
+                data.pathFileModifs = newPathFileModifs;
+            }
+
             if (data.dateLastModif.Year<2000) //si la date de modif est à 0 elles n'a jamais été faite donc on charge les données
             {
                 nodatemodif = true;
@@ -237,8 +284,8 @@ namespace GestionPlanning.src
         {
             SaveData data = new SaveData();
 
-            //try
-            //{
+            try
+            {
                 if (File.Exists(pathFile + nameFile + ".xml"))
                 {
                     //Ouverture du fichier
@@ -266,13 +313,12 @@ namespace GestionPlanning.src
                     //Fermeture du fichier
                     stream.Close();
                 }
-            /*}
+            }
             catch
             {
-
-            }*/
+                MessageBox.Show("Erreur ouverture fichier csv");
+            }
             return data;
-
         }
 
         /*
@@ -296,7 +342,7 @@ namespace GestionPlanning.src
                 }
                 catch (System.IO.IOException e)
                 {
-                    Console.WriteLine(e.Message);
+                    
                     return;
                 }
             }
@@ -329,7 +375,14 @@ namespace GestionPlanning.src
                     return;
                 }
             }
-            FileSystem.Rename(file_V2, file_V1);
+            try
+            {
+                FileSystem.Rename(file_V2, file_V1);
+            }
+            catch
+            {
+                MessageBox.Show("Erreur sauvegarde dans fichier sauvegarde \n ");
+            }
         }
 
         public int RenommerFichierXcel(String newName)

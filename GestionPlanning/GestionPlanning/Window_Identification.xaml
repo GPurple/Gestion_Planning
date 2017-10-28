@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionPlanning"
         mc:Ignorable="d"
-        Title="Window_Identification" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}">
+        Title="Window_Identification" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" WindowState="Maximized" WindowStartupLocation="CenterScreen" Closing="CloseAll">
     <Grid Background="#FF2E2E2E">
         <TextBlock HorizontalAlignment="Left" Margin="607,207,0,0" TextWrapping="Wrap" Text="Identification" VerticalAlignment="Top" Foreground="White" FontSize="36"/>
         <Image HorizontalAlignment="Left" Height="133" Margin="942,50,0,0" VerticalAlignment="Top" Width="369" Source="Images/logos_aos.png"/>

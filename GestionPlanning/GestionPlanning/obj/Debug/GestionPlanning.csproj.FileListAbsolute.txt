@@ -104,3 +104,7 @@ D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\D
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\Window_Identification.baml
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\WindowChangePaths.g.cs
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\WindowChangePaths.baml
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_param_logiciel.g.cs
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\UC_param_logiciel.baml
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\Window_Modif_Fiche.g.cs
+D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\obj\Debug\Window_Modif_Fiche.baml

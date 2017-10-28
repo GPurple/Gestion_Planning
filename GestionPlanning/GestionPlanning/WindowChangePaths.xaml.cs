@@ -20,11 +20,21 @@ namespace GestionPlanning
     /// </summary>
     public partial class WindowChangePaths : Window
     {
+
         public WindowChangePaths()
         {
             InitializeComponent();
         }
-        
+
+        public WindowChangePaths(String nameCsv, String pathCsv, String pathFichierModif)
+        {
+            InitializeComponent();
+            textNameCsv.Text = nameCsv;
+            textPathCsv.Text = pathCsv;
+            textPathFichierModifications.Text = pathFichierModif;
+        }
+
+
         private void LeaveWindowModifPaths(object sender, RoutedEventArgs e)
         {
             this.Hide();

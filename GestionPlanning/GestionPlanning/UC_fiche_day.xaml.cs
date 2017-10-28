@@ -28,8 +28,8 @@ namespace GestionPlanning
         private String textDateLivraison = "Livraison : ";
         private String textDateFabrication = "Fabrication : ";
         private String textQty = "Qté : ";
-        private Color colorLeft_op = Colors.White;    
-        private Color colorRight_rec = Colors.White;
+        private Color colorLeft_op = Values.COLOR_NA;
+        private Color colorRight_rec = Values.COLOR_NA;
         private String textHeureFab = "Heure fab : ";
         private String textTimeFab = "Temps fab : ";
         private String textDateFab = "Date Fabrication : ";
@@ -82,16 +82,16 @@ namespace GestionPlanning
             switch (op)
             {
                 case TypeOperation.na:
-                    colorLeft_op = Colors.White;
+                    colorLeft_op = Values.COLOR_NA;
                     break;
                 case TypeOperation.fabrication:
-                    colorLeft_op = Colors.LawnGreen;
+                    colorLeft_op = Values.COLOR_FAB;
                     break;
                 case TypeOperation.aiguisage:
-                    colorLeft_op = Colors.Firebrick;
+                    colorLeft_op = Values.COLOR_AFF;
                     break;
                 default:
-                    colorLeft_op = Colors.White;
+                    colorLeft_op = Values.COLOR_NA;
                     break;
             }
             rectangleLeft_op.Fill = new SolidColorBrush(colorLeft_op);
@@ -117,19 +117,19 @@ namespace GestionPlanning
             }
         }
 
-        public void ModifyId(int newId)
+        private void ModifyId(int newId)
         {
             textId = "Id : " + newId;
             textIDficheDay.Text = textId;
         }
 
-        public void ModifyName(String newName)
+        private void ModifyName(String newName)
         {
             textName = "Nom : " + newName;
             textNameFicheDay.Text = textName;
         }
 
-        public void ModifyDateLiv(DateTime newDate)
+        private void ModifyDateLiv(DateTime newDate)
         {
             if (newDate.CompareTo(new DateTime(2000, 1, 1)) > 0)
             {
@@ -143,7 +143,7 @@ namespace GestionPlanning
             }
         }
 
-        public void ModifyDateFab(DateTime newDate)
+        private void ModifyDateFab(DateTime newDate)
         {
             if (newDate.CompareTo(new DateTime(2000, 1, 1)) > 0)
             {
@@ -157,7 +157,7 @@ namespace GestionPlanning
             }
         }
 
-        public void ModifyTimeFab(int timeFab)
+        private void ModifyTimeFab(int timeFab)
         {
 
             if (timeFab >= 0)
@@ -172,7 +172,7 @@ namespace GestionPlanning
             }
         }
 
-        public void ModifyHourFab(DateTime newDate)
+        private void ModifyHourFab(DateTime newDate)
         {
             if (newDate.Hour > 0)
             {
@@ -185,31 +185,32 @@ namespace GestionPlanning
                 textHeureFabFicheWeek.Text = textTimeFab;
             }
         }
-        public void ModifyQté(int newQty)
+
+        private void ModifyQté(int newQty)
         {
             textQty = "Qté : " + newQty;
             textQtyFicheDay.Text = textQty;
         }
 
-        public void DisplayAlerte()
+        private void DisplayAlerte()
         {
             image_alerte.Visibility = Visibility.Visible;
             dispAlerte = true;
         }
 
-        public void HideAlerte()
+        private void HideAlerte()
         {
             image_alerte.Visibility = Visibility.Collapsed;
             dispAlerte = false;
         }
 
-        public void DisplayWarning()
+        private void DisplayWarning()
         {
             image_warning.Visibility = Visibility.Visible;
             dispWarning = true;
         }
 
-        public void HideWarning()
+        private void HideWarning()
         {
             image_warning.Visibility = Visibility.Collapsed;
             dispWarning = false;
@@ -217,7 +218,6 @@ namespace GestionPlanning
 
         private void ModifyFiche(object sender, RoutedEventArgs e)
         {
-            //TODO Afficher usercontrol avec les différentes infos de la fiche
             Brain.Instance.ClickModifyFiche(idFiche);
         }
 

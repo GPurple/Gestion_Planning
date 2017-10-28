@@ -30,5 +30,10 @@ namespace GestionPlanning
         {
             Brain.Instance.ValidateIdentification(TextBoxIdentifiant.Text, "");
         }
+
+        private void CloseAll(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Brain.Instance.CloseAll();
+        }
     }
 }

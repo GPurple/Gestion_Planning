@@ -82,17 +82,17 @@ namespace GestionPlanning
             int HEIGHT = 90;
             Rectangle rectLeftFab = new Rectangle();
             rectLeftFab.Width = 59;
-            rectLeftFab.Fill = new SolidColorBrush(Colors.LawnGreen);
+            rectLeftFab.Fill = new SolidColorBrush(Values.COLOR_FAB);
             Canvas.SetLeft(rectLeftFab, 1);
 
             Rectangle rectLeftAig = new Rectangle();
             rectLeftAig.Width = 59;
-            rectLeftAig.Fill = new SolidColorBrush(Colors.Firebrick);
+            rectLeftAig.Fill = new SolidColorBrush(Values.COLOR_AFF);
             Canvas.SetLeft(rectLeftAig, 1);
 
             Rectangle rectLeftNA = new Rectangle();
             rectLeftNA.Width = 59;
-            rectLeftNA.Fill = new SolidColorBrush(Colors.White);
+            rectLeftNA.Fill = new SolidColorBrush(Values.COLOR_NA);
             Canvas.SetLeft(rectLeftNA, 1);
 
 
@@ -207,7 +207,7 @@ namespace GestionPlanning
             else
             {
                 //afficher rectangle blanc
-                rectRight.Fill = new SolidColorBrush(Colors.White);
+                rectRight.Fill = new SolidColorBrush(Values.COLOR_NA);
             }
             CanvaColorDisplay.Children.Add(rectRight);
 
