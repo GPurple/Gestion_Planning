@@ -19,7 +19,6 @@
         <Button HorizontalAlignment="Left" Margin="939,18,0,0" VerticalAlignment="Top" Width="40" Height="40" Click="DisplayParamLog">
             <Image Height="37" Width="37" Source="Images/Icone_Modif.png"/>
         </Button>
-        <local:UC_param_logiciel Margin="761,35,380,0" VerticalAlignment="Top" Height="139"/>
         <Grid HorizontalAlignment="Left" Height="630" Margin="34,169,0,-65" VerticalAlignment="Top" Width="1290">
             <local:UC_Display_Simple x:Name="UC_Disp_Simple" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
             <local:UC_Disp_modifs HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
@@ -27,6 +26,7 @@
             <local:UC_Disp_Month x:Name="UC_Disp_Month" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
             <local:UC_Display_week x:Name="UC_Disp_Week" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
         </Grid>
+        <local:UC_param_logiciel Margin="761,35,380,0" VerticalAlignment="Top" Height="209"/>
 
     </Grid>
 </Window>

@@ -123,17 +123,17 @@ namespace GestionPlanning
             }
         }
 
-        public void SetListNumMachine(List<int> listeNumMachine)
+        public void SetListMachine(List<String> listeMachine)
         {
             ComboBoxSearchMachine.Items.Clear();
             ComboBoxSearchMachine.Items.Add("Toutes machines");
             ComboBoxSearchMachine.SelectedItem = "Toutes machines";
 
-            foreach (int numero in listeNumMachine)
+            foreach (String machine in listeMachine)
             {
-                if (!ComboBoxSearchMachine.Items.Contains(numero))
+                if (!ComboBoxSearchMachine.Items.Contains(machine))
                 {
-                    ComboBoxSearchMachine.Items.Add(numero);
+                    ComboBoxSearchMachine.Items.Add(machine);
                 }
             }
         }
@@ -148,5 +148,9 @@ namespace GestionPlanning
                 );
         }
 
+        private void CreateFiche(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.CreateFiche();
+        }
     }
 }

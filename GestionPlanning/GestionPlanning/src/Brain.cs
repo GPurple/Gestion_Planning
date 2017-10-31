@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using static GestionPlanning.src.FichierSauvegarde;
 
 namespace GestionPlanning.src
 {
-    enum DispPlanning { day, week, month, simple } // day = 1
+    enum DispPlanning { day, week, month, simple ,machine} // day = 1
     enum TriOp { all, fab, aff , na}; //all = 1
     enum TriReco { all, yes, non }; //all = 1
     enum TriRetard { all, attention, alerte, both, none}
@@ -35,7 +36,7 @@ namespace GestionPlanning.src
         public String triName = "Tous noms";
 
         //Afficher le numéro de machine de tri
-        public int triNumberMachine = -1; //-1 = all
+        public String triMachine = ""; //"" = all
         
         //La liste de fiches completes
         public List<Fiche> listeFiches = new List<Fiche>();
@@ -54,7 +55,10 @@ namespace GestionPlanning.src
 
         //La liste de fiches non placées
         public List<Fiche> listeSimple = new List<Fiche>();
-        
+
+        //La liste des types de revetement
+        public List<TypeColor> listeColors = new List<TypeColor>();
+
         //Le fichier de sauvegarde
         public FichierXcel fichierXcel = new FichierXcel();
 
@@ -77,6 +81,9 @@ namespace GestionPlanning.src
         public Window_Identification WinPageIdentification;
         public WindowChangePaths winChangePaths;
         public Window_Modif_Fiche winModifFiche = new Window_Modif_Fiche();
+        public Window_Create_Fiche winCreateFiche;
+        public Window_Modif_Colors winModifColors;
+        public Window_Add_Color winAddColor;
 
         MessageConfValidationFiche message_validationFiche;
         MessageConfRetraitFichePlanning message_retraitFiche;
@@ -416,10 +423,10 @@ namespace GestionPlanning.src
 
 
             //tri nombre machine
-            if (triNumberMachine == -1)
+            if (triMachine == "" || triMachine ==  "Toutes machines")
             {
             }
-            else if(triNumberMachine != fiche.numMachine)
+            else if(triMachine != fiche.machine)
             {
                 val++;
             }
@@ -440,7 +447,16 @@ namespace GestionPlanning.src
         {
             if (fichierXcel.LoadFiches(listeFiches) >= 0)
             {
-                fichierSauvegarde.SynchroListe(listeFiches);
+                List<Fiche> newListe = fichierSauvegarde.SynchroListe(listeFiches);
+                if (newListe != null)
+                {
+                    foreach (Fiche ficheTmp in newListe)
+                    {
+                        listeFiches.Add(ficheTmp);
+                    }
+                    //Trier fiches par id
+                    listeFiches = listeFiches.OrderBy(fiche => fiche.id).ToList();
+                }
                 FindAlerteListeFull(listeFiches);
                 ProcessListCurrentDay();
                 listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
@@ -454,22 +470,26 @@ namespace GestionPlanning.src
         
         public void RefreshDispControlTri()
         {
-            //TODO rafraichir dispcontrol
-            //*
-                //à partir de listeFiches (la liste complète)
             List<String> listName = new List<String>();
-            List<int> listeNumMachine = new List<int>();
+            List<String> listeMachine = new List<String>();
             foreach (Fiche fiche in listeFiches)
             {
-                listName.Add(fiche.name);
-                listeNumMachine.Add(fiche.numMachine);
+                if (!listName.Contains(fiche.name))
+                {
+                    listName.Add(fiche.name);
+                }
+                if (!listeMachine.Contains(fiche.machine))
+                {
+                    listeMachine.Add(fiche.machine);
+                }
             }
             
             listName.Sort();
-            listeNumMachine.Sort();
+            listeMachine.Sort();
 
             ucDispControl.SetListName(listName);
-            ucDispControl.SetListNumMachine(listeNumMachine);
+            //TODO setListColor
+            ucDispControl.SetListMachine(listeMachine);
         }
 
         public void RefreshDisplayListes()
@@ -501,6 +521,9 @@ namespace GestionPlanning.src
                     break;
                 case DispPlanning.simple:
                     DisplayListeSimple();
+                    break;
+                case DispPlanning.machine:
+                    //TODO
                     break;
                 default:
                     DisplayDay();
@@ -534,13 +557,12 @@ namespace GestionPlanning.src
 
             //obtenir premier jour de la semaine et afficher numéro semaine et jours
             int numberWeek = GetNumberWeek(dateToDisplay);
-            ucDispWeek.RefreshWeekToDisplay(dateToDisplay, numberWeek);
-
             //obtenir les fiches de la semaine affichée et les afficher
             while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
             {
                 dateToDisplay = dateToDisplay.AddDays(-1);
             }
+            ucDispWeek.RefreshWeekToDisplay(dateToDisplay, numberWeek);
             listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
             ucDispWeek.RefreshListToDisplay(listeWeek);
         }
@@ -588,85 +610,72 @@ namespace GestionPlanning.src
 
         public void NextDay()
         {
+            dispPlanning = DispPlanning.day;
             dateToDisplay = dateToDisplay.AddDays(1);
-            ucDispDay.RefreshDayToDisplay(dateToDisplay);
-            ProcessListCurrentDay();
-            ucDispDay.RefreshListToDisplay(listeDay);
+            DisplayFiches();
         }
 
         public void PreviousDay()
         {
+            dispPlanning = DispPlanning.day;
             dateToDisplay = dateToDisplay.AddDays(-1);
-            ucDispDay.RefreshDayToDisplay(dateToDisplay);
-            ProcessListCurrentDay();
-            ucDispDay.RefreshListToDisplay(listeDay);
+            DisplayFiches();
         }
 
         public void ResetDay()
         {
+            dispPlanning = DispPlanning.day;
             dateToDisplay = DateTime.Now;
-            ucDispDay.RefreshDayToDisplay(dateToDisplay);
-            ProcessListCurrentDay();
-            ucDispDay.RefreshListToDisplay(listeDay);
-            DisplayDay();
+            DisplayFiches();
         }
 
         public void NextWeek()
         {
+            dispPlanning = DispPlanning.week;
             dateToDisplay = dateToDisplay.AddDays(7);
-            while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
-            {
-                dateToDisplay = dateToDisplay.AddDays(-1);
-            }
-            DisplayWeek();
+            DisplayFiches();
         }
 
         public void PreviousWeek()
         {
+            dispPlanning = DispPlanning.week;
             dateToDisplay = dateToDisplay.AddDays(-7);
-            while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
-            {
-                dateToDisplay = dateToDisplay.AddDays(-1);
-            }
-            DisplayWeek();
+            DisplayFiches();
         }
 
         public void ResetWeek()
         {
+            dispPlanning = DispPlanning.week;
             dateToDisplay = DateTime.Now;
             while (dateToDisplay.DayOfWeek != DayOfWeek.Monday)
             {
                 dateToDisplay = dateToDisplay.AddDays(-1);
             }
-            //TODO corriger ici
-            DisplayWeek();
+            DisplayFiches();
         }
 
         public void NextMonth()
         {
+            dispPlanning = DispPlanning.month;
             dateToDisplay = dateToDisplay.AddMonths(1);
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month,1);
-            //listeMonth.ProcessListCurrentMonth(listeFiches, dateToDisplay);
-            ucDispMonth.RefreshMonthToDisplay(dateToDisplay, listeMonth);
-            DisplayMonth();
+            DisplayFiches();
         }
 
         public void ResetMonth()
         {
+            dispPlanning = DispPlanning.month;
             dateToDisplay = DateTime.Now;
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
-            //listeMonth.ProcessListCurrentMonth(listeFiches, dateToDisplay);
-            //ucDispMonth.RefreshMonthToDisplay(dateToDisplay, listeMonth);
-            DisplayMonth();
+            DisplayFiches();
         }
 
         public void PreviousMonth()
         {
+            dispPlanning = DispPlanning.month;
             dateToDisplay = dateToDisplay.AddMonths(-1);
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, 1);
-            //listeMonth.ProcessListCurrentMonth(listeFiches, dateToDisplay);
-            //ucDispMonth.RefreshMonthToDisplay(dateToDisplay, listeMonth);
-            DisplayMonth();
+            DisplayFiches();
         }
 
         private int GetNumberWeek(DateTime date)
@@ -691,7 +700,6 @@ namespace GestionPlanning.src
 
         public void ValidateModificationFiche(int idFiche)
         {
-            
             //réenregistrer les nouvelles données dans la liste
             String textTemp;
             Fiche ficheTemp = new Fiche();
@@ -730,7 +738,6 @@ namespace GestionPlanning.src
             {
                 ficheTemp.recouvrement = false;
             }
-
 
             //modif date livraison
             try
@@ -783,12 +790,49 @@ namespace GestionPlanning.src
             //Heure début fabrication
             try
             {
-                string[] tab_line = new string[20]; // tableau qui va contenir les sous-chaines extraites d'une ligne.
+                winModifFiche.imageAttention_heureFab.Visibility = Visibility.Collapsed;
+                string[] tab_line = new string[2]; // tableau qui va contenir les sous-chaines extraites d'une ligne.
                 char[] splitter = { ':' }; // délimiteur du fichier texte
                 tab_line = winModifFiche.textBoxHeureFabrication.Text.Split(splitter);
-                ficheTemp.dateDebutFabrication.AddHours(int.Parse(tab_line[0]));
-                ficheTemp.dateDebutFabrication.AddMinutes(int.Parse(tab_line[1]));
-                winModifFiche.imageAttention_heureFab.Visibility = Visibility.Collapsed;
+                ficheTemp.dateDebutFabrication = ficheTemp.dateDebutFabrication.AddHours(int.Parse(tab_line[0]));
+                
+                int lenght = tab_line[1].ToCharArray().Length;
+                if (lenght == 0)
+                {
+                    //ficheTemp.dateDebutFabrication.AddMinutes(0);
+                }
+                else if (lenght == 1)
+                {
+                    int value_tab = int.Parse(tab_line[1]);
+                    if (value_tab < 6 && value_tab >= 0)
+                    {
+                        value_tab = value_tab * 10;
+                        ficheTemp.dateDebutFabrication = ficheTemp.dateDebutFabrication.AddMinutes(value_tab);
+                    }
+                    else
+                    {
+                        error = true;
+                        winModifFiche.imageAttention_heureFab.Visibility = Visibility.Visible;
+                    }
+                }
+                else if (lenght == 2)
+                {
+                    int value_tab = int.Parse(tab_line[1]);
+                    if (value_tab < 60 && value_tab >= 0)
+                    {
+                        ficheTemp.dateDebutFabrication = ficheTemp.dateDebutFabrication.AddMinutes(int.Parse(tab_line[1]));
+                    }
+                    else
+                    {
+                        error = true;
+                        winModifFiche.imageAttention_heureFab.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    error = true;
+                    winModifFiche.imageAttention_heureFab.Visibility = Visibility.Visible;
+                }
             }
             catch
             {
@@ -814,24 +858,9 @@ namespace GestionPlanning.src
                 winModifFiche.imageAttention_TempsFab.Visibility = Visibility.Visible;
             }
 
-            //numéro machine
-            if (int.TryParse(winModifFiche.TextBoxNumMachine.Text, out ficheTemp.numMachine))
-            {
-                if (ficheTemp.numMachine >= -1)//ok
-                {
-                    winModifFiche.imageAttention_NumMach.Visibility = Visibility.Collapsed;
-                }
-                else
-                { 
-                    error = true;
-                    winModifFiche.imageAttention_NumMach.Visibility = Visibility.Visible;
-                }
-            }
-            else
-            {
-                error = true;
-                winModifFiche.imageAttention_NumMach.Visibility = Visibility.Visible;
-            }
+            //la machine
+            ficheTemp.machine = winModifFiche.TextBoxNumMachine.Text;
+
             //quantité élements
             if ( int.TryParse(winModifFiche.TextBoxQty.Text, out ficheTemp.quantiteElement))
             {
@@ -872,17 +901,13 @@ namespace GestionPlanning.src
                         fiche.dateLivraison = ficheTemp.dateLivraison;
                         fiche.dateDebutFabrication = ficheTemp.dateDebutFabrication;
                         fiche.tempsFabrication = ficheTemp.tempsFabrication;
-                        fiche.numMachine = ficheTemp.numMachine;
+                        fiche.machine = ficheTemp.machine;
                         fiche.quantiteElement = ficheTemp.quantiteElement;
                         fiche.textDescription = ficheTemp.textDescription;
                         fiche.typeOperation = ficheTemp.typeOperation;
                         fiche.recouvrement = ficheTemp.recouvrement;
 
                         FindAlerteListeFull(listeFiches);
-                        ProcessListCurrentDay();
-                        listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
-                        //processListCurrentMonth
-                        ProcessListNotPlaced();
                         DisplayFiches();
                         break;
                         
@@ -890,6 +915,7 @@ namespace GestionPlanning.src
                 }
                 winModifFiche.Close();
                 RefreshDispControlTri();
+                fichierSauvegarde.SaveListe(listeFiches);
             }
             gestionModif.AddModif(new Modification(TypeModification.modifFiche, nameUser, idFiche, "Modification d'une fiche", DateTime.Now,""));
         }
@@ -917,10 +943,6 @@ namespace GestionPlanning.src
                     //modifie les nouvelles données dans la liste 
                     //resynchronise la liste et réaffiche tout en retirant la fiche de ucdisplayfiche si possible
                     FindAlerteListeFull(listeFiches);
-                    ProcessListCurrentDay();
-                    listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
-                    //processListCurrentMonth
-                    ProcessListNotPlaced();
                     DisplayFiches();
                     modif = true;
                     break;
@@ -954,11 +976,6 @@ namespace GestionPlanning.src
                     else
                     {
                         PlacementAutoOneFiche(fiche);
-                        ProcessListSimple();
-                        ProcessListNotPlaced();
-                        ProcessListCurrentDay();
-                        listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
-                        //TODO ProcessListMonth
                         DisplayFiches();
                     }
                     modif = true;
@@ -982,11 +999,6 @@ namespace GestionPlanning.src
                 if (fiche.id == idFiche)
                 {
                     fiche.dateDebutFabrication = new DateTime(1, 1, 1);
-                    ProcessListSimple();
-                    ProcessListNotPlaced();
-                    ProcessListCurrentDay();
-                    listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
-                    //TODO ProcessListMonth
                     DisplayFiches();
                     modif = true;
                     break;
@@ -1032,6 +1044,7 @@ namespace GestionPlanning.src
 
         public void SearchByReco(String st_reco)
         {
+            //TODO modif en fonction des différents revêtements
             switch (st_reco)
             {
                 case "Tous recouvrements":
@@ -1051,21 +1064,7 @@ namespace GestionPlanning.src
 
         public void SearchByMachine(String st_numMachine)
         {
-            if (st_numMachine == "Toutes machines")
-            {
-                triNumberMachine = -1;
-            }
-            else
-            {
-                try
-                {
-                    triNumberMachine = int.Parse(st_numMachine);
-                }
-                catch (Exception ex)
-                {
-                    triNumberMachine = -1;
-                }
-            }
+            triMachine = st_numMachine;
         }
 
         public void SearchByRetard(String st_retard)
@@ -1093,14 +1092,14 @@ namespace GestionPlanning.src
             }
         }
 
-        public void TriFiches(String name, String st_operation, String st_reco, String st_numMachine, String st_retard)
+        public void TriFiches(String name, String st_operation, String st_reco, String st_machine, String st_retard)
         {
             SearchByName(name);
             SearchByOperation(st_operation);
             SearchByReco(st_reco);
-            SearchByMachine(st_numMachine);
+            SearchByMachine(st_machine);
             SearchByRetard(st_retard);
-            RefreshDisplayListes();
+            DisplayFiches();
         }
 
         public void ValidateIdentification(String username, String password)
@@ -1111,7 +1110,6 @@ namespace GestionPlanning.src
                 WinPageIdentification.Hide();
                 mainWindow.Show();
                 gestionModif.AddModif(new Modification(TypeModification.connexion, nameUser, -1, "Connexion de l'utilisateur", DateTime.Now, ""));
-
             }
         }
 
@@ -1131,6 +1129,7 @@ namespace GestionPlanning.src
         public void ChangeNameFileCsv(String newName)
         {
             fichierSauvegarde.RenommerFichierXcel(newName);
+            RefreshData();
             gestionModif.AddModif(new Modification(TypeModification.changementNameFile, nameUser, -1, "Renommage fichier csv", DateTime.Now, ""));
         }
 
@@ -1144,6 +1143,301 @@ namespace GestionPlanning.src
         {
             fichierSauvegarde.ModifierPathFichierModifs(newPath);
             gestionModif.AddModif(new Modification(TypeModification.changementPath, nameUser, -1, "Changement chemin d'accès fichier modifications", DateTime.Now, ""));
+        }
+
+        public void CreateFiche()
+        {
+            winCreateFiche = new Window_Create_Fiche();
+            winCreateFiche.Show();
+        }
+
+        public void CancelCreationFiche()
+        {
+            if (winCreateFiche != null)
+            {
+                winCreateFiche.Close();
+            }
+        }
+
+        public void ValidateCreationFiche()
+        {
+            if (winCreateFiche != null)
+            {
+                // réenregistrer les nouvelles données dans la liste
+                Fiche newFiche = new Fiche();
+                
+                Boolean error = false;
+                DateTime dateTime = new DateTime(1, 1, 1);
+                DateTime dateDayNow = DateTime.Now;
+                dateDayNow = new DateTime(dateDayNow.Year, dateDayNow.Month, dateDayNow.Day);
+
+                //nom de la fiche
+                newFiche.name = winCreateFiche.textBoxName.Text;
+                
+                if (int.TryParse(winCreateFiche.textBoxID.Text, out newFiche.id))
+                {
+                    if (newFiche.id >= 0) //ok
+                    {
+                        winCreateFiche.imageAttention_ID.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        error = true;
+                        winCreateFiche.imageAttention_ID.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    error = true;
+                    winCreateFiche.imageAttention_ID.Visibility = Visibility.Visible;
+                }
+
+
+                //opération
+                if (winCreateFiche.RadioButtonOpAffutage.IsChecked == true)
+                {
+                    newFiche.typeOperation = TypeOperation.aiguisage;
+                }
+                else if (winCreateFiche.radioButtonOpFabrication.IsChecked == true)
+                {
+                    newFiche.typeOperation = TypeOperation.fabrication;
+                }
+                else if (winCreateFiche.RadioButtonOpNA.IsChecked == true)
+                {
+                    newFiche.typeOperation = TypeOperation.na;
+                }
+                else
+                {
+                    newFiche.typeOperation = TypeOperation.na;
+                }
+
+                //TODO modifier choix revetement
+                if (winCreateFiche.RadioButtonRecYes.IsChecked == true)
+                {
+                    newFiche.recouvrement = true;
+                }
+                else if (winCreateFiche.RadioButtonRecNo.IsChecked == true)
+                {
+                    newFiche.recouvrement = false;
+                }
+                else
+                {
+                    newFiche.recouvrement = false;
+                }
+
+                //modif date livraison
+                try
+                {
+                    dateTime = Convert.ToDateTime(winCreateFiche.textBoxDateLivraison.Text);
+                }
+                catch
+                {
+                    error = true;
+                    winCreateFiche.imageAttention_dateLiv.Visibility = Visibility.Visible;
+                }
+                if (dateTime.CompareTo(dateDayNow) >= 0)
+                {
+                    newFiche.dateLivraison = dateTime;
+                    winCreateFiche.imageAttention_dateLiv.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    error = true;
+                    winCreateFiche.imageAttention_dateLiv.Visibility = Visibility.Visible;
+                }
+
+                //modif date fabrication
+                if (winCreateFiche.textBoxDateFabrication.Text.Length > 0 && winCreateFiche.textBoxDateFabrication.Text.CompareTo(" ") != 0)
+                {
+                    try
+                    {
+                        dateTime = Convert.ToDateTime(winCreateFiche.textBoxDateFabrication.Text);
+                    }
+                    catch
+                    {
+                        error = true;
+                        winCreateFiche.imageAttention_dateFab.Visibility = Visibility.Visible;
+                    }
+                    if (dateTime.CompareTo(dateDayNow) >= 0)
+                    {
+                        newFiche.dateDebutFabrication = dateTime;
+                        winCreateFiche.imageAttention_dateFab.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        error = true;
+                        winCreateFiche.imageAttention_dateFab.Visibility = Visibility.Visible;
+                    }
+                }
+                else //pas de date de fabrication
+                {
+                    newFiche.dateDebutFabrication = new DateTime(1, 1, 1);
+                    winCreateFiche.imageAttention_dateFab.Visibility = Visibility.Collapsed;
+                }
+
+                //Heure début fabrication
+                try
+                {
+                    winCreateFiche.imageAttention_heureFab.Visibility = Visibility.Collapsed;
+                    string[] tab_line = new string[2]; // tableau qui va contenir les sous-chaines extraites d'une ligne.
+                    char[] splitter = { ':' }; // délimiteur du fichier texte
+                    tab_line = winCreateFiche.textBoxHeureFabrication.Text.Split(splitter);
+                    newFiche.dateDebutFabrication = newFiche.dateDebutFabrication.AddHours(int.Parse(tab_line[0]));
+
+                    int lenght = tab_line[1].ToCharArray().Length;
+                    if (lenght == 0)
+                    {
+                    }
+                    else if (lenght == 1)
+                    {
+                        int value_tab = int.Parse(tab_line[1]);
+                        if (value_tab < 6 && value_tab >= 0)
+                        {
+                            value_tab = value_tab * 10;
+                            newFiche.dateDebutFabrication = newFiche.dateDebutFabrication.AddMinutes(value_tab);
+                        }
+                        else
+                        {
+                            error = true;
+                            winCreateFiche.imageAttention_heureFab.Visibility = Visibility.Visible;
+                        }
+                    }
+                    else if (lenght == 2)
+                    {
+                        int value_tab = int.Parse(tab_line[1]);
+                        if (value_tab < 60 && value_tab >= 0)
+                        {
+                            newFiche.dateDebutFabrication = newFiche.dateDebutFabrication.AddMinutes(int.Parse(tab_line[1]));
+                        }
+                        else
+                        {
+                            error = true;
+                            winCreateFiche.imageAttention_heureFab.Visibility = Visibility.Visible;
+                        }
+                    }
+                    else
+                    {
+                        error = true;
+                        winCreateFiche.imageAttention_heureFab.Visibility = Visibility.Visible;
+                    }
+                }
+                catch
+                {
+                    error = true;
+                    winCreateFiche.imageAttention_heureFab.Visibility = Visibility.Visible;
+                }
+                //temps fabrication
+                if (int.TryParse(winCreateFiche.textBoxTempsFabrication.Text, out newFiche.tempsFabrication))
+                {
+                    if (newFiche.tempsFabrication >= 0) //ok
+                    {
+                        winCreateFiche.imageAttention_TempsFab.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        error = true;
+                        winCreateFiche.imageAttention_TempsFab.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    error = true;
+                    winCreateFiche.imageAttention_TempsFab.Visibility = Visibility.Visible;
+                }
+
+                //la machine
+                newFiche.machine = winCreateFiche.textBoxNumMachine.Text;
+
+                //quantité élements
+                if (int.TryParse(winCreateFiche.TextBoxQty.Text, out newFiche.quantiteElement))
+                {
+                    if (newFiche.quantiteElement >= -1)
+                    {
+                        winCreateFiche.imageAttention_QtyEl.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        error = true;
+                        winCreateFiche.imageAttention_QtyEl.Visibility = Visibility.Visible;
+                    }
+                }
+                else
+                {
+                    error = true;
+                    winCreateFiche.imageAttention_QtyEl.Visibility = Visibility.Visible;
+                }
+
+                //description
+                newFiche.textDescription = winCreateFiche.textBoxTextFiche.Text;
+                if (winCreateFiche.textBoxTextFiche.Text.Length <= 200)
+                {
+                    winCreateFiche.imageAttention_SizeText.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    error = true;
+                    winCreateFiche.imageAttention_SizeText.Visibility = Visibility.Visible;
+                }
+
+                if (!error)
+                {
+                    listeFiches.Add(newFiche);
+                    listeFiches = listeFiches.OrderBy(fiche => fiche.id).ToList();
+                    FindAlerteListeFull(listeFiches);
+                    DisplayFiches();
+
+                    winCreateFiche.Close();
+                    RefreshDispControlTri();
+                    fichierSauvegarde.SaveListe(listeFiches);
+                }
+                gestionModif.AddModif(new Modification(TypeModification.modifFiche, nameUser, newFiche.id, "Création d'une fiche", DateTime.Now, ""));
+
+            }
+        }
+
+        public void ClickModifyColor()
+        {
+            winModifColors = new Window_Modif_Colors();
+            winModifColors.Show();
+
+            winModifColors.DisplayColors(listeColors);
+        }
+
+        public void ClickAddColor()
+        {
+            if(listeColors.Count<10)
+            {
+                winAddColor = new Window_Add_Color();
+                winAddColor.Show();
+            }
+        }
+
+        public void LeaveModifColors()
+        {
+            winModifColors.Close();
+        }
+
+        public void CancelCreationColor()
+        {
+            winAddColor.Close();
+        }
+
+        public void ValidateCreationColor()
+        {
+            bool error = true;
+            foreach (TypeColor color in listeColors)
+            {
+                if (winAddColor.textBoxNameRevet.Text == color.name && winAddColor.color!= Colors.White)
+                {
+                    listeColors.Add(new TypeColor(winAddColor.textBoxNameRevet.Text, winAddColor.color));
+                    error = false;
+                }
+            }
+            if (error == false)
+            {
+                winAddColor.Close();
+                winModifColors.DisplayColors(listeColors);
+            }
         }
 
         public void CloseAll()

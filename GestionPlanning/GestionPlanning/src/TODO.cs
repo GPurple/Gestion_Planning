@@ -8,23 +8,40 @@ namespace GestionPlanning.src
 {
     class TODO
     {
-        //Erreurs à ajouter
-        //ouverture fichier sauvegarde(existence, vide)
-        //chargement données
-        //fermeture fichier sauvegarde
-        //affichage image
-        //refresh data toutes les 15secondes
+
+        //choisir couleur : 
+        //écran paramétrage des couleurs: créer jusqu'à 10 types
+        //btn ajouter fiche(limiter à 10 fiches)
+            //définir nom fiche
+            //choix couleur dans panel 
+        //btn modifier
+        //une uc pour chaque type
+        //10 couleurs déjà défini
+
+        //fiche: sauvegarde nom type?
+        //
+        //fichier sauvegarde: sauvegarder les types dans savedata
+        //list<typeRevet> (color,name)
+        //création fiche: choix d'un type dans la liste dispo
+        //affichage d'une combo box à l'ouverture de la fiche à partir des types connus
+        //affichage de la couleur d'une fiche en fonction du type de la fiche et des couleurs connues
+        //si le nom ne correspond pas, afficher couleur blanche
 
         //TODO
-        //tout fermer à fermeture fenêtre
-        //corriger problème modification du path
         //faire un affichage par machine
-        //affichage par machine -> String et non int 
+        //option -> personnaliser couleurs et donner un nom
+        //choisir id creation fiche?
+        //calculer le temps sur une machine et prévenir en cas de problème
+        //réactualiser les données toutes les 15secondes
+        //afficher les listes non placées comme pour une machine? ou les fiches sans date de livraison
+        //placement automatique au chargement des données
+        //retirer du placement automatique
+        //modifier le menu pour un meilleur affichage (en haut de l'écran)
 
         //rendre plus beau
 
         //Tester plusieurs lancements en parallèle
-        
+
         //Fait:
         //Faire chargement depuis fichier xcel 
         //affichage en plein écran
@@ -43,8 +60,12 @@ namespace GestionPlanning.src
         //ajouter clique droit déplacement horaire/modification fiche/validation fiche(+ écran conbfirmation)
         //Ajouter identification utilisateur et ecrire dans le fichier les derniers à avoir modifier le fichier
         //Ajouter les différentes gestions d'erreurs
-
-
+        //tout fermer à fermeture fenêtre
+        //afficher bon premier jour de la semaine 
+        //corriger problème modification du path
+        //affichage par machine -> String et non int 
+        //choisir heure 8:01 ou 8h1 est différent
+        //pouvoir créer une nouvelle fiche -> choisir id?
 
         //a présenter
         // tous les cas de tests

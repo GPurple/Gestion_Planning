@@ -34,7 +34,6 @@ namespace GestionPlanning
             textPathFichierModifications.Text = pathFichierModif;
         }
 
-
         private void LeaveWindowModifPaths(object sender, RoutedEventArgs e)
         {
             this.Hide();

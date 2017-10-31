@@ -1,0 +1,26 @@
+﻿<Window x:Class="GestionPlanning.Window_Add_Color"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionPlanning"
+        mc:Ignorable="d"
+        Title="Window_Add_Color" Height="300" Width="300">
+    <Grid>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="51,223,0,0" VerticalAlignment="Top" Width="75" Click="ValidateCreationColor"/>
+        <Button Content="Annuler" HorizontalAlignment="Left" Margin="181,223,0,0" VerticalAlignment="Top" Width="75" Click="CancelCretionColor"/>
+        <TextBlock HorizontalAlignment="Left" Margin="83,19,0,0" TextWrapping="Wrap" Text="Créer type de revêtement" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxNameRevet" HorizontalAlignment="Left" Height="23" Margin="118,57,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="120"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="184,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFC0F5A1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="69,58,0,0" TextWrapping="Wrap" Text="Nom :" VerticalAlignment="Top"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="51,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorRed" Background="#FFFD5848"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="96,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorCyan" Background="#FF6CF3E1"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="96,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorBlueNight" Background="#FF2D519C"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="51,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFFF8B00"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="141,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFAE369E"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="226,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FF919191"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="184,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FF558F2E"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="141,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFEEC1FF"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="226,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFE2D3D1"/>
+    </Grid>
+</Window>

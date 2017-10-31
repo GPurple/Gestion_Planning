@@ -110,6 +110,9 @@
     <Compile Include="UC_modif_fiche.xaml.cs">
       <DependentUpon>UC_modif_fiche.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UC_Modif_Revet.xaml.cs">
+      <DependentUpon>UC_Modif_Revet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC_param_logiciel.xaml.cs">
       <DependentUpon>UC_param_logiciel.xaml</DependentUpon>
     </Compile>
@@ -117,8 +120,17 @@
     <Compile Include="WindowChangePaths.xaml.cs">
       <DependentUpon>WindowChangePaths.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Window_Add_Color.xaml.cs">
+      <DependentUpon>Window_Add_Color.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window_Create_Fiche.xaml.cs">
+      <DependentUpon>Window_Create_Fiche.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window_Identification.xaml.cs">
       <DependentUpon>Window_Identification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window_Modif_Colors.xaml.cs">
+      <DependentUpon>Window_Modif_Colors.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window_Modif_Fiche.xaml.cs">
       <DependentUpon>Window_Modif_Fiche.xaml</DependentUpon>
@@ -183,6 +195,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UC_Modif_Revet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UC_param_logiciel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,7 +207,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Window_Add_Color.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_Create_Fiche.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window_Identification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_Modif_Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

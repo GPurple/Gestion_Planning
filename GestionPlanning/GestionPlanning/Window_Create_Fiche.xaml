@@ -1,0 +1,63 @@
+﻿<Window x:Class="GestionPlanning.Window_Create_Fiche"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionPlanning"
+        mc:Ignorable="d"
+        Title="Window_Create_Fiche" Height="645" Width="400">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="156,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Création"/><Run Text=" fiche "/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="33,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Date livraison"/><Run Text=" :"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="33,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Date fabrication"/><Run Text=" :"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="33,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Quantité élements"/><Run Text=" :"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="33,466,0,0" TextWrapping="Wrap" Text="Note : " VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="33,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="N"/><Run Text="om"/><Run Text=" machine"/><Run Text=" :"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="33,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Temps"/><Run Text=" fabrication"/><Run Text="(min) :"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="33,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Heure fabrication"/><Run Text=" :"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="37,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nom"/><Run Text=" :"/></TextBlock>
+        <TextBlock x:Name="textId_Copy" HorizontalAlignment="Left" Margin="38,38,0,0" TextWrapping="Wrap" Text="ID : " VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxID" HorizontalAlignment="Left" Height="22" Margin="59,38,0,0" TextWrapping="Wrap" Text="id" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="22" Margin="83,72,0,0" TextWrapping="Wrap" Text="nom " VerticalAlignment="Top" Width="120"/>
+        <GroupBox Header="Type d'opération" HorizontalAlignment="Left" Height="59" Margin="28,109,0,0" VerticalAlignment="Top" Width="262">
+            <Grid HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="239">
+                <RadioButton x:Name="radioButtonOpFabrication" Content="Fabrication" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" />
+                <RadioButton x:Name="RadioButtonOpAffutage" Content="Affutage" HorizontalAlignment="Left" Margin="104,10,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="RadioButtonOpNA" Content="NA" HorizontalAlignment="Left" Margin="185,10,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Recouvrement" HorizontalAlignment="Left" Height="52" Margin="28,175,0,0" VerticalAlignment="Top" Width="145" RenderTransformOrigin="0.5,0.5">
+            <GroupBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.562"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.324"/>
+                </TransformGroup>
+            </GroupBox.RenderTransform>
+        </GroupBox>
+        <Grid HorizontalAlignment="Left" Height="22" Margin="31,190,0,0" VerticalAlignment="Top" Width="244">
+            <RadioButton x:Name="RadioButtonRecYes" Content="Oui" HorizontalAlignment="Left" Margin="10,10,0,-3" VerticalAlignment="Top"/>
+            <RadioButton x:Name="RadioButtonRecNo" Content="Non" HorizontalAlignment="Left" Margin="79,10,0,-3" VerticalAlignment="Top"/>
+        </Grid>
+        <TextBox x:Name="textBoxDateLivraison" HorizontalAlignment="Left" Height="22" Margin="121,243,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxDateFabrication" HorizontalAlignment="Left" Height="24" Margin="131,275,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxHeureFabrication" HorizontalAlignment="Left" Height="24" Margin="131,309,0,0" TextWrapping="Wrap" Text="0:0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxTempsFabrication" HorizontalAlignment="Left" Height="24" Margin="165,347,0,0" TextWrapping="Wrap" Text="temps" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxQty" HorizontalAlignment="Left" Height="22" Margin="141,387,0,0" TextWrapping="Wrap" Text="qté" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxNumMachine" HorizontalAlignment="Left" Height="23" Margin="121,423,0,0" TextWrapping="Wrap" Text="nom" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxTextFiche" HorizontalAlignment="Left" Height="78" Margin="33,487,0,0" TextWrapping="Wrap" Text="text" VerticalAlignment="Top" Width="272"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="107,577,0,-18" VerticalAlignment="Top" Width="76" Click="ValiderCreationFiche"/>
+        <Button Content="Annuler" HorizontalAlignment="Left" Margin="261,577,0,-18" VerticalAlignment="Top" Width="74" Click="CancelCreationFiche"/>
+        <Image x:Name="imageAttention_dateLiv" HorizontalAlignment="Left" Height="34" Margin="245,237,0,0" VerticalAlignment="Top" Width="30" Source="Images/Icone_Attention.png"/>
+        <Image x:Name="imageAttention_dateFab" HorizontalAlignment="Left" Height="34" Margin="255,271,0,0" VerticalAlignment="Top" Width="32" Source="Images/Icone_Attention.png"/>
+        <Image x:Name="imageAttention_heureFab" HorizontalAlignment="Left" Height="34" Margin="255,305,0,0" VerticalAlignment="Top" Width="32" Source="Images/Icone_Attention.png"/>
+        <Image x:Name="imageAttention_TempsFab" HorizontalAlignment="Left" Height="34" Margin="285,343,0,0" VerticalAlignment="Top" Width="30" Source="Images/Icone_Attention.png"/>
+        <Image x:Name="imageAttention_QtyEl" HorizontalAlignment="Left" Height="34" Margin="261,383,0,0" VerticalAlignment="Top" Width="30" Source="Images/Icone_Attention.png"/>
+        <Image x:Name="imageAttention_NumMach" HorizontalAlignment="Left" Height="34" Margin="204,423,0,0" VerticalAlignment="Top" Width="30" Source="Images/Icone_Attention.png"/>
+        <Image x:Name="imageAttention_SizeText" HorizontalAlignment="Left" Height="34" Margin="83,453,0,0" VerticalAlignment="Top" Width="32" Source="Images/Icone_Attention.png"/>
+        <Image x:Name="imageAttention_ID" HorizontalAlignment="Left" Height="34" Margin="184,33,0,0" VerticalAlignment="Top" Width="30" Source="Images/Icone_Attention.png"/>
+        
+
+    </Grid>
+</Window>

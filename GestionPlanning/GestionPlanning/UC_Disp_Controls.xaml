@@ -23,6 +23,7 @@
         <ComboBox x:Name="ComboBoxSearchRetard" HorizontalAlignment="Left" Margin="564,83,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnDispListeSimple" Content="Afficher liste complète" HorizontalAlignment="Left" Margin="380,10,0,0" VerticalAlignment="Top" Width="136" Click="DisplayListeSimple"/>
         <Button Content="Rechercher" HorizontalAlignment="Left" Margin="705,85,0,0" VerticalAlignment="Top" Width="82" Click="SearchFiches"/>
+        <Button Content="NouvelleFiche(TODO)" HorizontalAlignment="Left" Margin="380,47,0,0" VerticalAlignment="Top" Width="136" Click="CreateFiche"/>
 
     </Grid>
 </UserControl>

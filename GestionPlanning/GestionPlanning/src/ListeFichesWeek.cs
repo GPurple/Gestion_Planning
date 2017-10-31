@@ -20,8 +20,7 @@ namespace GestionPlanning.src
         {
 
         }
-
-
+        
         public void ProcessListCurrentWeek(List<Fiche> listePlacees, DateTime dateFirstDay)
         {
             ProcessListWeekForDay(this.listeLundi, listePlacees, dateFirstDay,0);

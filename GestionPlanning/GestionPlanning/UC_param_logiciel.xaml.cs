@@ -66,5 +66,10 @@ namespace GestionPlanning
             Brain.Instance.ucParamLog.Visibility = Visibility.Hidden;
 
         }
+
+        private void ModifyColors(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.ClickModifyColor();
+        }
     }
 }

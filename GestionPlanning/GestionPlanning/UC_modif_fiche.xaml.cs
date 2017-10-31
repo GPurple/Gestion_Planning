@@ -73,7 +73,7 @@ namespace GestionPlanning
             textBoxDateFabrication.Text = fiche.dateDebutFabrication.Day + "/" + fiche.dateDebutFabrication.Month + "/" + fiche.dateDebutFabrication.Year;
             textBoxHeureFabrication.Text = fiche.dateDebutFabrication.Hour + ":" + fiche.dateDebutFabrication.Minute;
             textBoxTempsFabrication.Text = "" + fiche.tempsFabrication;
-            TextBoxNumMachine.Text = "" + fiche.numMachine;
+            TextBoxNumMachine.Text = "" + fiche.machine;
             TextBoxQty.Text = "" + fiche.quantiteElement;
             textBoxTextFiche.Text = fiche.textDescription;
 

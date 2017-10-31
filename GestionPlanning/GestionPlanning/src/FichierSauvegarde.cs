@@ -6,7 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Xml.Serialization;
+using static GestionPlanning.src.FichierSauvegarde;
 
 namespace GestionPlanning.src
 {
@@ -39,10 +41,34 @@ namespace GestionPlanning.src
         [XmlArrayItem("Fiche")]
         public List<Fiche> listeFiches = new List<Fiche>();
 
+        [XmlArray("ListeColors")]
+        [XmlArrayItem("TypeColor")]
+        public List<TypeColor> listeColor = new List<TypeColor>();
+
         public SaveData() { }
     }
 
-    class FichierSauvegarde
+    //La structure contenant les données sur la couleur d'une fiche pas lié au type
+    //ex : fabrication : vert, aiguisage: rouge, recouvrement : orange
+    [XmlType("TypeColor")]
+    [XmlInclude(typeof(Color))]
+    public class TypeColor
+    {
+        public String name = "";
+        public Color color = Colors.White;
+
+        public TypeColor()
+        {
+        }
+
+        public TypeColor(String newName, Color newColor)
+        {
+            name = newName;
+            color = newColor;
+        }
+    }
+
+    public class FichierSauvegarde
     {
         public String pathFile = "";
         public String nameFile = "Fichier_Sauvegarde";
@@ -102,15 +128,15 @@ namespace GestionPlanning.src
          * @param listeFiches La référence de la liste des fiches 
          * @retval 0 = pas de modification, 1 = modification, -1 = erreur
          * */
-        public int SynchroListe(List<Fiche> listeFichesConnues)
+        public List<Fiche> SynchroListe(List<Fiche> listeFichesConnues)
         {
             Boolean nodatemodif = false;
             int idFichePrec = 0;
             SaveData data = ReadDatas();
-
+            
             if (data == null)
             {
-                return -1;
+                return null;
             }
 
             if (data.nameFileCSV != null && data.nameFileCSV != "")
@@ -183,7 +209,7 @@ namespace GestionPlanning.src
                             ficheConnue.typeOperation = ficheSaved.typeOperation;
                             ficheConnue.recouvrement = ficheSaved.recouvrement;
                             ficheConnue.quantiteElement = ficheSaved.quantiteElement;
-                            ficheConnue.numMachine = ficheSaved.numMachine;
+                            ficheConnue.machine = ficheSaved.machine;
                             ficheConnue.dateDebutFabrication = ficheSaved.dateDebutFabrication;
                             ficheConnue.dateLivraison = ficheSaved.dateLivraison;
                             ficheConnue.retardPlacement = ficheSaved.retardPlacement;
@@ -199,11 +225,11 @@ namespace GestionPlanning.src
                             {
                                 if (ts.Days < 30)
                                 {
-                                    listeFichesTmp.Add(new Fiche(ficheSaved));
+                                    listeFichesTmp.Add(ficheSaved);
                                 }
                                 else if (ficheSaved.check == false)
                                 {
-                                    listeFichesTmp.Add(new Fiche(ficheSaved));
+                                    listeFichesTmp.Add(ficheSaved);
                                 }
                             }
                             
@@ -212,21 +238,23 @@ namespace GestionPlanning.src
                         }
                     }
                     idFichePrec = ficheSaved.id;
+                    //if fiche pas placée
+                    //ajouter fiche
                 }
                 foreach (Fiche ficheTmp in listeFichesTmp)
                 {
-                    listeFichesConnues.Add(new Fiche(ficheTmp));
+                    listeFichesConnues.Add(ficheTmp);
                 }
                 //Trier fiches par id
                 listeFichesConnues = listeFichesConnues.OrderBy(fiche => fiche.id).ToList();
                 data.listeFiches = listeFichesConnues;
                 //à la fin la liste est réecrite dans le fichier
                 SaveDatas(data);
-                return 1;
+                return listeFichesTmp;
             }
             else //Si date dernière modif fichier == date connue alors pas besoin de synchro
             {
-                return 0;
+                return null;
             }
         }
 
@@ -267,15 +295,7 @@ namespace GestionPlanning.src
                 }
             }
         }
-
-        //La structure contenant les données sur la couleur d'une fiche pas lié au type
-        //ex : fabrication : vert, aiguisage: rouge, recouvrement : orange
-        public struct TypeColor
-        {
-            String name;
-            int color;
-        }
-
+        
         /*
          * @brief Lire fichier sauvegarde
          * 
@@ -320,11 +340,7 @@ namespace GestionPlanning.src
             }
             return data;
         }
-
-        /*
-         * @brief Lire fichier sauvegarde
-         * 
-         * */
+        
         public void SaveDatas(SaveData data)
         {
             // Delete a file by using File class static method...
@@ -389,7 +405,7 @@ namespace GestionPlanning.src
         {
             Brain.Instance.fichierXcel.name_file = newName;
             dataCom.nameFileCSV = newName;
-        
+            SaveDatas(dataCom);
             return 1;
         }
 
@@ -397,7 +413,7 @@ namespace GestionPlanning.src
         {
             Brain.Instance.fichierXcel.path_file = newPath;
             dataCom.pathFileCSV = newPath;
-        
+            SaveDatas(dataCom);
             return 1;
         }
 
@@ -405,10 +421,8 @@ namespace GestionPlanning.src
         {
             Brain.Instance.gestionModif.pathFile = newPath;
             dataCom.pathFileModifs = newPath;
-            //TODO save data
+            SaveDatas(dataCom);
             return 1;
         }
-
-            
     }
 }

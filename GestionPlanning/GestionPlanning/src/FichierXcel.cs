@@ -62,8 +62,7 @@ namespace GestionPlanning.src
                             fiche_tmp.id = -1;
                         }
 
-                        //opération [4] ou famille [14]
-                        //TODO revoir numéro colonne
+                        //famille [14]
                         if (String.Compare(tab_line[14], "AFF ") == 0 || String.Compare(tab_line[14], "AFF ") == 0)
                         {
                             fiche_tmp.typeOperation = TypeOperation.aiguisage;
@@ -78,9 +77,7 @@ namespace GestionPlanning.src
                         }
 
 
-                        //recouvrement? //TODO trouver quelle colonne?
-                        /*if () { fiche_tmp.recouvrement = true; }
-                        else { fiche_tmp.recouvrement = false; }*/
+                        //pas de recouvrement
 
                         //client [7]
                         fiche_tmp.name = String.Copy(tab_line[8]);

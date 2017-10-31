@@ -35,5 +35,13 @@ namespace GestionPlanning
         {
             Brain.Instance.CloseAll();
         }
+
+        private void EnterID(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Brain.Instance.ValidateIdentification(TextBoxIdentifiant.Text, "");
+            }
+        }
     }
 }

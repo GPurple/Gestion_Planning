@@ -26,7 +26,7 @@ namespace GestionPlanning.src
         public String name;
 
         //Le temps de fabrication en minutes
-        public int tempsFabrication;
+        public int tempsFabrication = -1;
 
         //Le type d'opération
         public TypeOperation typeOperation = TypeOperation.na;
@@ -38,7 +38,7 @@ namespace GestionPlanning.src
         public int quantiteElement = -1;
 
         //Le numéro de machine (-1 = non défini)
-        public int numMachine = -1;
+        public String machine = "na";
 
         //Datedébut fabrication 
         public DateTime dateDebutFabrication = new DateTime();
@@ -60,9 +60,7 @@ namespace GestionPlanning.src
 
         //Si la fiche est validée(déja fabriquée)
         public Boolean check = false;
-
-        //Temps de fabrication en minutes
-        public int timeFab = -1; //-1 non défini
+        
         /**
          * @brief Creation d'une nouvelle fiche
          * @note none 
@@ -103,6 +101,11 @@ namespace GestionPlanning.src
             this.dateLivraison = newFiche.dateLivraison;
             this.typeOperation = newFiche.typeOperation;
             this.recouvrement = newFiche.recouvrement;
+            this.dateDebutFabrication = newFiche.dateDebutFabrication;
+            this.textDescription = newFiche.textDescription;
+            this.attentionRetard = newFiche.attentionRetard;
+            this.alerteRetard = newFiche.alerteRetard;
+            this.check = newFiche.check;
         }
 
         // Default comparer for Part type.

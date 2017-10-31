@@ -4,10 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionPlanning"
-             mc:Ignorable="d" Height="592.755" Width="420.796">
+             mc:Ignorable="d" Height="595" Width="420">
     <Grid Background="#FFD4D4D4">
-        <Rectangle HorizontalAlignment="Left" Height="593" Stroke="White" VerticalAlignment="Top" Width="421" StrokeThickness="3" ClipToBounds="True"/>
-        <Rectangle HorizontalAlignment="Left" Height="587" Stroke="Black" VerticalAlignment="Top" Width="415" StrokeThickness="3" Margin="3,3,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="594" Stroke="White" VerticalAlignment="Top" Width="421" StrokeThickness="3" ClipToBounds="True"/>
+        <Rectangle HorizontalAlignment="Left" Height="589" Stroke="Black" VerticalAlignment="Top" Width="415" StrokeThickness="3" Margin="3,3,0,0"/>
         <TextBlock HorizontalAlignment="Left" Margin="156,10,0,0" TextWrapping="Wrap" Text="modification fiche " VerticalAlignment="Top"/>
         <TextBlock x:Name="textId" HorizontalAlignment="Left" Margin="36,35,0,0" TextWrapping="Wrap" Text="ID : 1234" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="24,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Date livraison"/><Run Text=" :"/></TextBlock>
