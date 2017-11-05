@@ -6,26 +6,21 @@
         xmlns:local="clr-namespace:GestionPlanning"
         mc:Ignorable="d"
         Title="MainWindow" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0,1,0,0" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}" WindowState="Maximized" WindowStartupLocation="CenterScreen" Closing="CloseAll">
-    <Grid Margin="0,0,2,-21">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="667*"/>
-            <ColumnDefinition Width="6*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
-        <Image x:Name="image_warningGeneral" HorizontalAlignment="Left" Height="56" Margin="768,10,0,0" VerticalAlignment="Top" Width="56" Source="Images/Icone_Attention.png"/>
-        <Image x:Name="image_alerteGeneral" HorizontalAlignment="Left" Height="56" Margin="837,10,0,0" VerticalAlignment="Top" Width="53" Source="Images/Icone_Alerte.png"/>
-        <Image HorizontalAlignment="Left" Height="56" Margin="908,10,0,0" VerticalAlignment="Top" Width="170" Source="Images/logos_aos.png"/>
+    <Grid Margin="0,0,0,0">
+        <Image x:Name="image_warningGeneral" HorizontalAlignment="Left" Height="56" Margin="764,0,0,0" VerticalAlignment="Top" Width="56" Source="Images/Icone_Attention.png"/>
+        <Image x:Name="image_alerteGeneral" HorizontalAlignment="Left" Height="56" Margin="820,0,0,0" VerticalAlignment="Top" Width="53" Source="Images/Icone_Alerte.png"/>
+        <Image HorizontalAlignment="Left" Height="56" Margin="890,0,0,0" VerticalAlignment="Top" Width="170" Source="Images/logos_aos.png"/>
 
         <Grid x:Name="gridUcDisplayPlanning" HorizontalAlignment="Center" Height="600" Margin="39,94,5,0" VerticalAlignment="Top" Width="1290">
-            <local:UC_Display_Simple x:Name="UC_Disp_Simple" HorizontalAlignment="Center" Height="530" VerticalAlignment="Center" Width="1290" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <local:UC_Disp_modifs HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
+            <local:UC_Display_Simple x:Name="UC_Disp_Simple" HorizontalAlignment="Center" Height="530" VerticalAlignment="Center" Width="1290" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <local:UC_Disp_modifs x:Name="UC_DispModifs" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
             <local:UC_display_day x:Name="UC_Disp_Day" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
             <local:UC_Disp_Month x:Name="UC_Disp_Month" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
             <local:UC_Display_week x:Name="UC_Disp_Week" HorizontalAlignment="Left" Height="530" VerticalAlignment="Top" Width="1290"/>
             <local:UC_Disp_Machine x:Name="UC_Disp_Machines" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="531" Width="1290"/>
 
         </Grid>
-        <local:UC_Disp_Controls HorizontalAlignment="Left" Height="124" Margin="10,10,0,0" VerticalAlignment="Top" Width="880"/>
+        <local:UC_Disp_Controls HorizontalAlignment="Left" Height="124" Margin="10,10,0,0" VerticalAlignment="Top" Width="740"/>
 
     </Grid>
 </Window>

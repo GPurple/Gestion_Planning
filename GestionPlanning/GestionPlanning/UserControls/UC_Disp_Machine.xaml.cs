@@ -24,6 +24,26 @@ namespace GestionPlanning
         public UC_Disp_Machine()
         {
             InitializeComponent();
+            
+        }
+
+        public void ResizeDispMachine()
+        {
+            gridDispMachine.Width = (int)(Values.Instance.WIDTH_DISP_MAIN * 0.96);
+            gridDispMachine.Height = (int)(Values.Instance.HEIGHT_DISP_MAIN * 0.9);
+            gridDispMachine.Margin = new Thickness((int)(Values.Instance.WIDTH_DISP_MAIN * 0), (int)(Values.Instance.HEIGHT_DISP_MAIN * 0.1), 0, 0);
+
+            scrollVieverDispListeMachines.Width = (int)(Values.Instance.WIDTH_DISP_MAIN * 0.96);
+            scrollVieverDispListeMachines.Height = (int)(Values.Instance.HEIGHT_DISP_MAIN * 0.9);
+            scrollVieverDispListeMachines.Margin = new Thickness(0, 0, 0, 0);
+
+            gridDispListeMachines.Width = (int)(Values.Instance.WIDTH_DISP_MAIN * 0.96);
+            gridDispListeMachines.Height = (int)(Values.Instance.HEIGHT_DISP_MAIN * 0.9);
+            gridDispListeMachines.Margin = new Thickness(0, 0, 0, 0);
+
+            scrollViewerDispMachines.Width = (int)(Values.Instance.WIDTH_DISP_MAIN * 0.90);
+            scrollViewerDispMachines.Height = (int)(Values.Instance.HEIGHT_DISP_MAIN * 0.80);
+            scrollViewerDispMachines.Margin = new Thickness((int)(Values.Instance.WIDTH_DISP_MAIN * 0.025), 50, 0, 0);
         }
 
         public void RefreshListToDisplay(ListeFicheMachines listeFichesMachines)
@@ -31,6 +51,8 @@ namespace GestionPlanning
             int nbMachine = 0;
             int sizeMax = 0;
             int nbFiches = 0;
+
+            ResizeDispMachine();
 
             canvasDispListesMachines.Children.Clear();
 
@@ -41,7 +63,7 @@ namespace GestionPlanning
                 nbFiches = 0;
 
                 TextBlock textBlockNameMachine = new TextBlock();
-                Canvas.SetLeft(textBlockNameMachine, nbMachine * 150 + 30);
+                Canvas.SetLeft(textBlockNameMachine, nbMachine * 150 + 50 + (int)(Values.Instance.WIDTH_DISP_MAIN * 0.025));
                 Canvas.SetTop(textBlockNameMachine, 20);
                 textBlockNameMachine.Foreground = new SolidColorBrush(Colors.White);
                 canvaDispNamesMachines.Children.Add(textBlockNameMachine);
@@ -67,8 +89,9 @@ namespace GestionPlanning
             //modifier dimension stack panel Hauteur et largeur en fonctino des données
             canvasDispListesMachines.Height = sizeMax * 160;
             canvasDispListesMachines.Width = nbMachine * 150 + 15;
+            canvaDispNamesMachines.Width = nbMachine * 150 + 15;
             scrollViewerDispMachines.Width = nbMachine * 150 + 15;
-            gridDispMachines.Width = nbMachine * 150 + 15;
+            gridDispListeMachines.Width = nbMachine * 150 + (int)(Values.Instance.WIDTH_DISP_MAIN * 0.025 * 2) + 40;
 
         }
     }

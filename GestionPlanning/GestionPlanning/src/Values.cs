@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionPlanning.src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace GestionPlanning
 {
     class Revetement
     {
+
         public Color color = Colors.White;
         public String name = "";
 
@@ -26,22 +28,6 @@ namespace GestionPlanning
 
     class Values
     {
-        private static Values instance;
-        public static Values Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new Values();
-                }
-                return instance;
-            }
-        }
-        private Values()
-        {
-            //TODO WIDTH_FICHE_DAY = 
-        }
 
         //Les couleurs d'affichage des types d'opération
         public static Color COLOR_AFF = Colors.LawnGreen;//colorAffutage
@@ -49,7 +35,7 @@ namespace GestionPlanning
         public static Color COLOR_NA = Colors.White; //colorNA
 
         //La liste des couleurs des revêtements
-        public List<Revetement> listeRevetements= new List<Revetement>();
+        public List<Revetement> listeRevetements = new List<Revetement>();
 
         public int timeProdDay = 7;
 
@@ -91,5 +77,37 @@ namespace GestionPlanning
         public static Color COLOR_PURPLE = Colors.Purple;
         public static Color COLOR_RED = Colors.Red;
         public static Color COLOR_LIGHTGREEN = Colors.PaleGreen;
+
+        private static Values instance;
+        public static Values Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Values();
+                }
+                return instance;
+            }
+        }
+        private Values()
+        {
+            //TODO WIDTH_FICHE_DAY = 
+            WIDTH_FICHE_DAY = (int)(Brain.Instance.mainWindow.Width * 0.95);
+
+            WIDTH_DISP_MAIN = (int)(Brain.Instance.mainWindow.Width * 0.96);
+            HEIGHT_DISP_MAIN= (int)(Brain.Instance.mainWindow.Height * 0.85);
+            
+            POSX_DISP_MAIN = (int)(Brain.Instance.mainWindow.Width * 0.01);
+            POSY_DISP_MAIN = (int)(Brain.Instance.mainWindow.Height * 0.08);
+
+            WIDTH_FICHE_MONTH = (int)(Brain.Instance.mainWindow.Width * 0.90 /7);
+            HEIGHT_FICHE_MONTH = (int)(Brain.Instance.mainWindow.Height * 0.70 / 5);
+
+            WIDTH_FICHE_DAY = (int)(Brain.Instance.mainWindow.Width * 0.70 );
+            HEIGHT_FICHE_DAY = (int)(Brain.Instance.mainWindow.Height * 0.1);
+        }
+
+        
     }
 }

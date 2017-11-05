@@ -64,7 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ListeFicheMachines.cs" />
+    <Compile Include="src\ListeFicheMachines.cs" />
     <Compile Include="MessageConfRetraitFichePlanning.xaml.cs">
       <DependentUpon>MessageConfRetraitFichePlanning.xaml</DependentUpon>
     </Compile>
@@ -84,16 +84,16 @@
     <Compile Include="src\ListeFichesWeek.cs" />
     <Compile Include="src\Tests\TestSauvegarde.cs" />
     <Compile Include="src\TODO.cs" />
-    <Compile Include="UC_display_day.xaml.cs">
+    <Compile Include="UserControls\UC_display_day.xaml.cs">
       <DependentUpon>UC_display_day.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_Display_Simple.xaml.cs">
+    <Compile Include="UserControls\UC_Display_Simple.xaml.cs">
       <DependentUpon>UC_Display_Simple.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_Display_week.xaml.cs">
+    <Compile Include="UserControls\UC_Display_week.xaml.cs">
       <DependentUpon>UC_Display_week.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_DispListe_Machine.xaml.cs">
+    <Compile Include="UserControls\UC_DispListe_Machine.xaml.cs">
       <DependentUpon>UC_DispListe_Machine.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_Disp_Controls.xaml.cs">
@@ -102,31 +102,31 @@
     <Compile Include="UserControls\UC_Disp_Machine.xaml.cs">
       <DependentUpon>UC_Disp_Machine.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_Disp_modifs.xaml.cs">
+    <Compile Include="UserControls\UC_Disp_modifs.xaml.cs">
       <DependentUpon>UC_Disp_modifs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_Disp_Month.xaml.cs">
+    <Compile Include="UserControls\UC_Disp_Month.xaml.cs">
       <DependentUpon>UC_Disp_Month.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_fiche_day.xaml.cs">
+    <Compile Include="UserControls\UC_fiche_day.xaml.cs">
       <DependentUpon>UC_fiche_day.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_Fiche_Machine.xaml.cs">
+    <Compile Include="UserControls\UC_Fiche_Machine.xaml.cs">
       <DependentUpon>UC_Fiche_Machine.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_fiche_month.xaml.cs">
+    <Compile Include="UserControls\UC_fiche_month.xaml.cs">
       <DependentUpon>UC_fiche_month.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_Fiche_week.xaml.cs">
+    <Compile Include="UserControls\UC_Fiche_week.xaml.cs">
       <DependentUpon>UC_Fiche_week.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_modif_fiche.xaml.cs">
+    <Compile Include="UserControls\UC_modif_fiche.xaml.cs">
       <DependentUpon>UC_modif_fiche.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_Modif_Revet.xaml.cs">
+    <Compile Include="UserControls\UC_Modif_Revet.xaml.cs">
       <DependentUpon>UC_Modif_Revet.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UC_param_logiciel.xaml.cs">
+    <Compile Include="UserControls\UC_param_logiciel.xaml.cs">
       <DependentUpon>UC_param_logiciel.xaml</DependentUpon>
     </Compile>
     <Compile Include="src\Values.cs" />
@@ -175,19 +175,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_display_day.xaml">
+    <Page Include="UserControls\UC_display_day.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_Display_Simple.xaml">
+    <Page Include="UserControls\UC_Display_Simple.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_Display_week.xaml">
+    <Page Include="UserControls\UC_Display_week.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_DispListe_Machine.xaml">
+    <Page Include="UserControls\UC_DispListe_Machine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,39 +199,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_Disp_modifs.xaml">
+    <Page Include="UserControls\UC_Disp_modifs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_Disp_Month.xaml">
+    <Page Include="UserControls\UC_Disp_Month.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_fiche_day.xaml">
+    <Page Include="UserControls\UC_fiche_day.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_Fiche_Machine.xaml">
+    <Page Include="UserControls\UC_Fiche_Machine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_fiche_month.xaml">
+    <Page Include="UserControls\UC_fiche_month.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_Fiche_week.xaml">
+    <Page Include="UserControls\UC_Fiche_week.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_modif_fiche.xaml">
+    <Page Include="UserControls\UC_modif_fiche.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_Modif_Revet.xaml">
+    <Page Include="UserControls\UC_Modif_Revet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC_param_logiciel.xaml">
+    <Page Include="UserControls\UC_param_logiciel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

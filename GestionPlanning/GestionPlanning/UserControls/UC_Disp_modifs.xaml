@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="GestionPlanning.UC_Disp_modifs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GestionPlanning"
+             mc:Ignorable="d" 
+             d:DesignHeight="560" d:DesignWidth="960">
+    <Grid>
+        <Rectangle Fill="#FF2E2E2E" Margin="0,0,0,0" Stroke="Black" StrokeThickness="0"/>
+        <Rectangle x:Name="rectangleDisp" Fill="#FF2E2E2E" HorizontalAlignment="Center" Height="433" Margin="0,61,0,0" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="823"/>
+        <ScrollViewer x:Name="scrollViewerDisp" HorizontalAlignment="Center" Height="427" Margin="0,64,0,0" VerticalAlignment="Top" Width="817" Padding="0" UseLayoutRounding="True" BorderBrush="Black" Background="White" >
+            <StackPanel x:Name="StackPanelModifs" Height="433" Width="813"/>
+
+        </ScrollViewer>
+        <TextBlock x:Name="TextListeSimple" HorizontalAlignment="Center" Margin="0,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Foreground="White" Width="337" TextAlignment="Center"><Run Text="M"/><Run Text="odifications effectuées"/></TextBlock>
+
+    </Grid>
+</UserControl>

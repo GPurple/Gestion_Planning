@@ -4,7 +4,7 @@
   <nameFileCSV>CHARGE_ATELIER_BRUTE_AOS</nameFileCSV>
   <pathFileModifs />
   <displayDay>false</displayDay>
-  <dateLastModif>2017-11-05T00:47:45.4057926+01:00</dateLastModif>
+  <dateLastModif>2017-11-06T00:49:58.2593631+01:00</dateLastModif>
   <ListeFiches>
     <Fiche>
       <id>0</id>
@@ -110,7 +110,7 @@
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-02T00:00:00</dateLivraison>
       <textDescription>text</textDescription>
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -137,7 +137,7 @@
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-22T00:00:00</dateLivraison>
       <textDescription />
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -164,7 +164,7 @@
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-23T00:00:00</dateLivraison>
       <textDescription />
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -198,52 +198,56 @@
     <Fiche>
       <id>75273</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>2</quantiteElement>
-      <machine>na</machine>
+      <machine>Machine4</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <textDescription />
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
     <Fiche>
       <id>75274</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>2</quantiteElement>
-      <machine>na</machine>
+      <machine>Machine5</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <textDescription />
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
     <Fiche>
       <id>75275</id>
       <name>MECATURN SAS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>1</quantiteElement>
-      <machine>na</machine>
+      <machine>Machine6</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <textDescription />
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
     <Fiche>
       <id>75276</id>
       <name>MECATURN SAS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>1</quantiteElement>
-      <machine>na</machine>
+      <machine>Machine7</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <textDescription />
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -256,7 +260,7 @@
       <machine>na</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -269,7 +273,7 @@
       <machine>na</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-30T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -282,7 +286,7 @@
       <machine>na</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-31T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -295,7 +299,7 @@
       <machine>na</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-01T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -308,7 +312,7 @@
       <machine>na</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-02T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -321,7 +325,7 @@
       <machine>na</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-03T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -334,7 +338,7 @@
       <machine>na</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-04T00:00:00</dateLivraison>
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -361,7 +365,7 @@
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-05T00:00:00</dateLivraison>
       <textDescription />
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
@@ -375,7 +379,7 @@
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-06T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
-      <attentionRetard>false</attentionRetard>
+      <attentionRetard>true</attentionRetard>
       <check>false</check>
     </Fiche>
     <Fiche>
@@ -388,7 +392,7 @@
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-07T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
-      <attentionRetard>false</attentionRetard>
+      <attentionRetard>true</attentionRetard>
       <check>false</check>
     </Fiche>
     <Fiche>

@@ -4,17 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionPlanning"
-             mc:Ignorable="d" Background="#FF2E2E2E" Height="588.659" Width="1177.942">
+             mc:Ignorable="d" Background="#FF2E2E2E" Height="648.659" Width="1687.942">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="441,9,0,0" TextWrapping="Wrap" FontSize="24" Foreground="White" Text="Affichage par machine" VerticalAlignment="Top"/>
-        <Grid HorizontalAlignment="Left" Height="443" Margin="35,35,0,0" VerticalAlignment="Top" Width="1113">
-            <ScrollViewer x:Name="scrollVieverDispListeMachines" HorizontalAlignment="Left" Margin="0,27,0,0" Width="1113" HorizontalScrollBarVisibility="Visible"  VerticalScrollBarVisibility="Disabled" BorderBrush="Black" BorderThickness="0">
-                <Grid x:Name="gridDispMachines" Height="400" Width="1103" Background="#FF514F4F">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="68*"/>
-                        <ColumnDefinition Width="439*"/>
-                    </Grid.ColumnDefinitions>
-                    <ScrollViewer x:Name="scrollViewerDispMachines" HorizontalAlignment="Left" Height="318" Margin="0,82,0,0" VerticalAlignment="Top" Width="1103" BorderBrush="Black" Grid.ColumnSpan="2">
+        <TextBlock HorizontalAlignment="Center" Margin="0,21,0,0" TextWrapping="Wrap" FontSize="24" Foreground="White" Text="Affichage par machine" VerticalAlignment="Top"/>
+        <Grid x:Name="gridDispMachine" Height="497" VerticalAlignment="Top" Width="1149">
+            <ScrollViewer x:Name="scrollVieverDispListeMachines" Width="1113" HorizontalScrollBarVisibility="Visible"  VerticalScrollBarVisibility="Disabled" BorderBrush="Black" BorderThickness="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch">
+                <Grid x:Name="gridDispListeMachines" Height="400" Width="1103" Background="#FF514F4F" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ScrollViewer x:Name="scrollViewerDispMachines" Height="318"  Width="1103" BorderBrush="Black" Grid.ColumnSpan="2" VerticalAlignment="Top" VerticalScrollBarVisibility="Visible">
                         <Canvas x:Name="canvasDispListesMachines" Height="398" Width="1094"/>
                     </ScrollViewer>
                     <Canvas x:Name="canvaDispNamesMachines" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" Width="1093" Grid.ColumnSpan="2"/>
