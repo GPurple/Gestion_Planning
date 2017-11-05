@@ -33,6 +33,7 @@ namespace GestionPlanning
         private String textHeureFab = "Heure fab : ";
         private String textTimeFab = "Temps fab : ";
         private String textDateFab = "Date Fabrication : ";
+        private String textMachine = "Machine : ";
         private bool dispWarning = false;
         private bool dispAlerte = false;
         private bool dispSimple = false;
@@ -53,17 +54,19 @@ namespace GestionPlanning
 
         }
 
-        public UC_fiche_day(int newId, String newName, DateTime newDate, int newQty, bool newDispWarning, bool newDispAlerte , TypeOperation op, bool rec, DateTime newDateFabrication, int timeFab, bool newDispSimple)
+        public UC_fiche_day(Fiche newFiche)
         {
             InitializeComponent();
-            idFiche = newId;
-            ModifyId(newId);
-            ModifyName(newName);
-            ModifyDateLiv(newDate);
-            ModifyQté(newQty);
-            ModifyTimeFab(timeFab);
-            ModifyHourFab(newDateFabrication);
-            if (newDispAlerte == true)
+            idFiche = newFiche.id;
+            ModifyId(newFiche.id);
+            ModifyName(newFiche.name);
+            ModifyDateLiv(newFiche.dateLivraison);
+            ModifyDateFab(newFiche.dateDebutFabrication);
+            ModifyTimeFab(newFiche.tempsFabrication);
+            ModifyHourFab(newFiche.dateDebutFabrication);
+            ModifyQty(newFiche.quantiteElement);
+            ModifyMachine(newFiche.machine);
+            if (newFiche.alerteRetard == true)
             {
                 DisplayAlerte();
             }
@@ -71,7 +74,7 @@ namespace GestionPlanning
             {
                 HideAlerte();
             }
-            if (newDispWarning == true)
+            if (newFiche.attentionRetard == true)
             {
                 DisplayWarning();
             }
@@ -79,7 +82,7 @@ namespace GestionPlanning
             {
                 HideWarning();
             }
-            switch (op)
+            switch (newFiche.typeOperation)
             {
                 case TypeOperation.na:
                     colorLeft_op = Values.COLOR_NA;
@@ -96,27 +99,18 @@ namespace GestionPlanning
             }
             rectangleLeft_op.Fill = new SolidColorBrush(colorLeft_op);
 
-            if (rec == true)
+            if (newFiche.recouvrement != null)
             {
-                colorRight_rec = Colors.Gold;
+                colorRight_rec = newFiche.recouvrement.color;
             }
             else
             {
-                colorRight_rec = colorLeft_op;
+                colorRight_rec = Colors.White;
             }
-            rectangleRight_rec.Fill = new SolidColorBrush(colorRight_rec);
-            dispSimple = newDispSimple;
-            if(dispSimple == true)
-            {
-                ModifyDateFab(newDateFabrication);
-            }
-            else
-            {
-                textDateFabrication = "";
-                textDateFabFicheDay.Text = "";
-            }
-        }
 
+            rectangleRight_rec.Fill = new SolidColorBrush(colorRight_rec);
+        }
+                
         private void ModifyId(int newId)
         {
             textId = "Id : " + newId;
@@ -129,6 +123,12 @@ namespace GestionPlanning
             textNameFicheDay.Text = textName;
         }
 
+        private void ModifyMachine(String newMachine)
+        {
+            textMachine = "Machine : " + newMachine;
+            textMachineFicheDay.Text = textMachine;
+
+        }
         private void ModifyDateLiv(DateTime newDate)
         {
             if (newDate.CompareTo(new DateTime(2000, 1, 1)) > 0)
@@ -186,7 +186,7 @@ namespace GestionPlanning
             }
         }
 
-        private void ModifyQté(int newQty)
+        private void ModifyQty(int newQty)
         {
             textQty = "Qté : " + newQty;
             textQtyFicheDay.Text = textQty;

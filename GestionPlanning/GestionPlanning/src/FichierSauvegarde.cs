@@ -83,6 +83,8 @@ namespace GestionPlanning.src
         public String newPathFileCsv = "";
         public String newPathFileModifs = "";
 
+
+        public List<TypeColor> listeColors = new List<TypeColor>();
         /* *
          * Données sauvegardées:
          * 1 = nom fichier sauvegarde
@@ -155,12 +157,7 @@ namespace GestionPlanning.src
             {
                 Brain.Instance.gestionModif.pathFile = data.pathFileModifs;
                 pathFileModifs = data.pathFileModifs;
-            }
-
-            /*data.nameFileCSV = Brain.Instance.fichierXcel.name_file;
-            data.pathFileCSV = Brain.Instance.fichierXcel.path_file;
-            data.pathFileModifs = Brain.Instance.gestionModif.pathFile;
-            */
+            }            
             if (newNameFileCsv != null && newNameFileCsv!="")
             {
                 data.nameFileCSV = newNameFileCsv;
@@ -212,7 +209,6 @@ namespace GestionPlanning.src
                             ficheConnue.machine = ficheSaved.machine;
                             ficheConnue.dateDebutFabrication = ficheSaved.dateDebutFabrication;
                             ficheConnue.dateLivraison = ficheSaved.dateLivraison;
-                            ficheConnue.retardPlacement = ficheSaved.retardPlacement;
                             ficheConnue.textDescription = ficheSaved.textDescription;
                             ficheConnue.check = ficheSaved.check;
                             break;
@@ -221,7 +217,7 @@ namespace GestionPlanning.src
                         {
                             TimeSpan ts = DateTime.Now - ficheSaved.dateLivraison;
                             //si la fiche sauvegardée n'est pas dans la liste connue et qu'elle n'est pas dépassée, la placer dans la liste
-                            if ( idFichePrec!= ficheSaved.id)
+                            if ( idFichePrec!= ficheSaved.id || ficheSaved.id == 0)
                             {
                                 if (ts.Days < 30)
                                 {
@@ -232,19 +228,17 @@ namespace GestionPlanning.src
                                     listeFichesTmp.Add(ficheSaved);
                                 }
                             }
-                            
                             //Si la fiche est passée, fin de la boucle
                             break;
                         }
                     }
-                    idFichePrec = ficheSaved.id;
-                    //if fiche pas placée
-                    //ajouter fiche
+                    idFichePrec = ficheSaved.id;                    
                 }
                 foreach (Fiche ficheTmp in listeFichesTmp)
                 {
                     listeFichesConnues.Add(ficheTmp);
                 }
+                this.listeColors = data.listeColor;
                 //Trier fiches par id
                 listeFichesConnues = listeFichesConnues.OrderBy(fiche => fiche.id).ToList();
                 data.listeFiches = listeFichesConnues;
@@ -275,6 +269,25 @@ namespace GestionPlanning.src
             }
         }
 
+        
+
+        public int SaveListe(List<Fiche> listeFichesConnues, List<TypeColor> listeColors)
+        {
+            try
+            {
+                SaveData data = ReadDatas();
+                dateLastModif = DateTime.Now;
+                data.dateLastModif = dateLastModif;
+                data.listeFiches = listeFichesConnues;
+                data.listeColor = listeColors;
+                SaveDatas(data);
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
         public void EraseData()
         {
             String file = this.pathFile + this.nameFile + ".xml";

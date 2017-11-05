@@ -19,9 +19,8 @@ namespace GestionPlanning
     /// Logique d'interaction pour Window_Create_Fiche.xaml
     /// </summary>
     public partial class Window_Create_Fiche : Window
-    {
-        
-        public Window_Create_Fiche()
+    {      
+        public Window_Create_Fiche(List<TypeColor> listeColors)
         {
             InitializeComponent();
             DateTime dateNow = DateTime.Now;
@@ -36,8 +35,18 @@ namespace GestionPlanning
             imageAttention_NumMach.Visibility = Visibility.Collapsed;
             imageAttention_QtyEl.Visibility = Visibility.Collapsed;
             imageAttention_SizeText.Visibility = Visibility.Collapsed;
+
+            bool first = true;
+            foreach (TypeColor color in listeColors)
+            {
+                comboBoxRevetement.Items.Add(color.name);
+                if (first == true)
+                {
+                    comboBoxRevetement.SelectedItem = color.name;
+                }
+            }
         }
-        
+
         private void ValiderCreationFiche(object sender, RoutedEventArgs e)
         {
             Brain.Instance.ValidateCreationFiche();
@@ -47,5 +56,6 @@ namespace GestionPlanning
         {
             Brain.Instance.CancelCreationFiche();
         }
+        
     }
 }

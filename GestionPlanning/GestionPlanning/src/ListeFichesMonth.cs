@@ -13,7 +13,7 @@ namespace GestionPlanning.src
         public bool attention_retard = false;
         public bool alerte_retard = false;
         public List<TypeOperation> listeOperation = new List<TypeOperation>();
-        public bool reco = false;
+        public TypeColor reco = null;
         
         public FicheDayMonth() { }
     }
@@ -55,7 +55,7 @@ namespace GestionPlanning.src
                     tabMonthFicheDay[j, i].alerte_retard = false;
                     tabMonthFicheDay[j, i].attention_retard = false;
                     tabMonthFicheDay[j, i].listeOperation.Clear();
-                    tabMonthFicheDay[j, i].reco = false;
+                    tabMonthFicheDay[j, i].reco = null;
 
                     foreach (Fiche fiche in listePlacees)
                     {
@@ -76,9 +76,9 @@ namespace GestionPlanning.src
                             {
                                 tabMonthFicheDay[j, i].listeOperation.Add(fiche.typeOperation);
                             }
-                            if(fiche.recouvrement == true)
+                            if (fiche.recouvrement != null)
                             {
-                                tabMonthFicheDay[j, i].reco = true;
+                                tabMonthFicheDay[j, i].reco = new TypeColor(fiche.recouvrement.name, fiche.recouvrement.color);
                             }
                         }
                     }

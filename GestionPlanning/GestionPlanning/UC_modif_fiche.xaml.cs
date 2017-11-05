@@ -60,15 +60,8 @@ namespace GestionPlanning
                     RadioButtonOpNA.IsChecked = true;
                     break;
             }
-
-            if(fiche.recouvrement == true)
-            {
-                RadioButtonRecYes.IsChecked = true;
-            }
-            else
-            {
-                RadioButtonRecNo.IsChecked = true;
-            }
+            
+            
             textBoxDateLivraison.Text = fiche.dateLivraison.Day + "/" + fiche.dateLivraison.Month + "/" + fiche.dateLivraison.Year;
             textBoxDateFabrication.Text = fiche.dateDebutFabrication.Day + "/" + fiche.dateDebutFabrication.Month + "/" + fiche.dateDebutFabrication.Year;
             textBoxHeureFabrication.Text = fiche.dateDebutFabrication.Hour + ":" + fiche.dateDebutFabrication.Minute;

@@ -7,8 +7,8 @@
              mc:Ignorable="d" Width="950" Height="560">
     <Grid>
         <Rectangle Fill="#FF2E2E2E" Margin="0,0,0,0" Stroke="Black" StrokeThickness="0"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="433" Margin="54,61,0,0" VerticalAlignment="Top" Width="823" Padding="0" UseLayoutRounding="True" BorderBrush="Black" >
-            <StackPanel x:Name="StackPanelDisplayDay" HorizontalAlignment="Left" Height="433" VerticalAlignment="Top" Width="813"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="433" Margin="54,61,0,0" VerticalAlignment="Top" Width="826" Padding="0" UseLayoutRounding="True" BorderBrush="Black" HorizontalScrollBarVisibility="Auto">
+            <StackPanel x:Name="StackPanelDisplayDay" HorizontalAlignment="Left" Height="433" VerticalAlignment="Top" Width="804"/>
         </ScrollViewer>
         <Button x:Name="btnPreviousDay" Content="Jour précedent" HorizontalAlignment="Left" Margin="72,27,0,0" VerticalAlignment="Top" Width="93" Click="Btn_PreviousDay"/>
         <Button x:Name="btnNextDay" Content="Jour suivant" HorizontalAlignment="Left" Margin="762,27,0,0" VerticalAlignment="Top" Width="93" Click="Btn_NextDay"/>

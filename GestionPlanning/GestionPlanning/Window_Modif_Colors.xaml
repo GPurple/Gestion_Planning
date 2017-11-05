@@ -14,7 +14,7 @@
         <ScrollViewer HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="300" Margin="22,43,0,0">
             <StackPanel x:Name="StackPanelDisplayRevetements" HorizontalAlignment="Left" Height="248" VerticalAlignment="Top" Width="300"/>
         </ScrollViewer>
-        <Button x:Name="btnLeave" Content="Quitter" HorizontalAlignment="Left" Margin="126,339,0,0" VerticalAlignment="Top" Width="75" Click="LeaveModif"/>
+        <Button x:Name="btnLeave" Content="Quitter" HorizontalAlignment="Left" Margin="126,339,0,0" VerticalAlignment="Top" Width="75" Click="CancelModif"/>
 
     </Grid>
 </Window>

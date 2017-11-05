@@ -9,38 +9,31 @@ namespace GestionPlanning.src
     class TODO
     {
 
-        //choisir couleur : 
-        //écran paramétrage des couleurs: créer jusqu'à 10 types
-        //btn ajouter fiche(limiter à 10 fiches)
-            //définir nom fiche
-            //choix couleur dans panel 
-        //btn modifier
-        //une uc pour chaque type
-        //10 couleurs déjà défini
+        //temps limite par jour et par temps de fabrication et machine
+        //placement auto, si dépassement de temps sur une machine sur une journée -> alerte : comment?
+        //création d'une fiche, si trop de temps sur une journée -> indication de l'alerte ; mais autorisation?
+        //modification d'une fiche, comme pour l'alerte
+        //au chargement, voir si problème de temps
 
-        //fiche: sauvegarde nom type?
+        //l'alerte est indiquée par un message après une modif? ->  afficher messageBox
+        //alerte empêche de modifier la fiche?
+        //l'alerte est indiquée dans machine? sur un jour? -> afficher messageBox si affichage du jour ou filtre de la machine
         //
-        //fichier sauvegarde: sauvegarder les types dans savedata
-        //list<typeRevet> (color,name)
-        //création fiche: choix d'un type dans la liste dispo
-        //affichage d'une combo box à l'ouverture de la fiche à partir des types connus
-        //affichage de la couleur d'une fiche en fonction du type de la fiche et des couleurs connues
-        //si le nom ne correspond pas, afficher couleur blanche
+
+        //si pas de date de fabrication, pas de machine
+        //
+
 
         //TODO
-        //faire un affichage par machine
-        //option -> personnaliser couleurs et donner un nom
-        //choisir id creation fiche?
-        //calculer le temps sur une machine et prévenir en cas de problème
-        //réactualiser les données toutes les 15secondes
-        //afficher les listes non placées comme pour une machine? ou les fiches sans date de livraison
-        //placement automatique au chargement des données
+        //réactualiser les données toutes les 15secondes?
         //retirer du placement automatique
         //modifier le menu pour un meilleur affichage (en haut de l'écran)
-
         //rendre plus beau
 
         //Tester plusieurs lancements en parallèle
+
+        //tester une dernière fois le path
+        //refaire des données complètes pour présentation
 
         //Fait:
         //Faire chargement depuis fichier xcel 
@@ -66,6 +59,14 @@ namespace GestionPlanning.src
         //affichage par machine -> String et non int 
         //choisir heure 8:01 ou 8h1 est différent
         //pouvoir créer une nouvelle fiche -> choisir id?
+        //option -> personnaliser couleurs et donner un nom
+        //faire un affichage par machine
+        //afficher les listes non placées comme pour une machine?
+        //calculer le temps sur une machine et prévenir en cas de problème
+        //afficher quantité dans fiche machine
+        //choisir id creation fiche?
+        //afficher les fiches sans date de livraison
+        //afficher machine pour day, week et simple
 
         //a présenter
         // tous les cas de tests

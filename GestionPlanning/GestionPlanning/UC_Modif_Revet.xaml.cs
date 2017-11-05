@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionPlanning.src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,28 @@ namespace GestionPlanning
     /// </summary>
     public partial class UC_Modif_Revet : UserControl
     {
+        String nameRevet = "";
         public UC_Modif_Revet()
         {
             InitializeComponent();
+        }
+
+        public UC_Modif_Revet(TypeColor typeColor)
+        {
+            InitializeComponent();
+            TextBlock_NameRevetement.Text = typeColor.name;
+            nameRevet = typeColor.name;
+            btnChoiceColor.Background = new SolidColorBrush(typeColor.color);
+        }
+
+        private void SupprColor(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.SupprColor(nameRevet);
+        }
+
+        private void ChoiceColor(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.ChoiceColor(nameRevet);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace GestionPlanning.src
         public TriOp triOperation = TriOp.all; //operation fabrication all=0/fabrication/affutage/ -> faire une enum
 
         //Afficher les recouvrements
-        public TriReco triReco = TriReco.all; //recouvrement all=0/oui/non/
+        public String triReco = "Tous revêtements";
 
         public TriRetard triRetard = TriRetard.all;
         //Afficher le nom de tri
@@ -59,6 +59,9 @@ namespace GestionPlanning.src
         //La liste des types de revetement
         public List<TypeColor> listeColors = new List<TypeColor>();
 
+        //la liste des machines
+        public ListeFicheMachines listeFichesMachines = new ListeFicheMachines();
+
         //Le fichier de sauvegarde
         public FichierXcel fichierXcel = new FichierXcel();
 
@@ -84,9 +87,11 @@ namespace GestionPlanning.src
         public Window_Create_Fiche winCreateFiche;
         public Window_Modif_Colors winModifColors;
         public Window_Add_Color winAddColor;
+        public Window_Choice_Color winChoiceColor;
 
         MessageConfValidationFiche message_validationFiche;
         MessageConfRetraitFichePlanning message_retraitFiche;
+        MessageConfSupprColor message_ConfSupprColor;
 
         private static Brain instance;
 
@@ -129,8 +134,10 @@ namespace GestionPlanning.src
             {
 
             }
+            
             ResetWeek();
             RefreshData();
+            listeFichesMachines.ProcessListeFicheMachines(listeFiches);
         }
         
         /**
@@ -145,11 +152,6 @@ namespace GestionPlanning.src
                 PlacementAutoOneFiche(fiche);
             }
             SaveListeInData();
-            ProcessListSimple();
-            ProcessListNotPlaced();
-            ProcessListCurrentDay();
-            listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
-            //TODO ProcessListMonth
             DisplayFiches();
             gestionModif.AddModif(new Modification(TypeModification.placementAuto, nameUser, -1, "Placement automatique de toutes les fiches", DateTime.Now,""));
         }
@@ -163,13 +165,17 @@ namespace GestionPlanning.src
                 {
                     DateTime dateTmp = DateTime.Now;
                     fiche.dateDebutFabrication = new DateTime(dateTmp.Year, dateTmp.Month, dateTmp.Day);
+                    if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(1);
+                    }
+                    else if(fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
+                    {
+                        fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(2);
+                    }
                 }
             }
             SaveListeInData();
-            ProcessListNotPlaced();
-            ProcessListCurrentDay();
-            listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
-            //TODO ProcessListMonth
             DisplayFiches();
             gestionModif.AddModif(new Modification(TypeModification.replacementAuto, nameUser, -1, "Replacement automatique de toutes les fiches", DateTime.Now,""));
         }
@@ -189,7 +195,7 @@ namespace GestionPlanning.src
                         fiche.dateDebutFabrication = fiche.dateDebutFabrication.AddDays(-2);
                     }
                     //Déplacement de 2 jours si recouvrement et prise en compte du week end
-                    if (fiche.recouvrement == true)
+                    if (fiche.recouvrement != null)
                     {
                         fiche.dateDebutFabrication = fiche.dateLivraison.AddDays(-2);
                         if (fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Sunday || fiche.dateDebutFabrication.DayOfWeek == DayOfWeek.Saturday)
@@ -395,13 +401,10 @@ namespace GestionPlanning.src
             }
 
             //tri recouvrement
-            if (triReco == TriReco.all)
+            if (triReco == "Tous revêtements")
             {
             }
-            else if (triReco == TriReco.non && fiche.recouvrement == false)
-            {
-            }
-            else if (triReco == TriReco.yes && fiche.recouvrement == true)
+            else if (fiche.recouvrement != null && triReco == fiche.recouvrement.name )
             {
             }
             else
@@ -448,6 +451,7 @@ namespace GestionPlanning.src
             if (fichierXcel.LoadFiches(listeFiches) >= 0)
             {
                 List<Fiche> newListe = fichierSauvegarde.SynchroListe(listeFiches);
+                this.listeColors = fichierSauvegarde.listeColors;
                 if (newListe != null)
                 {
                     foreach (Fiche ficheTmp in newListe)
@@ -458,10 +462,7 @@ namespace GestionPlanning.src
                     listeFiches = listeFiches.OrderBy(fiche => fiche.id).ToList();
                 }
                 FindAlerteListeFull(listeFiches);
-                ProcessListCurrentDay();
-                listeWeek.ProcessListCurrentWeek(listeFiches, dateToDisplay);
-                //processListCurrentMonth
-                ProcessListNotPlaced();
+                RefreshRevetements();
                 DisplayFiches();
                 RefreshDispControlTri();
                 gestionModif.AddModif(new Modification(TypeModification.refreshData, nameUser, -1, "Rafraichissement des données", DateTime.Now,""));
@@ -488,7 +489,7 @@ namespace GestionPlanning.src
             listeMachine.Sort();
 
             ucDispControl.SetListName(listName);
-            //TODO setListColor
+            ucDispControl.SetListRevetements(listeColors);
             ucDispControl.SetListMachine(listeMachine);
         }
 
@@ -503,7 +504,7 @@ namespace GestionPlanning.src
         
         public void SaveListeInData()
         {
-            fichierSauvegarde.SaveListe(listeFiches);
+            fichierSauvegarde.SaveListe(listeFiches,listeColors);
         }
         
         public void DisplayFiches()
@@ -523,7 +524,7 @@ namespace GestionPlanning.src
                     DisplayListeSimple();
                     break;
                 case DispPlanning.machine:
-                    //TODO
+                    DisplayListeMachines();
                     break;
                 default:
                     DisplayDay();
@@ -538,11 +539,13 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Machines.Visibility = Visibility.Collapsed;
             ucDispModifs.Visibility = Visibility.Collapsed;
 
             ProcessListCurrentDay();
             ucDispDay.RefreshDayToDisplay(dateToDisplay);
             ucDispDay.RefreshListToDisplay(listeDay);
+            VerifOverflowTimeDay(listeDay);
         }
         
         public void DisplayWeek()
@@ -553,6 +556,7 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Visible;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Machines.Visibility = Visibility.Collapsed;
             ucDispModifs.Visibility = Visibility.Collapsed;
 
             //obtenir premier jour de la semaine et afficher numéro semaine et jours
@@ -574,6 +578,7 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Visible;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Machines.Visibility = Visibility.Collapsed;
             ucDispModifs.Visibility = Visibility.Collapsed;
 
             //TODO obtenir premier jour du mois
@@ -581,6 +586,7 @@ namespace GestionPlanning.src
 
             listeMonth.ProcessListCurrentMonth(listeFiches, dateToDisplay);
             ucDispMonth.RefreshMonthToDisplay(dateToDisplay,listeMonth);
+            VerifOverflowTimeDay(listeFiches);
 
         }
 
@@ -592,10 +598,31 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Visible;
+            mainWindow.UC_Disp_Machines.Visibility = Visibility.Collapsed;
             ucDispModifs.Visibility = Visibility.Collapsed;
 
             ProcessListSimple();
             ucDispSimple.RefreshListToDisplay(listeSimple);
+            VerifOverflowTimeDay(listeSimple);
+        }
+
+        public void DisplayListeMachines()
+        {
+            dispPlanning = DispPlanning.machine;
+            //utiliser premiere semaine du mois ou semaine du jour
+            mainWindow.UC_Disp_Day.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Machines.Visibility = Visibility.Visible;
+            ucDispModifs.Visibility = Visibility.Collapsed;
+
+            listeFichesMachines.ProcessListeFicheMachines(listeFiches);
+            mainWindow.UC_Disp_Machines.RefreshListToDisplay(listeFichesMachines);
+            foreach (ListeMachine listeMachine in listeFichesMachines.listeFichesByMachines)
+            {
+                VerifOverflowTimeMachine(listeMachine.nameMachine, listeFiches);
+            }
         }
 
         public void DisplayListeModifs()
@@ -604,6 +631,7 @@ namespace GestionPlanning.src
             mainWindow.UC_Disp_Week.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Month.Visibility = Visibility.Collapsed;
             mainWindow.UC_Disp_Simple.Visibility = Visibility.Collapsed;
+            mainWindow.UC_Disp_Machines.Visibility = Visibility.Collapsed;
             ucDispModifs.DisplayModifs(gestionModif.ReadDatas());
             ucDispModifs.Visibility = Visibility.Visible;
         }
@@ -691,7 +719,7 @@ namespace GestionPlanning.src
             {
                 if (fiche.id == idFiche)
                 {
-                    winModifFiche = new Window_Modif_Fiche(fiche);
+                    winModifFiche = new Window_Modif_Fiche(fiche,listeColors);
                     winModifFiche.Show();
                     break;
                 }
@@ -726,39 +754,35 @@ namespace GestionPlanning.src
                 ficheTemp.typeOperation = TypeOperation.na;
             }
 
-            if (winModifFiche.RadioButtonRecYes.IsChecked == true)
+            //revetement
+            if (winModifFiche.comboBoxRevetement.Text == "NA")
             {
-                ficheTemp.recouvrement = true;
-            }
-            else if (winModifFiche.RadioButtonRecNo.IsChecked == true)
-            {
-                ficheTemp.recouvrement = false;
+                ficheTemp.recouvrement = null;
             }
             else
             {
-                ficheTemp.recouvrement = false;
+                foreach (TypeColor color in listeColors)
+                {
+                    if (winModifFiche.comboBoxRevetement.Text == color.name)
+                    {
+                        ficheTemp.recouvrement = new TypeColor(color.name, color.color);
+                        break;
+                    }
+                }
             }
 
             //modif date livraison
             try
             {
                 dateTime = Convert.ToDateTime(winModifFiche.textBoxDateLivraison.Text);
+                ficheTemp.dateLivraison = dateTime;
             }
             catch
             {
                 error = true;
                 winModifFiche.imageAttention_dateLiv.Visibility = Visibility.Visible;
             }
-            if (dateTime.CompareTo(dateDayNow) >= 0)
-            {
-                ficheTemp.dateLivraison = dateTime;
-                winModifFiche.imageAttention_dateLiv.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                error = true;
-                winModifFiche.imageAttention_dateLiv.Visibility = Visibility.Visible;
-            }
+            
             //modif date fabrication
             if (winModifFiche.textBoxDateFabrication.Text.Length > 0 && winModifFiche.textBoxDateFabrication.Text.CompareTo(" ") !=0 )
             {
@@ -909,12 +933,12 @@ namespace GestionPlanning.src
 
                         FindAlerteListeFull(listeFiches);
                         DisplayFiches();
-                        break;
-                        
+                        break;                        
                     }
                 }
                 winModifFiche.Close();
                 RefreshDispControlTri();
+                
                 fichierSauvegarde.SaveListe(listeFiches);
             }
             gestionModif.AddModif(new Modification(TypeModification.modifFiche, nameUser, idFiche, "Modification d'une fiche", DateTime.Now,""));
@@ -1044,22 +1068,7 @@ namespace GestionPlanning.src
 
         public void SearchByReco(String st_reco)
         {
-            //TODO modif en fonction des différents revêtements
-            switch (st_reco)
-            {
-                case "Tous recouvrements":
-                    triReco = TriReco.all;
-                    break;
-                case "Oui":
-                    triReco = TriReco.yes;
-                    break;
-                case "Non":
-                    triReco = TriReco.non;
-                    break;
-                default:
-                    triReco = TriReco.all;
-                    break;
-            }
+            triReco = st_reco;
         }
 
         public void SearchByMachine(String st_numMachine)
@@ -1100,6 +1109,103 @@ namespace GestionPlanning.src
             SearchByMachine(st_machine);
             SearchByRetard(st_retard);
             DisplayFiches();
+        }
+        
+        public List<String> VerifOverflowTimeDay(List<Fiche> listeDay)
+        {
+            List<string> retList = new List<string>();
+            TimeSpan totalTime = new TimeSpan();
+            DateTime dateDay = new DateTime();
+            
+            foreach (ListeMachine listMachine in listeFichesMachines.listeFichesByMachines)
+            {
+                foreach (Fiche fiche in listeDay)
+                {                    
+                    if (fiche.machine == listMachine.nameMachine && fiche.check == false)
+                    {
+                        if (fiche.tempsFabrication >= 0)
+                        {
+                            totalTime = totalTime.Add(new TimeSpan(0, fiche.tempsFabrication, 0));
+                            dateDay = fiche.dateDebutFabrication;
+                        }                        
+                    }
+                }
+                if(totalTime.TotalMinutes > 60 * Values.Instance.timeProdDay)
+                {
+                    retList.Add(listMachine.nameMachine);
+                    //TODO afficher le temps
+                    
+                    MessageBox.Show("Attention : Le temps de production de la machine " + listMachine.nameMachine + " (" + Values.Instance.timeProdDay + "h) est dépassé le " + dateDay.Day + "/" + dateDay.Month + "/" + dateDay.Year + ". Le temps de production est de :" + totalTime.Hours + "h" + totalTime.Minutes + "min.");
+                }
+                totalTime = new TimeSpan();
+            }
+            
+            
+            return retList;
+        }
+
+        public class TimeDayMachine
+        {
+            public TimeSpan totalTime = new TimeSpan();
+            public DateTime day = new DateTime();
+
+            public TimeDayMachine ()
+            {
+
+            }
+
+            public TimeDayMachine (DateTime newDay)
+            {
+                day = new DateTime(newDay.Year, newDay.Month,newDay.Day);
+            }
+
+            public TimeDayMachine(DateTime newDay, int nbMinutes)
+            {
+                day = new DateTime(newDay.Year, newDay.Month, newDay.Day);
+                totalTime = new TimeSpan(0, nbMinutes, 0);
+            }
+        }
+        
+        public int VerifOverflowTimeMachine(String nameMachine, List<Fiche> listeToVerif)
+        {
+            List<string> retList = new List<string>();
+            TimeSpan totalTime = new TimeSpan();
+            DateTime dateDay = new DateTime();
+
+
+            List<TimeDayMachine> listeDayMachine = new List<TimeDayMachine>();
+
+            bool exists = false;
+
+            foreach (Fiche fiche in listeToVerif)
+            {
+                if (fiche.machine == nameMachine && fiche.check == false)
+                {
+                    if (fiche.tempsFabrication >= 0)
+                    {
+                        exists = false;
+                        foreach (TimeDayMachine timeDay in listeDayMachine)
+                        {
+                            if(timeDay.day.CompareTo(fiche.dateDebutFabrication) == 0)
+                            {
+                                timeDay.totalTime.Add(new TimeSpan(0,fiche.tempsFabrication,0));
+                            }
+                        }   
+                        if(exists == false)
+                        {
+                            listeDayMachine.Add(new TimeDayMachine(fiche.dateDebutFabrication, fiche.tempsFabrication));
+                        }
+                    }
+                }
+            }
+            foreach (TimeDayMachine timeDay in listeDayMachine)
+            {
+                if (timeDay.totalTime.TotalMinutes > 60 * Values.Instance.timeProdDay)
+                {
+                    MessageBox.Show("Attention : Le temps de production de la machine " + nameMachine + " (" + Values.Instance.timeProdDay + "h) est dépassé le " + timeDay.day.Day + "/" + timeDay.day.Month + "/" + timeDay.day.Year + ". Le temps de production est de :" + timeDay.totalTime.Hours + "h" + timeDay.totalTime.Minutes + "min.");
+                }
+            }
+            return 1;
         }
 
         public void ValidateIdentification(String username, String password)
@@ -1147,7 +1253,7 @@ namespace GestionPlanning.src
 
         public void CreateFiche()
         {
-            winCreateFiche = new Window_Create_Fiche();
+            winCreateFiche = new Window_Create_Fiche(listeColors);
             winCreateFiche.Show();
         }
 
@@ -1176,6 +1282,7 @@ namespace GestionPlanning.src
                 
                 if (int.TryParse(winCreateFiche.textBoxID.Text, out newFiche.id))
                 {
+                    
                     if (newFiche.id >= 0) //ok
                     {
                         winCreateFiche.imageAttention_ID.Visibility = Visibility.Collapsed;
@@ -1184,6 +1291,14 @@ namespace GestionPlanning.src
                     {
                         error = true;
                         winCreateFiche.imageAttention_ID.Visibility = Visibility.Visible;
+                    }
+                    foreach (Fiche ficheComp in listeFiches)
+                    {
+                        if (ficheComp.id == newFiche.id && newFiche.id!=0)
+                        {
+                            error = true;
+                            winCreateFiche.imageAttention_ID.Visibility = Visibility.Visible;
+                        }
                     }
                 }
                 else
@@ -1211,18 +1326,21 @@ namespace GestionPlanning.src
                     newFiche.typeOperation = TypeOperation.na;
                 }
 
-                //TODO modifier choix revetement
-                if (winCreateFiche.RadioButtonRecYes.IsChecked == true)
+                if(winCreateFiche.comboBoxRevetement.Text == "NA")
                 {
-                    newFiche.recouvrement = true;
-                }
-                else if (winCreateFiche.RadioButtonRecNo.IsChecked == true)
-                {
-                    newFiche.recouvrement = false;
+                    newFiche.recouvrement = null;
                 }
                 else
                 {
-                    newFiche.recouvrement = false;
+
+                    foreach(TypeColor color in listeColors)
+                    {
+                        if(winCreateFiche.comboBoxRevetement.Text == color.name)
+                        {
+                            newFiche.recouvrement = new TypeColor(color.name, color.color);
+                            break;
+                        }
+                    }
                 }
 
                 //modif date livraison
@@ -1395,11 +1513,11 @@ namespace GestionPlanning.src
             }
         }
 
+        //Gestion des couleurs
         public void ClickModifyColor()
         {
             winModifColors = new Window_Modif_Colors();
             winModifColors.Show();
-
             winModifColors.DisplayColors(listeColors);
         }
 
@@ -1412,7 +1530,7 @@ namespace GestionPlanning.src
             }
         }
 
-        public void LeaveModifColors()
+        public void CancelModifColors()
         {
             winModifColors.Close();
         }
@@ -1424,19 +1542,133 @@ namespace GestionPlanning.src
 
         public void ValidateCreationColor()
         {
-            bool error = true;
-            foreach (TypeColor color in listeColors)
+            bool error = false;
+
+            if (winAddColor.textBoxNameRevet.Text == "Nom")
             {
-                if (winAddColor.textBoxNameRevet.Text == color.name && winAddColor.color!= Colors.White)
+                error = true;
+            }
+            else if (winAddColor.color == Colors.White)
+            {
+                error = true;
+            }
+            else
+            {
+                foreach (TypeColor color in listeColors)
                 {
-                    listeColors.Add(new TypeColor(winAddColor.textBoxNameRevet.Text, winAddColor.color));
-                    error = false;
+                    if (winAddColor.textBoxNameRevet.Text == color.name )
+                    {
+                        error = true;
+                    }
                 }
             }
             if (error == false)
             {
+                listeColors.Add(new TypeColor(winAddColor.textBoxNameRevet.Text, winAddColor.color));
                 winAddColor.Close();
                 winModifColors.DisplayColors(listeColors);
+                fichierSauvegarde.SaveListe(listeFiches, listeColors);
+                RefreshDispControlTri();
+            }
+        }
+
+        public void SupprColor(String nameRevet)
+        {
+            message_ConfSupprColor = new MessageConfSupprColor(nameRevet);
+            message_ConfSupprColor.Show();
+        }
+
+        public void ConfirmRetraitRevet(String name)
+        {
+            List<TypeColor> listeTmp = new List<TypeColor>();
+
+            foreach(TypeColor color in listeColors)
+            {
+                if(name != color.name)
+                {
+                    listeTmp.Add(color);
+                }
+            }
+            listeColors = listeTmp;
+            RefreshRevetements();
+            DisplayFiches();
+            winModifColors.DisplayColors(listeColors);
+            fichierSauvegarde.SaveListe(listeFiches, listeColors);
+            RefreshDispControlTri();
+            message_ConfSupprColor.Hide();
+            
+        }
+        
+        public void CancelRetraitRevet(String name)
+        {
+            message_ConfSupprColor.Hide();
+        }
+
+        public void ChoiceColor(String nameRevet)
+        {
+            //afficher écran choix couleur
+            winChoiceColor = new Window_Choice_Color(nameRevet);
+            winChoiceColor.Show();
+        }
+
+        public void ValidateChoiceColor(String nameRevet)
+        {
+            bool error = false;
+
+            if (winChoiceColor.color == Colors.White)
+            {
+                error = true;
+            }            
+            if (error == false)
+            {
+                foreach (TypeColor color in listeColors)
+                {
+                    if (nameRevet == color.name)
+                    {
+                        color.color = winChoiceColor.color;
+                        break;
+                    }
+                }
+
+                winChoiceColor.Close();
+                RefreshRevetements();
+                DisplayFiches();
+                winModifColors.DisplayColors(listeColors);
+                fichierSauvegarde.SaveListe(listeFiches, listeColors);
+                RefreshDispControlTri();
+            }
+            winChoiceColor.Hide();
+        }
+        
+        public void CancelChoiceColor(String nameRevet)
+        {
+            winChoiceColor.Hide();
+        }
+        
+        public void RefreshRevetements()
+        {
+            bool check = false;
+            //pour chaque fiche dans la liste
+            //ajouter la valeur de la bonne couleur
+            foreach(Fiche fiche in listeFiches)
+            {
+                check = false;
+                foreach (TypeColor typeColor in listeColors)
+                {
+                    if (fiche.recouvrement != null)
+                    {
+                        if (fiche.recouvrement.name == typeColor.name)
+                        {
+                            fiche.recouvrement.color = typeColor.color;
+                            check = true;
+                            break;
+                        }
+                    }
+                }
+                if (check == false && fiche.recouvrement != null)
+                {
+                    fiche.recouvrement.color = Values.COLOR_NA;
+                }
             }
         }
 

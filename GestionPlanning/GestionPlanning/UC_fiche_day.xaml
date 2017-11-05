@@ -14,12 +14,12 @@
         <Rectangle x:Name="rectangleRight_rec" Fill="#FFF4F4F5" HorizontalAlignment="Left" Width="330" Margin="320,0,0,0" StrokeThickness="0" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="textIDficheDay" HorizontalAlignment="Left" Margin="10,3,0,0" TextWrapping="Wrap" Text="ID : " VerticalAlignment="Top"/>
         <TextBlock x:Name="textNameFicheDay" HorizontalAlignment="Left" Margin="75,3,0,0" TextWrapping="Wrap" Text="Nom : " VerticalAlignment="Top"/>
-        <TextBlock x:Name="textDateLivFicheDay" HorizontalAlignment="Left" Margin="275,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Date l"/><Run Text="ivraison : "/></TextBlock>
-        <TextBlock x:Name="textQtyFicheDay" HorizontalAlignment="Left" Margin="480,3,0,0" TextWrapping="Wrap" Text="Quantité : " VerticalAlignment="Top"/>
+        <TextBlock x:Name="textDateLivFicheDay" HorizontalAlignment="Left" Margin="253,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Date l"/><Run Text="ivraison : "/></TextBlock>
+        <TextBlock x:Name="textQtyFicheDay" HorizontalAlignment="Left" Margin="421,21,0,0" TextWrapping="Wrap" Text="Quantité : " VerticalAlignment="Top"/>
         <Image x:Name="image_alerte" HorizontalAlignment="Left" Height="30" Margin="602,-4,0,0" VerticalAlignment="Top" Width="33" Source="Images/Icone_Alerte.png"/>
         <Image x:Name="image_warning" HorizontalAlignment="Left" Height="30" Margin="602,-4,0,0" VerticalAlignment="Top" Width="30" Source="Images/Icone_Attention.png" RenderTransformOrigin="0.533,0.404"/>
         <TextBlock x:Name="textHeureFabFicheWeek" HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"><Run Text="Heure fab"/><Run Text=" "/><Run Text=": "/></TextBlock>
-        <TextBlock x:Name="textTempsFabFicheWeek" HorizontalAlignment="Left" Margin="160,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"><Run Text="Temps fab"/><Run Text=" : "/></TextBlock>
+        <TextBlock x:Name="textTempsFabFicheWeek" HorizontalAlignment="Left" Margin="134,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119"><Run Text="Temps fab"/><Run Text=" : "/></TextBlock>
         <Rectangle Fill="#FF232323" HorizontalAlignment="Left" Height="1" Margin="0,49,0,0" VerticalAlignment="Top" Width="650" Grid.ColumnSpan="2"/>
         <Button HorizontalAlignment="Center" Margin="614,24,0,0" VerticalAlignment="Top" Width="36" Height="25" Background="#FF303030" Click="ModifyFiche" Grid.ColumnSpan="2">
             <Image HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="22" Source="Images/Icone_Modif.png"/>
@@ -30,6 +30,7 @@
         <Button HorizontalAlignment="Center" Margin="532,24,77,0" VerticalAlignment="Top" Width="36" Height="25" Background="#FF303030" Click="PlacementFicheAuto">
             <Image Height="22" Width="26" Source="Images/Icone_Placement.png"/>
         </Button>
-        <TextBlock x:Name="textDateFabFicheDay" HorizontalAlignment="Left" Margin="284,21,0,0" TextWrapping="Wrap" Text="Date fabrication :" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textDateFabFicheDay" HorizontalAlignment="Left" Margin="253,21,0,0" TextWrapping="Wrap" Text="Date fabrication :" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textMachineFicheDay" HorizontalAlignment="Left" Margin="421,3,0,0" TextWrapping="Wrap" Text="Machine :" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

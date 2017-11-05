@@ -48,17 +48,17 @@ namespace GestionPlanning
 
         }
 
-        public UC_Fiche_week(int newId, String newName, DateTime newDateLivraison, int newQty, bool newDispWarning, bool newDispAlerte, TypeOperation op, bool rec, DateTime newDateFabrication, int timeFab)
+        public UC_Fiche_week(Fiche newFiche)
         {
             InitializeComponent();
-            idFiche = newId;
-            ModifyId(newId);
-            ModifyName(newName);
-            ModifyDate(newDateLivraison);
-            ModifyTimeFab(timeFab);
-            ModifyHourFab(newDateFabrication);
-            ModifyQty(newQty);
-            if (newDispAlerte == true)
+            idFiche = newFiche.id;
+            ModifyId(newFiche.id);
+            ModifyName(newFiche.name);
+            ModifyDate(newFiche.dateLivraison);
+            ModifyTimeFab(newFiche.tempsFabrication);
+            ModifyHourFab(newFiche.dateDebutFabrication);
+            ModifyQty(newFiche.quantiteElement);
+            if (newFiche.alerteRetard == true)
             {
                 DisplayAlerte();
             }
@@ -66,7 +66,7 @@ namespace GestionPlanning
             {
                 HideAlerte();
             }
-            if (newDispWarning == true)
+            if (newFiche.attentionRetard == true)
             {
                 DisplayWarning();
             }
@@ -74,7 +74,7 @@ namespace GestionPlanning
             {
                 HideWarning();
             }
-            switch (op)
+            switch (newFiche.typeOperation)
             {
                 case TypeOperation.na:
                     colorLeft_op = Values.COLOR_NA;
@@ -91,17 +91,18 @@ namespace GestionPlanning
             }
             rectangleLeft_op.Fill = new SolidColorBrush(colorLeft_op);
 
-            if (rec == true)
+            if (newFiche.recouvrement != null)
             {
-                colorRight_rec = Colors.Gold;
+                colorRight_rec = newFiche.recouvrement.color;
             }
             else
             {
-                colorRight_rec = colorLeft_op;
+                colorRight_rec = Colors.White;
             }
+
             rectangleRight_rec.Fill = new SolidColorBrush(colorRight_rec);
         }
-
+                
         public void ModifyId(int newId)
         {
             textId = "Id : " + newId;

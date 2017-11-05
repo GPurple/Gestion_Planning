@@ -60,7 +60,7 @@ namespace GestionPlanning
             {
                 if (fiche.check == false)
                 {
-                    UC_fiche_day ucfd = new UC_fiche_day(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication,false);
+                    UC_fiche_day ucfd = new UC_fiche_day(fiche);
                     StackPanelDisplayDay.Children.Add(ucfd);
                 }
             }

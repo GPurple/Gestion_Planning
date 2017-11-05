@@ -32,7 +32,7 @@ namespace GestionPlanning.src
         public TypeOperation typeOperation = TypeOperation.na;
 
         //Le recouvrement
-        public Boolean recouvrement = false;
+        public TypeColor recouvrement = null;
 
         //Quantité élement
         public int quantiteElement = -1;
@@ -47,7 +47,7 @@ namespace GestionPlanning.src
         public DateTime dateLivraison = new DateTime();
 
         //Retard livraison
-        public RetardPlacement retardPlacement = RetardPlacement.na;
+        //public RetardPlacement retardPlacement = RetardPlacement.na;
 
         //Le texte de description de la fiche
         public String textDescription = null;
@@ -82,7 +82,7 @@ namespace GestionPlanning.src
         * @param enum retardPlacement (aucun/avant 2jours/ apres date rendu)
         * @param text
         * */
-        public Fiche(String newName, int newId, int newTempsFabrication, DateTime newDateLivraison, TypeOperation typeOperation, Boolean recouvrement)
+        public Fiche(String newName, int newId, int newTempsFabrication, DateTime newDateLivraison, TypeOperation typeOperation, TypeColor recouvrement)
         {
             //Les valeurs non définies sont à -1 ou null
             this.name = String.Copy(newName);
@@ -90,7 +90,7 @@ namespace GestionPlanning.src
             this.tempsFabrication = newTempsFabrication;
             this.dateLivraison = newDateLivraison;
             this.typeOperation = typeOperation;
-            this.recouvrement = recouvrement;
+            this.recouvrement = new TypeColor(recouvrement.name,recouvrement.color);
         }
         
         public Fiche(Fiche newFiche)
@@ -100,12 +100,14 @@ namespace GestionPlanning.src
             this.tempsFabrication = newFiche.tempsFabrication;
             this.dateLivraison = newFiche.dateLivraison;
             this.typeOperation = newFiche.typeOperation;
+            this.quantiteElement = newFiche.quantiteElement;
             this.recouvrement = newFiche.recouvrement;
             this.dateDebutFabrication = newFiche.dateDebutFabrication;
             this.textDescription = newFiche.textDescription;
             this.attentionRetard = newFiche.attentionRetard;
             this.alerteRetard = newFiche.alerteRetard;
             this.check = newFiche.check;
+            this.machine = newFiche.machine;
         }
 
         // Default comparer for Part type.
@@ -134,7 +136,7 @@ namespace GestionPlanning.src
          * */
         public void SetRetard(RetardPlacement newRetardPlacement)
         {
-            this.retardPlacement = newRetardPlacement;
+            //this.retardPlacement = newRetardPlacement;
         }
 
         /**

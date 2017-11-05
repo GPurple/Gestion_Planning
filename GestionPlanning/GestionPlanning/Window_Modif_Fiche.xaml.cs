@@ -27,10 +27,10 @@ namespace GestionPlanning
             InitializeComponent();
         }
 
-        public Window_Modif_Fiche(Fiche fiche)
+        public Window_Modif_Fiche(Fiche fiche, List<TypeColor> listeColors)
         {
             InitializeComponent();
-            ModifyDataFiche(fiche);
+            ModifyDataFiche(fiche, listeColors);
         }
 
         private void AnnulerModifFiche(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace GestionPlanning
             Brain.Instance.ValidateModificationFiche(idFiche);
         }
 
-        public void ModifyDataFiche(Fiche fiche)
+        public void ModifyDataFiche(Fiche fiche, List<TypeColor> listeColors)
         {
             idFiche = fiche.id;
             textId.Text = "ID : " + fiche.id;
@@ -65,15 +65,20 @@ namespace GestionPlanning
                     RadioButtonOpNA.IsChecked = true;
                     break;
             }
+            
+            foreach (TypeColor color in listeColors)
+            {
+                comboBoxRevetement.Items.Add(color.name);
+            }
+            try
+            {
+                comboBoxRevetement.SelectedItem = fiche.recouvrement.name;
+            }
+            catch
+            {
 
-            if (fiche.recouvrement == true)
-            {
-                RadioButtonRecYes.IsChecked = true;
             }
-            else
-            {
-                RadioButtonRecNo.IsChecked = true;
-            }
+
             textBoxDateLivraison.Text = fiche.dateLivraison.Day + "/" + fiche.dateLivraison.Month + "/" + fiche.dateLivraison.Year;
             textBoxDateFabrication.Text = fiche.dateDebutFabrication.Day + "/" + fiche.dateDebutFabrication.Month + "/" + fiche.dateDebutFabrication.Year;
             textBoxHeureFabrication.Text = fiche.dateDebutFabrication.Hour + ":" + fiche.dateDebutFabrication.Minute;

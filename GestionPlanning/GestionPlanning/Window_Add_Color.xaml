@@ -5,22 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionPlanning"
         mc:Ignorable="d"
-        Title="Window_Add_Color" Height="300" Width="300">
+        Title="Window_Add_Color" Height="295" Width="310">
     <Grid>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="51,223,0,0" VerticalAlignment="Top" Width="75" Click="ValidateCreationColor"/>
-        <Button Content="Annuler" HorizontalAlignment="Left" Margin="181,223,0,0" VerticalAlignment="Top" Width="75" Click="CancelCretionColor"/>
-        <TextBlock HorizontalAlignment="Left" Margin="83,19,0,0" TextWrapping="Wrap" Text="Créer type de revêtement" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="83,19,0,0" TextWrapping="Wrap" Text="Créer type de revêtement" VerticalAlignment="Top" Height="16" Width="144"/>
         <TextBox x:Name="textBoxNameRevet" HorizontalAlignment="Left" Height="23" Margin="118,57,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="120"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="184,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFC0F5A1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="69,58,0,0" TextWrapping="Wrap" Text="Nom :" VerticalAlignment="Top"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="51,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorRed" Background="#FFFD5848"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="96,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorCyan" Background="#FF6CF3E1"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="96,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorBlueNight" Background="#FF2D519C"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="51,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFFF8B00"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="141,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFAE369E"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="226,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FF919191"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="184,151,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FF558F2E"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="141,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFEEC1FF"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="226,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FFE2D3D1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="69,58,0,0" TextWrapping="Wrap" Text="Nom :" VerticalAlignment="Top" Height="16" Width="32"/>
+        <Button x:Name="btnOrange" Content="" HorizontalAlignment="Left" Margin="51,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorOrange" Background="#FFFF8B00"/>
+        <Button x:Name="btnCyan" Content="" HorizontalAlignment="Left" Margin="96,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorCyan" Background="#FF6CF3E1"/>
+        <Button x:Name="btnPink" Content="" HorizontalAlignment="Left" Margin="141,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorLightPink" Background="#FFE191FF"/>
+        <Button x:Name="btnLightGreen" Content="" HorizontalAlignment="Left" Margin="184,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorLightGreen" Background="#FFC0F5A1"/>
+        <Button x:Name="btnCream" Content="" HorizontalAlignment="Left" Margin="226,105,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorCream" Background="#FFE2D3D1"/>
+        <Button x:Name="btnRed" Content="" HorizontalAlignment="Left" Margin="51,16,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorRed" Background="#FFFD5848" Grid.Row="1"/>
+        <Button x:Name="btnNightBlue" Content="" HorizontalAlignment="Left" Margin="96,16,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorNightBlue" Background="#FF2D519C" Grid.Row="1"/>
+        <Button x:Name="btnPurple" Content="" HorizontalAlignment="Left" Margin="141,16,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorPurple" Background="#FFAE369E" Grid.Row="1"/>
+        <Button x:Name="btnGreen" Content="" HorizontalAlignment="Left" Margin="184,16,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGreen" Background="#FF558F2E" Grid.Row="1"/>
+        <Button x:Name="btnGrey" Content="" HorizontalAlignment="Left" Margin="226,16,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="ChoiceColorGrey" Background="#FF919191" Grid.Row="1"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="51,88,0,0" VerticalAlignment="Top" Width="75" Click="ValidateCreationColor" Grid.Row="1" Height="20"/>
+        <Button Content="Annuler" HorizontalAlignment="Left" Margin="181,88,0,0" VerticalAlignment="Top" Width="75" Click="CancelCretionColor" Grid.Row="1" Height="20"/>
     </Grid>
 </Window>

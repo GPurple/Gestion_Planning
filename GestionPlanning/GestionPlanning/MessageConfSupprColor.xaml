@@ -1,0 +1,16 @@
+﻿<Window x:Class="GestionPlanning.MessageConfSupprColor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionPlanning"
+        mc:Ignorable="d"
+        Title="MessageConfSupprColor" Height="150" Width="335">
+    <Grid>
+        <TextBlock x:Name="textMessageValidationFiche" HorizontalAlignment="Left" Margin="60,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="23"><Run Text="Attention : "/><Run Text="L"/><Run Text="e revêtement va être supprimé"/></TextBlock>
+        <Button x:Name="btnConfirm" Content="Valider" HorizontalAlignment="Left" Margin="61,70,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmRetraitRevet"/>
+        <Button x:Name="btnCancelModif" Content="Annuler" HorizontalAlignment="Left" Margin="198,70,0,0" VerticalAlignment="Top" Width="75" Click="CancelSupprRevet"/>
+        <Image HorizontalAlignment="Left" Height="29" Margin="27,36,0,0" VerticalAlignment="Top" Width="33" Source="Images/Icone_Attention.png"/>
+
+    </Grid>
+</Window>

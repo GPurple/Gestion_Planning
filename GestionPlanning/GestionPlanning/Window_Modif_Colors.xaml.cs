@@ -32,7 +32,7 @@ namespace GestionPlanning
             foreach (TypeColor color in listeColors)
             {
 
-                UC_Modif_Revet ucModifRevet = new UC_Modif_Revet();
+                UC_Modif_Revet ucModifRevet = new UC_Modif_Revet(color);
                 StackPanelDisplayRevetements.Children.Add(ucModifRevet);
             }
             int nbColor = StackPanelDisplayRevetements.Children.Count;
@@ -41,14 +41,14 @@ namespace GestionPlanning
             textNbColors.Text = nbColor + "/10";
         }
 
-        private void LeaveModif(object sender, RoutedEventArgs e)
-        {
-            Brain.Instance.LeaveModifColors();
-        }
-
         private void ClickAddColor(object sender, RoutedEventArgs e)
         {
             Brain.Instance.ClickAddColor();
+        }
+
+        private void CancelModif(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.CancelModifColors();
         }
     }
 }

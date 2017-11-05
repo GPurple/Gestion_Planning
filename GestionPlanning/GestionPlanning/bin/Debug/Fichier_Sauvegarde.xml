@@ -4,19 +4,112 @@
   <nameFileCSV>CHARGE_ATELIER_BRUTE_AOS</nameFileCSV>
   <pathFileModifs />
   <displayDay>false</displayDay>
-  <dateLastModif>2017-10-31T02:11:24.0484879+01:00</dateLastModif>
+  <dateLastModif>2017-11-05T00:47:45.4057926+01:00</dateLastModif>
   <ListeFiches>
+    <Fiche>
+      <id>0</id>
+      <name>nom </name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <recouvrement>
+        <name>Revet4</name>
+        <color>
+          <A>255</A>
+          <R>255</R>
+          <G>248</G>
+          <B>220</B>
+          <ScA>1</ScA>
+          <ScR>1</ScR>
+          <ScG>0.9386857</ScG>
+          <ScB>0.7156935</ScB>
+        </color>
+      </recouvrement>
+      <quantiteElement>1</quantiteElement>
+      <machine>nom</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-11-02T00:00:00</dateLivraison>
+      <textDescription>text</textDescription>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>0</id>
+      <name>nom </name>
+      <tempsFabrication>10</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <recouvrement>
+        <name>Revet4</name>
+        <color>
+          <A>255</A>
+          <R>255</R>
+          <G>248</G>
+          <B>220</B>
+          <ScA>1</ScA>
+          <ScR>1</ScR>
+          <ScG>0.9386857</ScG>
+          <ScB>0.7156935</ScB>
+        </color>
+      </recouvrement>
+      <quantiteElement>1</quantiteElement>
+      <machine>Machine3</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-11-02T00:00:00</dateLivraison>
+      <textDescription>text</textDescription>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>0</id>
+      <name>nom </name>
+      <tempsFabrication>1</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <recouvrement>
+        <name>Revet4</name>
+        <color>
+          <A>255</A>
+          <R>255</R>
+          <G>248</G>
+          <B>220</B>
+          <ScA>1</ScA>
+          <ScR>1</ScR>
+          <ScG>0.9386857</ScG>
+          <ScB>0.7156935</ScB>
+        </color>
+      </recouvrement>
+      <quantiteElement>1</quantiteElement>
+      <machine>nom</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-11-02T00:00:00</dateLivraison>
+      <textDescription>text</textDescription>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
     <Fiche>
       <id>75268</id>
       <name />
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
-      <quantiteElement>2</quantiteElement>
-      <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
-      <dateLivraison>2017-10-20T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
+      <recouvrement>
+        <name>Revet4</name>
+        <color>
+          <A>255</A>
+          <R>255</R>
+          <G>248</G>
+          <B>220</B>
+          <ScA>1</ScA>
+          <ScR>1</ScR>
+          <ScG>0.9386857</ScG>
+          <ScB>0.7156935</ScB>
+        </color>
+      </recouvrement>
+      <quantiteElement>1</quantiteElement>
+      <machine>nom</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-11-02T00:00:00</dateLivraison>
+      <textDescription>text</textDescription>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -24,14 +117,26 @@
     <Fiche>
       <id>75270</id>
       <name>SIM'EDIT IMPRIMEUR</name>
-      <tempsFabrication>-1</tempsFabrication>
-      <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
+      <tempsFabrication>100</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <recouvrement>
+        <name>Revet1</name>
+        <color>
+          <A>255</A>
+          <R>255</R>
+          <G>165</G>
+          <B>0</B>
+          <ScA>1</ScA>
+          <ScR>1</ScR>
+          <ScG>0.376262128</ScG>
+          <ScB>0</ScB>
+        </color>
+      </recouvrement>
       <quantiteElement>5</quantiteElement>
-      <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <machine>Machine1</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-22T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
+      <textDescription />
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -39,14 +144,26 @@
     <Fiche>
       <id>75271</id>
       <name>TECHFI Industries</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
+      <recouvrement>
+        <name>Revet2</name>
+        <color>
+          <A>255</A>
+          <R>0</R>
+          <G>255</G>
+          <B>255</B>
+          <ScA>1</ScA>
+          <ScR>0</ScR>
+          <ScG>1</ScG>
+          <ScB>1</ScB>
+        </color>
+      </recouvrement>
       <quantiteElement>3</quantiteElement>
-      <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <machine>Machine1</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-23T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
+      <textDescription />
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -54,29 +171,39 @@
     <Fiche>
       <id>75272</id>
       <name>TECHFI Industries</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>1000</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
+      <recouvrement>
+        <name>Revet2</name>
+        <color>
+          <A>255</A>
+          <R>0</R>
+          <G>255</G>
+          <B>255</B>
+          <ScA>1</ScA>
+          <ScR>0</ScR>
+          <ScG>1</ScG>
+          <ScB>1</ScB>
+        </color>
+      </recouvrement>
       <quantiteElement>3</quantiteElement>
-      <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <machine>Machine2</machine>
+      <dateDebutFabrication>2017-11-02T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-24T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
+      <textDescription />
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
-      <check>false</check>
+      <check>true</check>
     </Fiche>
     <Fiche>
       <id>75273</id>
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -86,12 +213,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -101,12 +226,10 @@
       <name>MECATURN SAS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>1</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -116,12 +239,10 @@
       <name>MECATURN SAS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>1</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -131,12 +252,10 @@
       <name>OUEST AFFUTAGE</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>15</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -146,12 +265,10 @@
       <name>OUEST AFFUTAGE</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>15</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-30T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -161,12 +278,10 @@
       <name>HALGAND SAS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>6</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-31T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -176,12 +291,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>4</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-01T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -191,12 +304,10 @@
       <name>MECATURN SAS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-10-31T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-02T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -206,12 +317,10 @@
       <name>MECATURN SAS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-11-01T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-03T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -221,12 +330,10 @@
       <name>OUEST AFFUTAGE</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>2</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-11-02T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-04T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -234,14 +341,26 @@
     <Fiche>
       <id>75284</id>
       <name>SIM'EDIT IMPRIMEUR</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
+      <recouvrement>
+        <name>Revet3</name>
+        <color>
+          <A>255</A>
+          <R>255</R>
+          <G>192</G>
+          <B>203</B>
+          <ScA>1</ScA>
+          <ScR>1</ScR>
+          <ScG>0.5271151</ScG>
+          <ScB>0.597201765</ScB>
+        </color>
+      </recouvrement>
       <quantiteElement>5</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-11-03T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-05T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
+      <textDescription />
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -251,12 +370,10 @@
       <name>HALGAND SAS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>4</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-11-02T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-06T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -266,12 +383,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>120</quantiteElement>
       <machine>na</machine>
-      <dateDebutFabrication>2017-11-03T00:00:00</dateDebutFabrication>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-07T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -281,12 +396,10 @@
       <name>MECATURN SAS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>1</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-08T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -296,12 +409,10 @@
       <name>MECATURN SAS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>1</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-07T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-09T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -311,12 +422,10 @@
       <name>OUEST AFFUTAGE</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>4</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-08T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-10T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -326,12 +435,10 @@
       <name>SIM'EDIT IMPRIMEUR</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>5</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-09T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-11T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -341,12 +448,10 @@
       <name>TECHFI Industries</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>6</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-10T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-12T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -356,12 +461,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>7</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-09T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-13T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -371,12 +474,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>8</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-10T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-14T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -386,12 +487,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>9</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-13T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-15T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -401,12 +500,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>10</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-14T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-16T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -416,12 +513,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>11</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-15T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-17T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -431,12 +526,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>12</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-16T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-18T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -446,12 +539,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>13</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-17T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-19T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -461,12 +552,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>14</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-16T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-20T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -476,12 +565,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>15</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-17T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-21T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -491,12 +578,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>16</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-20T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-22T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -506,12 +591,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>17</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-21T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-23T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -521,12 +604,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>18</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-22T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-24T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -536,12 +617,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>19</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-23T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-25T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -551,12 +630,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>20</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-24T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-26T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -566,12 +643,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>21</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-23T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-27T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -581,12 +656,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>22</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-24T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-28T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -596,12 +669,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>23</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-27T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-29T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -611,12 +682,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>24</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-28T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-30T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -626,12 +695,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>25</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-29T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-01T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -641,12 +708,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>26</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-30T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-02T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -656,12 +721,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>27</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-03T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -671,12 +734,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>28</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-11-30T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-04T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -686,12 +747,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>29</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-05T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -701,12 +760,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>30</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-04T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-06T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -716,12 +773,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>31</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-05T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-07T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -731,12 +786,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>32</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-08T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -746,12 +799,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>33</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-07T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-09T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -761,12 +812,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>34</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-08T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-10T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -776,12 +825,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>35</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-07T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-11T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -791,12 +838,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>36</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-08T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-12T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -806,12 +851,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>37</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-11T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-13T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -821,12 +864,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>38</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-12T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-14T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -836,12 +877,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>39</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-13T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-15T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -851,12 +890,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>40</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-14T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-16T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -866,12 +903,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>41</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-15T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-17T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -881,12 +916,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>42</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-14T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-18T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -896,12 +929,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>43</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-15T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-19T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -911,12 +942,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>44</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-18T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-20T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -926,12 +955,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>45</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-19T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-21T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -941,12 +968,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>46</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-20T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-22T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -956,12 +981,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>47</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-21T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-23T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -971,12 +994,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>48</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-22T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-24T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -986,12 +1007,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>49</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-21T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-25T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -1001,12 +1020,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>50</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-22T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-26T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -1016,12 +1033,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>51</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-25T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-27T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -1031,12 +1046,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>52</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-26T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-28T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -1046,12 +1059,10 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>53</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-27T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-29T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -1061,16 +1072,67 @@
       <name>BORLIS</name>
       <tempsFabrication>-1</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>false</recouvrement>
       <quantiteElement>54</quantiteElement>
       <machine>na</machine>
       <dateDebutFabrication>2017-12-28T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-30T00:00:00</dateLivraison>
-      <retardPlacement>na</retardPlacement>
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
   </ListeFiches>
-  <ListeColors />
+  <ListeColors>
+    <TypeColor>
+      <name>Revet1</name>
+      <color>
+        <A>255</A>
+        <R>255</R>
+        <G>165</G>
+        <B>0</B>
+        <ScA>1</ScA>
+        <ScR>1</ScR>
+        <ScG>0.376262128</ScG>
+        <ScB>0</ScB>
+      </color>
+    </TypeColor>
+    <TypeColor>
+      <name>Revet2</name>
+      <color>
+        <A>255</A>
+        <R>0</R>
+        <G>255</G>
+        <B>255</B>
+        <ScA>1</ScA>
+        <ScR>0</ScR>
+        <ScG>1</ScG>
+        <ScB>1</ScB>
+      </color>
+    </TypeColor>
+    <TypeColor>
+      <name>Revet3</name>
+      <color>
+        <A>255</A>
+        <R>255</R>
+        <G>192</G>
+        <B>203</B>
+        <ScA>1</ScA>
+        <ScR>1</ScR>
+        <ScG>0.5271151</ScG>
+        <ScB>0.597201765</ScB>
+      </color>
+    </TypeColor>
+    <TypeColor>
+      <name>Revet4</name>
+      <color>
+        <A>255</A>
+        <R>255</R>
+        <G>248</G>
+        <B>220</B>
+        <ScA>1</ScA>
+        <ScR>1</ScR>
+        <ScG>0.9386857</ScG>
+        <ScB>0.7156935</ScB>
+      </color>
+    </TypeColor>
+  </ListeColors>
 </Data>

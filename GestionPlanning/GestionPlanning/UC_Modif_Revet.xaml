@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:GestionPlanning"
              mc:Ignorable="d" Width="290" Height="50">
     <Grid Background="White">
-        <Button Content="C" HorizontalAlignment="Left" Margin="152,10,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="#FFE13EF1"/>
-        <Button Content="Suppr." HorizontalAlignment="Left" Margin="195,15,0,0" VerticalAlignment="Top" Width="74"/>
-        <TextBox x:Name="TextBox_NameRevetement" HorizontalAlignment="Left" Height="23" Margin="15,14,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnChoiceColor" Content="" HorizontalAlignment="Left" Margin="152,10,0,0" VerticalAlignment="Top" Width="30" Height="30" Background="#FFE13EF1" Click="ChoiceColor"/>
+        <Button x:Name="___Aucun_nom_" Content="Suppr." HorizontalAlignment="Left" Margin="195,15,0,0" VerticalAlignment="Top" Width="74" Click="SupprColor"/>
+        <TextBlock x:Name="TextBlock_NameRevetement" HorizontalAlignment="Left" Margin="16,15,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="123"/>
 
     </Grid>
 </UserControl>

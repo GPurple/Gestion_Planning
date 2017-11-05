@@ -43,7 +43,14 @@ namespace GestionPlanning
             textNbFiches = "Nb fiches : " + ficheDayMonth.nbFiches;
             TextNbFiches.Text = textNbFiches;
 
-            textReco = "Reco : " + ficheDayMonth.reco;
+            if (ficheDayMonth.reco != null)
+            {
+                textReco = "Reco : oui";
+            }
+            else
+            {
+                textReco = "Reco : non";
+            }
             TextReco.Text = textReco;
 
             if(ficheDayMonth.alerte_retard == true)
@@ -64,7 +71,6 @@ namespace GestionPlanning
                 image_AttentionRetard.Visibility = Visibility.Collapsed;
             }
 
-            //(int nbFiches, DateTime dateDay, bool attention_retard, bool alerte_retard, List<TypeOperation> listeOperation, bool reco)
             UC_DispColorsOperation(ficheDayMonth);
 
         }
@@ -199,16 +205,15 @@ namespace GestionPlanning
             Canvas.SetTop(rectRight, 1);
             Canvas.SetLeft(rectRight, 60);
 
-            if (ficheDayMonth.reco == true)
+            if (ficheDayMonth.reco != null)
             {
-                //afficher rectangle gold
-                rectRight.Fill = new SolidColorBrush(Colors.Gold);
+                rectRight.Fill = new SolidColorBrush(ficheDayMonth.reco.color);
             }
             else
             {
-                //afficher rectangle blanc
-                rectRight.Fill = new SolidColorBrush(Values.COLOR_NA);
+                rectRight.Fill = new SolidColorBrush( Colors.White);
             }
+            
             CanvaColorDisplay.Children.Add(rectRight);
 
         }

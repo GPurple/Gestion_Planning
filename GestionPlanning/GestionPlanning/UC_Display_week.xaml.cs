@@ -85,14 +85,14 @@ namespace GestionPlanning
             {
                 if (fiche.check == false)
                 {
-                    UC_Fiche_week ucfw = new UC_Fiche_week(fiche.id, fiche.name, fiche.dateLivraison, fiche.quantiteElement, fiche.attentionRetard, fiche.alerteRetard, fiche.typeOperation, fiche.recouvrement, fiche.dateDebutFabrication, fiche.tempsFabrication);
+                    UC_Fiche_week ucfw = new UC_Fiche_week(fiche);
                     stackPanel.Children.Add(ucfw);
                 }
             }
             int nbList = stackPanel.Children.Count;
             stackPanel.Height = nbList * 145;
+            Brain.Instance.VerifOverflowTimeDay(listeDay);
         }
-
-        //TODO do a drag and drop à partir du tuto 
+        
     }
 }
