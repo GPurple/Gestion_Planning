@@ -11,13 +11,14 @@
         <Button Content="Placement" HorizontalAlignment="Left" Margin="268,0,0,0" VerticalAlignment="Top" Width="170" Click="DispButtonPlacement" Height="26"/>
         <Button x:Name="DispButtonModifs" Content="Modifs Données" HorizontalAlignment="Left" Margin="438,0,0,0" VerticalAlignment="Top" Width="160" Click="DispButtonModifs_Click" Height="26"/>
         <Button Content="Paramètres" HorizontalAlignment="Left" Margin="598,0,0,0" VerticalAlignment="Top" Width="140" Click="DispButtonParam" Height="26"/>
-        <Canvas x:Name="canvasDispTri" HorizontalAlignment="Left" Height="177" Margin="0,26,0,-118" VerticalAlignment="Top" Width="140" Background="#FF2E2E2E">
+        <Canvas x:Name="canvasDispTri" HorizontalAlignment="Left" Height="204" Margin="0,26,0,-145" VerticalAlignment="Top" Width="140" Background="#FF2E2E2E">
             <ComboBox x:Name="ComboBoxName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Canvas.Left="10" Canvas.Top="65"/>
             <ComboBox x:Name="ComboBoxOperation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Canvas.Left="10" Canvas.Top="10"/>
             <ComboBox x:Name="ComboBoxSearchReco" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Canvas.Left="10" Canvas.Top="38"/>
             <ComboBox x:Name="ComboBoxSearchMachine" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Canvas.Left="10" Canvas.Top="92"/>
             <ComboBox x:Name="ComboBoxSearchRetard" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Canvas.Left="10" Canvas.Top="119"/>
-            <Button Content="Rechercher" HorizontalAlignment="Left" VerticalAlignment="Top" Width="82" Click="SearchFiches" Canvas.Left="10" Canvas.Top="146"/>
+            <Button Content="Rechercher" HorizontalAlignment="Left" VerticalAlignment="Top" Width="82" Click="SearchFiches" Canvas.Left="10" Canvas.Top="175"/>
+            <TextBox x:Name="textBoxBCCM" Height="24" Canvas.Left="10" TextWrapping="Wrap" Text="BCCM" Canvas.Top="146" Width="120"/>
         </Canvas>
         <Canvas x:Name="canvasDispAffich" HorizontalAlignment="Left" Height="212" Margin="140,26,0,-153" VerticalAlignment="Top" Width="128" Background="#FF2E2E2E">
             <Button x:Name="btnDispDay" Content="Afficher jour" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Click="DisplayDay" Canvas.Left="10" Canvas.Top="10"/>
@@ -33,13 +34,14 @@
             <Button Content="Placement Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Click="PlacementAuto" Canvas.Left="10" Canvas.Top="10"/>
             <Button Content="Replacement retard Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Click="ReplacementRetardAuto" Canvas.Left="10" Canvas.Top="35"/>
         </Canvas>
-        <Canvas x:Name="canvasDispModifsDatas" HorizontalAlignment="Left" Height="115" Margin="438,26,0,-56" VerticalAlignment="Top" Width="160" Background="#FF2E2E2E">
+        <Canvas x:Name="canvasDispModifsDatas" HorizontalAlignment="Left" Height="141" Margin="438,26,0,-82" VerticalAlignment="Top" Width="160" Background="#FF2E2E2E">
             <Button Content="Nouvelle fiche" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="CreateFiche" Canvas.Left="10" Canvas.Top="10"/>
             <Button Content="Sauvegarder données" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="SaveData" Canvas.Left="10" Canvas.Top="35"/>
             <Button Content="Charger données" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="RefreshData" Canvas.Left="10" Canvas.Top="60"/>
             <Button Content="Modifier revêtements" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="ModifyColors" Canvas.Left="10" Canvas.Top="85"/>
+            <Button Content="Charge machine" Canvas.Left="10" Canvas.Top="111" Width="140" Click="ModifyChargeMachine"/>
         </Canvas>
-        <Canvas x:Name="canvasDispParams" HorizontalAlignment="Left" Height="91" Margin="598,26,0,-32" VerticalAlignment="Top" Width="140" Background="#FF2E2E2E">
+        <Canvas x:Name="canvasDispParams" HorizontalAlignment="Left" Height="89" Margin="598,26,0,-30" VerticalAlignment="Top" Width="140" Background="#FF2E2E2E">
             <Button Content="Affichage modifs" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Click="DisplayModifs" Canvas.Left="10" Canvas.Top="10"/>
             <Button Content="Changer utilisateur" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Click="ChangeUser" Canvas.Left="10" Canvas.Top="35"/>
             <Button Content="Modifier paths" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Click="ModifyPathsFiles" Canvas.Left="10" Canvas.Top="60"/>

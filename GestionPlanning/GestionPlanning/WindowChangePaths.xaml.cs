@@ -31,7 +31,6 @@ namespace GestionPlanning
             InitializeComponent();
             textNameCsv.Text = nameCsv;
             textPathCsv.Text = pathCsv;
-            textPathFichierModifications.Text = pathFichierModif;
         }
 
         private void LeaveWindowModifPaths(object sender, RoutedEventArgs e)
@@ -48,10 +47,6 @@ namespace GestionPlanning
         {
             Brain.Instance.ChangePathFileCsv(textPathCsv.Text);
         }
-
-        private void ChangePathFichierModifs(object sender, RoutedEventArgs e)
-        {
-            Brain.Instance.ChangePathFichierModifs(textPathFichierModifications.Text);
-        }
+        
     }
 }

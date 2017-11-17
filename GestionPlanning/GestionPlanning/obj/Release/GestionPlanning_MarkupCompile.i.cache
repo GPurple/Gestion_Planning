@@ -10,11 +10,11 @@ none
 false
 TRACE
 D:\Projet_GestionPlanning\Gestion_Planning\GestionPlanning\GestionPlanning\App.xaml
-16603170727
+27-581732152
 
-34-1797259275
+47-1559728144
 17-385597657
-MainWindow.xaml;MessageConfRetraitFichePlanning.xaml;MessageConfValidationFiche.xaml;UC_display_day.xaml;UC_Display_Simple.xaml;UC_Display_week.xaml;UC_Disp_Controls.xaml;UC_Disp_modifs.xaml;UC_Disp_Month.xaml;UC_fiche_day.xaml;UC_fiche_month.xaml;UC_Fiche_week.xaml;UC_modif_fiche.xaml;UC_param_logiciel.xaml;WindowChangePaths.xaml;Window_Identification.xaml;
+MainWindow.xaml;MessageConfRetraitFichePlanning.xaml;MessageConfSupprColor.xaml;MessageConfValidationFiche.xaml;UserControls\UC_display_day.xaml;UserControls\UC_Display_Simple.xaml;UserControls\UC_Display_week.xaml;UserControls\UC_DispListe_Machine.xaml;UserControls\UC_Disp_Controls.xaml;UserControls\UC_Disp_Machine.xaml;UserControls\UC_Disp_modifs.xaml;UserControls\UC_Disp_Month.xaml;UserControls\UC_fiche_day.xaml;UserControls\UC_Fiche_Machine.xaml;UserControls\UC_fiche_month.xaml;UserControls\UC_Fiche_week.xaml;UserControls\UC_modif_fiche.xaml;UserControls\UC_Modif_Revet.xaml;UserControls\UC_param_logiciel.xaml;WindowChangePaths.xaml;Window_Add_Color.xaml;Window_Choice_Color.xaml;Window_Create_Fiche.xaml;Window_Identification.xaml;Window_Modif_Charge.xaml;Window_Modif_Colors.xaml;Window_Modif_Fiche.xaml;
 
 True
 

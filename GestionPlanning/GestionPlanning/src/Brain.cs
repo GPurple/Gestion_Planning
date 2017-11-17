@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Media;
 using static GestionPlanning.src.FichierSauvegarde;
@@ -31,7 +33,12 @@ namespace GestionPlanning.src
         //Afficher les recouvrements
         public String triReco = "Tous revêtements";
 
+        //Afficher les retards
         public TriRetard triRetard = TriRetard.all;
+
+        //Afficher le BCCM
+        public int triBCCM = 0;
+
         //Afficher le nom de tri
         public String triName = "Tous noms";
 
@@ -88,10 +95,15 @@ namespace GestionPlanning.src
         public Window_Modif_Colors winModifColors;
         public Window_Add_Color winAddColor;
         public Window_Choice_Color winChoiceColor;
+        public Window_Modif_Charge winModifCharge;
 
         MessageConfValidationFiche message_validationFiche;
         MessageConfRetraitFichePlanning message_retraitFiche;
         MessageConfSupprColor message_ConfSupprColor;
+
+        // Create a new Mutex. The creating thread does not own the mutex.
+        private static Mutex mutRefresh = new Mutex();
+        private Boolean inRefresh = false;
 
         private static Brain instance;
 
@@ -115,6 +127,34 @@ namespace GestionPlanning.src
         private Brain() {
             dateToDisplay = DateTime.Now;
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, dateToDisplay.Day);
+
+            //TODO modify
+            if(DateTime.Now.CompareTo(new DateTime(2017,11,30)) > 0)
+            {
+                MessageBox.Show("La version d'essai du logiciel est dépassée \n ");
+                CloseAll();
+            }
+
+
+            /*System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEventRefresh);
+            aTimer.Interval = 5000;
+            aTimer.Enabled = true;*/
+
+        }
+
+        private static void OnTimedEventRefresh(object source, ElapsedEventArgs e)
+        {
+            //TODO resynchronisation de la liste
+            //attention au problèmes de conflit
+            //utiliser un mutex
+            /*if(Brain.instance.InRefresh() == false)
+            {
+                mutRefresh.WaitOne();
+                Brain.Instance.RefreshData();
+                mutRefresh.ReleaseMutex();
+            }*/
+            MessageBox.Show("Timer \n ");
         }
 
         static public void Main()
@@ -140,6 +180,10 @@ namespace GestionPlanning.src
             listeFichesMachines.ProcessListeFicheMachines(listeFiches);
         }
         
+        public Boolean InRefresh()
+        {
+            return inRefresh;
+        }
         /**
          * @brief Place automatiquement toutes les fiches dans l'emploi du temps en fonction de leurs paramètres
          * @note la synchro doit être appellées
@@ -433,8 +477,23 @@ namespace GestionPlanning.src
             {
                 val++;
             }
-            
-            if(val > 0)
+
+            //tri bccm
+            if(triBCCM ==0)
+            {
+
+            }
+            else if(triBCCM == fiche.id)
+            {
+
+            }
+            else
+            {
+                val++;
+            }
+
+
+            if (val > 0)
             {
                 ret = 0;
             }
@@ -448,6 +507,8 @@ namespace GestionPlanning.src
         
         public void RefreshData()
         {
+            mutRefresh.WaitOne();
+            inRefresh = true;
             if (fichierXcel.LoadFiches(listeFiches) >= 0)
             {
                 List<Fiche> newListe = fichierSauvegarde.SynchroListe(listeFiches);
@@ -467,6 +528,8 @@ namespace GestionPlanning.src
                 RefreshDispControlTri();
                 gestionModif.AddModif(new Modification(TypeModification.refreshData, nameUser, -1, "Rafraichissement des données", DateTime.Now,""));
             }
+            mutRefresh.ReleaseMutex();
+            inRefresh = false;
         }
         
         public void RefreshDispControlTri()
@@ -914,8 +977,18 @@ namespace GestionPlanning.src
                 error = true;
                 winModifFiche.imageAttention_SizeText.Visibility = Visibility.Visible;
             }
-            
-            if(!error)
+
+            if (!error)
+            {
+                List<Fiche> liste_tmp = GetListeDayTmp(ficheTemp.dateDebutFabrication, ficheTemp.id);
+                liste_tmp.Add(ficheTemp);
+                if (VerifOverflowTimeMachine(ficheTemp.machine, liste_tmp) == 0)
+                {
+                    error = true;
+                }
+            }
+
+            if (!error)
             { 
                 //synchro ficheTemp avec listeFiches
                 foreach (Fiche fiche in listeFiches)
@@ -1101,13 +1174,32 @@ namespace GestionPlanning.src
             }
         }
 
-        public void TriFiches(String name, String st_operation, String st_reco, String st_machine, String st_retard)
+        public void SearchByBCCM(String st_bccm)
+        {
+            if (int.TryParse(st_bccm, out triBCCM))
+            {
+                
+            }
+            else if(String.Compare(st_bccm,"BCCM") == 0)
+            {
+                triBCCM = 0;
+            }
+            else
+            {
+                //TODO erreur écriture BCCM
+                MessageBox.Show("Le format du BCCM n'est pas valide \n ");
+                triBCCM = 0;
+            }
+        }
+
+        public void TriFiches(String name, String st_operation, String st_reco, String st_machine, String st_retard, String st_bccm)
         {
             SearchByName(name);
             SearchByOperation(st_operation);
             SearchByReco(st_reco);
             SearchByMachine(st_machine);
             SearchByRetard(st_retard);
+            SearchByBCCM(st_bccm);
             DisplayFiches();
         }
         
@@ -1130,12 +1222,12 @@ namespace GestionPlanning.src
                         }                        
                     }
                 }
-                if(totalTime.TotalMinutes > 60 * Values.Instance.timeProdDay)
+                if(totalTime.TotalMinutes > fichierSauvegarde.minChargeTime)
                 {
                     retList.Add(listMachine.nameMachine);
                     //TODO afficher le temps
                     
-                    MessageBox.Show("Attention : Le temps de production de la machine " + listMachine.nameMachine + " (" + Values.Instance.timeProdDay + "h) est dépassé le " + dateDay.Day + "/" + dateDay.Month + "/" + dateDay.Year + ". Le temps de production est de :" + totalTime.Hours + "h" + totalTime.Minutes + "min.");
+                    MessageBox.Show("Attention : Le temps de production de la machine " + listMachine.nameMachine + " (" + (double)(fichierSauvegarde.minChargeTime / 60) + "h) est dépassé le " + dateDay.Day + "/" + dateDay.Month + "/" + dateDay.Year + ". Le temps de production est de :" + totalTime.Hours + "h" + totalTime.Minutes + "min.");
                 }
                 totalTime = new TimeSpan();
             }
@@ -1171,8 +1263,7 @@ namespace GestionPlanning.src
             List<string> retList = new List<string>();
             TimeSpan totalTime = new TimeSpan();
             DateTime dateDay = new DateTime();
-
-
+            
             List<TimeDayMachine> listeDayMachine = new List<TimeDayMachine>();
 
             bool exists = false;
@@ -1200,9 +1291,10 @@ namespace GestionPlanning.src
             }
             foreach (TimeDayMachine timeDay in listeDayMachine)
             {
-                if (timeDay.totalTime.TotalMinutes > 60 * Values.Instance.timeProdDay)
+                if (timeDay.totalTime.TotalMinutes > fichierSauvegarde.minChargeTime)
                 {
-                    MessageBox.Show("Attention : Le temps de production de la machine " + nameMachine + " (" + Values.Instance.timeProdDay + "h) est dépassé le " + timeDay.day.Day + "/" + timeDay.day.Month + "/" + timeDay.day.Year + ". Le temps de production est de :" + timeDay.totalTime.Hours + "h" + timeDay.totalTime.Minutes + "min.");
+                    MessageBox.Show("Attention : Le temps de production de la machine " + nameMachine + " (" + (double)(fichierSauvegarde.minChargeTime / 60) + "h) est dépassé le " + timeDay.day.Day + "/" + timeDay.day.Month + "/" + timeDay.day.Year + ". Le temps de production est de :" + timeDay.totalTime.Hours + "h" + timeDay.totalTime.Minutes + "min.");
+                    return 0;
                 }
             }
             return 1;
@@ -1462,7 +1554,7 @@ namespace GestionPlanning.src
                     error = true;
                     winCreateFiche.imageAttention_TempsFab.Visibility = Visibility.Visible;
                 }
-
+                
                 //la machine
                 newFiche.machine = winCreateFiche.textBoxNumMachine.Text;
 
@@ -1499,6 +1591,16 @@ namespace GestionPlanning.src
 
                 if (!error)
                 {
+                    List<Fiche> liste_tmp = GetListeDayTmp(newFiche.dateDebutFabrication, newFiche.id);
+                    liste_tmp.Add(newFiche);
+                    if (VerifOverflowTimeMachine(newFiche.machine, liste_tmp) == 0)
+                    { 
+                        error = true;
+                    }
+                }
+
+                if(!error)
+                { 
                     listeFiches.Add(newFiche);
                     listeFiches = listeFiches.OrderBy(fiche => fiche.id).ToList();
                     FindAlerteListeFull(listeFiches);
@@ -1511,6 +1613,21 @@ namespace GestionPlanning.src
                 gestionModif.AddModif(new Modification(TypeModification.modifFiche, nameUser, newFiche.id, "Création d'une fiche", DateTime.Now, ""));
 
             }
+        }
+
+        public List<Fiche> GetListeDayTmp(DateTime day , int id)
+        {
+            List<Fiche> liste = new List<Fiche>();
+
+            foreach(Fiche fiche in listeFiches)
+            {
+                if(fiche.dateDebutFabrication.CompareTo(day) == 0 && fiche.id != id)
+                {
+                    liste.Add(new Fiche(fiche));
+                }
+            }
+
+            return liste;
         }
 
         //Gestion des couleurs
@@ -1645,6 +1762,13 @@ namespace GestionPlanning.src
             winChoiceColor.Hide();
         }
         
+        public void ModifyChargeMachine()
+        {
+            winModifCharge = new Window_Modif_Charge();
+            winModifCharge.Show();
+            winModifCharge.SetNewTime(fichierSauvegarde.minChargeTime);
+        }
+
         public void RefreshRevetements()
         {
             bool check = false;
@@ -1669,6 +1793,36 @@ namespace GestionPlanning.src
                 {
                     fiche.recouvrement.color = Values.COLOR_NA;
                 }
+            }
+        }
+
+        public void ValidateModifTimeHeures(String time)
+        {
+            try
+            {
+                int value_time = int.Parse(time);
+                Values.Instance.minChargeTime = value_time * 60;
+                fichierSauvegarde.SaveChargeTimeData(Values.Instance.minChargeTime);
+                winModifCharge.Close();
+            }
+            catch 
+            {
+
+            }
+        }
+
+        public void ValidateModifTimeMinutes(String time)
+        {
+            try
+            {
+                int value_time = int.Parse(time);
+                Values.Instance.minChargeTime = value_time;
+                fichierSauvegarde.SaveChargeTimeData(Values.Instance.minChargeTime);
+                winModifCharge.Close();
+            }
+            catch
+            {
+
             }
         }
 

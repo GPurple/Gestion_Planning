@@ -63,7 +63,7 @@ namespace GestionPlanning.src
                         }
 
                         //famille [14]
-                        if (String.Compare(tab_line[14], "AFF ") == 0 || String.Compare(tab_line[14], "AFF ") == 0)
+                        if (String.Compare(tab_line[14], "AFF") == 0 || String.Compare(tab_line[14], "AFF ") == 0)
                         {
                             fiche_tmp.typeOperation = TypeOperation.aiguisage;
                         }
@@ -123,13 +123,13 @@ namespace GestionPlanning.src
                 else
                 {
                     MessageBox.Show("Erreur: Le fichier csv n'existe pas");
-                    return -1;
+                    return 1;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur ouverture fichier CSV");
-                return -1;
+                return 1;
             }
         }
     }

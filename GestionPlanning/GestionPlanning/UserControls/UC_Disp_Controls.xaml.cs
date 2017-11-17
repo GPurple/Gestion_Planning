@@ -170,7 +170,8 @@ namespace GestionPlanning
                 ComboBoxOperation.Text,
                 ComboBoxSearchReco.Text,
                 ComboBoxSearchMachine.Text,
-                ComboBoxSearchRetard.Text
+                ComboBoxSearchRetard.Text,
+                textBoxBCCM.Text
                 );
             CollapseAllZones();
         }
@@ -202,6 +203,7 @@ namespace GestionPlanning
             {
                 CollapseAllZones();
                 canvasDispTri.Visibility = Visibility.Visible;
+                textBoxBCCM.Text = "BCCM";
             }
             else
             {
@@ -282,6 +284,12 @@ namespace GestionPlanning
         private void ModifyColors(object sender, RoutedEventArgs e)
         {
             Brain.Instance.ClickModifyColor();
+            CollapseAllZones();
+        }
+
+        private void ModifyChargeMachine(object sender, RoutedEventArgs e)
+        {
+            Brain.Instance.ModifyChargeMachine();
             CollapseAllZones();
         }
     }

@@ -41,15 +41,11 @@ namespace GestionPlanning
 
         //largeurFicheDay
         public int WIDTH_FICHE_DAY; //TODO récupérer en fonction de quelque chose
-        //LargeurFicheWeek
-        public int WIDTH_FICHE_WEEK;
         //LargeurFicheMonth
         public int WIDTH_FICHE_MONTH;
 
         //hauteurFicheDay
         public int HEIGHT_FICHE_DAY;
-        //hauteurFicheWeek
-        public int HEIGHT_FICHE_WEEK;
         //hauteurFicheMonth
         public int HEIGHT_FICHE_MONTH;
 
@@ -62,10 +58,7 @@ namespace GestionPlanning
         //positionYDisplayScreen
         public int POSY_DISP_MAIN;
 
-        //largeurMenu
-        public int WIDTH_MENU;
-        //hauteurMenu
-        public int HEIGHT_MENU;
+        public int minChargeTime;
 
         public static Color COLOR_CREAM = Colors.Cornsilk;
         public static Color COLOR_CYAN = Colors.Cyan;

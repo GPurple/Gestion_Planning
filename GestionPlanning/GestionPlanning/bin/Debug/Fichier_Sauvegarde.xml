@@ -4,85 +4,3102 @@
   <nameFileCSV>CHARGE_ATELIER_BRUTE_AOS</nameFileCSV>
   <pathFileModifs />
   <displayDay>false</displayDay>
-  <dateLastModif>2017-11-06T00:49:58.2593631+01:00</dateLastModif>
+  <dateLastModif>2017-11-06T09:24:15.7450131+01:00</dateLastModif>
+  <minChargeTime>420</minChargeTime>
   <ListeFiches>
     <Fiche>
-      <id>0</id>
+      <id>1</id>
       <name>nom </name>
-      <tempsFabrication>0</tempsFabrication>
-      <typeOperation>fabrication</typeOperation>
-      <recouvrement>
-        <name>Revet4</name>
-        <color>
-          <A>255</A>
-          <R>255</R>
-          <G>248</G>
-          <B>220</B>
-          <ScA>1</ScA>
-          <ScR>1</ScR>
-          <ScG>0.9386857</ScG>
-          <ScB>0.7156935</ScB>
-        </color>
-      </recouvrement>
-      <quantiteElement>1</quantiteElement>
+      <tempsFabrication>100</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>0</quantiteElement>
       <machine>nom</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
-      <dateLivraison>2017-11-02T00:00:00</dateLivraison>
+      <dateLivraison>2017-11-06T00:00:00</dateLivraison>
       <textDescription>text</textDescription>
-      <alerteRetard>true</alerteRetard>
-      <attentionRetard>false</attentionRetard>
+      <alerteRetard>false</alerteRetard>
+      <attentionRetard>true</attentionRetard>
       <check>false</check>
     </Fiche>
     <Fiche>
-      <id>0</id>
-      <name>nom </name>
+      <id>45036</id>
+      <name>OUEST AFFUTAGE</name>
       <tempsFabrication>10</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>
-        <name>Revet4</name>
-        <color>
-          <A>255</A>
-          <R>255</R>
-          <G>248</G>
-          <B>220</B>
-          <ScA>1</ScA>
-          <ScR>1</ScR>
-          <ScG>0.9386857</ScG>
-          <ScB>0.7156935</ScB>
-        </color>
-      </recouvrement>
-      <quantiteElement>1</quantiteElement>
-      <machine>Machine3</machine>
+      <quantiteElement>7</quantiteElement>
+      <machine>Machine2</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
-      <dateLivraison>2017-11-02T00:00:00</dateLivraison>
-      <textDescription>text</textDescription>
+      <dateLivraison>2016-12-31T00:00:00</dateLivraison>
+      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
     <Fiche>
-      <id>0</id>
-      <name>nom </name>
-      <tempsFabrication>1</tempsFabrication>
-      <typeOperation>na</typeOperation>
-      <recouvrement>
-        <name>Revet4</name>
-        <color>
-          <A>255</A>
-          <R>255</R>
-          <G>248</G>
-          <B>220</B>
-          <ScA>1</ScA>
-          <ScR>1</ScR>
-          <ScG>0.9386857</ScG>
-          <ScB>0.7156935</ScB>
-        </color>
-      </recouvrement>
-      <quantiteElement>1</quantiteElement>
-      <machine>nom</machine>
+      <id>61357</id>
+      <name>F A M A T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>80</quantiteElement>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
-      <dateLivraison>2017-11-02T00:00:00</dateLivraison>
-      <textDescription>text</textDescription>
+      <dateLivraison>2016-12-31T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>62021</id>
+      <name>SAUNIER DUVAL EAU C</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>9</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-12-31T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>62634</id>
+      <name>HALGAND SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-05-31T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>64719</id>
+      <name>F A M A T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-04-08T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>65790</id>
+      <name>MEUNIER MECANIQUE GE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-05-09T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>66280</id>
+      <name>CERO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-05-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>66425</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-06-08T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>67432</id>
+      <name>MECAMIGUE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-06-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>67473</id>
+      <name>SN ARMORMECA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-08-19T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>67597</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-07-13T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>67935</id>
+      <name>M.G.P.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-08-11T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>68459</id>
+      <name>RAUTURIER GUY</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>15</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-09-01T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>68589</id>
+      <name>F A M A T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-08-12T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>68771</id>
+      <name>JOHN DEERE - UNITE D</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>6</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-09-01T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>68814</id>
+      <name>TELL MECANIQUE DE PR</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-09-07T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>69030</id>
+      <name>QUALI CITE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-09-10T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>69036</id>
+      <name>MK AUTOMOTIVE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-09-08T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>69096</id>
+      <name>GKN DRIVELINE S.A.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-09-07T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>69653</id>
+      <name>F A M A T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-09-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>69715</id>
+      <name>EXXELIA TANTALUM</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>4</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-09-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>69773</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-10-10T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>70025</id>
+      <name>GKN DRIVELINE S.A.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-10-05T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>70204</id>
+      <name>EXXELIA  SIC SAFCO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-17T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>70302</id>
+      <name>POSTFORMING INDUSTRI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-10-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>70662</id>
+      <name>CAIB</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-10-26T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>70688</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-11-02T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>70708</id>
+      <name>F A M A T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-10-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>71164</id>
+      <name>LEUL MENUISERIES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-11-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>71548</id>
+      <name>MECACHROME  FRANCE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-12-01T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>71614</id>
+      <name>G U E R Y   S.A.S.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-01-26T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>71998</id>
+      <name>APORE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2016-12-08T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>72069</id>
+      <name>GROUPE GOYER</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>25</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-05T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>72369</id>
+      <name>S M 3 D  SARL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-01-03T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>72877</id>
+      <name>MINCO MENUISERIES MI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-01-10T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>72973</id>
+      <name>CSP LAPEYRE INDUSTRI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-01-16T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73088</id>
+      <name>MECATURN SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-01-16T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73140</id>
+      <name>F A M A T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-01-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73142</id>
+      <name>TIM COMPOSITES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-01T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73252</id>
+      <name>NTN TRANSMISSIONS EU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73262</id>
+      <name>FOUNDATION BRAKES FR</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-02T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73458</id>
+      <name>BATISTYL   MENUISERI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73500</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-01-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73634</id>
+      <name>CASTEL METALS AEROSP</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-08T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73652</id>
+      <name>MARFIL GROUPE BMI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>4</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-06T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73673</id>
+      <name>PAULSTRA S.N.C.  USI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>300</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-05T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73714</id>
+      <name>GKN DRIVELINE S.A.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-01T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73804</id>
+      <name>S A D E V</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-14T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73885</id>
+      <name>RADIALL SA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-09T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73897</id>
+      <name>SOPAC FERMETURES SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73898</id>
+      <name>TELL MECANIQUE DE PR</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-15T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73929</id>
+      <name>FOUNDATION BRAKES FR</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73940</id>
+      <name>G.K.N.DRIVELINE S.A</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>73941</id>
+      <name>G.K.N.DRIVELINE S.A</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74046</id>
+      <name>JANNEAU MENUISERIES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-15T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74071</id>
+      <name>S.M.M.   SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-04T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74138</id>
+      <name>BOUVET</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74140</id>
+      <name>S U T E A U-ANVER</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>50</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74245</id>
+      <name>DAHER Aerospace</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74252</id>
+      <name>FORGES DE BOLOGNE SA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-26T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74277</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74298</id>
+      <name>TIM COMPOSITES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74340</id>
+      <name>ENTREPRISE ADAPTEE D</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-01T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74413</id>
+      <name>FOUNDATION BRAKES FR</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-04T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74417</id>
+      <name>GKN DRIVELINE S.A.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74419</id>
+      <name>MATECHPLAST SARL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74502</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-02-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74503</id>
+      <name>ROBERT BOSCH AUTOMOT</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>16</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74564</id>
+      <name>F.P.E.E.  PVC SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>M2</machine>
+      <dateDebutFabrication>2017-11-30T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-28T00:00:00</dateLivraison>
+      <textDescription />
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74579</id>
+      <name>P O L Y R E X</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-04T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74614</id>
+      <name>CSP LAPEYRE INDUSTRI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-07T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74645</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>20</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74650</id>
+      <name>MILLET INDUSTRIE ATL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74699</id>
+      <name>SODIFRA AGENCEMENT S</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-01T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74726</id>
+      <name>BATISTYL   MENUISERI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>16</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74734</id>
+      <name>FOUNDATION BRAKES FR</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-14T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74766</id>
+      <name>REGNIER SA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>6</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-31T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74810</id>
+      <name>SN ALUGO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-12T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74825</id>
+      <name>EXXELIA  SIC SAFCO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>33</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-10T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74842</id>
+      <name>G R O L L E A U   PE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-04T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74862</id>
+      <name>BOUVET SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>20</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74865</id>
+      <name>J.H. INDUSTRIES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-13T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74875</id>
+      <name>CSP LAPEYRE INDUSTRI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-03T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74883</id>
+      <name>ALU 'SOM SARL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74887</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-17T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74888</id>
+      <name>FONDERIE D ANJOU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-05T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74893</id>
+      <name>BATISTYL   MENUISERI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>8</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-03T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74912</id>
+      <name>EROMMO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74913</id>
+      <name>EROMMO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74923</id>
+      <name>NTN TRANSMISSIONS EU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74925</id>
+      <name>MECATEC</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>4</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74932</id>
+      <name>BATISTYL   MENUISERI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-03T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74944</id>
+      <name>EFI METAL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74949</id>
+      <name>EFI METAL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-08T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74950</id>
+      <name>M.G.P.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74952</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-08T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74967</id>
+      <name>MARFIL GROUPE BMI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74971</id>
+      <name>CARDINEAU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>6</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74973</id>
+      <name>EXXELIA  SIC SAFCO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>4</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-09T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74994</id>
+      <name>SAMIBOIS-SAMIPLAST</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>6</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>74995</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75004</id>
+      <name>JOHN DEERE - UNITE D</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-16T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75012</id>
+      <name>MECABOR NC</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-16T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75013</id>
+      <name>CAIB</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-15T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75017</id>
+      <name>METASEVAL - GROUPE E</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75018</id>
+      <name>CORONA MEDICAL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-16T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75027</id>
+      <name>MAUGIN SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75030</id>
+      <name>ROBERT BOSCH AUTOMOT</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>15</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75052</id>
+      <name>BOUVET</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75055</id>
+      <name>CIBA OUARY</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-05T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75059</id>
+      <name>BODET S.A.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>6</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75063</id>
+      <name>LEUL MENUISERIES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-13T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75064</id>
+      <name>RIAUX ESCALIERS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-10T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75067</id>
+      <name>RIAUX ESCALIERS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75069</id>
+      <name>SAMP INDUSTRIE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75070</id>
+      <name>F A M A T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-17T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75072</id>
+      <name>J.H. INDUSTRIES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>4</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75075</id>
+      <name>MILLET PORTES ET FEN</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>11</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75076</id>
+      <name>MECACOUPE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75078</id>
+      <name>OUEST DECOLLETAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75080</id>
+      <name>F.P.E.E.  PVC</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75088</id>
+      <name>CERO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75094</id>
+      <name>MECATURN SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75100</id>
+      <name>R O B I N E A U</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75101</id>
+      <name>R O B I N E A U</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75102</id>
+      <name>R O B I N E A U</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75103</id>
+      <name>GREGOIRE BESSON</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75104</id>
+      <name>MECATURN SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75105</id>
+      <name>VETELE COMMUNICATION</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75107</id>
+      <name>MECATURN SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75109</id>
+      <name>SAMIBOIS-SAMIPLAST</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>4</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75111</id>
+      <name>FPV-INDUSTRIES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>13</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75114</id>
+      <name>ROBERT BOSCH AUTOMOT</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>20</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75115</id>
+      <name>MECACHROME  FRANCE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>29</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75119</id>
+      <name>F A M A T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75122</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75125</id>
+      <name>NTN TRANSMISSIONS EU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>13</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75126</id>
+      <name>SOMGA  INDUSTRIE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75127</id>
+      <name>FHG FRANCEPAL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75130</id>
+      <name>TECHNI MANUT</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75131</id>
+      <name>LASERIS S.A.S</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>7</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75133</id>
+      <name>MECATURN SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75134</id>
+      <name>LOEUL - PIRIOT ABATT</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75138</id>
+      <name>NICOLL SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75141</id>
+      <name>FORGES DE BOLOGNE SA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75143</id>
+      <name>MTI Engineering Sarl</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75144</id>
+      <name>MTI  MAINTENANCE SAR</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75145</id>
+      <name>NICOLL SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-28T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75153</id>
+      <name>DECORATHEQUE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75157</id>
+      <name>DEFONTAINE GROUPE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>13</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75158</id>
+      <name>COURANT BERNARD</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75160</id>
+      <name>MARTINEAU SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>12</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-15T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75161</id>
+      <name>ALF PRODUCTIONS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-10T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75163</id>
+      <name>EXXELIA  SIC SAFCO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-15T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75165</id>
+      <name>RENOVAL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>20</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75166</id>
+      <name>FONTENEAU MECANIQUE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75167</id>
+      <name>THEATRE REGIONAL DES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75168</id>
+      <name>BUCHER VASLIN S.A.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75169</id>
+      <name>G R O L L E A U   PE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75171</id>
+      <name>ATI BEL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75172</id>
+      <name>ALU 'SOM SARL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75173</id>
+      <name>G Y T  S.A.S.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75174</id>
+      <name>NICOLLEAU USINAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75175</id>
+      <name>NICOLLEAU USINAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75176</id>
+      <name>NICOLLEAU USINAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75177</id>
+      <name>FLEURY MICHON CHARCU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75178</id>
+      <name>FLEURY MICHON CHARCU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75179</id>
+      <name>FLEURY MICHON CHARCU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75180</id>
+      <name>PCM MANUFACTURING FR</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75181</id>
+      <name>FONDERIE D ANJOU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75183</id>
+      <name>CHARRIER SARL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75184</id>
+      <name>THEATRE REGIONAL DES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75185</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75186</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>8</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75188</id>
+      <name>P R E M E C A</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75189</id>
+      <name>S.M.P. BAUDRY</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75190</id>
+      <name>COMMECA ANJOU SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75191</id>
+      <name>COMMECA ANJOU SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75192</id>
+      <name>P R E M E C A</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75193</id>
+      <name>MILLET PORTES ET FEN</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75195</id>
+      <name>S.M.P. BAUDRY</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75196</id>
+      <name>MTI Engineering Sarl</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75197</id>
+      <name>MECACHROME  FRANCE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75198</id>
+      <name>MECACHROME  FRANCE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75200</id>
+      <name>MECACHROME  FRANCE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>9</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75201</id>
+      <name>MECACHROME  FRANCE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75203</id>
+      <name>MECACHROME  FRANCE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-16T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75205</id>
+      <name>POISON</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-25T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75207</id>
+      <name>MECATURN SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75210</id>
+      <name>LAITERIE DU VAL D'AN</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-16T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75212</id>
+      <name>MATECHPLAST SARL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75213</id>
+      <name>MILLET PORTES ET FEN</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75214</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75216</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-29T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75218</id>
+      <name>SFERIC</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75220</id>
+      <name>SFERIC</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75222</id>
+      <name>GROUPE G2M</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75223</id>
+      <name>MARTY SPORTS SA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75224</id>
+      <name>BOUVET SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75225</id>
+      <name>LAFOREST SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>6</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75226</id>
+      <name>ASSA ABLOY AUBE ANJO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75227</id>
+      <name>AG METAL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75228</id>
+      <name>CORONA MEDICAL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75229</id>
+      <name>MILLET PORTES ET FEN</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-17T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75230</id>
+      <name>GROUPE G2M</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75231</id>
+      <name>BOUVET SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75232</id>
+      <name>TELLIER BRISE SOLEIL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-17T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75233</id>
+      <name>SOCIETE MOULES METAL</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75234</id>
+      <name>JEAN BAL S.A.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-17T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75235</id>
+      <name>ASI PROD S.A.S.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75236</id>
+      <name>IMPRIMERIE DU VAL DE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75237</id>
+      <name>F A B R E</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75238</id>
+      <name>F A B R E</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75239</id>
+      <name>A.A.S.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75240</id>
+      <name>S.A.U.M.  S.A.</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75242</id>
+      <name>CONSTELLIUM MONTREUI</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-04-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75243</id>
+      <name>CSP LAPEYRE SERVICES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75244</id>
+      <name>M.T.A. INDUSTRIE S.A</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75245</id>
+      <name>ASSA ABLOY AUBE ANJO</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75246</id>
+      <name>ASSISTANCE TECHNIQUE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>3</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75247</id>
+      <name>ASSISTANCE TECHNIQUE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75248</id>
+      <name>ANTALIA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-30T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75249</id>
+      <name>PLASTIMEN</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75251</id>
+      <name>CONNIVENCE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75253</id>
+      <name>ATLANTEM INDUSTRIES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75254</id>
+      <name>GROLLEAU</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75256</id>
+      <name>NICOLL SAS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-20T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75257</id>
+      <name>CSP LAPEYRE SERVICES</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-27T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75258</id>
+      <name>UMEA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75259</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>14</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75260</id>
+      <name>OUEST AFFUTAGE</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75261</id>
+      <name>S A C H O T</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-21T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75262</id>
+      <name>UMEA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>5</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75263</id>
+      <name>MARTY SPORTS SA</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-23T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75264</id>
+      <name>A M P H</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75265</id>
+      <name>MECAPACK</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75266</id>
+      <name>CASTEL METALS AEROSP</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
+      <quantiteElement>1</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-03-24T00:00:00</dateLivraison>
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -90,26 +3107,13 @@
     <Fiche>
       <id>75268</id>
       <name />
-      <tempsFabrication>0</tempsFabrication>
+      <tempsFabrication>100</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>
-        <name>Revet4</name>
-        <color>
-          <A>255</A>
-          <R>255</R>
-          <G>248</G>
-          <B>220</B>
-          <ScA>1</ScA>
-          <ScR>1</ScR>
-          <ScG>0.9386857</ScG>
-          <ScB>0.7156935</ScB>
-        </color>
-      </recouvrement>
-      <quantiteElement>1</quantiteElement>
-      <machine>nom</machine>
+      <quantiteElement>2</quantiteElement>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
-      <dateLivraison>2017-11-02T00:00:00</dateLivraison>
-      <textDescription>text</textDescription>
+      <dateLivraison>2017-10-20T00:00:00</dateLivraison>
+      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -117,26 +3121,12 @@
     <Fiche>
       <id>75270</id>
       <name>SIM'EDIT IMPRIMEUR</name>
-      <tempsFabrication>100</tempsFabrication>
-      <typeOperation>fabrication</typeOperation>
-      <recouvrement>
-        <name>Revet1</name>
-        <color>
-          <A>255</A>
-          <R>255</R>
-          <G>165</G>
-          <B>0</B>
-          <ScA>1</ScA>
-          <ScR>1</ScR>
-          <ScG>0.376262128</ScG>
-          <ScB>0</ScB>
-        </color>
-      </recouvrement>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>na</typeOperation>
       <quantiteElement>5</quantiteElement>
-      <machine>Machine1</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-22T00:00:00</dateLivraison>
-      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -146,24 +3136,10 @@
       <name>TECHFI Industries</name>
       <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>
-        <name>Revet2</name>
-        <color>
-          <A>255</A>
-          <R>0</R>
-          <G>255</G>
-          <B>255</B>
-          <ScA>1</ScA>
-          <ScR>0</ScR>
-          <ScG>1</ScG>
-          <ScB>1</ScB>
-        </color>
-      </recouvrement>
       <quantiteElement>3</quantiteElement>
-      <machine>Machine1</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-23T00:00:00</dateLivraison>
-      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -171,29 +3147,15 @@
     <Fiche>
       <id>75272</id>
       <name>TECHFI Industries</name>
-      <tempsFabrication>1000</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
-      <recouvrement>
-        <name>Revet2</name>
-        <color>
-          <A>255</A>
-          <R>0</R>
-          <G>255</G>
-          <B>255</B>
-          <ScA>1</ScA>
-          <ScR>0</ScR>
-          <ScG>1</ScG>
-          <ScB>1</ScB>
-        </color>
-      </recouvrement>
       <quantiteElement>3</quantiteElement>
-      <machine>Machine2</machine>
-      <dateDebutFabrication>2017-11-02T00:00:00</dateDebutFabrication>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-24T00:00:00</dateLivraison>
-      <textDescription />
-      <alerteRetard>false</alerteRetard>
+      <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
-      <check>true</check>
+      <check>false</check>
     </Fiche>
     <Fiche>
       <id>75273</id>
@@ -201,10 +3163,9 @@
       <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>2</quantiteElement>
-      <machine>Machine4</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -215,10 +3176,9 @@
       <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>2</quantiteElement>
-      <machine>Machine5</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -229,10 +3189,9 @@
       <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>1</quantiteElement>
-      <machine>Machine6</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -243,10 +3202,9 @@
       <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>1</quantiteElement>
-      <machine>Machine7</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
-      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -254,10 +3212,10 @@
     <Fiche>
       <id>75277</id>
       <name>OUEST AFFUTAGE</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>15</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-28T00:00:00</dateLivraison>
       <alerteRetard>true</alerteRetard>
@@ -267,10 +3225,10 @@
     <Fiche>
       <id>75278</id>
       <name>OUEST AFFUTAGE</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>15</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-30T00:00:00</dateLivraison>
       <alerteRetard>true</alerteRetard>
@@ -280,10 +3238,10 @@
     <Fiche>
       <id>75279</id>
       <name>HALGAND SAS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>6</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-10-31T00:00:00</dateLivraison>
       <alerteRetard>true</alerteRetard>
@@ -293,10 +3251,10 @@
     <Fiche>
       <id>75280</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>4</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-01T00:00:00</dateLivraison>
       <alerteRetard>true</alerteRetard>
@@ -306,10 +3264,10 @@
     <Fiche>
       <id>75281</id>
       <name>MECATURN SAS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>2</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-02T00:00:00</dateLivraison>
       <alerteRetard>true</alerteRetard>
@@ -319,10 +3277,10 @@
     <Fiche>
       <id>75282</id>
       <name>MECATURN SAS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>2</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-03T00:00:00</dateLivraison>
       <alerteRetard>true</alerteRetard>
@@ -332,10 +3290,10 @@
     <Fiche>
       <id>75283</id>
       <name>OUEST AFFUTAGE</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>2</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-04T00:00:00</dateLivraison>
       <alerteRetard>true</alerteRetard>
@@ -347,24 +3305,10 @@
       <name>SIM'EDIT IMPRIMEUR</name>
       <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <recouvrement>
-        <name>Revet3</name>
-        <color>
-          <A>255</A>
-          <R>255</R>
-          <G>192</G>
-          <B>203</B>
-          <ScA>1</ScA>
-          <ScR>1</ScR>
-          <ScG>0.5271151</ScG>
-          <ScB>0.597201765</ScB>
-        </color>
-      </recouvrement>
       <quantiteElement>5</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-05T00:00:00</dateLivraison>
-      <textDescription />
       <alerteRetard>true</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -372,10 +3316,10 @@
     <Fiche>
       <id>75285</id>
       <name>HALGAND SAS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>4</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-06T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -385,10 +3329,10 @@
     <Fiche>
       <id>75286</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>120</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-07T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -398,10 +3342,10 @@
     <Fiche>
       <id>75287</id>
       <name>MECATURN SAS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>1</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-08T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -411,10 +3355,10 @@
     <Fiche>
       <id>75288</id>
       <name>MECATURN SAS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>1</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-07T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-09T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -424,10 +3368,10 @@
     <Fiche>
       <id>75289</id>
       <name>OUEST AFFUTAGE</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>4</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-08T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-10T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -437,10 +3381,10 @@
     <Fiche>
       <id>75290</id>
       <name>SIM'EDIT IMPRIMEUR</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>5</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-09T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-11T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -450,10 +3394,10 @@
     <Fiche>
       <id>75291</id>
       <name>TECHFI Industries</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>6</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-10T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-12T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -463,10 +3407,10 @@
     <Fiche>
       <id>75292</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>7</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-09T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-13T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -476,10 +3420,10 @@
     <Fiche>
       <id>75293</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>8</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-10T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-14T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -489,10 +3433,10 @@
     <Fiche>
       <id>75294</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>9</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-13T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-15T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -502,10 +3446,10 @@
     <Fiche>
       <id>75295</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>10</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-14T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-16T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -515,10 +3459,10 @@
     <Fiche>
       <id>75296</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>11</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-15T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-17T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -528,10 +3472,10 @@
     <Fiche>
       <id>75297</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>12</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-16T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-18T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -541,10 +3485,10 @@
     <Fiche>
       <id>75298</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>13</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-17T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-19T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -554,10 +3498,10 @@
     <Fiche>
       <id>75299</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>14</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-16T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-20T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -567,10 +3511,10 @@
     <Fiche>
       <id>75300</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>15</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-17T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-21T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -580,10 +3524,10 @@
     <Fiche>
       <id>75301</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>16</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-20T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-22T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -593,10 +3537,10 @@
     <Fiche>
       <id>75302</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>17</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-21T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-23T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -606,10 +3550,10 @@
     <Fiche>
       <id>75303</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>18</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-22T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-24T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -619,12 +3563,13 @@
     <Fiche>
       <id>75304</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
-      <typeOperation>na</typeOperation>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>aiguisage</typeOperation>
       <quantiteElement>19</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-23T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-25T00:00:00</dateLivraison>
+      <textDescription />
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -632,10 +3577,10 @@
     <Fiche>
       <id>75305</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>20</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-24T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-26T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -645,10 +3590,10 @@
     <Fiche>
       <id>75306</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>21</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-23T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-27T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -658,10 +3603,10 @@
     <Fiche>
       <id>75307</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>22</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-24T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-28T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -671,10 +3616,10 @@
     <Fiche>
       <id>75308</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>na</typeOperation>
       <quantiteElement>23</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-27T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-29T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -684,10 +3629,10 @@
     <Fiche>
       <id>75309</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>24</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-28T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-11-30T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -697,10 +3642,10 @@
     <Fiche>
       <id>75310</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>25</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-29T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-01T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -710,10 +3655,10 @@
     <Fiche>
       <id>75311</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>26</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-30T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-02T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -723,10 +3668,10 @@
     <Fiche>
       <id>75312</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>27</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-03T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -736,10 +3681,10 @@
     <Fiche>
       <id>75313</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>28</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-11-30T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-04T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -749,10 +3694,10 @@
     <Fiche>
       <id>75314</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>29</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-01T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-05T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -762,10 +3707,10 @@
     <Fiche>
       <id>75315</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>30</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-04T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-06T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -775,10 +3720,10 @@
     <Fiche>
       <id>75316</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>31</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-05T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-07T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -788,10 +3733,10 @@
     <Fiche>
       <id>75317</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>32</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-08T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -801,10 +3746,10 @@
     <Fiche>
       <id>75318</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>33</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-07T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-09T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -814,10 +3759,10 @@
     <Fiche>
       <id>75319</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>34</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-08T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-10T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -827,10 +3772,10 @@
     <Fiche>
       <id>75320</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>35</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-07T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-11T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -840,10 +3785,10 @@
     <Fiche>
       <id>75321</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>36</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-08T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-12T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -853,10 +3798,10 @@
     <Fiche>
       <id>75322</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>37</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-11T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-13T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -866,10 +3811,10 @@
     <Fiche>
       <id>75323</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>38</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-12T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-14T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -879,10 +3824,10 @@
     <Fiche>
       <id>75324</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>39</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-13T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-15T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -892,10 +3837,10 @@
     <Fiche>
       <id>75325</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>40</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-14T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-16T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -905,10 +3850,10 @@
     <Fiche>
       <id>75326</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>41</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-15T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-17T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -918,10 +3863,10 @@
     <Fiche>
       <id>75327</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>42</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-14T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-18T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -931,10 +3876,10 @@
     <Fiche>
       <id>75328</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>43</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-15T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-19T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -944,10 +3889,10 @@
     <Fiche>
       <id>75329</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>44</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-18T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-20T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -957,10 +3902,10 @@
     <Fiche>
       <id>75330</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>45</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-19T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-21T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -970,10 +3915,10 @@
     <Fiche>
       <id>75331</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>46</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-20T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-22T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -983,10 +3928,10 @@
     <Fiche>
       <id>75332</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>47</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-21T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-23T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -996,10 +3941,10 @@
     <Fiche>
       <id>75333</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>48</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-22T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-24T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -1009,10 +3954,10 @@
     <Fiche>
       <id>75334</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>49</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-21T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-25T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -1022,10 +3967,10 @@
     <Fiche>
       <id>75335</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>50</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-22T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-26T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -1035,10 +3980,10 @@
     <Fiche>
       <id>75336</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>51</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-25T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-27T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -1048,10 +3993,10 @@
     <Fiche>
       <id>75337</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>52</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-26T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-28T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -1061,10 +4006,10 @@
     <Fiche>
       <id>75338</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>53</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-27T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-29T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -1074,10 +4019,10 @@
     <Fiche>
       <id>75339</id>
       <name>BORLIS</name>
-      <tempsFabrication>-1</tempsFabrication>
+      <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>54</quantiteElement>
-      <machine>na</machine>
+      <machine>NA</machine>
       <dateDebutFabrication>2017-12-28T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-30T00:00:00</dateLivraison>
       <alerteRetard>false</alerteRetard>
@@ -1085,58 +4030,5 @@
       <check>false</check>
     </Fiche>
   </ListeFiches>
-  <ListeColors>
-    <TypeColor>
-      <name>Revet1</name>
-      <color>
-        <A>255</A>
-        <R>255</R>
-        <G>165</G>
-        <B>0</B>
-        <ScA>1</ScA>
-        <ScR>1</ScR>
-        <ScG>0.376262128</ScG>
-        <ScB>0</ScB>
-      </color>
-    </TypeColor>
-    <TypeColor>
-      <name>Revet2</name>
-      <color>
-        <A>255</A>
-        <R>0</R>
-        <G>255</G>
-        <B>255</B>
-        <ScA>1</ScA>
-        <ScR>0</ScR>
-        <ScG>1</ScG>
-        <ScB>1</ScB>
-      </color>
-    </TypeColor>
-    <TypeColor>
-      <name>Revet3</name>
-      <color>
-        <A>255</A>
-        <R>255</R>
-        <G>192</G>
-        <B>203</B>
-        <ScA>1</ScA>
-        <ScR>1</ScR>
-        <ScG>0.5271151</ScG>
-        <ScB>0.597201765</ScB>
-      </color>
-    </TypeColor>
-    <TypeColor>
-      <name>Revet4</name>
-      <color>
-        <A>255</A>
-        <R>255</R>
-        <G>248</G>
-        <B>220</B>
-        <ScA>1</ScA>
-        <ScR>1</ScR>
-        <ScG>0.9386857</ScG>
-        <ScB>0.7156935</ScB>
-      </color>
-    </TypeColor>
-  </ListeColors>
+  <ListeColors />
 </Data>

@@ -19,20 +19,15 @@ namespace GestionPlanning.src
         //alerte empêche de modifier la fiche?
         //l'alerte est indiquée dans machine? sur un jour? -> afficher messageBox si affichage du jour ou filtre de la machine
         //
-
-        //si pas de date de fabrication, pas de machine
-        //
+        
 
 
         //TODO
-        //réactualiser les données toutes les 15secondes?
-        //retirer du placement automatique
-        //modifier le menu pour un meilleur affichage (en haut de l'écran)
-        //rendre plus beau
-
-        //Tester plusieurs lancements en parallèle
-
         //tester une dernière fois le path
+        //gérer le prblème avec l'ID 0 ou trouver une solution...
+        //donner un id aléatoire?
+
+        //ajouter fenetre modif temps prod max journée
         //refaire des données complètes pour présentation
 
         //Fait:
@@ -67,6 +62,12 @@ namespace GestionPlanning.src
         //choisir id creation fiche?
         //afficher les fiches sans date de livraison
         //afficher machine pour day, week et simple
+
+        //faire code démo
+
+
+        //modifier le menu pour un meilleur affichage (en haut de l'écran)
+        //rendre plus beau
 
         //a présenter
         // tous les cas de tests

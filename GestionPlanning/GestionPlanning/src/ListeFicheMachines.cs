@@ -70,12 +70,12 @@ namespace GestionPlanning
                 }
             }
             //tri, placer na en fin de liste
-            ListeMachine listeNA = new ListeMachine("na");
+            ListeMachine listeNA = new ListeMachine("NA");
             List<ListeMachine> listeTmp = new List<ListeMachine>();
 
             foreach (ListeMachine machine in listeFichesByMachines)
             {
-                if (machine.nameMachine == "na")
+                if (machine.nameMachine == "NA")
                 {
                     listeNA = machine;
                 }

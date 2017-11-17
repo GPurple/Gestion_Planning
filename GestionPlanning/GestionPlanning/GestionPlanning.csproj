@@ -145,6 +145,9 @@
     <Compile Include="Window_Identification.xaml.cs">
       <DependentUpon>Window_Identification.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Window_Modif_Charge.xaml.cs">
+      <DependentUpon>Window_Modif_Charge.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window_Modif_Colors.xaml.cs">
       <DependentUpon>Window_Modif_Colors.xaml</DependentUpon>
     </Compile>
@@ -252,6 +255,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window_Identification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window_Modif_Charge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

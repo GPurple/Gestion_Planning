@@ -55,6 +55,7 @@ namespace GestionPlanning
             ResizeDispMachine();
 
             canvasDispListesMachines.Children.Clear();
+            canvaDispNamesMachines.Children.Clear();
 
             foreach (ListeMachine machine in listeFichesMachines.listeFichesByMachines)
             {

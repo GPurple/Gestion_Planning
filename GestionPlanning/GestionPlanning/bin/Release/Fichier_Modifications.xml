@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ListeModifications xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ListeModifs>
+    <Modification>
+      <modification>refreshData</modification>
+      <nameUser> Default user</nameUser>
+      <idFiche>-1</idFiche>
+      <text>Rafraichissement des données</text>
+      <dateModif>2017-11-06T04:45:34.4953553+01:00</dateModif>
+      <valueModif />
+    </Modification>
+  </ListeModifs>
+</ListeModifications>

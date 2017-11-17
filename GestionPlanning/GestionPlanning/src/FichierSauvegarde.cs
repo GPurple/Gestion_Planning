@@ -16,6 +16,7 @@ namespace GestionPlanning.src
     //Les données à sauvegarder
     [XmlRoot("Data")]
     [XmlInclude(typeof(Fiche))]
+    [XmlInclude(typeof(TimeSpan))]
     public class SaveData
     {
         //Les données
@@ -25,16 +26,14 @@ namespace GestionPlanning.src
         public String nameFileCSV;
 
         public String pathFileModifs;
-
-        //les valeurs non définies par défaut
-        /*public List<TypeColor> colorFabrication;
-        public List<TypeColor> colorRecouvrement;
-        public List<TypeColor> colorOption;*/
-
+        
         public Boolean displayDay;
 
         //Date de la dernière modification pour savoir si le chargement est utile
         public DateTime dateLastModif;
+
+
+        public int minChargeTime;
 
         //La liste des fiches 
         [XmlArray("ListeFiches")]
@@ -70,10 +69,13 @@ namespace GestionPlanning.src
 
     public class FichierSauvegarde
     {
+        public String pathFileFinal = @"\\serveur\partages\DonneesPlanning\";
         public String pathFile = "";
         public String nameFile = "Fichier_Sauvegarde";
         public DateTime dateLastModif = new DateTime(2000,1,1);
         public SaveData dataCom = new SaveData();
+
+        
 
         public String nameFileCsv = "";
         public String pathFileCsv = "";
@@ -83,6 +85,7 @@ namespace GestionPlanning.src
         public String newPathFileCsv = "";
         public String newPathFileModifs = "";
 
+        public int minChargeTime = 0;
 
         public List<TypeColor> listeColors = new List<TypeColor>();
         /* *
@@ -135,6 +138,8 @@ namespace GestionPlanning.src
             Boolean nodatemodif = false;
             int idFichePrec = 0;
             SaveData data = ReadDatas();
+
+            minChargeTime = data.minChargeTime;
             
             if (data == null)
             {
@@ -239,9 +244,11 @@ namespace GestionPlanning.src
                     listeFichesConnues.Add(ficheTmp);
                 }
                 this.listeColors = data.listeColor;
+                this.minChargeTime = data.minChargeTime;
                 //Trier fiches par id
                 listeFichesConnues = listeFichesConnues.OrderBy(fiche => fiche.id).ToList();
                 data.listeFiches = listeFichesConnues;
+                dataCom = data;
                 //à la fin la liste est réecrite dans le fichier
                 SaveDatas(data);
                 return listeFichesTmp;
@@ -268,7 +275,6 @@ namespace GestionPlanning.src
                 return 0;
             }
         }
-
         
 
         public int SaveListe(List<Fiche> listeFichesConnues, List<TypeColor> listeColors)
@@ -280,6 +286,7 @@ namespace GestionPlanning.src
                 data.dateLastModif = dateLastModif;
                 data.listeFiches = listeFichesConnues;
                 data.listeColor = listeColors;
+                dataCom = data;
                 SaveDatas(data);
                 return 1;
             }
@@ -288,6 +295,25 @@ namespace GestionPlanning.src
                 return 0;
             }
         }
+
+        public int SaveChargeTimeData(int newChargeTime)
+        {
+            try
+            {
+                SaveData data = ReadDatas();
+                dateLastModif = DateTime.Now;
+                data.minChargeTime = newChargeTime;
+                this.minChargeTime = newChargeTime;
+                SaveDatas(data);
+                dataCom = data;
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
         public void EraseData()
         {
             String file = this.pathFile + this.nameFile + ".xml";
@@ -349,12 +375,12 @@ namespace GestionPlanning.src
             }
             catch
             {
-                MessageBox.Show("Erreur ouverture fichier csv");
+                MessageBox.Show("Erreur ouverture fichier sauvegarde");
             }
             return data;
         }
         
-        public void SaveDatas(SaveData data)
+        public int SaveDatas(SaveData data)
         {
             // Delete a file by using File class static method...
             String file_V1 = this.pathFile + this.nameFile + ".xml";
@@ -372,7 +398,6 @@ namespace GestionPlanning.src
                 catch (System.IO.IOException e)
                 {
                     
-                    return;
                 }
             }
 
@@ -401,7 +426,7 @@ namespace GestionPlanning.src
                 catch (System.IO.IOException e)
                 {
                     Console.WriteLine(e.Message);
-                    return;
+                    return 0;
                 }
             }
             try
@@ -412,21 +437,34 @@ namespace GestionPlanning.src
             {
                 MessageBox.Show("Erreur sauvegarde dans fichier sauvegarde \n ");
             }
+
+            return 1;
         }
 
         public int RenommerFichierXcel(String newName)
         {
             Brain.Instance.fichierXcel.name_file = newName;
             dataCom.nameFileCSV = newName;
-            SaveDatas(dataCom);
+            if (SaveDatas(dataCom) == 1)
+            {
+                MessageBox.Show("Le nom du fichier a été modifié correctement \n ");
+            }
             return 1;
         }
 
         public int ModifierPathFichierXcel(String newPath)
         {
+            char val = newPath.LastOrDefault<char>();
+            if (val != '\\')
+            {
+                newPath = newPath + '\\';
+            }
             Brain.Instance.fichierXcel.path_file = newPath;
             dataCom.pathFileCSV = newPath;
-            SaveDatas(dataCom);
+            if(SaveDatas(dataCom) == 1)
+            {
+                MessageBox.Show("Le chemin d'accès a été modifié correctement \n ");
+            }
             return 1;
         }
 

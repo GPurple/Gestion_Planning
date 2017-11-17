@@ -26,7 +26,7 @@ namespace GestionPlanning.src
         public String name;
 
         //Le temps de fabrication en minutes
-        public int tempsFabrication = -1;
+        public int tempsFabrication = 0;
 
         //Le type d'opération
         public TypeOperation typeOperation = TypeOperation.na;
@@ -35,10 +35,10 @@ namespace GestionPlanning.src
         public TypeColor recouvrement = null;
 
         //Quantité élement
-        public int quantiteElement = -1;
+        public int quantiteElement = 0;
 
         //Le numéro de machine (-1 = non défini)
-        public String machine = "na";
+        public String machine = "NA";
 
         //Datedébut fabrication 
         public DateTime dateDebutFabrication = new DateTime();
