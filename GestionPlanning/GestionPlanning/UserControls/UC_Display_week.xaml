@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:GestionPlanning"
              mc:Ignorable="d" Height="530" Width="950">
     <Grid>
-        <Rectangle Fill="#FF2E2E2E" Margin="0,0,0,0" Stroke="#FF2B2B2B" StrokeThickness="0" Grid.RowSpan="2"/>
-        <ScrollViewer x:Name="scrollViewWeek" HorizontalAlignment="Center" Height="412" Margin="20,95,0,0" VerticalAlignment="Top" Width="920" Grid.RowSpan="2" HorizontalContentAlignment="Center">
+        <Rectangle Fill="DodgerBlue" Margin="0,0,0,0" Stroke="#FF2B2B2B" StrokeThickness="0" Grid.RowSpan="2"/>
+        <ScrollViewer x:Name="scrollViewWeek" HorizontalAlignment="Center" Height="412" Margin="20,95,0,0" VerticalAlignment="Top" Width="920" Grid.RowSpan="2" HorizontalContentAlignment="Center" Background="#FF315870">
             <Grid x:Name="gridDispWeek">
                 <StackPanel x:Name="SPDisplayDay_lundi" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="130"/>
                 <StackPanel x:Name="SPDisplayDay_mardi" HorizontalAlignment="Left" Height="412" VerticalAlignment="Top" Width="130" Margin="130,0,0,0"/>

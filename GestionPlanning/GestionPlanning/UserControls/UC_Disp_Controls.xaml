@@ -37,7 +37,7 @@
         <Canvas x:Name="canvasDispModifsDatas" HorizontalAlignment="Left" Height="141" Margin="438,26,0,-82" VerticalAlignment="Top" Width="160" Background="#FF2E2E2E">
             <Button Content="Nouvelle fiche" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="CreateFiche" Canvas.Left="10" Canvas.Top="10"/>
             <Button Content="Sauvegarder données" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="SaveData" Canvas.Left="10" Canvas.Top="35"/>
-            <Button Content="Charger données" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="RefreshData" Canvas.Left="10" Canvas.Top="60"/>
+            <Button x:Name="btnRefreshData" Content="Charger données" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="RefreshData" Canvas.Left="10" Canvas.Top="60"/>
             <Button Content="Modifier revêtements" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Click="ModifyColors" Canvas.Left="10" Canvas.Top="85"/>
             <Button Content="Charge machine" Canvas.Left="10" Canvas.Top="111" Width="140" Click="ModifyChargeMachine"/>
         </Canvas>

@@ -4,7 +4,7 @@
   <nameFileCSV>CHARGE_ATELIER_BRUTE_AOS</nameFileCSV>
   <pathFileModifs />
   <displayDay>false</displayDay>
-  <dateLastModif>2017-11-06T09:24:15.7450131+01:00</dateLastModif>
+  <dateLastModif>2017-12-05T16:49:19.0477912+01:00</dateLastModif>
   <minChargeTime>420</minChargeTime>
   <ListeFiches>
     <Fiche>
@@ -3720,12 +3720,13 @@
     <Fiche>
       <id>75316</id>
       <name>BORLIS</name>
-      <tempsFabrication>0</tempsFabrication>
+      <tempsFabrication>10</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
       <quantiteElement>31</quantiteElement>
       <machine>NA</machine>
       <dateDebutFabrication>2017-12-05T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-07T00:00:00</dateLivraison>
+      <textDescription />
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -3735,10 +3736,24 @@
       <name>BORLIS</name>
       <tempsFabrication>0</tempsFabrication>
       <typeOperation>fabrication</typeOperation>
-      <quantiteElement>32</quantiteElement>
+      <recouvrement>
+        <name>Revet1</name>
+        <color>
+          <A>255</A>
+          <R>0</R>
+          <G>255</G>
+          <B>255</B>
+          <ScA>1</ScA>
+          <ScR>0</ScR>
+          <ScG>1</ScG>
+          <ScB>1</ScB>
+        </color>
+      </recouvrement>
+      <quantiteElement>33</quantiteElement>
       <machine>NA</machine>
       <dateDebutFabrication>2017-12-06T00:00:00</dateDebutFabrication>
       <dateLivraison>2017-12-08T00:00:00</dateLivraison>
+      <textDescription />
       <alerteRetard>false</alerteRetard>
       <attentionRetard>false</attentionRetard>
       <check>false</check>
@@ -4029,6 +4044,72 @@
       <attentionRetard>false</attentionRetard>
       <check>false</check>
     </Fiche>
+    <Fiche>
+      <id>75340</id>
+      <name>BORLIS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>55</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-20T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-11-22T00:00:00</dateLivraison>
+      <alerteRetard>false</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75341</id>
+      <name>BORLIS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>55</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-11-20T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-11-22T00:00:00</dateLivraison>
+      <alerteRetard>false</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75342</id>
+      <name>BORLIS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>55</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-12-05T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-11-22T00:00:00</dateLivraison>
+      <alerteRetard>true</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
+    <Fiche>
+      <id>75343</id>
+      <name>BORLIS</name>
+      <tempsFabrication>0</tempsFabrication>
+      <typeOperation>fabrication</typeOperation>
+      <quantiteElement>10</quantiteElement>
+      <machine>NA</machine>
+      <dateDebutFabrication>2017-12-06T00:00:00</dateDebutFabrication>
+      <dateLivraison>2017-12-08T00:00:00</dateLivraison>
+      <alerteRetard>false</alerteRetard>
+      <attentionRetard>false</attentionRetard>
+      <check>false</check>
+    </Fiche>
   </ListeFiches>
-  <ListeColors />
+  <ListeColors>
+    <TypeColor>
+      <name>Revet1</name>
+      <color>
+        <A>255</A>
+        <R>0</R>
+        <G>255</G>
+        <B>255</B>
+        <ScA>1</ScA>
+        <ScR>0</ScR>
+        <ScG>1</ScG>
+        <ScB>1</ScB>
+      </color>
+    </TypeColor>
+  </ListeColors>
 </Data>

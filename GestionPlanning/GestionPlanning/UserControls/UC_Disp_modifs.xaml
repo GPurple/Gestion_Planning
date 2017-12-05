@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="560" d:DesignWidth="960">
     <Grid>
-        <Rectangle Fill="#FF2E2E2E" Margin="0,0,0,0" Stroke="Black" StrokeThickness="0"/>
+        <Rectangle Fill="DodgerBlue" Margin="0,0,0,0" Stroke="Black" StrokeThickness="0"/>
         <Rectangle x:Name="rectangleDisp" Fill="#FF2E2E2E" HorizontalAlignment="Center" Height="433" Margin="0,61,0,0" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="823"/>
         <ScrollViewer x:Name="scrollViewerDisp" HorizontalAlignment="Center" Height="427" Margin="0,64,0,0" VerticalAlignment="Top" Width="817" Padding="0" UseLayoutRounding="True" BorderBrush="Black" Background="White" >
             <StackPanel x:Name="StackPanelModifs" Height="433" Width="813"/>

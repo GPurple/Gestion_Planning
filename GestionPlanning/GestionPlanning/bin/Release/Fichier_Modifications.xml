@@ -9,5 +9,29 @@
       <dateModif>2017-11-06T04:45:34.4953553+01:00</dateModif>
       <valueModif />
     </Modification>
+    <Modification>
+      <modification>refreshData</modification>
+      <nameUser> Default user</nameUser>
+      <idFiche>-1</idFiche>
+      <text>Rafraichissement des données</text>
+      <dateModif>2017-12-01T12:24:22.319869+01:00</dateModif>
+      <valueModif />
+    </Modification>
+    <Modification>
+      <modification>refreshData</modification>
+      <nameUser> Default user</nameUser>
+      <idFiche>-1</idFiche>
+      <text>Rafraichissement des données</text>
+      <dateModif>2017-12-01T12:24:41.7705965+01:00</dateModif>
+      <valueModif />
+    </Modification>
+    <Modification>
+      <modification>connexion</modification>
+      <nameUser>Identi</nameUser>
+      <idFiche>-1</idFiche>
+      <text>Connexion de l'utilisateur</text>
+      <dateModif>2017-12-01T12:24:43.9521373+01:00</dateModif>
+      <valueModif />
+    </Modification>
   </ListeModifs>
 </ListeModifications>

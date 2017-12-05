@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionPlanning"
              mc:Ignorable="d" Height="560" Width="950">
-    <Grid Background="#FF2E2E2E">
+    <Grid Background="DodgerBlue">
         <TextBlock x:Name="TextMonth" Margin="0,21,0,0" TextWrapping="Wrap" Text="Affichage Mois" VerticalAlignment="Top" Width="192" FontSize="24" Foreground="White" HorizontalAlignment="Center" TextAlignment="Center"/>
         <Button x:Name="BtnPreviousMonth" Content="Mois précédent" HorizontalAlignment="Left" Margin="51,27,0,0" VerticalAlignment="Top" Width="106" Click="PreviousMonth" Height="34"/>
         <Button x:Name="btnNextMonth" Content="Mois suivant" HorizontalAlignment="Left" Margin="810,21,0,0" VerticalAlignment="Top" Width="93" Click="NextMonth" Height="34"/>
-        <Canvas x:Name="Canva_disp_fiche" HorizontalAlignment="Left" Height="450" Margin="51,80,0,0" VerticalAlignment="Top" Width="840"/>
+        <Canvas x:Name="Canva_disp_fiche" HorizontalAlignment="Left" Height="450" Margin="51,80,0,0" VerticalAlignment="Top" Width="840" Background="#FF315870"/>
 
     </Grid>
 </UserControl>

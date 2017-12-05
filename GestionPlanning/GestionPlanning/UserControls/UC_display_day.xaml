@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:GestionPlanning"
              mc:Ignorable="d" Width="950" Height="560">
     <Grid>
-        <Rectangle Fill="#FF2E2E2E" Margin="0,0,0,0" Stroke="Black" StrokeThickness="0"/>
-        <ScrollViewer x:Name="scrollViewDispDay" HorizontalAlignment="Center" Height="433" Margin="54,61,0,0" VerticalAlignment="Top" Width="826" Padding="0" UseLayoutRounding="True" BorderBrush="Black" HorizontalScrollBarVisibility="Auto">
+        <Rectangle Fill="DodgerBlue" Margin="0,0,0,0" Stroke="Black" StrokeThickness="0"/>
+        <ScrollViewer x:Name="scrollViewDispDay" HorizontalAlignment="Center" Height="433" Margin="54,61,0,0" VerticalAlignment="Top" Width="826" Padding="0" UseLayoutRounding="True" BorderBrush="Black" HorizontalScrollBarVisibility="Auto" Background="#FF315870">
             <StackPanel x:Name="StackPanelDisplayDay" HorizontalAlignment="Center" Height="433" VerticalAlignment="Top" Width="804"/>
         </ScrollViewer>
         <Button x:Name="btnPreviousDay" Content="Jour précedent" HorizontalAlignment="Left" Margin="74,19,0,0" VerticalAlignment="Top" Width="93" Click="Btn_PreviousDay" Height="34"/>

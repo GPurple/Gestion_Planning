@@ -7,7 +7,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Media;
+using System.Messaging;
+
 using static GestionPlanning.src.FichierSauvegarde;
 
 namespace GestionPlanning.src
@@ -80,7 +83,7 @@ namespace GestionPlanning.src
 
         //Les différents controls utilisateurs
         public MainWindow mainWindow;
-        public UC_Disp_Controls ucDispControl;
+        public UC_Disp_Controls ucDispControl = null ;
         public UC_display_day ucDispDay;
         public UC_Display_week ucDispWeek;
         public UC_Disp_Month ucDispMonth;
@@ -102,8 +105,13 @@ namespace GestionPlanning.src
         MessageConfSupprColor message_ConfSupprColor;
 
         // Create a new Mutex. The creating thread does not own the mutex.
-        private static Mutex mutRefresh = new Mutex();
+        //private static Mutex mutRefresh = new Mutex();
         private Boolean inRefresh = false;
+
+        public System.Timers.Timer aTimer;
+
+        // Connect to the a queue on the local computer.
+        MessageQueue refreshQueue;
 
         private static Brain instance;
 
@@ -129,32 +137,31 @@ namespace GestionPlanning.src
             dateToDisplay = new DateTime(dateToDisplay.Year, dateToDisplay.Month, dateToDisplay.Day);
 
             //TODO modify
-            if(DateTime.Now.CompareTo(new DateTime(2017,11,30)) > 0)
+            if(DateTime.Now.CompareTo(new DateTime(2017,12,31)) > 0)
             {
-                MessageBox.Show("La version d'essai du logiciel est dépassée \n ");
+                System.Windows.MessageBox.Show("La version d'essai du logiciel est dépassée \n ");
                 CloseAll();
             }
 
 
-            /*System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEventRefresh);
-            aTimer.Interval = 5000;
-            aTimer.Enabled = true;*/
+            aTimer.Interval = 20000;
+            //aTimer.Enabled = true;
+
+            return;
 
         }
 
+        
+
+        [STAThread]
         private static void OnTimedEventRefresh(object source, ElapsedEventArgs e)
         {
-            //TODO resynchronisation de la liste
-            //attention au problèmes de conflit
-            //utiliser un mutex
-            /*if(Brain.instance.InRefresh() == false)
-            {
-                mutRefresh.WaitOne();
-                Brain.Instance.RefreshData();
-                mutRefresh.ReleaseMutex();
-            }*/
-            MessageBox.Show("Timer \n ");
+            Brain.instance.mainWindow.Dispatcher.Invoke(() => { Brain.Instance.RefreshData(); });
+            //System.Windows.MessageBox.Show("Timer event \n ");
+            //TODO ne pas fermer les icones 
+
         }
 
         static public void Main()
@@ -184,6 +191,12 @@ namespace GestionPlanning.src
         {
             return inRefresh;
         }
+
+        public void SetRefresh(bool refresh)
+        {
+            inRefresh = refresh;
+        }
+
         /**
          * @brief Place automatiquement toutes les fiches dans l'emploi du temps en fonction de leurs paramètres
          * @note la synchro doit être appellées
@@ -279,8 +292,12 @@ namespace GestionPlanning.src
         
         public void FindAlerteListeFull(List<Fiche> liste)
         {
-            mainWindow.image_alerteGeneral.Visibility = Visibility.Collapsed;
-            mainWindow.image_warningGeneral.Visibility = Visibility.Collapsed;
+            //mainWindow.image_alerteGeneral.Visibility = Visibility.Collapsed;
+            //mainWindow.Invoke(() => { image_alerteGeneral.Visibility = Visibility.Collapsed });
+            mainWindow.Dispatcher.Invoke(() => { mainWindow.image_alerteGeneral.Visibility = Visibility.Collapsed; });
+            mainWindow.Dispatcher.Invoke(() => { mainWindow.image_warningGeneral.Visibility = Visibility.Collapsed; });
+
+            //mainWindow.image_warningGeneral.Visibility = Visibility.Collapsed;
             foreach (Fiche fiche in liste)
             {
                 FindAlerteListeInFor(fiche);
@@ -313,19 +330,19 @@ namespace GestionPlanning.src
                     {
                         fiche.alerteRetard = true;
                         fiche.attentionRetard = false;
-                        mainWindow.image_alerteGeneral.Visibility = Visibility.Visible;
+                        mainWindow.Dispatcher.Invoke(() => { mainWindow.image_alerteGeneral.Visibility = Visibility.Visible; });
                     }
                     else if (time.Days >-2) //moins de 2 jours entre fabrication et livraison en semaine
                     {
                         fiche.alerteRetard = false;
                         fiche.attentionRetard = true;
-                        mainWindow.image_warningGeneral.Visibility = Visibility.Visible;
+                        mainWindow.Dispatcher.Invoke(() => { mainWindow.image_warningGeneral.Visibility = Visibility.Visible; });
                     }
                     else if (time.Days > -4 && (dateLivraison.AddDays(-1).DayOfWeek == DayOfWeek.Sunday || dateLivraison.AddDays(-2).DayOfWeek == DayOfWeek.Sunday))
                     {
                         fiche.alerteRetard = false;
                         fiche.attentionRetard = true;
-                        mainWindow.image_warningGeneral.Visibility = Visibility.Visible;
+                        mainWindow.Dispatcher.Invoke(() => { mainWindow.image_warningGeneral.Visibility = Visibility.Visible; });
                     }
                     else 
                     {
@@ -507,7 +524,6 @@ namespace GestionPlanning.src
         
         public void RefreshData()
         {
-            mutRefresh.WaitOne();
             inRefresh = true;
             if (fichierXcel.LoadFiches(listeFiches) >= 0)
             {
@@ -528,7 +544,6 @@ namespace GestionPlanning.src
                 RefreshDispControlTri();
                 gestionModif.AddModif(new Modification(TypeModification.refreshData, nameUser, -1, "Rafraichissement des données", DateTime.Now,""));
             }
-            mutRefresh.ReleaseMutex();
             inRefresh = false;
         }
         
@@ -1187,7 +1202,7 @@ namespace GestionPlanning.src
             else
             {
                 //TODO erreur écriture BCCM
-                MessageBox.Show("Le format du BCCM n'est pas valide \n ");
+                System.Windows.MessageBox.Show("Le format du BCCM n'est pas valide \n ");
                 triBCCM = 0;
             }
         }
@@ -1226,8 +1241,8 @@ namespace GestionPlanning.src
                 {
                     retList.Add(listMachine.nameMachine);
                     //TODO afficher le temps
-                    
-                    MessageBox.Show("Attention : Le temps de production de la machine " + listMachine.nameMachine + " (" + (double)(fichierSauvegarde.minChargeTime / 60) + "h) est dépassé le " + dateDay.Day + "/" + dateDay.Month + "/" + dateDay.Year + ". Le temps de production est de :" + totalTime.Hours + "h" + totalTime.Minutes + "min.");
+
+                    System.Windows.MessageBox.Show("Attention : Le temps de production de la machine " + listMachine.nameMachine + " (" + (double)(fichierSauvegarde.minChargeTime / 60) + "h) est dépassé le " + dateDay.Day + "/" + dateDay.Month + "/" + dateDay.Year + ". Le temps de production est de :" + totalTime.Hours + "h" + totalTime.Minutes + "min.");
                 }
                 totalTime = new TimeSpan();
             }
@@ -1293,7 +1308,7 @@ namespace GestionPlanning.src
             {
                 if (timeDay.totalTime.TotalMinutes > fichierSauvegarde.minChargeTime)
                 {
-                    MessageBox.Show("Attention : Le temps de production de la machine " + nameMachine + " (" + (double)(fichierSauvegarde.minChargeTime / 60) + "h) est dépassé le " + timeDay.day.Day + "/" + timeDay.day.Month + "/" + timeDay.day.Year + ". Le temps de production est de :" + timeDay.totalTime.Hours + "h" + timeDay.totalTime.Minutes + "min.");
+                    System.Windows.MessageBox.Show("Attention : Le temps de production de la machine " + nameMachine + " (" + (double)(fichierSauvegarde.minChargeTime / 60) + "h) est dépassé le " + timeDay.day.Day + "/" + timeDay.day.Month + "/" + timeDay.day.Year + ". Le temps de production est de :" + timeDay.totalTime.Hours + "h" + timeDay.totalTime.Minutes + "min.");
                     return 0;
                 }
             }
@@ -1828,7 +1843,9 @@ namespace GestionPlanning.src
 
         public void CloseAll()
         {
-            if(System.Windows.Forms.Application.MessageLoop)
+            Brain.Instance.aTimer.Enabled = true;
+            Brain.Instance.aTimer.Close();
+            if (System.Windows.Forms.Application.MessageLoop)
             {
                 System.Windows.Forms.Application.Exit();
             }

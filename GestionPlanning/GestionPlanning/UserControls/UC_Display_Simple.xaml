@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestionPlanning"
-             mc:Ignorable="d" Height="560" Width="950" Background="#FF2E2E2E">
+             mc:Ignorable="d" Height="560" Width="950" Background="DodgerBlue">
     <Grid>
-        <ScrollViewer x:Name="scrollViewListe" HorizontalAlignment="Center" Height="433" Margin="0,61,0,0" VerticalAlignment="Top" Width="823" Padding="0" UseLayoutRounding="True" BorderBrush="Black" >
+        <ScrollViewer x:Name="scrollViewListe" HorizontalAlignment="Center" Height="433" Margin="0,61,0,0" VerticalAlignment="Top" Width="823" Padding="0" UseLayoutRounding="True" BorderBrush="Black" Background="#FF315870" >
             <StackPanel x:Name="StackPanelDisplayListe" HorizontalAlignment="Center" Height="433" VerticalAlignment="Top" Width="813"/>
         </ScrollViewer>
         <TextBlock x:Name="TextListeSimple" HorizontalAlignment="Center" Margin="0,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Foreground="White" Width="190" TextAlignment="Center"><Run Text="Liste "/><Run Text="complète"/></TextBlock>

@@ -52,6 +52,8 @@ namespace GestionPlanning
 
             CollapseAllZones();
 
+            Brain.Instance.aTimer.Enabled = true;
+
         }
 
         private void DisplayDay(object sender, RoutedEventArgs e)
@@ -98,7 +100,22 @@ namespace GestionPlanning
 
         private void RefreshData(object sender, RoutedEventArgs e)
         {
-            Brain.Instance.RefreshData();
+            if (Brain.Instance.InRefresh() == false)
+            {
+                Brain.Instance.RefreshData();
+                Brain.Instance.SetRefresh(true);
+            }
+            CollapseAllZones();
+        }
+
+        public void RefreshDataPublicEvent(object sender, RoutedEventArgs e)
+        {
+            if (Brain.Instance.InRefresh() == false)
+            {
+                Brain.Instance.RefreshData();
+                Brain.Instance.SetRefresh(true);
+            }
+            System.Windows.MessageBox.Show("Timer \n ");
             CollapseAllZones();
         }
 
